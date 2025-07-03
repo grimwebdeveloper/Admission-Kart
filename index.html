@@ -329,6 +329,90 @@
     </div>
   </section>
 
+  <!-- FAQ SECTION (Accordion) -->
+  <section id="faqs" class="bg-akcard2 pt-14 pb-12 font-inter">
+    <div class="max-w-[800px] mx-auto px-8">
+      <h2 class="text-[2rem] font-extrabold text-akprimary text-center mb-8 tracking-[.01em]">Frequently Asked Questions</h2>
+      <div class="space-y-5" id="faq-accordion">
+        <!-- FAQ 1 -->
+        <div class="border border-akborder rounded-ak bg-akcard overflow-hidden">
+          <button type="button" class="w-full flex justify-between items-center px-6 py-5 text-left text-aktext font-semibold text-[1.08rem] focus:outline-none faq-toggle transition-colors hover:bg-akborder/30">
+            <span>How do I get admission assistance?</span>
+            <span class="faq-icon text-akprimary text-[1.5rem] transition-transform">+</span>
+          </button>
+          <div class="faq-content px-6 pb-5 text-akmuted text-[1rem] leading-[1.7] hidden">
+            Simply click on "Book Consultation" and fill out the form. Our expert counselors will reach out to guide you through the entire admission process, from shortlisting colleges to application and documentation.
+          </div>
+        </div>
+        <!-- FAQ 2 -->
+        <div class="border border-akborder rounded-ak bg-akcard overflow-hidden">
+          <button type="button" class="w-full flex justify-between items-center px-6 py-5 text-left text-aktext font-semibold text-[1.08rem] focus:outline-none faq-toggle transition-colors hover:bg-akborder/30">
+            <span>What exams do I need for MBA?</span>
+            <span class="faq-icon text-akprimary text-[1.5rem] transition-transform">+</span>
+          </button>
+          <div class="faq-content px-6 pb-5 text-akmuted text-[1rem] leading-[1.7] hidden">
+            For MBA admissions in India, common entrance exams include CAT, XAT, MAT, CMAT, and state-level exams. For international MBAs, exams like GMAT or GRE and English proficiency tests (IELTS/TOEFL) are required.
+          </div>
+        </div>
+        <!-- FAQ 3 -->
+        <div class="border border-akborder rounded-ak bg-akcard overflow-hidden">
+          <button type="button" class="w-full flex justify-between items-center px-6 py-5 text-left text-aktext font-semibold text-[1.08rem] focus:outline-none faq-toggle transition-colors hover:bg-akborder/30">
+            <span>Can you help with international universities?</span>
+            <span class="faq-icon text-akprimary text-[1.5rem] transition-transform">+</span>
+          </button>
+          <div class="faq-content px-6 pb-5 text-akmuted text-[1rem] leading-[1.7] hidden">
+            Yes! We provide complete guidance for admissions to universities in the USA, UK, Canada, Germany, and more—including course selection, application, visa process, SOPs, and LORs.
+          </div>
+        </div>
+        <!-- FAQ 4 -->
+        <div class="border border-akborder rounded-ak bg-akcard overflow-hidden">
+          <button type="button" class="w-full flex justify-between items-center px-6 py-5 text-left text-aktext font-semibold text-[1.08rem] focus:outline-none faq-toggle transition-colors hover:bg-akborder/30">
+            <span>Is the counseling session free?</span>
+            <span class="faq-icon text-akprimary text-[1.5rem] transition-transform">+</span>
+          </button>
+          <div class="faq-content px-6 pb-5 text-akmuted text-[1rem] leading-[1.7] hidden">
+            Yes, your first counseling session is absolutely free. Book a session to discuss your goals and get personalized advice from our experts.
+          </div>
+        </div>
+        <!-- FAQ 5 -->
+        <div class="border border-akborder rounded-ak bg-akcard overflow-hidden">
+          <button type="button" class="w-full flex justify-between items-center px-6 py-5 text-left text-aktext font-semibold text-[1.08rem] focus:outline-none faq-toggle transition-colors hover:bg-akborder/30">
+            <span>How soon will I get a response after booking?</span>
+            <span class="faq-icon text-akprimary text-[1.5rem] transition-transform">+</span>
+          </button>
+          <div class="faq-content px-6 pb-5 text-akmuted text-[1rem] leading-[1.7] hidden">
+            Our team usually responds within 24 hours of your booking. You’ll receive a call or email to schedule your session.
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // FAQ Accordion JS
+      document.addEventListener('DOMContentLoaded', function () {
+        const toggles = document.querySelectorAll('#faq-accordion .faq-toggle');
+        toggles.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('.faq-icon');
+            const isOpen = !content.classList.contains('hidden');
+            // Close all
+            toggles.forEach(function (otherBtn) {
+              otherBtn.nextElementSibling.classList.add('hidden');
+              otherBtn.querySelector('.faq-icon').textContent = '+';
+              otherBtn.querySelector('.faq-icon').classList.remove('rotate-45');
+            });
+            // Open this if not already open
+            if (!isOpen) {
+              content.classList.remove('hidden');
+              icon.textContent = '−';
+              icon.classList.add('rotate-45');
+            }
+          });
+        });
+      });
+    </script>
+  </section>
+
   <!-- TOP COLLEGES / EXAMS / COURSES SHOWCASE (Premium, Dark, Professional) -->
   <section id="showcase" class="bg-akcard pt-12 pb-10 font-inter">
     <div class="max-w-[1000px] mx-auto px-8">
