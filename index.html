@@ -13,29 +13,28 @@
       theme: {
         extend: {
           colors: {
-            akblue: '#1a237e',
-            akbluelight: '#f6f8fc',
-            akgray: '#f8fafc',
-            akgraydark: '#dbe3ea',
-            akyellow: '#fbc02d',
-            aktext: '#232a36',
-            akfooter: '#222e50',
-            akfootertext: '#b3b8d8',
-            akexam: '#fff7ed',
-            akcourse: '#f0fdf4',
-            aksuccess: '#22a06b',
-            akorange: '#f59e42',
+            akbg: '#0A0A0A',
+            aktext: '#FFFFFF',
+            akcard: '#1C1C1C',
+            akborder: '#2E2E2E',
+            akprimary: '#FACC15',
+            akaccent: '#38BDF8',
+            akaccent2: '#16A34A',
+            akmuted: '#A3A3A3',
+            akfooter: '#18181B',
+            akfootertext: '#A3A3A3',
+            akcard2: '#232323',
           },
           borderRadius: {
             ak: '14px',
           },
           boxShadow: {
-            ak: '0 2px 16px rgba(26,35,126,0.06)',
-            ak2: '0 2px 12px rgba(26,35,126,0.04)',
-            ak3: '0 2px 8px rgba(26,35,126,0.07)',
-            ak4: '0 8px 32px rgba(26,35,126,0.10)',
-            ak5: '0 2px 8px rgba(26,35,126,0.06)',
-            ak6: '0 2px 8px rgba(26,35,126,0.08)',
+            ak: '0 2px 16px rgba(56,189,248,0.06)',
+            ak2: '0 2px 12px rgba(250,204,21,0.04)',
+            ak3: '0 2px 8px rgba(56,189,248,0.07)',
+            ak4: '0 8px 32px rgba(56,189,248,0.10)',
+            ak5: '0 2px 8px rgba(56,189,248,0.06)',
+            ak6: '0 2px 8px rgba(250,204,21,0.08)',
           },
           fontFamily: {
             inter: ['Inter', 'Poppins', 'Roboto', 'Arial', 'sans-serif'],
@@ -86,48 +85,48 @@
   </script>
 </head>
 
-<body class="font-inter bg-akbluelight text-aktext tracking-[.01em]">
-  <!-- HEADER (Minimal, Modern, Clean) -->
-  <header id="main-header" class="sticky top-0 z-50 bg-white shadow-ak2 transition-shadow">
+<body class="font-inter bg-akbg text-aktext tracking-[.01em]">
+  <!-- HEADER (Premium, Dark, Professional) -->
+  <header id="main-header" class="sticky top-0 z-50 bg-akcard shadow-ak2 transition-shadow border-b border-akborder">
     <div class="max-w-[1200px] mx-auto flex items-center justify-between py-2 px-8 min-h-[72px]">
       <!-- Logo -->
-      <a href="#" class="flex items-center text-[1.7rem] font-extrabold text-akblue no-underline gap-2 tracking-[.02em]">
+      <a href="#" class="flex items-center text-[1.7rem] font-extrabold text-akprimary no-underline gap-2 tracking-[.02em]">
         <span class="text-[2.1rem] mr-[0.1em]">🎓</span>
         <span>Admission Kart</span>
       </a>
       <!-- Desktop Navigation -->
       <nav class="hidden lg:flex flex-1 ml-10">
-        <ul class="flex gap-10 list-none m-0 p-0 font-medium text-blue-900">
+        <ul class="flex gap-10 list-none m-0 p-0 font-medium text-aktext">
           <!-- Colleges Dropdown -->
           <li class="relative group">
-            <button class="bg-transparent border-none font-sans cursor-pointer px-1 py-2 text-blue-900 hover:text-blue-700 transition-colors duration-150 focus:outline-none tracking-wide text-base" style="letter-spacing:0.01em;">Colleges</button>
-            <div class="absolute left-0 top-14 bg-white/95 shadow-2xl rounded-2xl p-8 min-w-[420px] hidden group-hover:flex group-focus-within:flex animate-fadeIn border border-[#f0f2f7]" style="gap:2.5rem;">
+            <button class="bg-transparent border-none font-sans cursor-pointer px-1 py-2 text-aktext hover:text-akprimary transition-colors duration-150 focus:outline-none tracking-wide text-base" style="letter-spacing:0.01em;">Colleges</button>
+            <div class="absolute left-0 top-14 bg-akcard/95 shadow-2xl rounded-2xl p-8 min-w-[420px] hidden group-hover:flex group-focus-within:flex animate-fadeIn border border-akborder" style="gap:2.5rem;">
               <div class="flex gap-12">
                 <div>
-                  <span class="block mb-3 text-blue-800 font-semibold text-sm uppercase tracking-wider">By State</span>
-                  <ul class="list-none m-0 p-0 text-base text-gray-600 space-y-2">
-                    <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Maharashtra</li>
-                    <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Karnataka</li>
-                    <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Tamil Nadu</li>
+                  <span class="block mb-3 text-akaccent font-semibold text-sm uppercase tracking-wider">By State</span>
+                  <ul class="list-none m-0 p-0 text-base text-akmuted space-y-2">
+                    <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">Maharashtra</li>
+                    <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">Karnataka</li>
+                    <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">Tamil Nadu</li>
                   </ul>
                 </div>
                 <div>
-                  <span class="block mb-3 text-blue-800 font-semibold text-sm uppercase tracking-wider">Top Private Colleges</span>
-                  <ul class="list-none m-0 p-0 text-base text-gray-600 space-y-2">
-                    <li class="hover:bg-gray-100 rounded px-2 py-1 transition">VIT</li>
-                    <li class="hover:bg-gray-100 rounded px-2 py-1 transition">MIT-WPU</li>
-                    <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Christ</li>
-                    <li class="hover:bg-gray-100 rounded px-2 py-1 transition">PES</li>
-                    <li class="hover:bg-gray-100 rounded px-2 py-1 transition">SRM</li>
-                    <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Sathyabama</li>
+                  <span class="block mb-3 text-akaccent font-semibold text-sm uppercase tracking-wider">Top Private Colleges</span>
+                  <ul class="list-none m-0 p-0 text-base text-akmuted space-y-2">
+                    <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">VIT</li>
+                    <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">MIT-WPU</li>
+                    <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">Christ</li>
+                    <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">PES</li>
+                    <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">SRM</li>
+                    <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">Sathyabama</li>
                   </ul>
                 </div>
                 <div>
-                  <span class="block mb-3 text-blue-800 font-semibold text-sm uppercase tracking-wider">Top Govt Colleges</span>
-                  <ul class="list-none m-0 p-0 text-base text-gray-600 space-y-2">
-                    <li class="hover:bg-gray-100 rounded px-2 py-1 transition">IIT Bombay</li>
-                    <li class="hover:bg-gray-100 rounded px-2 py-1 transition">NIT Karnataka</li>
-                    <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Anna University</li>
+                  <span class="block mb-3 text-akaccent font-semibold text-sm uppercase tracking-wider">Top Govt Colleges</span>
+                  <ul class="list-none m-0 p-0 text-base text-akmuted space-y-2">
+                    <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">IIT Bombay</li>
+                    <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">NIT Karnataka</li>
+                    <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">Anna University</li>
                   </ul>
                 </div>
               </div>
@@ -135,35 +134,35 @@
           </li>
           <!-- Courses Dropdown -->
           <li class="relative group">
-            <button class="bg-transparent border-none font-sans cursor-pointer px-1 py-2 text-blue-900 hover:text-blue-700 transition-colors duration-150 focus:outline-none tracking-wide text-base" style="letter-spacing:0.01em;">Courses</button>
-            <div class="absolute left-0 top-14 bg-white/95 shadow-2xl rounded-2xl p-8 min-w-[240px] hidden group-hover:flex group-focus-within:flex animate-fadeIn border border-[#f0f2f7]">
-              <ul class="list-none m-0 p-0 text-base text-gray-600 space-y-2">
-                <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Engineering (UG / PG)</li>
-                <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Management (UG / PG)</li>
-                <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Medical</li>
-                <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Law</li>
-                <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Design</li>
-                <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Arts & Science</li>
+            <button class="bg-transparent border-none font-sans cursor-pointer px-1 py-2 text-aktext hover:text-akprimary transition-colors duration-150 focus:outline-none tracking-wide text-base" style="letter-spacing:0.01em;">Courses</button>
+            <div class="absolute left-0 top-14 bg-akcard/95 shadow-2xl rounded-2xl p-8 min-w-[240px] hidden group-hover:flex group-focus-within:flex animate-fadeIn border border-akborder">
+              <ul class="list-none m-0 p-0 text-base text-akmuted space-y-2">
+                <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">Engineering (UG / PG)</li>
+                <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">Management (UG / PG)</li>
+                <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">Medical</li>
+                <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">Law</li>
+                <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">Design</li>
+                <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">Arts & Science</li>
               </ul>
             </div>
           </li>
           <!-- Exams Dropdown -->
           <li class="relative group">
-            <button class="bg-transparent border-none font-sans cursor-pointer px-1 py-2 text-blue-900 hover:text-blue-700 transition-colors duration-150 focus:outline-none tracking-wide text-base" style="letter-spacing:0.01em;">Exams</button>
-            <div class="absolute left-0 top-14 bg-white/95 shadow-2xl rounded-2xl p-8 min-w-[240px] hidden group-hover:flex group-focus-within:flex animate-fadeIn border border-[#f0f2f7]">
-              <ul class="list-none m-0 p-0 text-base text-gray-600 space-y-2">
-                <li><span class="font-semibold text-blue-800">National:</span> JEE, NEET, CUET</li>
-                <li><span class="font-semibold text-blue-800">State:</span> MHT CET, KCET, AP EAMCET</li>
-                <li><span class="font-semibold text-blue-800">Abroad:</span> SAT, IELTS, TOEFL</li>
+            <button class="bg-transparent border-none font-sans cursor-pointer px-1 py-2 text-aktext hover:text-akprimary transition-colors duration-150 focus:outline-none tracking-wide text-base" style="letter-spacing:0.01em;">Exams</button>
+            <div class="absolute left-0 top-14 bg-akcard/95 shadow-2xl rounded-2xl p-8 min-w-[240px] hidden group-hover:flex group-focus-within:flex animate-fadeIn border border-akborder">
+              <ul class="list-none m-0 p-0 text-base text-akmuted space-y-2">
+                <li><span class="font-semibold text-akaccent">National:</span> JEE, NEET, CUET</li>
+                <li><span class="font-semibold text-akaccent">State:</span> MHT CET, KCET, AP EAMCET</li>
+                <li><span class="font-semibold text-akaccent">Abroad:</span> SAT, IELTS, TOEFL</li>
               </ul>
             </div>
           </li>
           <!-- Study Abroad Dropdown -->
           <li class="relative group">
-            <button class="bg-transparent border-none font-sans cursor-pointer px-1 py-2 text-blue-900 hover:text-blue-700 transition-colors duration-150 focus:outline-none tracking-wide text-base" style="letter-spacing:0.01em;">Study Abroad</button>
-            <div class="absolute left-0 top-14 bg-white/95 shadow-2xl rounded-2xl p-8 min-w-[240px] hidden group-hover:flex group-focus-within:flex animate-fadeIn border border-[#f0f2f7]">
-              <ul class="list-none m-0 p-0 text-base text-gray-600 space-y-2">
-                <li><span class="font-semibold text-blue-800">By Country:</span> USA, UK, Canada, Germany</li>
+            <button class="bg-transparent border-none font-sans cursor-pointer px-1 py-2 text-aktext hover:text-akprimary transition-colors duration-150 focus:outline-none tracking-wide text-base" style="letter-spacing:0.01em;">Study Abroad</button>
+            <div class="absolute left-0 top-14 bg-akcard/95 shadow-2xl rounded-2xl p-8 min-w-[240px] hidden group-hover:flex group-focus-within:flex animate-fadeIn border border-akborder">
+              <ul class="list-none m-0 p-0 text-base text-akmuted space-y-2">
+                <li><span class="font-semibold text-akaccent">By Country:</span> USA, UK, Canada, Germany</li>
                 <li>UG | PG Admissions</li>
                 <li>Visa Help, SOP, LOR</li>
               </ul>
@@ -171,38 +170,38 @@
           </li>
           <!-- Counseling Dropdown -->
           <li class="relative group">
-            <button class="bg-transparent border-none font-sans cursor-pointer px-1 py-2 text-blue-900 hover:text-blue-700 transition-colors duration-150 focus:outline-none tracking-wide text-base" style="letter-spacing:0.01em;">Counseling</button>
-            <div class="absolute left-0 top-14 bg-white/95 shadow-2xl rounded-2xl p-8 min-w-[200px] hidden group-hover:flex group-focus-within:flex animate-fadeIn border border-[#f0f2f7]">
-              <ul class="list-none m-0 p-0 text-base text-gray-600 space-y-2">
-                <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Book Session</li>
-                <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Career Guidance</li>
-                <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Admission Process</li>
+            <button class="bg-transparent border-none font-sans cursor-pointer px-1 py-2 text-aktext hover:text-akprimary transition-colors duration-150 focus:outline-none tracking-wide text-base" style="letter-spacing:0.01em;">Counseling</button>
+            <div class="absolute left-0 top-14 bg-akcard/95 shadow-2xl rounded-2xl p-8 min-w-[200px] hidden group-hover:flex group-focus-within:flex animate-fadeIn border border-akborder">
+              <ul class="list-none m-0 p-0 text-base text-akmuted space-y-2">
+                <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">Book Session</li>
+                <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">Career Guidance</li>
+                <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">Admission Process</li>
               </ul>
             </div>
           </li>
         </ul>
       </nav>
       <!-- CTA Button (Desktop) -->
-      <a href="#cta-final" class="hidden lg:inline-block ml-8 bg-akblue text-white px-7 py-3 rounded-lg font-semibold text-[1.05rem] no-underline shadow-ak3 border-none transition-colors duration-150 hover:bg-[#3949ab]">Book Consultation</a>
+      <a href="#cta-final" class="hidden lg:inline-block ml-8 bg-akprimary text-akbg px-7 py-3 rounded-lg font-semibold text-[1.05rem] no-underline shadow-ak3 border-none transition-colors duration-150 hover:bg-akaccent hover:text-akbg">Book Consultation</a>
       <!-- Hamburger (Mobile) -->
       <button id="mobile-menu-btn" aria-label="Open menu" class="flex flex-col gap-1.5 cursor-pointer p-1 ml-5 w-9 h-9 justify-center bg-transparent border-none lg:hidden">
-        <span class="block h-[3px] w-7 bg-akblue rounded transition-all"></span>
-        <span class="block h-[3px] w-7 bg-akblue rounded transition-all"></span>
-        <span class="block h-[3px] w-5 bg-akblue rounded transition-all"></span>
+        <span class="block h-[3px] w-7 bg-akprimary rounded transition-all"></span>
+        <span class="block h-[3px] w-7 bg-akprimary rounded transition-all"></span>
+        <span class="block h-[3px] w-5 bg-akprimary rounded transition-all"></span>
       </button>
     </div>
     <!-- Mobile Drawer -->
-    <div id="mobile-menu-drawer" class="hidden fixed top-0 right-0 w-[82vw] max-w-[340px] h-screen bg-white shadow-[0_0_32px_rgba(26,35,126,0.10)] z-[100] flex-col p-10 pt-10 pb-6 animate-slideInDrawer">
-      <button id="mobile-menu-close" aria-label="Close menu" class="absolute top-5 right-5 text-[2.2rem] bg-transparent border-none text-akblue cursor-pointer leading-none">&times;</button>
+    <div id="mobile-menu-drawer" class="hidden fixed top-0 right-0 w-[82vw] max-w-[340px] h-screen bg-akcard shadow-[0_0_32px_rgba(56,189,248,0.10)] z-[100] flex-col p-10 pt-10 pb-6 animate-slideInDrawer border-l border-akborder">
+      <button id="mobile-menu-close" aria-label="Close menu" class="absolute top-5 right-5 text-[2.2rem] bg-transparent border-none text-akprimary cursor-pointer leading-none">&times;</button>
       <nav>
-        <ul class="list-none p-0 mt-14 flex flex-col gap-7 font-semibold text-[1.1rem] text-akblue">
-          <li><a href="#" class="text-akblue no-underline transition-colors hover:text-[#3949ab]">Colleges</a></li>
-          <li><a href="#" class="text-akblue no-underline transition-colors hover:text-[#3949ab]">Courses</a></li>
-          <li><a href="#" class="text-akblue no-underline transition-colors hover:text-[#3949ab]">Exams</a></li>
-          <li><a href="#" class="text-akblue no-underline transition-colors hover:text-[#3949ab]">Study Abroad</a></li>
-          <li><a href="#" class="text-akblue no-underline transition-colors hover:text-[#3949ab]">Counseling</a></li>
+        <ul class="list-none p-0 mt-14 flex flex-col gap-7 font-semibold text-[1.1rem] text-aktext">
+          <li><a href="#" class="text-aktext no-underline transition-colors hover:text-akprimary">Colleges</a></li>
+          <li><a href="#" class="text-aktext no-underline transition-colors hover:text-akprimary">Courses</a></li>
+          <li><a href="#" class="text-aktext no-underline transition-colors hover:text-akprimary">Exams</a></li>
+          <li><a href="#" class="text-aktext no-underline transition-colors hover:text-akprimary">Study Abroad</a></li>
+          <li><a href="#" class="text-aktext no-underline transition-colors hover:text-akprimary">Counseling</a></li>
         </ul>
-        <a href="#cta-final" class="block mt-10 w-full text-center bg-akblue text-white px-7 py-3 rounded-lg font-semibold text-[1.05rem] no-underline shadow-ak3 border-none transition-colors duration-150 hover:bg-[#3949ab]">Book Consultation</a>
+        <a href="#cta-final" class="block mt-10 w-full text-center bg-akprimary text-akbg px-7 py-3 rounded-lg font-semibold text-[1.05rem] no-underline shadow-ak3 border-none transition-colors duration-150 hover:bg-akaccent hover:text-akbg">Book Consultation</a>
       </nav>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -241,187 +240,187 @@
     </script>
   </header>
 
-  <!-- HERO SECTION (Minimal, Clean) -->
-  <section id="hero" class="bg-gradient-to-r from-akbluelight via-akbluelight to-white pt-22 pb-14 font-inter">
+  <!-- HERO SECTION (Premium, Dark, Professional) -->
+  <section id="hero" class="bg-gradient-to-r from-akbg via-akcard2 to-akbg pt-22 pb-14 font-inter">
     <div class="max-w-[1200px] mx-auto flex flex-wrap items-center justify-between gap-10 px-8">
       <!-- Left: Text -->
       <div class="flex-1 min-w-[280px] max-w-[520px] flex flex-col gap-6">
-        <h1 class="text-[2.3rem] sm:text-[2.8rem] font-extrabold text-akblue mb-2 leading-[1.18] tracking-[.01em]">Get Expert Guidance for College Admissions in India &amp; Abroad</h1>
-        <p class="text-[1.13rem] text-gray-700 mb-5 max-w-[420px] leading-[1.6]">Personalized counseling, trusted by 10,000+ students. Your dream college is just a step away!</p>
+        <h1 class="text-[2.3rem] sm:text-[2.8rem] font-extrabold text-akprimary mb-2 leading-[1.18] tracking-[.01em]">Get Expert Guidance for College Admissions in India &amp; Abroad</h1>
+        <p class="text-[1.13rem] text-akmuted mb-5 max-w-[420px] leading-[1.6]">Personalized counseling, trusted by 10,000+ students. Your dream college is just a step away!</p>
         <div class="flex gap-4 flex-wrap">
-          <a href="#cta-final" class="bg-akblue text-white px-7 py-3 rounded-lg font-semibold text-[1.05rem] no-underline shadow-ak3 border-none transition-colors duration-150 hover:bg-[#3949ab]">Get Admission Help</a>
-          <a href="#cta-final" class="bg-white text-akblue border-2 border-akblue px-7 py-3 rounded-lg font-semibold text-[1.05rem] no-underline shadow-none transition-colors duration-150 hover:bg-akbluelight hover:text-[#3949ab]">Book Free Counseling</a>
+          <a href="#cta-final" class="bg-akprimary text-akbg px-7 py-3 rounded-lg font-semibold text-[1.05rem] no-underline shadow-ak3 border-none transition-colors duration-150 hover:bg-akaccent hover:text-akbg">Get Admission Help</a>
+          <a href="#cta-final" class="bg-akcard text-akprimary border-2 border-akprimary px-7 py-3 rounded-lg font-semibold text-[1.05rem] no-underline shadow-none transition-colors duration-150 hover:bg-akbg hover:text-akaccent">Book Free Counseling</a>
         </div>
       </div>
       <!-- Right: Illustration -->
       <div class="flex-1 min-w-[220px] flex items-center justify-center mt-10 sm:mt-0">
         <svg width="270" height="210" viewBox="0 0 270 210" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Counselor and student illustration" class="w-[270px] h-[210px] animate-heroSvg">
-          <ellipse cx="135" cy="200" rx="110" ry="10" fill="#e3e9fc"/>
-          <circle cx="80" cy="90" r="38" fill="#fff" stroke="#dbe3ea" stroke-width="3"/>
-          <circle cx="190" cy="90" r="38" fill="#fff" stroke="#dbe3ea" stroke-width="3"/>
-          <ellipse cx="80" cy="120" rx="28" ry="12" fill="#b3b8d8" opacity="0.12"/>
-          <ellipse cx="190" cy="120" rx="28" ry="12" fill="#b3b8d8" opacity="0.12"/>
+          <ellipse cx="135" cy="200" rx="110" ry="10" fill="#232323"/>
+          <circle cx="80" cy="90" r="38" fill="#18181B" stroke="#2E2E2E" stroke-width="3"/>
+          <circle cx="190" cy="90" r="38" fill="#18181B" stroke="#2E2E2E" stroke-width="3"/>
+          <ellipse cx="80" cy="120" rx="28" ry="12" fill="#38BDF8" opacity="0.12"/>
+          <ellipse cx="190" cy="120" rx="28" ry="12" fill="#38BDF8" opacity="0.12"/>
           <!-- Student -->
-          <circle cx="80" cy="85" r="18" fill="#90caf9"/>
-          <rect x="65" y="105" width="30" height="35" rx="10" fill="#1976d2"/>
+          <circle cx="80" cy="85" r="18" fill="#38BDF8"/>
+          <rect x="65" y="105" width="30" height="35" rx="10" fill="#0EA5E9"/>
           <!-- Counselor -->
-          <circle cx="190" cy="85" r="18" fill="#ffe082"/>
-          <rect x="175" y="105" width="30" height="35" rx="10" fill="#fbc02d"/>
+          <circle cx="190" cy="85" r="18" fill="#FACC15"/>
+          <rect x="175" y="105" width="30" height="35" rx="10" fill="#FACC15"/>
           <!-- Desk -->
-          <rect x="60" y="140" width="140" height="18" rx="6" fill="#dbe3ea"/>
+          <rect x="60" y="140" width="140" height="18" rx="6" fill="#2E2E2E"/>
         </svg>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT ADMISSION KART (Minimal, Clean) -->
-  <section id="about" class="bg-white pt-14 pb-12">
+  <!-- ABOUT ADMISSION KART (Premium, Dark, Professional) -->
+  <section id="about" class="bg-akcard pt-14 pb-12">
     <div class="max-w-[900px] mx-auto px-8 text-center">
-      <h2 class="text-[2rem] font-extrabold text-akblue mb-4 tracking-[.01em]">About Admission Kart</h2>
-      <p class="text-[1.13rem] text-[#3a3a3a] max-w-[540px] mx-auto mb-9 leading-[1.7]">Admission Kart is your trusted partner for college admissions in India and abroad. We simplify the process with expert counseling, up-to-date information, and end-to-end support for students and parents.</p>
+      <h2 class="text-[2rem] font-extrabold text-akprimary mb-4 tracking-[.01em]">About Admission Kart</h2>
+      <p class="text-[1.13rem] text-akmuted max-w-[540px] mx-auto mb-9 leading-[1.7]">Admission Kart is your trusted partner for college admissions in India and abroad. We simplify the process with expert counseling, up-to-date information, and end-to-end support for students and parents.</p>
       <div class="flex justify-center gap-14 flex-wrap mt-9">
         <div class="min-w-[120px]">
-          <div class="text-[2.1rem] text-[#1976d2] font-extrabold mb-1">8+</div>
-          <div class="text-gray-500 text-[1rem] tracking-[.01em]">Years Experience</div>
+          <div class="text-[2.1rem] text-akaccent font-extrabold mb-1">8+</div>
+          <div class="text-akmuted text-[1rem] tracking-[.01em]">Years Experience</div>
         </div>
         <div class="min-w-[120px]">
-          <div class="text-[2.1rem] text-[#1976d2] font-extrabold mb-1">10,000+</div>
-          <div class="text-gray-500 text-[1rem] tracking-[.01em]">Students Helped</div>
+          <div class="text-[2.1rem] text-akaccent font-extrabold mb-1">10,000+</div>
+          <div class="text-akmuted text-[1rem] tracking-[.01em]">Students Helped</div>
         </div>
         <div class="min-w-[120px]">
-          <div class="text-[2.1rem] text-[#1976d2] font-extrabold mb-1">98%</div>
-          <div class="text-gray-500 text-[1rem] tracking-[.01em]">Success Rate</div>
+          <div class="text-[2.1rem] text-akaccent font-extrabold mb-1">98%</div>
+          <div class="text-akmuted text-[1rem] tracking-[.01em]">Success Rate</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- OUR SERVICES OVERVIEW (Minimal, Clean) -->
-  <section id="services" class="bg-akgray pt-14 pb-12">
+  <!-- OUR SERVICES OVERVIEW (Premium, Dark, Professional) -->
+  <section id="services" class="bg-akbg pt-14 pb-12">
     <div class="max-w-[1100px] mx-auto px-8">
-      <h2 class="text-[2rem] font-extrabold text-akblue text-center mb-10 tracking-[.01em]">Our Services</h2>
+      <h2 class="text-[2rem] font-extrabold text-akprimary text-center mb-10 tracking-[.01em]">Our Services</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-9">
-        <div class="bg-white rounded-ak shadow-ak p-9 pt-9 pb-7 text-center transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-2">
-          <div class="text-[2.2rem] text-[#1976d2] mb-2">🎯</div>
-          <h3 class="text-[1.13rem] font-bold mb-1 text-akblue">Admission Help</h3>
-          <p class="text-gray-600 text-[1rem] leading-[1.6]">End-to-end support for college applications, documentation, and deadlines.</p>
+        <div class="bg-akcard rounded-ak shadow-ak p-9 pt-9 pb-7 text-center border border-akborder transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-2">
+          <div class="text-[2.2rem] text-akaccent mb-2">🎯</div>
+          <h3 class="text-[1.13rem] font-bold mb-1 text-akprimary">Admission Help</h3>
+          <p class="text-akmuted text-[1rem] leading-[1.6]">End-to-end support for college applications, documentation, and deadlines.</p>
         </div>
-        <div class="bg-white rounded-ak shadow-ak p-9 pt-9 pb-7 text-center transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-2">
-          <div class="text-[2.2rem] text-[#1976d2] mb-2">🧑‍💼</div>
-          <h3 class="text-[1.13rem] font-bold mb-1 text-akblue">Counseling</h3>
-          <p class="text-gray-600 text-[1rem] leading-[1.6]">Personalized guidance to help you choose the right course and college.</p>
+        <div class="bg-akcard rounded-ak shadow-ak p-9 pt-9 pb-7 text-center border border-akborder transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-2">
+          <div class="text-[2.2rem] text-akaccent2 mb-2">🧑‍💼</div>
+          <h3 class="text-[1.13rem] font-bold mb-1 text-akprimary">Counseling</h3>
+          <p class="text-akmuted text-[1rem] leading-[1.6]">Personalized guidance to help you choose the right course and college.</p>
         </div>
-        <div class="bg-white rounded-ak shadow-ak p-9 pt-9 pb-7 text-center transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-2">
-          <div class="text-[2.2rem] text-[#1976d2] mb-2">📚</div>
-          <h3 class="text-[1.13rem] font-bold mb-1 text-akblue">Course &amp; College Guide</h3>
-          <p class="text-gray-600 text-[1rem] leading-[1.6]">Comprehensive information on top courses and colleges in India &amp; abroad.</p>
+        <div class="bg-akcard rounded-ak shadow-ak p-9 pt-9 pb-7 text-center border border-akborder transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-2">
+          <div class="text-[2.2rem] text-akaccent mb-2">📚</div>
+          <h3 class="text-[1.13rem] font-bold mb-1 text-akprimary">Course &amp; College Guide</h3>
+          <p class="text-akmuted text-[1rem] leading-[1.6]">Comprehensive information on top courses and colleges in India &amp; abroad.</p>
         </div>
-        <div class="bg-white rounded-ak shadow-ak p-9 pt-9 pb-7 text-center transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-2">
-          <div class="text-[2.2rem] text-[#1976d2] mb-2">📝</div>
-          <h3 class="text-[1.13rem] font-bold mb-1 text-akblue">Exam Assistance</h3>
-          <p class="text-gray-600 text-[1rem] leading-[1.6]">Updates, tips, and resources for major entrance exams.</p>
+        <div class="bg-akcard rounded-ak shadow-ak p-9 pt-9 pb-7 text-center border border-akborder transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-2">
+          <div class="text-[2.2rem] text-akprimary mb-2">📝</div>
+          <h3 class="text-[1.13rem] font-bold mb-1 text-akprimary">Exam Assistance</h3>
+          <p class="text-akmuted text-[1rem] leading-[1.6]">Updates, tips, and resources for major entrance exams.</p>
         </div>
-        <div class="bg-white rounded-ak shadow-ak p-9 pt-9 pb-7 text-center transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-2">
-          <div class="text-[2.2rem] text-[#1976d2] mb-2">🌏</div>
-          <h3 class="text-[1.13rem] font-bold mb-1 text-akblue">Study Abroad</h3>
-          <p class="text-gray-600 text-[1rem] leading-[1.6]">Guidance for overseas admissions, visas, SOPs, and more.</p>
+        <div class="bg-akcard rounded-ak shadow-ak p-9 pt-9 pb-7 text-center border border-akborder transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-2">
+          <div class="text-[2.2rem] text-akaccent2 mb-2">🌏</div>
+          <h3 class="text-[1.13rem] font-bold mb-1 text-akprimary">Study Abroad</h3>
+          <p class="text-akmuted text-[1rem] leading-[1.6]">Guidance for overseas admissions, visas, SOPs, and more.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TOP COLLEGES / EXAMS / COURSES SHOWCASE (Minimal, Clean) -->
-  <section id="showcase" class="bg-white pt-12 pb-10 font-inter">
+  <!-- TOP COLLEGES / EXAMS / COURSES SHOWCASE (Premium, Dark, Professional) -->
+  <section id="showcase" class="bg-akcard pt-12 pb-10 font-inter">
     <div class="max-w-[1000px] mx-auto px-8">
-      <h2 class="text-[1.5rem] font-extrabold text-akblue text-center mb-9 tracking-[.01em]">Top Colleges, Exams &amp; Courses</h2>
+      <h2 class="text-[1.5rem] font-extrabold text-akprimary text-center mb-9 tracking-[.01em]">Top Colleges, Exams &amp; Courses</h2>
       <div class="flex overflow-x-auto gap-5 pb-2 scroll-snap-x scroll-snap-mandatory">
         <!-- Colleges -->
-        <div class="min-w-[170px] flex-none bg-akgray rounded-ak p-6 text-center shadow-ak5 scroll-snap-start transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
+        <div class="min-w-[170px] flex-none bg-akbg rounded-ak p-6 text-center shadow-ak5 scroll-snap-start border border-akborder transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
           <div class="text-[1.7rem] mb-1">🏫</div>
-          <div class="font-bold text-akblue text-[1.08rem]">VIT</div>
-          <div class="text-[0.97rem] text-gray-500">Vellore</div>
+          <div class="font-bold text-akprimary text-[1.08rem]">VIT</div>
+          <div class="text-[0.97rem] text-akmuted">Vellore</div>
         </div>
-        <div class="min-w-[170px] flex-none bg-akgray rounded-ak p-6 text-center shadow-ak5 scroll-snap-start transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
+        <div class="min-w-[170px] flex-none bg-akbg rounded-ak p-6 text-center shadow-ak5 scroll-snap-start border border-akborder transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
           <div class="text-[1.7rem] mb-1">🏫</div>
-          <div class="font-bold text-akblue text-[1.08rem]">Christ</div>
-          <div class="text-[0.97rem] text-gray-500">Bangalore</div>
+          <div class="font-bold text-akprimary text-[1.08rem]">Christ</div>
+          <div class="text-[0.97rem] text-akmuted">Bangalore</div>
         </div>
-        <div class="min-w-[170px] flex-none bg-akgray rounded-ak p-6 text-center shadow-ak5 scroll-snap-start transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
+        <div class="min-w-[170px] flex-none bg-akbg rounded-ak p-6 text-center shadow-ak5 scroll-snap-start border border-akborder transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
           <div class="text-[1.7rem] mb-1">🏫</div>
-          <div class="font-bold text-akblue text-[1.08rem]">Symbiosis</div>
-          <div class="text-[0.97rem] text-gray-500">Pune</div>
+          <div class="font-bold text-akprimary text-[1.08rem]">Symbiosis</div>
+          <div class="text-[0.97rem] text-akmuted">Pune</div>
         </div>
-        <div class="min-w-[170px] flex-none bg-akgray rounded-ak p-6 text-center shadow-ak5 scroll-snap-start transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
+        <div class="min-w-[170px] flex-none bg-akbg rounded-ak p-6 text-center shadow-ak5 scroll-snap-start border border-akborder transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
           <div class="text-[1.7rem] mb-1">🏫</div>
-          <div class="font-bold text-akblue text-[1.08rem]">IIT Bombay</div>
-          <div class="text-[0.97rem] text-gray-500">Mumbai</div>
+          <div class="font-bold text-akprimary text-[1.08rem]">IIT Bombay</div>
+          <div class="text-[0.97rem] text-akmuted">Mumbai</div>
         </div>
-        <div class="min-w-[170px] flex-none bg-akgray rounded-ak p-6 text-center shadow-ak5 scroll-snap-start transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
+        <div class="min-w-[170px] flex-none bg-akbg rounded-ak p-6 text-center shadow-ak5 scroll-snap-start border border-akborder transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
           <div class="text-[1.7rem] mb-1">🏫</div>
-          <div class="font-bold text-akblue text-[1.08rem]">SRM</div>
-          <div class="text-[0.97rem] text-gray-500">Chennai</div>
+          <div class="font-bold text-akprimary text-[1.08rem]">SRM</div>
+          <div class="text-[0.97rem] text-akmuted">Chennai</div>
         </div>
         <!-- Exams -->
-        <div class="min-w-[170px] flex-none bg-akexam rounded-ak p-6 text-center shadow-ak5 scroll-snap-start transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
+        <div class="min-w-[170px] flex-none bg-akcard2 rounded-ak p-6 text-center shadow-ak5 scroll-snap-start border border-akborder transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
           <div class="text-[1.7rem] mb-1">📝</div>
-          <div class="font-bold text-akorange text-[1.08rem]">JEE</div>
+          <div class="font-bold text-akprimary text-[1.08rem]">JEE</div>
         </div>
-        <div class="min-w-[170px] flex-none bg-akexam rounded-ak p-6 text-center shadow-ak5 scroll-snap-start transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
+        <div class="min-w-[170px] flex-none bg-akcard2 rounded-ak p-6 text-center shadow-ak5 scroll-snap-start border border-akborder transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
           <div class="text-[1.7rem] mb-1">📝</div>
-          <div class="font-bold text-akorange text-[1.08rem]">CUET</div>
+          <div class="font-bold text-akprimary text-[1.08rem]">CUET</div>
         </div>
-        <div class="min-w-[170px] flex-none bg-akexam rounded-ak p-6 text-center shadow-ak5 scroll-snap-start transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
+        <div class="min-w-[170px] flex-none bg-akcard2 rounded-ak p-6 text-center shadow-ak5 scroll-snap-start border border-akborder transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
           <div class="text-[1.7rem] mb-1">📝</div>
-          <div class="font-bold text-akorange text-[1.08rem]">NEET</div>
+          <div class="font-bold text-akprimary text-[1.08rem]">NEET</div>
         </div>
         <!-- Courses -->
-        <div class="min-w-[170px] flex-none bg-akcourse rounded-ak p-6 text-center shadow-ak5 scroll-snap-start transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
+        <div class="min-w-[170px] flex-none bg-akcard2 rounded-ak p-6 text-center shadow-ak5 scroll-snap-start border border-akborder transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
           <div class="text-[1.7rem] mb-1">🎓</div>
-          <div class="font-bold text-aksuccess text-[1.08rem]">BBA</div>
+          <div class="font-bold text-akaccent2 text-[1.08rem]">BBA</div>
         </div>
-        <div class="min-w-[170px] flex-none bg-akcourse rounded-ak p-6 text-center shadow-ak5 scroll-snap-start transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
+        <div class="min-w-[170px] flex-none bg-akcard2 rounded-ak p-6 text-center shadow-ak5 scroll-snap-start border border-akborder transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
           <div class="text-[1.7rem] mb-1">🎓</div>
-          <div class="font-bold text-aksuccess text-[1.08rem]">MBA</div>
+          <div class="font-bold text-akaccent2 text-[1.08rem]">MBA</div>
         </div>
-        <div class="min-w-[170px] flex-none bg-akcourse rounded-ak p-6 text-center shadow-ak5 scroll-snap-start transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
+        <div class="min-w-[170px] flex-none bg-akcard2 rounded-ak p-6 text-center shadow-ak5 scroll-snap-start border border-akborder transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
           <div class="text-[1.7rem] mb-1">🎓</div>
-          <div class="font-bold text-aksuccess text-[1.08rem]">B.Tech</div>
+          <div class="font-bold text-akaccent2 text-[1.08rem]">B.Tech</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIALS & TRUST MARKERS (Minimal, Clean) -->
-  <section id="testimonials" class="bg-akgray pt-14 pb-12 font-inter">
+  <!-- TESTIMONIALS & TRUST MARKERS (Premium, Dark, Professional) -->
+  <section id="testimonials" class="bg-akbg pt-14 pb-12 font-inter">
     <div class="max-w-[1000px] mx-auto px-8">
-      <h2 class="text-[1.5rem] font-extrabold text-akblue text-center mb-9 tracking-[.01em]">What Our Students Say</h2>
+      <h2 class="text-[1.5rem] font-extrabold text-akprimary text-center mb-9 tracking-[.01em]">What Our Students Say</h2>
       <div class="flex flex-wrap gap-8 justify-center mb-10">
-        <div class="bg-white rounded-ak shadow-ak p-7 pt-7 pb-5 max-w-[320px] flex-1 min-w-[260px] transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-ak4 flex flex-col gap-4">
+        <div class="bg-akcard rounded-ak shadow-ak p-7 pt-7 pb-5 max-w-[320px] flex-1 min-w-[260px] border border-akborder transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-ak4 flex flex-col gap-4">
           <div class="flex items-center gap-3 mb-1">
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student testimonial" class="w-11 h-11 rounded-full object-cover" />
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student testimonial" class="w-11 h-11 rounded-full object-cover border border-akborder" />
             <div>
-              <div class="font-bold text-[#1976d2] text-[1.05rem]">Aditi Sharma</div>
-              <div class="text-[0.97rem] text-gray-500">B.Tech, VIT</div>
+              <div class="font-bold text-akaccent text-[1.05rem]">Aditi Sharma</div>
+              <div class="text-[0.97rem] text-akmuted">B.Tech, VIT</div>
             </div>
           </div>
           <p class="text-aktext text-[1rem] leading-[1.6] m-0">Admission Kart made my college application journey stress-free. The counselors were always available and guided me at every step!</p>
         </div>
-        <div class="bg-white rounded-ak shadow-ak p-7 pt-7 pb-5 max-w-[320px] flex-1 min-w-[260px] transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-ak4 flex flex-col gap-4">
+        <div class="bg-akcard rounded-ak shadow-ak p-7 pt-7 pb-5 max-w-[320px] flex-1 min-w-[260px] border border-akborder transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-ak4 flex flex-col gap-4">
           <div class="flex items-center gap-3 mb-1">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student testimonial" class="w-11 h-11 rounded-full object-cover" />
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student testimonial" class="w-11 h-11 rounded-full object-cover border border-akborder" />
             <div>
-              <div class="font-bold text-[#1976d2] text-[1.05rem]">Rahul Verma</div>
-              <div class="text-[0.97rem] text-gray-500">MBA, Christ</div>
+              <div class="font-bold text-akaccent2 text-[1.05rem]">Rahul Verma</div>
+              <div class="text-[0.97rem] text-akmuted">MBA, Christ</div>
             </div>
           </div>
           <p class="text-aktext text-[1rem] leading-[1.6] m-0">I got into my dream college abroad thanks to their expert advice and visa support. Highly recommended!</p>
         </div>
-        <div class="bg-white rounded-ak shadow-ak p-7 pt-7 pb-5 max-w-[320px] flex-1 min-w-[260px] transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-ak4 flex flex-col gap-4">
+        <div class="bg-akcard rounded-ak shadow-ak p-7 pt-7 pb-5 max-w-[320px] flex-1 min-w-[260px] border border-akborder transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-ak4 flex flex-col gap-4">
           <div class="flex items-center gap-3 mb-1">
-            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Student testimonial" class="w-11 h-11 rounded-full object-cover" />
+            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Student testimonial" class="w-11 h-11 rounded-full object-cover border border-akborder" />
             <div>
-              <div class="font-bold text-[#1976d2] text-[1.05rem]">Sneha Iyer</div>
-              <div class="text-[0.97rem] text-gray-500">BBA, Symbiosis</div>
+              <div class="font-bold text-akprimary text-[1.05rem]">Sneha Iyer</div>
+              <div class="text-[0.97rem] text-akmuted">BBA, Symbiosis</div>
             </div>
           </div>
           <p class="text-aktext text-[1rem] leading-[1.6] m-0">The team is very professional and knowledgeable. They helped me shortlist the best colleges and courses for my profile.</p>
@@ -436,49 +435,49 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/SRM_University_Logo.png" alt="SRM" class="h-[38px] object-contain grayscale-[.2] brightness-[.98] opacity-90 transition hover:grayscale-0 hover:opacity-100" />
       </div>
       <div class="mt-5 flex justify-center items-center gap-3 text-[1.08rem]">
-        <span class="text-akyellow text-[1.2rem] tracking-widest">★★★★★</span>
-        <span class="font-bold text-[#1976d2]">4.9/5</span>
-        <span class="text-gray-500 text-[0.97rem]">on Google Reviews</span>
+        <span class="text-akprimary text-[1.2rem] tracking-widest">★★★★★</span>
+        <span class="font-bold text-akaccent">4.9/5</span>
+        <span class="text-akmuted text-[0.97rem]">on Google Reviews</span>
       </div>
     </div>
   </section>
 
-  <!-- FINAL CALL TO ACTION SECTION (Minimal, Clean) -->
-  <section id="cta-final" class="bg-gradient-to-r from-akblue via-akblue to-[#3949ab] pt-11 pb-9 relative">
+  <!-- FINAL CALL TO ACTION SECTION (Premium, Dark, Professional) -->
+  <section id="cta-final" class="bg-gradient-to-r from-akprimary via-akaccent2 to-akaccent pt-11 pb-9 relative">
     <div class="max-w-[900px] mx-auto px-8 text-center">
-      <h2 class="text-[2rem] font-extrabold text-white mb-5 tracking-[.01em]">Confused about admissions? Let our experts help.</h2>
-      <a href="#footer" class="bg-white text-akblue px-9 py-4 rounded-lg font-bold text-[1.13rem] no-underline shadow-ak6 border-none mt-2 inline-block transition-colors duration-150 hover:bg-akbluelight hover:text-[#3949ab]">Book Free Session</a>
+      <h2 class="text-[2rem] font-extrabold text-akbg mb-5 tracking-[.01em]">Confused about admissions? Let our experts help.</h2>
+      <a href="#footer" class="bg-akbg text-akprimary px-9 py-4 rounded-lg font-bold text-[1.13rem] no-underline shadow-ak6 border-none mt-2 inline-block transition-colors duration-150 hover:bg-akcard hover:text-akaccent">Book Free Session</a>
     </div>
   </section>
 
-  <!-- FOOTER (Minimal, Clean) -->
-  <footer id="footer" class="bg-akfooter text-white pt-11 pb-5 font-inter">
+  <!-- FOOTER (Premium, Dark, Professional) -->
+  <footer id="footer" class="bg-akfooter text-aktext pt-11 pb-5 font-inter border-t border-akborder">
     <div class="max-w-[1100px] mx-auto px-8 flex flex-wrap gap-10 justify-between">
       <div class="min-w-[180px] flex-1 mb-5">
-        <div class="text-[1.3rem] font-extrabold mb-3 tracking-[.02em]">Admission Kart</div>
+        <div class="text-[1.3rem] font-extrabold mb-3 tracking-[.02em] text-akprimary">Admission Kart</div>
         <p class="text-akfootertext text-[0.98rem] max-w-[260px] mb-5">Your trusted partner for college admissions in India &amp; abroad.</p>
         <div class="flex gap-4 mt-1">
-          <a href="#" aria-label="Instagram" class="text-white text-[1.3rem] opacity-85 transition-opacity hover:opacity-100 no-underline"><span>📸</span></a>
-          <a href="#" aria-label="Facebook" class="text-white text-[1.3rem] opacity-85 transition-opacity hover:opacity-100 no-underline"><span>📘</span></a>
-          <a href="#" aria-label="LinkedIn" class="text-white text-[1.3rem] opacity-85 transition-opacity hover:opacity-100 no-underline"><span>🔗</span></a>
-          <a href="#" aria-label="YouTube" class="text-white text-[1.3rem] opacity-85 transition-opacity hover:opacity-100 no-underline"><span>▶️</span></a>
+          <a href="#" aria-label="Instagram" class="text-aktext text-[1.3rem] opacity-85 transition-opacity hover:opacity-100 no-underline"><span>📸</span></a>
+          <a href="#" aria-label="Facebook" class="text-aktext text-[1.3rem] opacity-85 transition-opacity hover:opacity-100 no-underline"><span>📘</span></a>
+          <a href="#" aria-label="LinkedIn" class="text-aktext text-[1.3rem] opacity-85 transition-opacity hover:opacity-100 no-underline"><span>🔗</span></a>
+          <a href="#" aria-label="YouTube" class="text-aktext text-[1.3rem] opacity-85 transition-opacity hover:opacity-100 no-underline"><span>▶️</span></a>
         </div>
       </div>
       <div class="min-w-[180px] flex-1 mb-5">
-        <div class="font-bold mb-3 text-[1.05rem] tracking-[.01em]">Quick Links</div>
+        <div class="font-bold mb-3 text-[1.05rem] tracking-[.01em] text-akprimary">Quick Links</div>
         <ul class="list-none p-0 m-0 leading-[2.1]">
-          <li><a href="#services" class="text-akfootertext no-underline text-[1rem] transition-colors hover:text-white">Courses</a></li>
-          <li><a href="#showcase" class="text-akfootertext no-underline text-[1rem] transition-colors hover:text-white">Colleges</a></li>
-          <li><a href="#showcase" class="text-akfootertext no-underline text-[1rem] transition-colors hover:text-white">Exams</a></li>
-          <li><a href="#about" class="text-akfootertext no-underline text-[1rem] transition-colors hover:text-white">About Us</a></li>
-          <li><a href="#footer" class="text-akfootertext no-underline text-[1rem] transition-colors hover:text-white">Contact</a></li>
+          <li><a href="#services" class="text-akfootertext no-underline text-[1rem] transition-colors hover:text-akprimary">Courses</a></li>
+          <li><a href="#showcase" class="text-akfootertext no-underline text-[1rem] transition-colors hover:text-akprimary">Colleges</a></li>
+          <li><a href="#showcase" class="text-akfootertext no-underline text-[1rem] transition-colors hover:text-akprimary">Exams</a></li>
+          <li><a href="#about" class="text-akfootertext no-underline text-[1rem] transition-colors hover:text-akprimary">About Us</a></li>
+          <li><a href="#footer" class="text-akfootertext no-underline text-[1rem] transition-colors hover:text-akprimary">Contact</a></li>
         </ul>
       </div>
       <div class="min-w-[180px] flex-1 mb-5">
-        <div class="font-bold mb-3 text-[1.05rem] tracking-[.01em]">Newsletter</div>
+        <div class="font-bold mb-3 text-[1.05rem] tracking-[.01em] text-akprimary">Newsletter</div>
         <form onsubmit="event.preventDefault();alert('Thank you for subscribing!');" class="flex gap-2 flex-wrap mt-1">
-          <input type="email" required placeholder="Your email" class="px-4 py-2.5 rounded-md border-none outline-none text-[1rem] flex-1 min-w-[120px] bg-white text-aktext" />
-          <button type="submit" class="bg-akyellow text-akblue font-bold px-5 py-2.5 rounded-md border-none cursor-pointer text-[1rem] transition-colors hover:bg-[#ffe082] hover:text-akblue">Subscribe</button>
+          <input type="email" required placeholder="Your email" class="px-4 py-2.5 rounded-md border border-akborder outline-none text-[1rem] flex-1 min-w-[120px] bg-akbg text-aktext" />
+          <button type="submit" class="bg-akprimary text-akbg font-bold px-5 py-2.5 rounded-md border-none cursor-pointer text-[1rem] transition-colors hover:bg-akaccent hover:text-akbg">Subscribe</button>
         </form>
       </div>
     </div>
