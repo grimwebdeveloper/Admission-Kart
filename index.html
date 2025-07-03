@@ -604,40 +604,74 @@
     </div>
   </section>
 
-  <!-- FOOTER (Premium, Dark, Professional) -->
-  <footer id="footer" class="bg-akfooter text-aktext pt-11 pb-5 font-inter border-t border-akborder">
-    <div class="max-w-[1100px] mx-auto px-8 flex flex-wrap gap-10 justify-between">
-      <div class="min-w-[180px] flex-1 mb-5">
-        <div class="text-[1.3rem] font-extrabold mb-3 tracking-[.02em] text-akprimary">Admission Kart</div>
-        <p class="text-akfootertext text-[0.98rem] max-w-[260px] mb-5">Your trusted partner for college admissions in India &amp; abroad.</p>
-        <div class="flex gap-4 mt-1">
-          <a href="#" aria-label="Instagram" class="text-aktext text-[1.3rem] opacity-85 transition-opacity hover:opacity-100 no-underline"><span>📸</span></a>
-          <a href="#" aria-label="Facebook" class="text-aktext text-[1.3rem] opacity-85 transition-opacity hover:opacity-100 no-underline"><span>📘</span></a>
-          <a href="#" aria-label="LinkedIn" class="text-aktext text-[1.3rem] opacity-85 transition-opacity hover:opacity-100 no-underline"><span>🔗</span></a>
-          <a href="#" aria-label="YouTube" class="text-aktext text-[1.3rem] opacity-85 transition-opacity hover:opacity-100 no-underline"><span>▶️</span></a>
+  <!-- FOOTER (Premium, Dark, Professional, Redesigned, Spaced) -->
+  <footer id="footer" class="bg-akfooter text-akfootertext pt-12 pb-6 font-inter border-t border-akborder text-[0.98rem]">
+    <div class="max-w-[1200px] mx-auto px-6 flex flex-wrap gap-14 justify-between items-start">
+      <!-- Logo & About -->
+      <div class="min-w-[220px] max-w-[280px] mb-10 flex flex-col gap-3">
+        <div class="flex items-center gap-3 mb-2">
+          <img src="/vite.svg" alt="Admission Kart Logo" class="w-9 h-9 rounded bg-akbg border border-akborder shadow" />
+          <span class="font-extrabold text-[1.13rem] text-akprimary" style="letter-spacing:.01em;">Admission Kart</span>
+        </div>
+        <div class="text-[0.97rem] leading-[1.6] mb-2">Helping students navigate the path to higher education since 2010.</div>
+        <div class="flex gap-4 mt-2">
+          <a href="#" aria-label="Facebook" class="hover:text-akprimary transition-colors text-[1.18rem]"><i class="fab fa-facebook-f"></i><span class="sr-only">Facebook</span></a>
+          <a href="#" aria-label="Twitter" class="hover:text-akprimary transition-colors text-[1.18rem]"><i class="fab fa-twitter"></i><span class="sr-only">Twitter</span></a>
+          <a href="#" aria-label="LinkedIn" class="hover:text-akprimary transition-colors text-[1.18rem]"><i class="fab fa-linkedin-in"></i><span class="sr-only">LinkedIn</span></a>
         </div>
       </div>
-      <div class="min-w-[180px] flex-1 mb-5">
-        <div class="font-bold mb-3 text-[1.05rem] tracking-[.01em] text-akprimary">Quick Links</div>
-        <ul class="list-none p-0 m-0 leading-[2.1]">
-          <li><a href="#services" class="text-akfootertext no-underline text-[1rem] transition-colors hover:text-akprimary">Courses</a></li>
-          <li><a href="#showcase" class="text-akfootertext no-underline text-[1rem] transition-colors hover:text-akprimary">Colleges</a></li>
-          <li><a href="#showcase" class="text-akfootertext no-underline text-[1rem] transition-colors hover:text-akprimary">Exams</a></li>
-          <li><a href="#about" class="text-akfootertext no-underline text-[1rem] transition-colors hover:text-akprimary">About Us</a></li>
-          <li><a href="#footer" class="text-akfootertext no-underline text-[1rem] transition-colors hover:text-akprimary">Contact</a></li>
+      <!-- Services -->
+      <div class="min-w-[170px] mb-10">
+        <div class="font-bold text-aktext text-[1.07rem] mb-4 tracking-wide">SERVICES</div>
+        <ul class="space-y-2">
+          <li class="hover:text-akprimary transition-colors cursor-pointer">University Selection</li>
+          <li class="hover:text-akprimary transition-colors cursor-pointer">Application Prep</li>
+          <li class="hover:text-akprimary transition-colors cursor-pointer">Visa Assistance</li>
+          <li class="hover:text-akprimary transition-colors cursor-pointer">Test Prep</li>
+          <li class="hover:text-akprimary transition-colors cursor-pointer">Scholarships</li>
         </ul>
       </div>
-      <div class="min-w-[180px] flex-1 mb-5">
-        <div class="font-bold mb-3 text-[1.05rem] tracking-[.01em] text-akprimary">Newsletter</div>
-        <form onsubmit="event.preventDefault();alert('Thank you for subscribing!');" class="flex gap-2 flex-wrap mt-1">
-          <input type="email" required placeholder="Your email" class="px-4 py-2.5 rounded-md border border-akborder outline-none text-[1rem] flex-1 min-w-[120px] bg-akbg text-aktext" />
-          <button type="submit" class="bg-akprimary text-akbg font-bold px-5 py-2.5 rounded-md border-none cursor-pointer text-[1rem] transition-colors hover:bg-akaccent hover:text-akbg">Subscribe</button>
-        </form>
+      <!-- Countries -->
+      <div class="min-w-[130px] mb-10">
+        <div class="font-bold text-aktext text-[1.07rem] mb-4 tracking-wide">COUNTRIES</div>
+        <ul class="space-y-2">
+          <li class="hover:text-akprimary transition-colors cursor-pointer">USA</li>
+          <li class="hover:text-akprimary transition-colors cursor-pointer">UK</li>
+          <li class="hover:text-akprimary transition-colors cursor-pointer">Canada</li>
+          <li class="hover:text-akprimary transition-colors cursor-pointer">Australia</li>
+          <li class="hover:text-akprimary transition-colors cursor-pointer">Europe</li>
+        </ul>
+      </div>
+      <!-- Company -->
+      <div class="min-w-[130px] mb-10">
+        <div class="font-bold text-aktext text-[1.07rem] mb-4 tracking-wide">COMPANY</div>
+        <ul class="space-y-2">
+          <li class="hover:text-akprimary transition-colors cursor-pointer">About Us</li>
+          <li class="hover:text-akprimary transition-colors cursor-pointer">Careers</li>
+          <li class="hover:text-akprimary transition-colors cursor-pointer">Blog</li>
+          <li class="hover:text-akprimary transition-colors cursor-pointer">Press</li>
+          <li class="hover:text-akprimary transition-colors cursor-pointer">Contact</li>
+        </ul>
+      </div>
+      <!-- Legal -->
+      <div class="min-w-[130px] mb-10">
+        <div class="font-bold text-aktext text-[1.07rem] mb-4 tracking-wide">LEGAL</div>
+        <ul class="space-y-2">
+          <li class="hover:text-akprimary transition-colors cursor-pointer">Privacy</li>
+          <li class="hover:text-akprimary transition-colors cursor-pointer">Terms</li>
+          <li class="hover:text-akprimary transition-colors cursor-pointer">Cookie Policy</li>
+          <li class="hover:text-akprimary transition-colors cursor-pointer">Sitemap</li>
+        </ul>
       </div>
     </div>
-    <div class="text-center text-akfootertext text-[0.97rem] mt-8">
-      &copy; 2024 Admission Kart. All rights reserved.
+    <div class="flex flex-wrap justify-between items-center max-w-[1200px] mx-auto px-6 mt-10 pt-5 border-t border-akborder text-[0.97rem] gap-y-2">
+      <div class="mb-1">&copy; 2023 Admission Kart. All rights reserved.</div>
+      <div class="mb-1 text-right">
+        Designed with <span class="text-red-500">❤</span> for students worldwide
+      </div>
     </div>
+    <!-- FontAwesome CDN for icons (if not already included) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
   </footer>
 
   <!-- scripts -->
