@@ -363,7 +363,7 @@
   <section id="services" class="bg-akbg pt-14 pb-12">
     <div class="max-w-[1100px] mx-auto px-8">
       <h2 class="text-[2rem] font-extrabold text-akprimary text-center mb-10 tracking-[.01em]">Our Services</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-9">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-9">
         <div class="bg-akcard rounded-ak shadow-ak p-9 pt-9 pb-7 text-center border border-akborder transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-2">
           <div class="text-[2.2rem] text-akaccent mb-2">🎯</div>
           <h3 class="text-[1.13rem] font-bold mb-1 text-akprimary">Admission Help</h3>
@@ -597,10 +597,15 @@
   </section>
 
   <!-- FINAL CALL TO ACTION SECTION (Premium, Dark, Professional) -->
-  <section id="cta-final" class="bg-gradient-to-r from-akprimary via-akaccent2 to-akaccent pt-11 pb-9 relative">
-    <div class="max-w-[900px] mx-auto px-8 text-center">
-      <h2 class="text-[2rem] font-extrabold text-akbg mb-5 tracking-[.01em]">Confused about admissions? Let our experts help.</h2>
-      <a href="#footer" class="bg-akbg text-akprimary px-9 py-4 rounded-lg font-bold text-[1.13rem] no-underline shadow-ak6 border-none mt-2 inline-block transition-colors duration-150 hover:bg-akcard hover:text-akaccent">Book Free Session</a>
+  <section id="cta-final" class="relative pt-14 pb-12" style="background: linear-gradient(135deg, #18181B 0%, #232323 60%, #101010 100%);">
+    <div class="absolute inset-0 pointer-events-none z-0">
+      <!-- Subtle blurred accent glow, premium look -->
+      <div class="absolute left-1/2 top-0 -translate-x-1/2 w-[600px] h-[220px] rounded-full opacity-60 blur-2xl" style="background: radial-gradient(ellipse at center, #38BDF8 0%, transparent 70%);"></div>
+      <div class="absolute right-10 bottom-0 w-[320px] h-[120px] rounded-full opacity-40 blur-2xl" style="background: radial-gradient(ellipse at center, #FACC15 0%, transparent 80%);"></div>
+    </div>
+    <div class="relative z-10 max-w-[900px] mx-auto px-8 text-center">
+      <h2 class="text-[2rem] font-extrabold text-akprimary mb-5 tracking-[.01em] drop-shadow-lg">Confused about admissions? Let our experts help.</h2>
+      <a href="#footer" class="bg-akprimary text-akbg px-9 py-4 rounded-lg font-bold text-[1.13rem] no-underline shadow-ak6 border-none mt-2 inline-block transition-all duration-150 hover:bg-akaccent hover:text-white hover:shadow-akglow">Book Free Session</a>
     </div>
   </section>
 
