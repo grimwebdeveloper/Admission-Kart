@@ -6,25 +6,102 @@
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admission Kart</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            akblue: '#1a237e',
+            akbluelight: '#f6f8fc',
+            akgray: '#f8fafc',
+            akgraydark: '#dbe3ea',
+            akyellow: '#fbc02d',
+            aktext: '#232a36',
+            akfooter: '#222e50',
+            akfootertext: '#b3b8d8',
+            akexam: '#fff7ed',
+            akcourse: '#f0fdf4',
+            aksuccess: '#22a06b',
+            akorange: '#f59e42',
+          },
+          borderRadius: {
+            ak: '14px',
+          },
+          boxShadow: {
+            ak: '0 2px 16px rgba(26,35,126,0.06)',
+            ak2: '0 2px 12px rgba(26,35,126,0.04)',
+            ak3: '0 2px 8px rgba(26,35,126,0.07)',
+            ak4: '0 8px 32px rgba(26,35,126,0.10)',
+            ak5: '0 2px 8px rgba(26,35,126,0.06)',
+            ak6: '0 2px 8px rgba(26,35,126,0.08)',
+          },
+          fontFamily: {
+            inter: ['Inter', 'Poppins', 'Roboto', 'Arial', 'sans-serif'],
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'translateY(10px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            heroSvg: {
+              '0%': { opacity: '0', transform: 'scale(0.95)' },
+              '100%': { opacity: '1', transform: 'scale(1)' },
+            },
+            slideInDrawer: {
+              '0%': { right: '-340px', opacity: '0' },
+              '100%': { right: '0', opacity: '1' },
+            },
+          },
+          animation: {
+            fadeIn: 'fadeIn 0.18s cubic-bezier(.4,0,.2,1)',
+            heroSvg: 'heroSvg 0.7s cubic-bezier(.4,0,.2,1) 0.3s both',
+            slideInDrawer: 'slideInDrawer 0.22s cubic-bezier(.4,0,.2,1)',
+          },
+          minWidth: {
+            200: '200px',
+            220: '220px',
+            240: '240px',
+            420: '420px',
+          },
+          spacing: {
+            '2.2': '0.55rem',
+            '3.5': '0.875rem',
+            '5.5': '1.375rem',
+            '7': '1.75rem',
+            '8.5': '2.125rem',
+            '9': '2.25rem',
+            '10.5': '2.625rem',
+            '13': '3.25rem',
+            '14': '3.5rem',
+            '15': '3.75rem',
+            '17': '4.25rem',
+            '18': '4.5rem',
+            '22': '5.5rem',
+          }
+        }
+      }
+    }
+  </script>
 </head>
 
-<body>
-  
+<body class="font-inter bg-akbluelight text-aktext tracking-[.01em]">
   <!-- HEADER (Minimal, Modern, Clean) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <header id="main-header" class="ak-header">
-    <div class="ak-header-inner">
+  <header id="main-header" class="sticky top-0 z-50 bg-white shadow-ak2 transition-shadow">
+    <div class="max-w-[1200px] mx-auto flex items-center justify-between py-2 px-8 min-h-[72px]">
       <!-- Logo -->
-      <a href="#" class="ak-logo">
-        <span class="ak-logo-icon">🎓</span>
+      <a href="#" class="flex items-center text-[1.7rem] font-extrabold text-akblue no-underline gap-2 tracking-[.02em]">
+        <span class="text-[2.1rem] mr-[0.1em]">🎓</span>
         <span>Admission Kart</span>
       </a>
       <!-- Desktop Navigation -->
-      <nav class="mega-menu hidden lg:flex flex-1 ml-10">
+      <nav class="hidden lg:flex flex-1 ml-10">
         <ul class="flex gap-10 list-none m-0 p-0 font-medium text-blue-900">
-          <li class="menu-item relative group">
-            <button class="menu-btn bg-transparent border-none font-sans cursor-pointer px-1 py-2 text-blue-900 hover:text-blue-700 transition-colors duration-150 focus:outline-none tracking-wide text-base" style="letter-spacing:0.01em;">Colleges</button>
-            <div class="dropdown absolute left-0 top-14 bg-white/95 shadow-2xl rounded-2xl p-8 min-w-[420px] hidden group-hover:flex group-focus-within:flex animate-fadeIn" style="gap:2.5rem; border: 1px solid #f0f2f7;">
+          <!-- Colleges Dropdown -->
+          <li class="relative group">
+            <button class="bg-transparent border-none font-sans cursor-pointer px-1 py-2 text-blue-900 hover:text-blue-700 transition-colors duration-150 focus:outline-none tracking-wide text-base" style="letter-spacing:0.01em;">Colleges</button>
+            <div class="absolute left-0 top-14 bg-white/95 shadow-2xl rounded-2xl p-8 min-w-[420px] hidden group-hover:flex group-focus-within:flex animate-fadeIn border border-[#f0f2f7]" style="gap:2.5rem;">
               <div class="flex gap-12">
                 <div>
                   <span class="block mb-3 text-blue-800 font-semibold text-sm uppercase tracking-wider">By State</span>
@@ -56,9 +133,10 @@
               </div>
             </div>
           </li>
-          <li class="menu-item relative group">
-            <button class="menu-btn bg-transparent border-none font-sans cursor-pointer px-1 py-2 text-blue-900 hover:text-blue-700 transition-colors duration-150 focus:outline-none tracking-wide text-base" style="letter-spacing:0.01em;">Courses</button>
-            <div class="dropdown absolute left-0 top-14 bg-white/95 shadow-2xl rounded-2xl p-8 min-w-[240px] hidden group-hover:flex group-focus-within:flex animate-fadeIn" style="border: 1px solid #f0f2f7;">
+          <!-- Courses Dropdown -->
+          <li class="relative group">
+            <button class="bg-transparent border-none font-sans cursor-pointer px-1 py-2 text-blue-900 hover:text-blue-700 transition-colors duration-150 focus:outline-none tracking-wide text-base" style="letter-spacing:0.01em;">Courses</button>
+            <div class="absolute left-0 top-14 bg-white/95 shadow-2xl rounded-2xl p-8 min-w-[240px] hidden group-hover:flex group-focus-within:flex animate-fadeIn border border-[#f0f2f7]">
               <ul class="list-none m-0 p-0 text-base text-gray-600 space-y-2">
                 <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Engineering (UG / PG)</li>
                 <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Management (UG / PG)</li>
@@ -69,9 +147,10 @@
               </ul>
             </div>
           </li>
-          <li class="menu-item relative group">
-            <button class="menu-btn bg-transparent border-none font-sans cursor-pointer px-1 py-2 text-blue-900 hover:text-blue-700 transition-colors duration-150 focus:outline-none tracking-wide text-base" style="letter-spacing:0.01em;">Exams</button>
-            <div class="dropdown absolute left-0 top-14 bg-white/95 shadow-2xl rounded-2xl p-8 min-w-[240px] hidden group-hover:flex group-focus-within:flex animate-fadeIn" style="border: 1px solid #f0f2f7;">
+          <!-- Exams Dropdown -->
+          <li class="relative group">
+            <button class="bg-transparent border-none font-sans cursor-pointer px-1 py-2 text-blue-900 hover:text-blue-700 transition-colors duration-150 focus:outline-none tracking-wide text-base" style="letter-spacing:0.01em;">Exams</button>
+            <div class="absolute left-0 top-14 bg-white/95 shadow-2xl rounded-2xl p-8 min-w-[240px] hidden group-hover:flex group-focus-within:flex animate-fadeIn border border-[#f0f2f7]">
               <ul class="list-none m-0 p-0 text-base text-gray-600 space-y-2">
                 <li><span class="font-semibold text-blue-800">National:</span> JEE, NEET, CUET</li>
                 <li><span class="font-semibold text-blue-800">State:</span> MHT CET, KCET, AP EAMCET</li>
@@ -79,9 +158,10 @@
               </ul>
             </div>
           </li>
-          <li class="menu-item relative group">
-            <button class="menu-btn bg-transparent border-none font-sans cursor-pointer px-1 py-2 text-blue-900 hover:text-blue-700 transition-colors duration-150 focus:outline-none tracking-wide text-base" style="letter-spacing:0.01em;">Study Abroad</button>
-            <div class="dropdown absolute left-0 top-14 bg-white/95 shadow-2xl rounded-2xl p-8 min-w-[240px] hidden group-hover:flex group-focus-within:flex animate-fadeIn" style="border: 1px solid #f0f2f7;">
+          <!-- Study Abroad Dropdown -->
+          <li class="relative group">
+            <button class="bg-transparent border-none font-sans cursor-pointer px-1 py-2 text-blue-900 hover:text-blue-700 transition-colors duration-150 focus:outline-none tracking-wide text-base" style="letter-spacing:0.01em;">Study Abroad</button>
+            <div class="absolute left-0 top-14 bg-white/95 shadow-2xl rounded-2xl p-8 min-w-[240px] hidden group-hover:flex group-focus-within:flex animate-fadeIn border border-[#f0f2f7]">
               <ul class="list-none m-0 p-0 text-base text-gray-600 space-y-2">
                 <li><span class="font-semibold text-blue-800">By Country:</span> USA, UK, Canada, Germany</li>
                 <li>UG | PG Admissions</li>
@@ -89,9 +169,10 @@
               </ul>
             </div>
           </li>
-          <li class="menu-item relative group">
-            <button class="menu-btn bg-transparent border-none font-sans cursor-pointer px-1 py-2 text-blue-900 hover:text-blue-700 transition-colors duration-150 focus:outline-none tracking-wide text-base" style="letter-spacing:0.01em;">Counseling</button>
-            <div class="dropdown absolute left-0 top-14 bg-white/95 shadow-2xl rounded-2xl p-8 min-w-[200px] hidden group-hover:flex group-focus-within:flex animate-fadeIn" style="border: 1px solid #f0f2f7;">
+          <!-- Counseling Dropdown -->
+          <li class="relative group">
+            <button class="bg-transparent border-none font-sans cursor-pointer px-1 py-2 text-blue-900 hover:text-blue-700 transition-colors duration-150 focus:outline-none tracking-wide text-base" style="letter-spacing:0.01em;">Counseling</button>
+            <div class="absolute left-0 top-14 bg-white/95 shadow-2xl rounded-2xl p-8 min-w-[200px] hidden group-hover:flex group-focus-within:flex animate-fadeIn border border-[#f0f2f7]">
               <ul class="list-none m-0 p-0 text-base text-gray-600 space-y-2">
                 <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Book Session</li>
                 <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Career Guidance</li>
@@ -102,272 +183,28 @@
         </ul>
       </nav>
       <!-- CTA Button (Desktop) -->
-      <a href="#cta-final" class="ak-cta-btn ak-cta-desktop">Book Consultation</a>
+      <a href="#cta-final" class="hidden lg:inline-block ml-8 bg-akblue text-white px-7 py-3 rounded-lg font-semibold text-[1.05rem] no-underline shadow-ak3 border-none transition-colors duration-150 hover:bg-[#3949ab]">Book Consultation</a>
       <!-- Hamburger (Mobile) -->
-      <button id="mobile-menu-btn" aria-label="Open menu" class="ak-hamburger">
-        <span></span><span></span><span></span>
+      <button id="mobile-menu-btn" aria-label="Open menu" class="flex flex-col gap-1.5 cursor-pointer p-1 ml-5 w-9 h-9 justify-center bg-transparent border-none lg:hidden">
+        <span class="block h-[3px] w-7 bg-akblue rounded transition-all"></span>
+        <span class="block h-[3px] w-7 bg-akblue rounded transition-all"></span>
+        <span class="block h-[3px] w-5 bg-akblue rounded transition-all"></span>
       </button>
     </div>
     <!-- Mobile Drawer -->
-    <div id="mobile-menu-drawer" class="ak-mobile-drawer">
-      <button id="mobile-menu-close" aria-label="Close menu" class="ak-mobile-close">&times;</button>
+    <div id="mobile-menu-drawer" class="hidden fixed top-0 right-0 w-[82vw] max-w-[340px] h-screen bg-white shadow-[0_0_32px_rgba(26,35,126,0.10)] z-[100] flex-col p-10 pt-10 pb-6 animate-slideInDrawer">
+      <button id="mobile-menu-close" aria-label="Close menu" class="absolute top-5 right-5 text-[2.2rem] bg-transparent border-none text-akblue cursor-pointer leading-none">&times;</button>
       <nav>
-        <ul>
-          <li><a href="#">Colleges</a></li>
-          <li><a href="#">Courses</a></li>
-          <li><a href="#">Exams</a></li>
-          <li><a href="#">Study Abroad</a></li>
-          <li><a href="#">Counseling</a></li>
+        <ul class="list-none p-0 mt-14 flex flex-col gap-7 font-semibold text-[1.1rem] text-akblue">
+          <li><a href="#" class="text-akblue no-underline transition-colors hover:text-[#3949ab]">Colleges</a></li>
+          <li><a href="#" class="text-akblue no-underline transition-colors hover:text-[#3949ab]">Courses</a></li>
+          <li><a href="#" class="text-akblue no-underline transition-colors hover:text-[#3949ab]">Exams</a></li>
+          <li><a href="#" class="text-akblue no-underline transition-colors hover:text-[#3949ab]">Study Abroad</a></li>
+          <li><a href="#" class="text-akblue no-underline transition-colors hover:text-[#3949ab]">Counseling</a></li>
         </ul>
-        <a href="#cta-final" class="ak-cta-btn ak-cta-mobile">Book Consultation</a>
+        <a href="#cta-final" class="block mt-10 w-full text-center bg-akblue text-white px-7 py-3 rounded-lg font-semibold text-[1.05rem] no-underline shadow-ak3 border-none transition-colors duration-150 hover:bg-[#3949ab]">Book Consultation</a>
       </nav>
     </div>
-    <style>
-      :root {
-        --ak-blue: #1a237e;
-        --ak-blue-light: #f6f8fc;
-        --ak-gray: #f8fafc;
-        --ak-gray-dark: #dbe3ea;
-        --ak-yellow: #fbc02d;
-        --ak-text: #232a36;
-        --ak-radius: 14px;
-        --ak-shadow: 0 2px 16px rgba(26,35,126,0.06);
-      }
-      body, .font-inter {
-        font-family: 'Inter', 'Poppins', 'Roboto', Arial, sans-serif;
-        background: var(--ak-blue-light);
-        color: var(--ak-text);
-        letter-spacing: 0.01em;
-      }
-      .ak-header {
-        position: sticky;
-        top: 0;
-        z-index: 50;
-        background: #fff;
-        box-shadow: 0 2px 12px rgba(26,35,126,0.04);
-        transition: box-shadow 0.2s;
-      }
-      .ak-header-inner {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0.5rem 2rem;
-        min-height: 72px;
-      }
-      .ak-logo {
-        display: flex;
-        align-items: center;
-        font-size: 1.7rem;
-        font-weight: 800;
-        color: var(--ak-blue);
-        text-decoration: none;
-        gap: 0.5rem;
-        letter-spacing: 0.02em;
-      }
-      .ak-logo-icon {
-        font-size: 2.1rem;
-        margin-right: 0.1em;
-      }
-      .ak-nav {
-        display: none;
-      }
-      .ak-nav ul {
-        display: flex;
-        gap: 2.2rem;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-      .ak-nav-item {
-        position: relative;
-      }
-      .ak-nav-link {
-        background: none;
-        border: none;
-        font: inherit;
-        color: var(--ak-blue);
-        font-weight: 600;
-        font-size: 1.05rem;
-        padding: 0.2rem 0;
-        cursor: pointer;
-        transition: color 0.15s;
-        outline: none;
-        letter-spacing: 0.01em;
-      }
-      .ak-nav-link:hover,
-      .ak-nav-link:focus {
-        color: #3949ab;
-      }
-      .ak-dropdown {
-        display: none;
-        position: absolute;
-        left: 0;
-        top: 2.5rem;
-        background: #fff;
-        box-shadow: var(--ak-shadow);
-        border-radius: var(--ak-radius);
-        padding: 1.3rem 1.5rem;
-        min-width: 220px;
-        z-index: 10;
-        gap: 2.5rem;
-        font-size: 1rem;
-        white-space: nowrap;
-      }
-      .ak-dropdown-wide {
-        display: none;
-        min-width: 420px;
-        display: flex;
-        gap: 2.5rem;
-      }
-      .ak-dropdown-title {
-        display: block;
-        font-weight: 700;
-        color: var(--ak-blue);
-        margin-bottom: 0.5rem;
-        font-size: 1rem;
-        letter-spacing: 0.01em;
-      }
-      .ak-dropdown ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        color: #4a5568;
-        font-size: 0.98rem;
-        line-height: 1.7;
-      }
-      .ak-has-dropdown:hover > .ak-dropdown,
-      .ak-has-dropdown:focus-within > .ak-dropdown {
-        display: block;
-        animation: fadeIn 0.18s cubic-bezier(.4,0,.2,1);
-      }
-      .ak-has-dropdown:hover > .ak-dropdown-wide,
-      .ak-has-dropdown:focus-within > .ak-dropdown-wide {
-        display: flex;
-        animation: fadeIn 0.18s cubic-bezier(.4,0,.2,1);
-      }
-      @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(10px);}
-        to { opacity: 1; transform: translateY(0);}
-      }
-      .ak-cta-btn {
-        background: var(--ak-blue);
-        color: #fff;
-        padding: 0.7rem 1.7rem;
-        border-radius: 8px;
-        font-weight: 600;
-        font-size: 1.05rem;
-        text-decoration: none;
-        box-shadow: 0 2px 8px rgba(26,35,126,0.07);
-        border: none;
-        transition: background 0.18s, color 0.18s;
-        letter-spacing: 0.01em;
-        display: inline-block;
-      }
-      .ak-cta-btn:hover, .ak-cta-btn:focus {
-        background: #3949ab;
-        color: #fff;
-      }
-      .ak-cta-desktop {
-        margin-left: 2rem;
-        display: none;
-      }
-      .ak-hamburger {
-        background: none;
-        border: none;
-        display: flex;
-        flex-direction: column;
-        gap: 0.3rem;
-        cursor: pointer;
-        padding: 0.3rem 0.2rem;
-        margin-left: 1.2rem;
-        width: 2.2rem;
-        height: 2.2rem;
-        justify-content: center;
-      }
-      .ak-hamburger span {
-        display: block;
-        height: 3px;
-        width: 28px;
-        background: var(--ak-blue);
-        border-radius: 2px;
-        transition: all 0.2s;
-      }
-      .ak-hamburger span:nth-child(3) {
-        width: 20px;
-      }
-      /* Mobile Drawer */
-      .ak-mobile-drawer {
-        display: none;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 82vw;
-        max-width: 340px;
-        height: 100vh;
-        background: #fff;
-        box-shadow: 0 0 32px rgba(26,35,126,0.10);
-        z-index: 100;
-        flex-direction: column;
-        padding: 2.5rem 1.5rem 1.5rem 1.5rem;
-        animation: slideInDrawer 0.22s cubic-bezier(.4,0,.2,1);
-      }
-      .ak-mobile-drawer.open {
-        display: flex !important;
-      }
-      .ak-mobile-close {
-        position: absolute;
-        top: 1.2rem;
-        right: 1.2rem;
-        font-size: 2.2rem;
-        background: none;
-        border: none;
-        color: var(--ak-blue);
-        cursor: pointer;
-        line-height: 1;
-      }
-      .ak-mobile-drawer nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 3.5rem 0 0 0;
-        display: flex;
-        flex-direction: column;
-        gap: 1.7rem;
-        font-weight: 600;
-        font-size: 1.1rem;
-        color: var(--ak-blue);
-      }
-      .ak-mobile-drawer nav ul li a {
-        color: var(--ak-blue);
-        text-decoration: none;
-        transition: color 0.15s;
-      }
-      .ak-mobile-drawer nav ul li a:hover {
-        color: #3949ab;
-      }
-      .ak-cta-mobile {
-        margin-top: 2.5rem;
-        width: 100%;
-        text-align: center;
-      }
-      @keyframes slideInDrawer {
-        from { right: -340px; opacity: 0; }
-        to { right: 0; opacity: 1; }
-      }
-      /* Responsive */
-      @media (min-width: 1024px) {
-        .ak-nav { display: block; }
-        .ak-hamburger { display: none; }
-        .ak-cta-desktop { display: inline-block; }
-        .ak-mobile-drawer { display: none !important; }
-      }
-      @media (max-width: 1023px) {
-        .ak-nav { display: none !important; }
-        .ak-hamburger { display: flex !important; }
-        .ak-cta-desktop { display: none !important; }
-      }
-    </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script>
       // Mobile menu open/close with animation
@@ -377,12 +214,14 @@
         var closeBtn = document.getElementById('mobile-menu-close');
         if(btn && drawer && closeBtn) {
           btn.onclick = function() {
-            drawer.classList.add('open');
+            drawer.classList.remove('hidden');
+            drawer.classList.add('flex', 'open');
             gsap.fromTo(drawer, {x: 340, opacity: 0}, {x: 0, opacity: 1, duration: 0.22, ease: "power2.out"});
           };
           closeBtn.onclick = function() {
             gsap.to(drawer, {x: 340, opacity: 0, duration: 0.18, ease: "power2.in", onComplete: function() {
-              drawer.classList.remove('open');
+              drawer.classList.remove('flex', 'open');
+              drawer.classList.add('hidden');
               drawer.style.transform = '';
               drawer.style.opacity = '';
             }});
@@ -390,7 +229,8 @@
           drawer.onclick = function(e) {
             if(e.target === drawer) {
               gsap.to(drawer, {x: 340, opacity: 0, duration: 0.18, ease: "power2.in", onComplete: function() {
-                drawer.classList.remove('open');
+                drawer.classList.remove('flex', 'open');
+                drawer.classList.add('hidden');
                 drawer.style.transform = '';
                 drawer.style.opacity = '';
               }});
@@ -402,24 +242,20 @@
   </header>
 
   <!-- HERO SECTION (Minimal, Clean) -->
-  <section id="hero" class="ak-hero">
-    <div class="ak-hero-inner">
+  <section id="hero" class="bg-gradient-to-r from-akbluelight via-akbluelight to-white pt-22 pb-14 font-inter">
+    <div class="max-w-[1200px] mx-auto flex flex-wrap items-center justify-between gap-10 px-8">
       <!-- Left: Text -->
-      <div class="ak-hero-text">
-        <h1>
-          Get Expert Guidance for College Admissions in India &amp; Abroad
-        </h1>
-        <p>
-          Personalized counseling, trusted by 10,000+ students. Your dream college is just a step away!
-        </p>
-        <div class="ak-hero-cta">
-          <a href="#cta-final" class="ak-cta-btn">Get Admission Help</a>
-          <a href="#cta-final" class="ak-cta-btn ak-cta-outline">Book Free Counseling</a>
+      <div class="flex-1 min-w-[280px] max-w-[520px] flex flex-col gap-6">
+        <h1 class="text-[2.3rem] sm:text-[2.8rem] font-extrabold text-akblue mb-2 leading-[1.18] tracking-[.01em]">Get Expert Guidance for College Admissions in India &amp; Abroad</h1>
+        <p class="text-[1.13rem] text-gray-700 mb-5 max-w-[420px] leading-[1.6]">Personalized counseling, trusted by 10,000+ students. Your dream college is just a step away!</p>
+        <div class="flex gap-4 flex-wrap">
+          <a href="#cta-final" class="bg-akblue text-white px-7 py-3 rounded-lg font-semibold text-[1.05rem] no-underline shadow-ak3 border-none transition-colors duration-150 hover:bg-[#3949ab]">Get Admission Help</a>
+          <a href="#cta-final" class="bg-white text-akblue border-2 border-akblue px-7 py-3 rounded-lg font-semibold text-[1.05rem] no-underline shadow-none transition-colors duration-150 hover:bg-akbluelight hover:text-[#3949ab]">Book Free Counseling</a>
         </div>
       </div>
       <!-- Right: Illustration -->
-      <div class="ak-hero-illus">
-        <svg width="270" height="210" viewBox="0 0 270 210" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Counselor and student illustration" class="ak-hero-svg">
+      <div class="flex-1 min-w-[220px] flex items-center justify-center mt-10 sm:mt-0">
+        <svg width="270" height="210" viewBox="0 0 270 210" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Counselor and student illustration" class="w-[270px] h-[210px] animate-heroSvg">
           <ellipse cx="135" cy="200" rx="110" ry="10" fill="#e3e9fc"/>
           <circle cx="80" cy="90" r="38" fill="#fff" stroke="#dbe3ea" stroke-width="3"/>
           <circle cx="190" cy="90" r="38" fill="#fff" stroke="#dbe3ea" stroke-width="3"/>
@@ -436,741 +272,220 @@
         </svg>
       </div>
     </div>
-    <style>
-      .ak-hero {
-        background: linear-gradient(90deg, var(--ak-blue-light) 60%, #fff 100%);
-        padding: 5.5rem 0 3.5rem 0;
-        font-family: 'Inter', 'Poppins', 'Roboto', Arial, sans-serif;
-      }
-      .ak-hero-inner {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        gap: 2.5rem;
-        padding: 0 2rem;
-      }
-      .ak-hero-text {
-        flex: 1 1 320px;
-        max-width: 520px;
-        min-width: 280px;
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-      }
-      .ak-hero-text h1 {
-        font-size: 2.3rem;
-        font-weight: 800;
-        color: var(--ak-blue);
-        margin: 0 0 0.5rem 0;
-        line-height: 1.18;
-        letter-spacing: 0.01em;
-      }
-      @media (min-width: 640px) {
-        .ak-hero-text h1 { font-size: 2.8rem; }
-      }
-      .ak-hero-text p {
-        font-size: 1.13rem;
-        color: #4a5568;
-        margin: 0 0 1.2rem 0;
-        max-width: 420px;
-        line-height: 1.6;
-      }
-      .ak-hero-cta {
-        display: flex;
-        gap: 1.1rem;
-        flex-wrap: wrap;
-      }
-      .ak-cta-outline {
-        background: #fff;
-        color: var(--ak-blue);
-        border: 2px solid var(--ak-blue);
-        box-shadow: none;
-      }
-      .ak-cta-outline:hover, .ak-cta-outline:focus {
-        background: #f6f8fc;
-        color: #3949ab;
-      }
-      .ak-hero-illus {
-        flex: 1 1 260px;
-        min-width: 220px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 2.5rem;
-      }
-      @media (min-width: 640px) {
-        .ak-hero-illus { margin-top: 0; }
-      }
-      .ak-hero-svg {
-        width: 270px;
-        height: 210px;
-        animation: heroSvg 0.7s cubic-bezier(.4,0,.2,1) 0.3s both;
-      }
-      @keyframes heroSvg {
-        0% { opacity: 0; transform: scale(0.95);}
-        100% { opacity: 1; transform: scale(1);}
-      }
-    </style>
   </section>
 
   <!-- ABOUT ADMISSION KART (Minimal, Clean) -->
-  <section id="about" class="ak-about">
-    <div class="ak-about-inner">
-      <h2>About Admission Kart</h2>
-      <p>
-        Admission Kart is your trusted partner for college admissions in India and abroad. We simplify the process with expert counseling, up-to-date information, and end-to-end support for students and parents.
-      </p>
-      <div class="ak-about-stats">
-        <div>
-          <div class="ak-about-stat-num">8+</div>
-          <div class="ak-about-stat-label">Years Experience</div>
+  <section id="about" class="bg-white pt-14 pb-12">
+    <div class="max-w-[900px] mx-auto px-8 text-center">
+      <h2 class="text-[2rem] font-extrabold text-akblue mb-4 tracking-[.01em]">About Admission Kart</h2>
+      <p class="text-[1.13rem] text-[#3a3a3a] max-w-[540px] mx-auto mb-9 leading-[1.7]">Admission Kart is your trusted partner for college admissions in India and abroad. We simplify the process with expert counseling, up-to-date information, and end-to-end support for students and parents.</p>
+      <div class="flex justify-center gap-14 flex-wrap mt-9">
+        <div class="min-w-[120px]">
+          <div class="text-[2.1rem] text-[#1976d2] font-extrabold mb-1">8+</div>
+          <div class="text-gray-500 text-[1rem] tracking-[.01em]">Years Experience</div>
         </div>
-        <div>
-          <div class="ak-about-stat-num">10,000+</div>
-          <div class="ak-about-stat-label">Students Helped</div>
+        <div class="min-w-[120px]">
+          <div class="text-[2.1rem] text-[#1976d2] font-extrabold mb-1">10,000+</div>
+          <div class="text-gray-500 text-[1rem] tracking-[.01em]">Students Helped</div>
         </div>
-        <div>
-          <div class="ak-about-stat-num">98%</div>
-          <div class="ak-about-stat-label">Success Rate</div>
+        <div class="min-w-[120px]">
+          <div class="text-[2.1rem] text-[#1976d2] font-extrabold mb-1">98%</div>
+          <div class="text-gray-500 text-[1rem] tracking-[.01em]">Success Rate</div>
         </div>
       </div>
     </div>
-    <style>
-      .ak-about {
-        background: #fff;
-        padding: 3.5rem 0 3rem 0;
-      }
-      .ak-about-inner {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        text-align: center;
-      }
-      .ak-about h2 {
-        font-size: 2rem;
-        font-weight: 800;
-        color: var(--ak-blue);
-        margin-bottom: 1.1rem;
-        letter-spacing: 0.01em;
-      }
-      .ak-about p {
-        font-size: 1.13rem;
-        color: #3a3a3a;
-        max-width: 540px;
-        margin: 0 auto 2.2rem auto;
-        line-height: 1.7;
-      }
-      .ak-about-stats {
-        display: flex;
-        justify-content: center;
-        gap: 3.5rem;
-        flex-wrap: wrap;
-        margin-top: 2.2rem;
-      }
-      .ak-about-stats > div {
-        min-width: 120px;
-      }
-      .ak-about-stat-num {
-        font-size: 2.1rem;
-        color: #1976d2;
-        font-weight: 800;
-        margin-bottom: 0.3rem;
-      }
-      .ak-about-stat-label {
-        color: #6b7280;
-        font-size: 1rem;
-        letter-spacing: 0.01em;
-      }
-    </style>
   </section>
 
   <!-- OUR SERVICES OVERVIEW (Minimal, Clean) -->
-  <section id="services" class="ak-services">
-    <div class="ak-services-inner">
-      <h2>Our Services</h2>
-      <div class="ak-services-grid">
-        <div class="ak-service-card">
-          <div class="ak-service-icon">🎯</div>
-          <h3>Admission Help</h3>
-          <p>End-to-end support for college applications, documentation, and deadlines.</p>
+  <section id="services" class="bg-akgray pt-14 pb-12">
+    <div class="max-w-[1100px] mx-auto px-8">
+      <h2 class="text-[2rem] font-extrabold text-akblue text-center mb-10 tracking-[.01em]">Our Services</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-9">
+        <div class="bg-white rounded-ak shadow-ak p-9 pt-9 pb-7 text-center transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-2">
+          <div class="text-[2.2rem] text-[#1976d2] mb-2">🎯</div>
+          <h3 class="text-[1.13rem] font-bold mb-1 text-akblue">Admission Help</h3>
+          <p class="text-gray-600 text-[1rem] leading-[1.6]">End-to-end support for college applications, documentation, and deadlines.</p>
         </div>
-        <div class="ak-service-card">
-          <div class="ak-service-icon">🧑‍💼</div>
-          <h3>Counseling</h3>
-          <p>Personalized guidance to help you choose the right course and college.</p>
+        <div class="bg-white rounded-ak shadow-ak p-9 pt-9 pb-7 text-center transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-2">
+          <div class="text-[2.2rem] text-[#1976d2] mb-2">🧑‍💼</div>
+          <h3 class="text-[1.13rem] font-bold mb-1 text-akblue">Counseling</h3>
+          <p class="text-gray-600 text-[1rem] leading-[1.6]">Personalized guidance to help you choose the right course and college.</p>
         </div>
-        <div class="ak-service-card">
-          <div class="ak-service-icon">📚</div>
-          <h3>Course &amp; College Guide</h3>
-          <p>Comprehensive information on top courses and colleges in India &amp; abroad.</p>
+        <div class="bg-white rounded-ak shadow-ak p-9 pt-9 pb-7 text-center transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-2">
+          <div class="text-[2.2rem] text-[#1976d2] mb-2">📚</div>
+          <h3 class="text-[1.13rem] font-bold mb-1 text-akblue">Course &amp; College Guide</h3>
+          <p class="text-gray-600 text-[1rem] leading-[1.6]">Comprehensive information on top courses and colleges in India &amp; abroad.</p>
         </div>
-        <div class="ak-service-card">
-          <div class="ak-service-icon">📝</div>
-          <h3>Exam Assistance</h3>
-          <p>Updates, tips, and resources for major entrance exams.</p>
+        <div class="bg-white rounded-ak shadow-ak p-9 pt-9 pb-7 text-center transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-2">
+          <div class="text-[2.2rem] text-[#1976d2] mb-2">📝</div>
+          <h3 class="text-[1.13rem] font-bold mb-1 text-akblue">Exam Assistance</h3>
+          <p class="text-gray-600 text-[1rem] leading-[1.6]">Updates, tips, and resources for major entrance exams.</p>
         </div>
-        <div class="ak-service-card">
-          <div class="ak-service-icon">🌏</div>
-          <h3>Study Abroad</h3>
-          <p>Guidance for overseas admissions, visas, SOPs, and more.</p>
+        <div class="bg-white rounded-ak shadow-ak p-9 pt-9 pb-7 text-center transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-2">
+          <div class="text-[2.2rem] text-[#1976d2] mb-2">🌏</div>
+          <h3 class="text-[1.13rem] font-bold mb-1 text-akblue">Study Abroad</h3>
+          <p class="text-gray-600 text-[1rem] leading-[1.6]">Guidance for overseas admissions, visas, SOPs, and more.</p>
         </div>
       </div>
     </div>
-    <style>
-      .ak-services {
-        background: var(--ak-gray);
-        padding: 3.5rem 0 3rem 0;
-      }
-      .ak-services-inner {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0 2rem;
-      }
-      .ak-services h2 {
-        font-size: 2rem;
-        font-weight: 800;
-        color: var(--ak-blue);
-        text-align: center;
-        margin-bottom: 2.5rem;
-        letter-spacing: 0.01em;
-      }
-      .ak-services-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 2.2rem;
-      }
-      .ak-service-card {
-        background: #fff;
-        border-radius: var(--ak-radius);
-        box-shadow: var(--ak-shadow);
-        padding: 2.2rem 1.3rem 1.7rem 1.3rem;
-        text-align: center;
-        transition: transform 0.15s, box-shadow 0.15s;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.7rem;
-      }
-      .ak-service-card:hover {
-        transform: translateY(-6px) scale(1.03);
-        box-shadow: 0 8px 32px rgba(26,35,126,0.10);
-      }
-      .ak-service-icon {
-        font-size: 2.2rem;
-        color: #1976d2;
-        margin-bottom: 0.5rem;
-      }
-      .ak-service-card h3 {
-        font-size: 1.13rem;
-        font-weight: 700;
-        margin-bottom: 0.3rem;
-        color: var(--ak-blue);
-      }
-      .ak-service-card p {
-        color: #5a5a5a;
-        font-size: 1rem;
-        line-height: 1.6;
-      }
-    </style>
   </section>
 
   <!-- TOP COLLEGES / EXAMS / COURSES SHOWCASE (Minimal, Clean) -->
-  <section id="showcase" class="ak-showcase">
-    <div class="ak-showcase-inner">
-      <h2>Top Colleges, Exams &amp; Courses</h2>
-      <div class="ak-carousel">
+  <section id="showcase" class="bg-white pt-12 pb-10 font-inter">
+    <div class="max-w-[1000px] mx-auto px-8">
+      <h2 class="text-[1.5rem] font-extrabold text-akblue text-center mb-9 tracking-[.01em]">Top Colleges, Exams &amp; Courses</h2>
+      <div class="flex overflow-x-auto gap-5 pb-2 scroll-snap-x scroll-snap-mandatory">
         <!-- Colleges -->
-        <div class="ak-carousel-card ak-card-college">
-          <div class="ak-card-emoji">🏫</div>
-          <div class="ak-card-title">VIT</div>
-          <div class="ak-card-sub">Vellore</div>
+        <div class="min-w-[170px] flex-none bg-akgray rounded-ak p-6 text-center shadow-ak5 scroll-snap-start transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
+          <div class="text-[1.7rem] mb-1">🏫</div>
+          <div class="font-bold text-akblue text-[1.08rem]">VIT</div>
+          <div class="text-[0.97rem] text-gray-500">Vellore</div>
         </div>
-        <div class="ak-carousel-card ak-card-college">
-          <div class="ak-card-emoji">🏫</div>
-          <div class="ak-card-title">Christ</div>
-          <div class="ak-card-sub">Bangalore</div>
+        <div class="min-w-[170px] flex-none bg-akgray rounded-ak p-6 text-center shadow-ak5 scroll-snap-start transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
+          <div class="text-[1.7rem] mb-1">🏫</div>
+          <div class="font-bold text-akblue text-[1.08rem]">Christ</div>
+          <div class="text-[0.97rem] text-gray-500">Bangalore</div>
         </div>
-        <div class="ak-carousel-card ak-card-college">
-          <div class="ak-card-emoji">🏫</div>
-          <div class="ak-card-title">Symbiosis</div>
-          <div class="ak-card-sub">Pune</div>
+        <div class="min-w-[170px] flex-none bg-akgray rounded-ak p-6 text-center shadow-ak5 scroll-snap-start transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
+          <div class="text-[1.7rem] mb-1">🏫</div>
+          <div class="font-bold text-akblue text-[1.08rem]">Symbiosis</div>
+          <div class="text-[0.97rem] text-gray-500">Pune</div>
         </div>
-        <div class="ak-carousel-card ak-card-college">
-          <div class="ak-card-emoji">🏫</div>
-          <div class="ak-card-title">IIT Bombay</div>
-          <div class="ak-card-sub">Mumbai</div>
+        <div class="min-w-[170px] flex-none bg-akgray rounded-ak p-6 text-center shadow-ak5 scroll-snap-start transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
+          <div class="text-[1.7rem] mb-1">🏫</div>
+          <div class="font-bold text-akblue text-[1.08rem]">IIT Bombay</div>
+          <div class="text-[0.97rem] text-gray-500">Mumbai</div>
         </div>
-        <div class="ak-carousel-card ak-card-college">
-          <div class="ak-card-emoji">🏫</div>
-          <div class="ak-card-title">SRM</div>
-          <div class="ak-card-sub">Chennai</div>
+        <div class="min-w-[170px] flex-none bg-akgray rounded-ak p-6 text-center shadow-ak5 scroll-snap-start transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
+          <div class="text-[1.7rem] mb-1">🏫</div>
+          <div class="font-bold text-akblue text-[1.08rem]">SRM</div>
+          <div class="text-[0.97rem] text-gray-500">Chennai</div>
         </div>
         <!-- Exams -->
-        <div class="ak-carousel-card ak-card-exam">
-          <div class="ak-card-emoji">📝</div>
-          <div class="ak-card-title">JEE</div>
+        <div class="min-w-[170px] flex-none bg-akexam rounded-ak p-6 text-center shadow-ak5 scroll-snap-start transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
+          <div class="text-[1.7rem] mb-1">📝</div>
+          <div class="font-bold text-akorange text-[1.08rem]">JEE</div>
         </div>
-        <div class="ak-carousel-card ak-card-exam">
-          <div class="ak-card-emoji">📝</div>
-          <div class="ak-card-title">CUET</div>
+        <div class="min-w-[170px] flex-none bg-akexam rounded-ak p-6 text-center shadow-ak5 scroll-snap-start transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
+          <div class="text-[1.7rem] mb-1">📝</div>
+          <div class="font-bold text-akorange text-[1.08rem]">CUET</div>
         </div>
-        <div class="ak-carousel-card ak-card-exam">
-          <div class="ak-card-emoji">📝</div>
-          <div class="ak-card-title">NEET</div>
+        <div class="min-w-[170px] flex-none bg-akexam rounded-ak p-6 text-center shadow-ak5 scroll-snap-start transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
+          <div class="text-[1.7rem] mb-1">📝</div>
+          <div class="font-bold text-akorange text-[1.08rem]">NEET</div>
         </div>
         <!-- Courses -->
-        <div class="ak-carousel-card ak-card-course">
-          <div class="ak-card-emoji">🎓</div>
-          <div class="ak-card-title">BBA</div>
+        <div class="min-w-[170px] flex-none bg-akcourse rounded-ak p-6 text-center shadow-ak5 scroll-snap-start transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
+          <div class="text-[1.7rem] mb-1">🎓</div>
+          <div class="font-bold text-aksuccess text-[1.08rem]">BBA</div>
         </div>
-        <div class="ak-carousel-card ak-card-course">
-          <div class="ak-card-emoji">🎓</div>
-          <div class="ak-card-title">MBA</div>
+        <div class="min-w-[170px] flex-none bg-akcourse rounded-ak p-6 text-center shadow-ak5 scroll-snap-start transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
+          <div class="text-[1.7rem] mb-1">🎓</div>
+          <div class="font-bold text-aksuccess text-[1.08rem]">MBA</div>
         </div>
-        <div class="ak-carousel-card ak-card-course">
-          <div class="ak-card-emoji">🎓</div>
-          <div class="ak-card-title">B.Tech</div>
+        <div class="min-w-[170px] flex-none bg-akcourse rounded-ak p-6 text-center shadow-ak5 scroll-snap-start transition-transform duration-150 hover:scale-105 hover:shadow-ak4 flex flex-col items-center gap-1">
+          <div class="text-[1.7rem] mb-1">🎓</div>
+          <div class="font-bold text-aksuccess text-[1.08rem]">B.Tech</div>
         </div>
       </div>
     </div>
-    <style>
-      .ak-showcase {
-        background: #fff;
-        padding: 3rem 0 2.5rem 0;
-        font-family: 'Inter', 'Poppins', 'Roboto', Arial, sans-serif;
-      }
-      .ak-showcase-inner {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 0 2rem;
-      }
-      .ak-showcase h2 {
-        font-size: 1.5rem;
-        font-weight: 800;
-        color: var(--ak-blue);
-        text-align: center;
-        margin-bottom: 2.2rem;
-        letter-spacing: 0.01em;
-      }
-      .ak-carousel {
-        display: flex;
-        overflow-x: auto;
-        gap: 1.3rem;
-        padding-bottom: 0.7rem;
-        scroll-snap-type: x mandatory;
-      }
-      .ak-carousel::-webkit-scrollbar {
-        height: 7px;
-        background: #f5f7fa;
-      }
-      .ak-carousel::-webkit-scrollbar-thumb {
-        background: #dbe3ea;
-        border-radius: 4px;
-      }
-      .ak-carousel-card {
-        min-width: 170px;
-        flex: 0 0 auto;
-        background: #f8fafc;
-        border-radius: var(--ak-radius);
-        padding: 1.5rem 1rem;
-        text-align: center;
-        box-shadow: 0 2px 8px rgba(26,35,126,0.06);
-        scroll-snap-align: start;
-        transition: transform 0.15s, box-shadow 0.15s;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.3rem;
-      }
-      .ak-carousel-card:hover {
-        transform: scale(1.05);
-        box-shadow: 0 8px 32px rgba(26,35,126,0.10);
-      }
-      .ak-card-college { background: #f8fafc; }
-      .ak-card-exam { background: #fff7ed; }
-      .ak-card-course { background: #f0fdf4; }
-      .ak-card-emoji {
-        font-size: 1.7rem;
-        margin-bottom: 0.2rem;
-      }
-      .ak-card-title {
-        font-weight: 700;
-        color: var(--ak-blue);
-        font-size: 1.08rem;
-      }
-      .ak-card-exam .ak-card-title { color: #f59e42; }
-      .ak-card-course .ak-card-title { color: #22a06b; }
-      .ak-card-sub {
-        font-size: 0.97rem;
-        color: #6b7280;
-      }
-    </style>
   </section>
 
   <!-- TESTIMONIALS & TRUST MARKERS (Minimal, Clean) -->
-  <section id="testimonials" class="ak-testimonials">
-    <div class="ak-testimonials-inner">
-      <h2>What Our Students Say</h2>
-      <div class="ak-testimonials-list">
-        <div class="ak-testimonial-card">
-          <div class="ak-testimonial-user">
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student testimonial">
+  <section id="testimonials" class="bg-akgray pt-14 pb-12 font-inter">
+    <div class="max-w-[1000px] mx-auto px-8">
+      <h2 class="text-[1.5rem] font-extrabold text-akblue text-center mb-9 tracking-[.01em]">What Our Students Say</h2>
+      <div class="flex flex-wrap gap-8 justify-center mb-10">
+        <div class="bg-white rounded-ak shadow-ak p-7 pt-7 pb-5 max-w-[320px] flex-1 min-w-[260px] transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-ak4 flex flex-col gap-4">
+          <div class="flex items-center gap-3 mb-1">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student testimonial" class="w-11 h-11 rounded-full object-cover" />
             <div>
-              <div class="ak-testimonial-name">Aditi Sharma</div>
-              <div class="ak-testimonial-meta">B.Tech, VIT</div>
+              <div class="font-bold text-[#1976d2] text-[1.05rem]">Aditi Sharma</div>
+              <div class="text-[0.97rem] text-gray-500">B.Tech, VIT</div>
             </div>
           </div>
-          <p>Admission Kart made my college application journey stress-free. The counselors were always available and guided me at every step!</p>
+          <p class="text-aktext text-[1rem] leading-[1.6] m-0">Admission Kart made my college application journey stress-free. The counselors were always available and guided me at every step!</p>
         </div>
-        <div class="ak-testimonial-card">
-          <div class="ak-testimonial-user">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student testimonial">
+        <div class="bg-white rounded-ak shadow-ak p-7 pt-7 pb-5 max-w-[320px] flex-1 min-w-[260px] transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-ak4 flex flex-col gap-4">
+          <div class="flex items-center gap-3 mb-1">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student testimonial" class="w-11 h-11 rounded-full object-cover" />
             <div>
-              <div class="ak-testimonial-name">Rahul Verma</div>
-              <div class="ak-testimonial-meta">MBA, Christ</div>
+              <div class="font-bold text-[#1976d2] text-[1.05rem]">Rahul Verma</div>
+              <div class="text-[0.97rem] text-gray-500">MBA, Christ</div>
             </div>
           </div>
-          <p>I got into my dream college abroad thanks to their expert advice and visa support. Highly recommended!</p>
+          <p class="text-aktext text-[1rem] leading-[1.6] m-0">I got into my dream college abroad thanks to their expert advice and visa support. Highly recommended!</p>
         </div>
-        <div class="ak-testimonial-card">
-          <div class="ak-testimonial-user">
-            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Student testimonial">
+        <div class="bg-white rounded-ak shadow-ak p-7 pt-7 pb-5 max-w-[320px] flex-1 min-w-[260px] transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-ak4 flex flex-col gap-4">
+          <div class="flex items-center gap-3 mb-1">
+            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Student testimonial" class="w-11 h-11 rounded-full object-cover" />
             <div>
-              <div class="ak-testimonial-name">Sneha Iyer</div>
-              <div class="ak-testimonial-meta">BBA, Symbiosis</div>
+              <div class="font-bold text-[#1976d2] text-[1.05rem]">Sneha Iyer</div>
+              <div class="text-[0.97rem] text-gray-500">BBA, Symbiosis</div>
             </div>
           </div>
-          <p>The team is very professional and knowledgeable. They helped me shortlist the best colleges and courses for my profile.</p>
+          <p class="text-aktext text-[1rem] leading-[1.6] m-0">The team is very professional and knowledgeable. They helped me shortlist the best colleges and courses for my profile.</p>
         </div>
       </div>
       <!-- Trust Markers -->
-      <div class="ak-trust-logos">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/VIT_University_Logo.png" alt="VIT">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Christ_University_Logo.png" alt="Christ">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Symbiosis_International_University_Logo.png" alt="Symbiosis">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/IIT_Bombay_Logo.png" alt="IIT Bombay">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/SRM_University_Logo.png" alt="SRM">
+      <div class="flex justify-center gap-10 flex-wrap items-center mt-10 mb-2">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/VIT_University_Logo.png" alt="VIT" class="h-[38px] object-contain grayscale-[.2] brightness-[.98] opacity-90 transition hover:grayscale-0 hover:opacity-100" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Christ_University_Logo.png" alt="Christ" class="h-[38px] object-contain grayscale-[.2] brightness-[.98] opacity-90 transition hover:grayscale-0 hover:opacity-100" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Symbiosis_International_University_Logo.png" alt="Symbiosis" class="h-[38px] object-contain grayscale-[.2] brightness-[.98] opacity-90 transition hover:grayscale-0 hover:opacity-100" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/IIT_Bombay_Logo.png" alt="IIT Bombay" class="h-[38px] object-contain grayscale-[.2] brightness-[.98] opacity-90 transition hover:grayscale-0 hover:opacity-100" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/SRM_University_Logo.png" alt="SRM" class="h-[38px] object-contain grayscale-[.2] brightness-[.98] opacity-90 transition hover:grayscale-0 hover:opacity-100" />
       </div>
-      <div class="ak-google-rating">
-        <span class="ak-stars">★★★★★</span>
-        <span class="ak-rating-score">4.9/5</span>
-        <span class="ak-rating-meta">on Google Reviews</span>
+      <div class="mt-5 flex justify-center items-center gap-3 text-[1.08rem]">
+        <span class="text-akyellow text-[1.2rem] tracking-widest">★★★★★</span>
+        <span class="font-bold text-[#1976d2]">4.9/5</span>
+        <span class="text-gray-500 text-[0.97rem]">on Google Reviews</span>
       </div>
     </div>
-    <style>
-      .ak-testimonials {
-        background: var(--ak-gray);
-        padding: 3.5rem 0 3rem 0;
-        font-family: 'Inter', 'Poppins', 'Roboto', Arial, sans-serif;
-      }
-      .ak-testimonials-inner {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 0 2rem;
-      }
-      .ak-testimonials h2 {
-        font-size: 1.5rem;
-        font-weight: 800;
-        color: var(--ak-blue);
-        text-align: center;
-        margin-bottom: 2.2rem;
-        letter-spacing: 0.01em;
-      }
-      .ak-testimonials-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-        justify-content: center;
-        margin-bottom: 2.5rem;
-      }
-      .ak-testimonial-card {
-        background: #fff;
-        border-radius: var(--ak-radius);
-        box-shadow: var(--ak-shadow);
-        padding: 1.7rem 1.2rem 1.3rem 1.2rem;
-        max-width: 320px;
-        flex: 1 1 260px;
-        transition: transform 0.15s, box-shadow 0.15s;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-      }
-      .ak-testimonial-card:hover {
-        transform: translateY(-6px) scale(1.03);
-        box-shadow: 0 8px 32px rgba(26,35,126,0.10);
-      }
-      .ak-testimonial-user {
-        display: flex;
-        align-items: center;
-        gap: 0.8rem;
-        margin-bottom: 0.2rem;
-      }
-      .ak-testimonial-user img {
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        object-fit: cover;
-      }
-      .ak-testimonial-name {
-        font-weight: 700;
-        color: #1976d2;
-        font-size: 1.05rem;
-      }
-      .ak-testimonial-meta {
-        font-size: 0.97rem;
-        color: #6b7280;
-      }
-      .ak-testimonial-card p {
-        color: #232a36;
-        font-size: 1rem;
-        line-height: 1.6;
-        margin: 0;
-      }
-      .ak-trust-logos {
-        display: flex;
-        justify-content: center;
-        gap: 2.5rem;
-        flex-wrap: wrap;
-        align-items: center;
-        margin: 2.5rem 0 0.7rem 0;
-      }
-      .ak-trust-logos img {
-        height: 38px;
-        object-fit: contain;
-        filter: grayscale(0.2) brightness(0.98);
-        opacity: 0.92;
-        transition: filter 0.15s, opacity 0.15s;
-      }
-      .ak-trust-logos img:hover {
-        filter: none;
-        opacity: 1;
-      }
-      .ak-google-rating {
-        margin-top: 1.2rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 0.7rem;
-        font-size: 1.08rem;
-      }
-      .ak-stars {
-        color: #fbc02d;
-        font-size: 1.2rem;
-        letter-spacing: 0.1em;
-      }
-      .ak-rating-score {
-        font-weight: 700;
-        color: #1976d2;
-      }
-      .ak-rating-meta {
-        color: #6b7280;
-        font-size: 0.97rem;
-      }
-    </style>
   </section>
 
   <!-- FINAL CALL TO ACTION SECTION (Minimal, Clean) -->
-  <section id="cta-final" class="ak-cta-final">
-    <div class="ak-cta-final-inner">
-      <h2>Confused about admissions? Let our experts help.</h2>
-      <a href="#footer" class="ak-cta-btn ak-cta-final-btn">Book Free Session</a>
+  <section id="cta-final" class="bg-gradient-to-r from-akblue via-akblue to-[#3949ab] pt-11 pb-9 relative">
+    <div class="max-w-[900px] mx-auto px-8 text-center">
+      <h2 class="text-[2rem] font-extrabold text-white mb-5 tracking-[.01em]">Confused about admissions? Let our experts help.</h2>
+      <a href="#footer" class="bg-white text-akblue px-9 py-4 rounded-lg font-bold text-[1.13rem] no-underline shadow-ak6 border-none mt-2 inline-block transition-colors duration-150 hover:bg-akbluelight hover:text-[#3949ab]">Book Free Session</a>
     </div>
-    <style>
-      .ak-cta-final {
-        background: linear-gradient(90deg, #1a237e 60%, #3949ab 100%);
-        padding: 2.7rem 0 2.2rem 0;
-        position: relative;
-      }
-      .ak-cta-final-inner {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        text-align: center;
-      }
-      .ak-cta-final h2 {
-        font-size: 2rem;
-        font-weight: 800;
-        color: #fff;
-        margin-bottom: 1.3rem;
-        letter-spacing: 0.01em;
-      }
-      .ak-cta-final-btn {
-        background: #fff;
-        color: #1a237e;
-        padding: 1rem 2.2rem;
-        border-radius: 8px;
-        font-weight: 700;
-        text-decoration: none;
-        font-size: 1.13rem;
-        box-shadow: 0 2px 8px rgba(26,35,126,0.08);
-        transition: background 0.18s, color 0.18s;
-        border: none;
-        margin-top: 0.5rem;
-        display: inline-block;
-      }
-      .ak-cta-final-btn:hover, .ak-cta-final-btn:focus {
-        background: #f6f8fc;
-        color: #3949ab;
-      }
-    </style>
   </section>
 
   <!-- FOOTER (Minimal, Clean) -->
-  <footer id="footer" class="ak-footer">
-    <div class="ak-footer-inner">
-      <div class="ak-footer-col ak-footer-brand">
-        <div class="ak-footer-logo">Admission Kart</div>
-        <p>Your trusted partner for college admissions in India &amp; abroad.</p>
-        <div class="ak-footer-social">
-          <a href="#" aria-label="Instagram"><span>📸</span></a>
-          <a href="#" aria-label="Facebook"><span>📘</span></a>
-          <a href="#" aria-label="LinkedIn"><span>🔗</span></a>
-          <a href="#" aria-label="YouTube"><span>▶️</span></a>
+  <footer id="footer" class="bg-akfooter text-white pt-11 pb-5 font-inter">
+    <div class="max-w-[1100px] mx-auto px-8 flex flex-wrap gap-10 justify-between">
+      <div class="min-w-[180px] flex-1 mb-5">
+        <div class="text-[1.3rem] font-extrabold mb-3 tracking-[.02em]">Admission Kart</div>
+        <p class="text-akfootertext text-[0.98rem] max-w-[260px] mb-5">Your trusted partner for college admissions in India &amp; abroad.</p>
+        <div class="flex gap-4 mt-1">
+          <a href="#" aria-label="Instagram" class="text-white text-[1.3rem] opacity-85 transition-opacity hover:opacity-100 no-underline"><span>📸</span></a>
+          <a href="#" aria-label="Facebook" class="text-white text-[1.3rem] opacity-85 transition-opacity hover:opacity-100 no-underline"><span>📘</span></a>
+          <a href="#" aria-label="LinkedIn" class="text-white text-[1.3rem] opacity-85 transition-opacity hover:opacity-100 no-underline"><span>🔗</span></a>
+          <a href="#" aria-label="YouTube" class="text-white text-[1.3rem] opacity-85 transition-opacity hover:opacity-100 no-underline"><span>▶️</span></a>
         </div>
       </div>
-      <div class="ak-footer-col ak-footer-links">
-        <div class="ak-footer-title">Quick Links</div>
-        <ul>
-          <li><a href="#services">Courses</a></li>
-          <li><a href="#showcase">Colleges</a></li>
-          <li><a href="#showcase">Exams</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#footer">Contact</a></li>
+      <div class="min-w-[180px] flex-1 mb-5">
+        <div class="font-bold mb-3 text-[1.05rem] tracking-[.01em]">Quick Links</div>
+        <ul class="list-none p-0 m-0 leading-[2.1]">
+          <li><a href="#services" class="text-akfootertext no-underline text-[1rem] transition-colors hover:text-white">Courses</a></li>
+          <li><a href="#showcase" class="text-akfootertext no-underline text-[1rem] transition-colors hover:text-white">Colleges</a></li>
+          <li><a href="#showcase" class="text-akfootertext no-underline text-[1rem] transition-colors hover:text-white">Exams</a></li>
+          <li><a href="#about" class="text-akfootertext no-underline text-[1rem] transition-colors hover:text-white">About Us</a></li>
+          <li><a href="#footer" class="text-akfootertext no-underline text-[1rem] transition-colors hover:text-white">Contact</a></li>
         </ul>
       </div>
-      <div class="ak-footer-col ak-footer-newsletter">
-        <div class="ak-footer-title">Newsletter</div>
-        <form onsubmit="event.preventDefault();alert('Thank you for subscribing!');">
-          <input type="email" required placeholder="Your email">
-          <button type="submit">Subscribe</button>
+      <div class="min-w-[180px] flex-1 mb-5">
+        <div class="font-bold mb-3 text-[1.05rem] tracking-[.01em]">Newsletter</div>
+        <form onsubmit="event.preventDefault();alert('Thank you for subscribing!');" class="flex gap-2 flex-wrap mt-1">
+          <input type="email" required placeholder="Your email" class="px-4 py-2.5 rounded-md border-none outline-none text-[1rem] flex-1 min-w-[120px] bg-white text-aktext" />
+          <button type="submit" class="bg-akyellow text-akblue font-bold px-5 py-2.5 rounded-md border-none cursor-pointer text-[1rem] transition-colors hover:bg-[#ffe082] hover:text-akblue">Subscribe</button>
         </form>
       </div>
     </div>
-    <div class="ak-footer-bottom">
+    <div class="text-center text-akfootertext text-[0.97rem] mt-8">
       &copy; 2024 Admission Kart. All rights reserved.
     </div>
-    <style>
-      .ak-footer {
-        background: #222e50;
-        color: #fff;
-        padding: 2.7rem 0 1.2rem 0;
-        font-family: 'Inter', 'Poppins', 'Roboto', Arial, sans-serif;
-      }
-      .ak-footer-inner {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2.5rem;
-        justify-content: space-between;
-      }
-      .ak-footer-col {
-        min-width: 180px;
-        flex: 1 1 220px;
-        margin-bottom: 1.2rem;
-      }
-      .ak-footer-logo {
-        font-size: 1.3rem;
-        font-weight: 800;
-        margin-bottom: 0.7rem;
-        letter-spacing: 0.02em;
-      }
-      .ak-footer-brand p {
-        color: #b3b8d8;
-        font-size: 0.98rem;
-        max-width: 260px;
-        margin-bottom: 1.2rem;
-      }
-      .ak-footer-social {
-        display: flex;
-        gap: 1rem;
-        margin-top: 0.2rem;
-      }
-      .ak-footer-social a {
-        color: #fff;
-        font-size: 1.3rem;
-        opacity: 0.85;
-        transition: opacity 0.15s;
-        text-decoration: none;
-      }
-      .ak-footer-social a:hover {
-        opacity: 1;
-      }
-      .ak-footer-title {
-        font-weight: 700;
-        margin-bottom: 0.7rem;
-        font-size: 1.05rem;
-        letter-spacing: 0.01em;
-      }
-      .ak-footer-links ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        line-height: 2.1;
-      }
-      .ak-footer-links ul li a {
-        color: #b3b8d8;
-        text-decoration: none;
-        font-size: 1rem;
-        transition: color 0.15s;
-      }
-      .ak-footer-links ul li a:hover {
-        color: #fff;
-      }
-      .ak-footer-newsletter form {
-        display: flex;
-        gap: 0.5rem;
-        flex-wrap: wrap;
-        margin-top: 0.2rem;
-      }
-      .ak-footer-newsletter input[type="email"] {
-        padding: 0.6rem 1rem;
-        border-radius: 5px;
-        border: none;
-        outline: none;
-        font-size: 1rem;
-        flex: 1 1 120px;
-        min-width: 120px;
-        background: #fff;
-        color: #232a36;
-      }
-      .ak-footer-newsletter button {
-        background: #fbc02d;
-        color: #1a237e;
-        font-weight: 700;
-        padding: 0.6rem 1.2rem;
-        border-radius: 5px;
-        border: none;
-        cursor: pointer;
-        font-size: 1rem;
-        transition: background 0.15s, color 0.15s;
-      }
-      .ak-footer-newsletter button:hover {
-        background: #ffe082;
-        color: #1a237e;
-      }
-      .ak-footer-bottom {
-        text-align: center;
-        color: #b3b8d8;
-        font-size: 0.97rem;
-        margin-top: 2rem;
-      }
-      @media (max-width: 800px) {
-        .ak-footer-inner {
-          flex-direction: column;
-          gap: 1.7rem;
-        }
-        .ak-footer-col {
-          min-width: 0;
-        }
-      }
-    </style>
   </footer>
-
 
   <!-- scripts -->
   <script type="module" src="/src/main.js"></script>
