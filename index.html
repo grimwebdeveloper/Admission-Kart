@@ -10,157 +10,362 @@
 
 <body>
   
-  <!-- HEADER (Sticky, Modern Academic) -->
+  <!-- HEADER (Minimal, Modern, Clean) -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <header id="main-header" class="sticky top-0 z-50 bg-white shadow-md font-inter transition-all duration-300" style="font-family: 'Inter', 'Poppins', 'Roboto', Arial, sans-serif;">
-    <div class="container mx-auto max-w-6xl flex items-center justify-between px-6 py-4">
+  <header id="main-header" class="ak-header">
+    <div class="ak-header-inner">
       <!-- Logo -->
-      <a href="#" class="flex items-center text-2xl font-extrabold text-blue-900 tracking-wide no-underline hover:opacity-90 transition-opacity duration-200">
-        <span class="mr-2 text-3xl">🎓</span> Admission Kart
+      <a href="#" class="ak-logo">
+        <span class="ak-logo-icon">🎓</span>
+        <span>Admission Kart</span>
       </a>
-      <!-- Mega Menu (Desktop) -->
-      <nav class="mega-menu hidden lg:flex flex-1 ml-8">
-        <ul class="flex gap-8 list-none m-0 p-0 font-medium text-blue-900">
+      <!-- Desktop Navigation -->
+      <nav class="mega-menu hidden lg:flex flex-1 ml-10">
+        <ul class="flex gap-10 list-none m-0 p-0 font-medium text-blue-900">
           <li class="menu-item relative group">
-            <button class="menu-btn bg-transparent border-none font-inherit cursor-pointer p-0 text-blue-900 hover:text-blue-700 transition-colors duration-150 focus:outline-none">Colleges</button>
-            <div class="dropdown absolute left-0 top-12 bg-white shadow-xl rounded-xl p-6 min-w-[400px] hidden group-hover:flex group-focus-within:flex animate-fadeIn" style="gap:2rem;">
-              <div class="flex gap-8">
+            <button class="menu-btn bg-transparent border-none font-sans cursor-pointer px-1 py-2 text-blue-900 hover:text-blue-700 transition-colors duration-150 focus:outline-none tracking-wide text-base" style="letter-spacing:0.01em;">Colleges</button>
+            <div class="dropdown absolute left-0 top-14 bg-white/95 shadow-2xl rounded-2xl p-8 min-w-[420px] hidden group-hover:flex group-focus-within:flex animate-fadeIn" style="gap:2.5rem; border: 1px solid #f0f2f7;">
+              <div class="flex gap-12">
                 <div>
-                  <strong class="block mb-2 text-blue-800">By State</strong>
-                  <ul class="list-none m-0 p-0 text-base text-gray-700 space-y-1">
-                    <li>Maharashtra</li>
-                    <li>Karnataka</li>
-                    <li>Tamil Nadu</li>
+                  <span class="block mb-3 text-blue-800 font-semibold text-sm uppercase tracking-wider">By State</span>
+                  <ul class="list-none m-0 p-0 text-base text-gray-600 space-y-2">
+                    <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Maharashtra</li>
+                    <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Karnataka</li>
+                    <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Tamil Nadu</li>
                   </ul>
                 </div>
                 <div>
-                  <strong class="block mb-2 text-blue-800">Top Private Colleges</strong>
-                  <ul class="list-none m-0 p-0 text-base text-gray-700 space-y-1">
-                    <li>VIT</li>
-                    <li>MIT-WPU</li>
-                    <li>Christ</li>
-                    <li>PES</li>
-                    <li>SRM</li>
-                    <li>Sathyabama</li>
+                  <span class="block mb-3 text-blue-800 font-semibold text-sm uppercase tracking-wider">Top Private Colleges</span>
+                  <ul class="list-none m-0 p-0 text-base text-gray-600 space-y-2">
+                    <li class="hover:bg-gray-100 rounded px-2 py-1 transition">VIT</li>
+                    <li class="hover:bg-gray-100 rounded px-2 py-1 transition">MIT-WPU</li>
+                    <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Christ</li>
+                    <li class="hover:bg-gray-100 rounded px-2 py-1 transition">PES</li>
+                    <li class="hover:bg-gray-100 rounded px-2 py-1 transition">SRM</li>
+                    <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Sathyabama</li>
                   </ul>
                 </div>
                 <div>
-                  <strong class="block mb-2 text-blue-800">Top Govt Colleges</strong>
-                  <ul class="list-none m-0 p-0 text-base text-gray-700 space-y-1">
-                    <li>IIT Bombay</li>
-                    <li>NIT Karnataka</li>
-                    <li>Anna University</li>
+                  <span class="block mb-3 text-blue-800 font-semibold text-sm uppercase tracking-wider">Top Govt Colleges</span>
+                  <ul class="list-none m-0 p-0 text-base text-gray-600 space-y-2">
+                    <li class="hover:bg-gray-100 rounded px-2 py-1 transition">IIT Bombay</li>
+                    <li class="hover:bg-gray-100 rounded px-2 py-1 transition">NIT Karnataka</li>
+                    <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Anna University</li>
                   </ul>
                 </div>
               </div>
             </div>
           </li>
           <li class="menu-item relative group">
-            <button class="menu-btn bg-transparent border-none font-inherit cursor-pointer p-0 text-blue-900 hover:text-blue-700 transition-colors duration-150 focus:outline-none">Courses</button>
-            <div class="dropdown absolute left-0 top-12 bg-white shadow-xl rounded-xl p-6 min-w-[220px] hidden group-hover:flex group-focus-within:flex animate-fadeIn">
-              <ul class="list-none m-0 p-0 text-base text-gray-700 space-y-1">
-                <li>Engineering (UG / PG)</li>
-                <li>Management (UG / PG)</li>
-                <li>Medical</li>
-                <li>Law</li>
-                <li>Design</li>
-                <li>Arts & Science</li>
+            <button class="menu-btn bg-transparent border-none font-sans cursor-pointer px-1 py-2 text-blue-900 hover:text-blue-700 transition-colors duration-150 focus:outline-none tracking-wide text-base" style="letter-spacing:0.01em;">Courses</button>
+            <div class="dropdown absolute left-0 top-14 bg-white/95 shadow-2xl rounded-2xl p-8 min-w-[240px] hidden group-hover:flex group-focus-within:flex animate-fadeIn" style="border: 1px solid #f0f2f7;">
+              <ul class="list-none m-0 p-0 text-base text-gray-600 space-y-2">
+                <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Engineering (UG / PG)</li>
+                <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Management (UG / PG)</li>
+                <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Medical</li>
+                <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Law</li>
+                <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Design</li>
+                <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Arts & Science</li>
               </ul>
             </div>
           </li>
           <li class="menu-item relative group">
-            <button class="menu-btn bg-transparent border-none font-inherit cursor-pointer p-0 text-blue-900 hover:text-blue-700 transition-colors duration-150 focus:outline-none">Exams</button>
-            <div class="dropdown absolute left-0 top-12 bg-white shadow-xl rounded-xl p-6 min-w-[220px] hidden group-hover:flex group-focus-within:flex animate-fadeIn">
-              <ul class="list-none m-0 p-0 text-base text-gray-700 space-y-1">
-                <li><strong>National:</strong> JEE, NEET, CUET</li>
-                <li><strong>State:</strong> MHT CET, KCET, AP EAMCET</li>
-                <li><strong>Abroad:</strong> SAT, IELTS, TOEFL</li>
+            <button class="menu-btn bg-transparent border-none font-sans cursor-pointer px-1 py-2 text-blue-900 hover:text-blue-700 transition-colors duration-150 focus:outline-none tracking-wide text-base" style="letter-spacing:0.01em;">Exams</button>
+            <div class="dropdown absolute left-0 top-14 bg-white/95 shadow-2xl rounded-2xl p-8 min-w-[240px] hidden group-hover:flex group-focus-within:flex animate-fadeIn" style="border: 1px solid #f0f2f7;">
+              <ul class="list-none m-0 p-0 text-base text-gray-600 space-y-2">
+                <li><span class="font-semibold text-blue-800">National:</span> JEE, NEET, CUET</li>
+                <li><span class="font-semibold text-blue-800">State:</span> MHT CET, KCET, AP EAMCET</li>
+                <li><span class="font-semibold text-blue-800">Abroad:</span> SAT, IELTS, TOEFL</li>
               </ul>
             </div>
           </li>
           <li class="menu-item relative group">
-            <button class="menu-btn bg-transparent border-none font-inherit cursor-pointer p-0 text-blue-900 hover:text-blue-700 transition-colors duration-150 focus:outline-none">Study Abroad</button>
-            <div class="dropdown absolute left-0 top-12 bg-white shadow-xl rounded-xl p-6 min-w-[220px] hidden group-hover:flex group-focus-within:flex animate-fadeIn">
-              <ul class="list-none m-0 p-0 text-base text-gray-700 space-y-1">
-                <li><strong>By Country:</strong> USA, UK, Canada, Germany</li>
+            <button class="menu-btn bg-transparent border-none font-sans cursor-pointer px-1 py-2 text-blue-900 hover:text-blue-700 transition-colors duration-150 focus:outline-none tracking-wide text-base" style="letter-spacing:0.01em;">Study Abroad</button>
+            <div class="dropdown absolute left-0 top-14 bg-white/95 shadow-2xl rounded-2xl p-8 min-w-[240px] hidden group-hover:flex group-focus-within:flex animate-fadeIn" style="border: 1px solid #f0f2f7;">
+              <ul class="list-none m-0 p-0 text-base text-gray-600 space-y-2">
+                <li><span class="font-semibold text-blue-800">By Country:</span> USA, UK, Canada, Germany</li>
                 <li>UG | PG Admissions</li>
                 <li>Visa Help, SOP, LOR</li>
               </ul>
             </div>
           </li>
           <li class="menu-item relative group">
-            <button class="menu-btn bg-transparent border-none font-inherit cursor-pointer p-0 text-blue-900 hover:text-blue-700 transition-colors duration-150 focus:outline-none">Counseling</button>
-            <div class="dropdown absolute left-0 top-12 bg-white shadow-xl rounded-xl p-6 min-w-[180px] hidden group-hover:flex group-focus-within:flex animate-fadeIn">
-              <ul class="list-none m-0 p-0 text-base text-gray-700 space-y-1">
-                <li>Book Session</li>
-                <li>Career Guidance</li>
-                <li>Admission Process</li>
+            <button class="menu-btn bg-transparent border-none font-sans cursor-pointer px-1 py-2 text-blue-900 hover:text-blue-700 transition-colors duration-150 focus:outline-none tracking-wide text-base" style="letter-spacing:0.01em;">Counseling</button>
+            <div class="dropdown absolute left-0 top-14 bg-white/95 shadow-2xl rounded-2xl p-8 min-w-[200px] hidden group-hover:flex group-focus-within:flex animate-fadeIn" style="border: 1px solid #f0f2f7;">
+              <ul class="list-none m-0 p-0 text-base text-gray-600 space-y-2">
+                <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Book Session</li>
+                <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Career Guidance</li>
+                <li class="hover:bg-gray-100 rounded px-2 py-1 transition">Admission Process</li>
               </ul>
             </div>
           </li>
         </ul>
       </nav>
-      <!-- Book Consultation CTA -->
-      <a href="#cta-final" class="cta-btn bg-blue-900 text-white px-6 py-2 rounded-md font-semibold shadow hover:bg-blue-800 transition-colors duration-200 hidden sm:inline-block ml-4">Book Consultation</a>
+      <!-- CTA Button (Desktop) -->
+      <a href="#cta-final" class="ak-cta-btn ak-cta-desktop">Book Consultation</a>
       <!-- Hamburger (Mobile) -->
-      <button id="mobile-menu-btn" aria-label="Open menu" class="bg-transparent border-none flex flex-col gap-1.5 cursor-pointer ml-4 lg:hidden">
-        <span class="block w-7 h-1 rounded bg-blue-900"></span>
-        <span class="block w-7 h-1 rounded bg-blue-900"></span>
-        <span class="block w-5 h-1 rounded bg-blue-900"></span>
+      <button id="mobile-menu-btn" aria-label="Open menu" class="ak-hamburger">
+        <span></span><span></span><span></span>
       </button>
     </div>
-    <!-- Mobile Menu Drawer -->
-    <div id="mobile-menu-drawer" class="fixed top-0 right-0 w-4/5 max-w-xs h-full bg-white shadow-2xl z-50 p-6 hidden flex-col animate-slideIn">
-      <button id="mobile-menu-close" aria-label="Close menu" class="absolute top-4 right-4 text-3xl text-blue-900 bg-transparent border-none cursor-pointer">&times;</button>
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu-drawer" class="ak-mobile-drawer">
+      <button id="mobile-menu-close" aria-label="Close menu" class="ak-mobile-close">&times;</button>
       <nav>
-        <ul class="list-none p-0 mt-12 flex flex-col gap-6 font-semibold text-blue-900">
-          <li><a href="#" class="hover:text-blue-700 transition-colors">Colleges</a></li>
-          <li><a href="#" class="hover:text-blue-700 transition-colors">Courses</a></li>
-          <li><a href="#" class="hover:text-blue-700 transition-colors">Exams</a></li>
-          <li><a href="#" class="hover:text-blue-700 transition-colors">Study Abroad</a></li>
-          <li><a href="#" class="hover:text-blue-700 transition-colors">Counseling</a></li>
+        <ul>
+          <li><a href="#">Colleges</a></li>
+          <li><a href="#">Courses</a></li>
+          <li><a href="#">Exams</a></li>
+          <li><a href="#">Study Abroad</a></li>
+          <li><a href="#">Counseling</a></li>
         </ul>
-        <a href="#cta-final" class="cta-btn block mt-8 bg-blue-900 text-white px-6 py-2 rounded-md font-semibold shadow hover:bg-blue-800 transition-colors duration-200">Book Consultation</a>
+        <a href="#cta-final" class="ak-cta-btn ak-cta-mobile">Book Consultation</a>
       </nav>
     </div>
     <style>
       :root {
         --ak-blue: #1a237e;
-        --ak-blue-light: #e3e9fc;
-        --ak-gray: #f5f7fa;
-        --ak-gray-dark: #b3b8d8;
+        --ak-blue-light: #f6f8fc;
+        --ak-gray: #f8fafc;
+        --ak-gray-dark: #dbe3ea;
         --ak-yellow: #fbc02d;
+        --ak-text: #232a36;
+        --ak-radius: 14px;
+        --ak-shadow: 0 2px 16px rgba(26,35,126,0.06);
       }
-      .font-inter { font-family: 'Inter', 'Poppins', 'Roboto', Arial, sans-serif; }
-      .animate-fadeIn { animation: fadeIn 0.25s cubic-bezier(.4,0,.2,1); }
-      .animate-slideIn { animation: slideInDrawer 0.22s cubic-bezier(.4,0,.2,1); }
+      body, .font-inter {
+        font-family: 'Inter', 'Poppins', 'Roboto', Arial, sans-serif;
+        background: var(--ak-blue-light);
+        color: var(--ak-text);
+        letter-spacing: 0.01em;
+      }
+      .ak-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: #fff;
+        box-shadow: 0 2px 12px rgba(26,35,126,0.04);
+        transition: box-shadow 0.2s;
+      }
+      .ak-header-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem 2rem;
+        min-height: 72px;
+      }
+      .ak-logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.7rem;
+        font-weight: 800;
+        color: var(--ak-blue);
+        text-decoration: none;
+        gap: 0.5rem;
+        letter-spacing: 0.02em;
+      }
+      .ak-logo-icon {
+        font-size: 2.1rem;
+        margin-right: 0.1em;
+      }
+      .ak-nav {
+        display: none;
+      }
+      .ak-nav ul {
+        display: flex;
+        gap: 2.2rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .ak-nav-item {
+        position: relative;
+      }
+      .ak-nav-link {
+        background: none;
+        border: none;
+        font: inherit;
+        color: var(--ak-blue);
+        font-weight: 600;
+        font-size: 1.05rem;
+        padding: 0.2rem 0;
+        cursor: pointer;
+        transition: color 0.15s;
+        outline: none;
+        letter-spacing: 0.01em;
+      }
+      .ak-nav-link:hover,
+      .ak-nav-link:focus {
+        color: #3949ab;
+      }
+      .ak-dropdown {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 2.5rem;
+        background: #fff;
+        box-shadow: var(--ak-shadow);
+        border-radius: var(--ak-radius);
+        padding: 1.3rem 1.5rem;
+        min-width: 220px;
+        z-index: 10;
+        gap: 2.5rem;
+        font-size: 1rem;
+        white-space: nowrap;
+      }
+      .ak-dropdown-wide {
+        display: none;
+        min-width: 420px;
+        display: flex;
+        gap: 2.5rem;
+      }
+      .ak-dropdown-title {
+        display: block;
+        font-weight: 700;
+        color: var(--ak-blue);
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+        letter-spacing: 0.01em;
+      }
+      .ak-dropdown ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        color: #4a5568;
+        font-size: 0.98rem;
+        line-height: 1.7;
+      }
+      .ak-has-dropdown:hover > .ak-dropdown,
+      .ak-has-dropdown:focus-within > .ak-dropdown {
+        display: block;
+        animation: fadeIn 0.18s cubic-bezier(.4,0,.2,1);
+      }
+      .ak-has-dropdown:hover > .ak-dropdown-wide,
+      .ak-has-dropdown:focus-within > .ak-dropdown-wide {
+        display: flex;
+        animation: fadeIn 0.18s cubic-bezier(.4,0,.2,1);
+      }
       @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(12px);}
+        from { opacity: 0; transform: translateY(10px);}
         to { opacity: 1; transform: translateY(0);}
       }
+      .ak-cta-btn {
+        background: var(--ak-blue);
+        color: #fff;
+        padding: 0.7rem 1.7rem;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1.05rem;
+        text-decoration: none;
+        box-shadow: 0 2px 8px rgba(26,35,126,0.07);
+        border: none;
+        transition: background 0.18s, color 0.18s;
+        letter-spacing: 0.01em;
+        display: inline-block;
+      }
+      .ak-cta-btn:hover, .ak-cta-btn:focus {
+        background: #3949ab;
+        color: #fff;
+      }
+      .ak-cta-desktop {
+        margin-left: 2rem;
+        display: none;
+      }
+      .ak-hamburger {
+        background: none;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        cursor: pointer;
+        padding: 0.3rem 0.2rem;
+        margin-left: 1.2rem;
+        width: 2.2rem;
+        height: 2.2rem;
+        justify-content: center;
+      }
+      .ak-hamburger span {
+        display: block;
+        height: 3px;
+        width: 28px;
+        background: var(--ak-blue);
+        border-radius: 2px;
+        transition: all 0.2s;
+      }
+      .ak-hamburger span:nth-child(3) {
+        width: 20px;
+      }
+      /* Mobile Drawer */
+      .ak-mobile-drawer {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 82vw;
+        max-width: 340px;
+        height: 100vh;
+        background: #fff;
+        box-shadow: 0 0 32px rgba(26,35,126,0.10);
+        z-index: 100;
+        flex-direction: column;
+        padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+        animation: slideInDrawer 0.22s cubic-bezier(.4,0,.2,1);
+      }
+      .ak-mobile-drawer.open {
+        display: flex !important;
+      }
+      .ak-mobile-close {
+        position: absolute;
+        top: 1.2rem;
+        right: 1.2rem;
+        font-size: 2.2rem;
+        background: none;
+        border: none;
+        color: var(--ak-blue);
+        cursor: pointer;
+        line-height: 1;
+      }
+      .ak-mobile-drawer nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 3.5rem 0 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.7rem;
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: var(--ak-blue);
+      }
+      .ak-mobile-drawer nav ul li a {
+        color: var(--ak-blue);
+        text-decoration: none;
+        transition: color 0.15s;
+      }
+      .ak-mobile-drawer nav ul li a:hover {
+        color: #3949ab;
+      }
+      .ak-cta-mobile {
+        margin-top: 2.5rem;
+        width: 100%;
+        text-align: center;
+      }
       @keyframes slideInDrawer {
-        from { right: -320px; opacity: 0; }
+        from { right: -340px; opacity: 0; }
         to { right: 0; opacity: 1; }
       }
-      .menu-item:focus-within .dropdown,
-      .menu-item:hover .dropdown {
-        display: flex !important;
-      }
-      .dropdown { display: none; }
+      /* Responsive */
       @media (min-width: 1024px) {
-        .mega-menu { display: flex !important; }
-        #mobile-menu-btn { display: none !important; }
+        .ak-nav { display: block; }
+        .ak-hamburger { display: none; }
+        .ak-cta-desktop { display: inline-block; }
+        .ak-mobile-drawer { display: none !important; }
       }
       @media (max-width: 1023px) {
-        .mega-menu { display: none !important; }
-        #mobile-menu-btn { display: flex !important; }
-        .cta-btn.sm\:inline-block { display: none !important; }
-      }
-      #mobile-menu-drawer.open {
-        display: flex !important;
-      }
-      .cta-btn:hover {
-        background: #3949ab !important;
+        .ak-nav { display: none !important; }
+        .ak-hamburger { display: flex !important; }
+        .ak-cta-desktop { display: none !important; }
       }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -173,10 +378,10 @@
         if(btn && drawer && closeBtn) {
           btn.onclick = function() {
             drawer.classList.add('open');
-            gsap.fromTo(drawer, {x: 320, opacity: 0}, {x: 0, opacity: 1, duration: 0.22, ease: "power2.out"});
+            gsap.fromTo(drawer, {x: 340, opacity: 0}, {x: 0, opacity: 1, duration: 0.22, ease: "power2.out"});
           };
           closeBtn.onclick = function() {
-            gsap.to(drawer, {x: 320, opacity: 0, duration: 0.18, ease: "power2.in", onComplete: function() {
+            gsap.to(drawer, {x: 340, opacity: 0, duration: 0.18, ease: "power2.in", onComplete: function() {
               drawer.classList.remove('open');
               drawer.style.transform = '';
               drawer.style.opacity = '';
@@ -184,7 +389,7 @@
           };
           drawer.onclick = function(e) {
             if(e.target === drawer) {
-              gsap.to(drawer, {x: 320, opacity: 0, duration: 0.18, ease: "power2.in", onComplete: function() {
+              gsap.to(drawer, {x: 340, opacity: 0, duration: 0.18, ease: "power2.in", onComplete: function() {
                 drawer.classList.remove('open');
                 drawer.style.transform = '';
                 drawer.style.opacity = '';
@@ -196,31 +401,30 @@
     </script>
   </header>
 
-  <!-- HERO SECTION -->
-  <section id="hero" class="bg-gradient-to-r from-[var(--ak-blue-light)] to-white py-16 pb-10 font-inter">
-    <div class="container mx-auto max-w-6xl flex flex-wrap items-center justify-between px-6">
+  <!-- HERO SECTION (Minimal, Clean) -->
+  <section id="hero" class="ak-hero">
+    <div class="ak-hero-inner">
       <!-- Left: Text -->
-      <div class="flex-1 min-w-[320px] max-w-xl">
-        <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight text-blue-900 mb-5 animate-heroFadeIn">
+      <div class="ak-hero-text">
+        <h1>
           Get Expert Guidance for College Admissions in India &amp; Abroad
         </h1>
-        <p class="text-lg text-gray-700 max-w-md mb-8">
+        <p>
           Personalized counseling, trusted by 10,000+ students. Your dream college is just a step away!
         </p>
-        <div class="flex gap-4 flex-wrap">
-          <a href="#cta-final" class="cta-btn bg-blue-900 text-white px-7 py-3 rounded-md font-semibold shadow hover:bg-blue-800 transition-colors duration-200">Get Admission Help</a>
-          <a href="#cta-final" class="cta-btn bg-white text-blue-900 px-7 py-3 rounded-md font-semibold border-2 border-blue-900 hover:bg-blue-50 transition-colors duration-200">Book Free Counseling</a>
+        <div class="ak-hero-cta">
+          <a href="#cta-final" class="ak-cta-btn">Get Admission Help</a>
+          <a href="#cta-final" class="ak-cta-btn ak-cta-outline">Book Free Counseling</a>
         </div>
       </div>
       <!-- Right: Illustration -->
-      <div class="flex-1 min-w-[260px] flex justify-center items-center mt-10 sm:mt-0">
-        <!-- SVG illustration: Counselor & student -->
-        <svg width="270" height="210" viewBox="0 0 270 210" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Counselor and student illustration" class="animate-heroSvg">
+      <div class="ak-hero-illus">
+        <svg width="270" height="210" viewBox="0 0 270 210" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Counselor and student illustration" class="ak-hero-svg">
           <ellipse cx="135" cy="200" rx="110" ry="10" fill="#e3e9fc"/>
-          <circle cx="80" cy="90" r="38" fill="#fff" stroke="#b3b8d8" stroke-width="3"/>
-          <circle cx="190" cy="90" r="38" fill="#fff" stroke="#b3b8d8" stroke-width="3"/>
-          <ellipse cx="80" cy="120" rx="28" ry="12" fill="#b3b8d8" opacity="0.15"/>
-          <ellipse cx="190" cy="120" rx="28" ry="12" fill="#b3b8d8" opacity="0.15"/>
+          <circle cx="80" cy="90" r="38" fill="#fff" stroke="#dbe3ea" stroke-width="3"/>
+          <circle cx="190" cy="90" r="38" fill="#fff" stroke="#dbe3ea" stroke-width="3"/>
+          <ellipse cx="80" cy="120" rx="28" ry="12" fill="#b3b8d8" opacity="0.12"/>
+          <ellipse cx="190" cy="120" rx="28" ry="12" fill="#b3b8d8" opacity="0.12"/>
           <!-- Student -->
           <circle cx="80" cy="85" r="18" fill="#90caf9"/>
           <rect x="65" y="105" width="30" height="35" rx="10" fill="#1976d2"/>
@@ -228,251 +432,743 @@
           <circle cx="190" cy="85" r="18" fill="#ffe082"/>
           <rect x="175" y="105" width="30" height="35" rx="10" fill="#fbc02d"/>
           <!-- Desk -->
-          <rect x="60" y="140" width="140" height="18" rx="6" fill="#b3b8d8"/>
+          <rect x="60" y="140" width="140" height="18" rx="6" fill="#dbe3ea"/>
         </svg>
       </div>
     </div>
     <style>
-      @keyframes heroFadeIn {
-        from { opacity: 0; transform: translateY(30px);}
-        to { opacity: 1; transform: translateY(0);}
+      .ak-hero {
+        background: linear-gradient(90deg, var(--ak-blue-light) 60%, #fff 100%);
+        padding: 5.5rem 0 3.5rem 0;
+        font-family: 'Inter', 'Poppins', 'Roboto', Arial, sans-serif;
       }
-      .animate-heroFadeIn { animation: heroFadeIn 0.7s cubic-bezier(.4,0,.2,1) 0.1s both; }
+      .ak-hero-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2.5rem;
+        padding: 0 2rem;
+      }
+      .ak-hero-text {
+        flex: 1 1 320px;
+        max-width: 520px;
+        min-width: 280px;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      .ak-hero-text h1 {
+        font-size: 2.3rem;
+        font-weight: 800;
+        color: var(--ak-blue);
+        margin: 0 0 0.5rem 0;
+        line-height: 1.18;
+        letter-spacing: 0.01em;
+      }
+      @media (min-width: 640px) {
+        .ak-hero-text h1 { font-size: 2.8rem; }
+      }
+      .ak-hero-text p {
+        font-size: 1.13rem;
+        color: #4a5568;
+        margin: 0 0 1.2rem 0;
+        max-width: 420px;
+        line-height: 1.6;
+      }
+      .ak-hero-cta {
+        display: flex;
+        gap: 1.1rem;
+        flex-wrap: wrap;
+      }
+      .ak-cta-outline {
+        background: #fff;
+        color: var(--ak-blue);
+        border: 2px solid var(--ak-blue);
+        box-shadow: none;
+      }
+      .ak-cta-outline:hover, .ak-cta-outline:focus {
+        background: #f6f8fc;
+        color: #3949ab;
+      }
+      .ak-hero-illus {
+        flex: 1 1 260px;
+        min-width: 220px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2.5rem;
+      }
+      @media (min-width: 640px) {
+        .ak-hero-illus { margin-top: 0; }
+      }
+      .ak-hero-svg {
+        width: 270px;
+        height: 210px;
+        animation: heroSvg 0.7s cubic-bezier(.4,0,.2,1) 0.3s both;
+      }
       @keyframes heroSvg {
         0% { opacity: 0; transform: scale(0.95);}
         100% { opacity: 1; transform: scale(1);}
       }
-      .animate-heroSvg { animation: heroSvg 0.7s cubic-bezier(.4,0,.2,1) 0.3s both; }
     </style>
   </section>
 
-  <!-- ABOUT ADMISSION KART -->
-  <section id="about" style="background:#fff;padding:3rem 0;">
-    <div class="container" style="max-width:900px;margin:0 auto;padding:0 2rem;text-align:center;">
-      <h2 style="font-size:2rem;font-weight:700;color:#1a237e;margin-bottom:1rem;">About Admission Kart</h2>
-      <p style="font-size:1.1rem;color:#333;max-width:600px;margin:0 auto 1.5rem;">
+  <!-- ABOUT ADMISSION KART (Minimal, Clean) -->
+  <section id="about" class="ak-about">
+    <div class="ak-about-inner">
+      <h2>About Admission Kart</h2>
+      <p>
         Admission Kart is your trusted partner for college admissions in India and abroad. We simplify the process with expert counseling, up-to-date information, and end-to-end support for students and parents.
       </p>
-      <div style="display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;margin-top:2rem;">
-        <div style="min-width:120px;">
-          <div style="font-size:2rem;color:#1976d2;font-weight:700;">8+</div>
-          <div style="color:#555;">Years Experience</div>
+      <div class="ak-about-stats">
+        <div>
+          <div class="ak-about-stat-num">8+</div>
+          <div class="ak-about-stat-label">Years Experience</div>
         </div>
-        <div style="min-width:120px;">
-          <div style="font-size:2rem;color:#1976d2;font-weight:700;">10,000+</div>
-          <div style="color:#555;">Students Helped</div>
+        <div>
+          <div class="ak-about-stat-num">10,000+</div>
+          <div class="ak-about-stat-label">Students Helped</div>
         </div>
-        <div style="min-width:120px;">
-          <div style="font-size:2rem;color:#1976d2;font-weight:700;">98%</div>
-          <div style="color:#555;">Success Rate</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- OUR SERVICES OVERVIEW -->
-  <section id="services" style="background:#f5f7fa;padding:3rem 0;">
-    <div class="container" style="max-width:1100px;margin:0 auto;padding:0 2rem;">
-      <h2 style="font-size:2rem;font-weight:700;color:#1a237e;text-align:center;margin-bottom:2.5rem;">Our Services</h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;">
-        <div class="service-card" style="background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(26,35,126,0.06);padding:2rem 1.2rem;text-align:center;transition:transform 0.15s;">
-          <div style="font-size:2.2rem;color:#1976d2;margin-bottom:0.7rem;">🎯</div>
-          <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:0.5rem;">Admission Help</h3>
-          <p style="color:#555;">End-to-end support for college applications, documentation, and deadlines.</p>
-        </div>
-        <div class="service-card" style="background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(26,35,126,0.06);padding:2rem 1.2rem;text-align:center;transition:transform 0.15s;">
-          <div style="font-size:2.2rem;color:#1976d2;margin-bottom:0.7rem;">🧑‍💼</div>
-          <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:0.5rem;">Counseling</h3>
-          <p style="color:#555;">Personalized guidance to help you choose the right course and college.</p>
-        </div>
-        <div class="service-card" style="background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(26,35,126,0.06);padding:2rem 1.2rem;text-align:center;transition:transform 0.15s;">
-          <div style="font-size:2.2rem;color:#1976d2;margin-bottom:0.7rem;">📚</div>
-          <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:0.5rem;">Course &amp; College Guide</h3>
-          <p style="color:#555;">Comprehensive information on top courses and colleges in India &amp; abroad.</p>
-        </div>
-        <div class="service-card" style="background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(26,35,126,0.06);padding:2rem 1.2rem;text-align:center;transition:transform 0.15s;">
-          <div style="font-size:2.2rem;color:#1976d2;margin-bottom:0.7rem;">📝</div>
-          <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:0.5rem;">Exam Assistance</h3>
-          <p style="color:#555;">Updates, tips, and resources for major entrance exams.</p>
-        </div>
-        <div class="service-card" style="background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(26,35,126,0.06);padding:2rem 1.2rem;text-align:center;transition:transform 0.15s;">
-          <div style="font-size:2.2rem;color:#1976d2;margin-bottom:0.7rem;">🌏</div>
-          <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:0.5rem;">Study Abroad</h3>
-          <p style="color:#555;">Guidance for overseas admissions, visas, SOPs, and more.</p>
+        <div>
+          <div class="ak-about-stat-num">98%</div>
+          <div class="ak-about-stat-label">Success Rate</div>
         </div>
       </div>
     </div>
     <style>
-      .service-card:hover {
-        transform: translateY(-6px) scale(1.03);
-        box-shadow:0 6px 24px rgba(26,35,126,0.10);
+      .ak-about {
+        background: #fff;
+        padding: 3.5rem 0 3rem 0;
+      }
+      .ak-about-inner {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        text-align: center;
+      }
+      .ak-about h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--ak-blue);
+        margin-bottom: 1.1rem;
+        letter-spacing: 0.01em;
+      }
+      .ak-about p {
+        font-size: 1.13rem;
+        color: #3a3a3a;
+        max-width: 540px;
+        margin: 0 auto 2.2rem auto;
+        line-height: 1.7;
+      }
+      .ak-about-stats {
+        display: flex;
+        justify-content: center;
+        gap: 3.5rem;
+        flex-wrap: wrap;
+        margin-top: 2.2rem;
+      }
+      .ak-about-stats > div {
+        min-width: 120px;
+      }
+      .ak-about-stat-num {
+        font-size: 2.1rem;
+        color: #1976d2;
+        font-weight: 800;
+        margin-bottom: 0.3rem;
+      }
+      .ak-about-stat-label {
+        color: #6b7280;
+        font-size: 1rem;
+        letter-spacing: 0.01em;
       }
     </style>
   </section>
 
-  <!-- TOP COLLEGES / EXAMS / COURSES SHOWCASE -->
-  <section id="showcase" class="bg-white py-10 font-inter">
-    <div class="container max-w-5xl mx-auto px-6">
-      <h2 class="text-2xl font-bold text-blue-900 text-center mb-6">Top Colleges, Exams &amp; Courses</h2>
-      <div class="carousel flex overflow-x-auto gap-6 pb-4 scroll-snap-x scroll-snap-mandatory">
-        <!-- Colleges -->
-        <div class="carousel-card min-w-[180px] flex-none bg-[var(--ak-gray)] rounded-xl p-5 text-center shadow-md scroll-snap-align-start transition-transform duration-150 hover:scale-105 hover:shadow-xl">
-          <div class="text-2xl">🏫</div>
-          <div class="font-bold text-blue-700">VIT</div>
-          <div class="text-sm text-gray-600">Vellore</div>
+  <!-- OUR SERVICES OVERVIEW (Minimal, Clean) -->
+  <section id="services" class="ak-services">
+    <div class="ak-services-inner">
+      <h2>Our Services</h2>
+      <div class="ak-services-grid">
+        <div class="ak-service-card">
+          <div class="ak-service-icon">🎯</div>
+          <h3>Admission Help</h3>
+          <p>End-to-end support for college applications, documentation, and deadlines.</p>
         </div>
-        <div class="carousel-card min-w-[180px] flex-none bg-[var(--ak-gray)] rounded-xl p-5 text-center shadow-md scroll-snap-align-start transition-transform duration-150 hover:scale-105 hover:shadow-xl">
-          <div class="text-2xl">🏫</div>
-          <div class="font-bold text-blue-700">Christ</div>
-          <div class="text-sm text-gray-600">Bangalore</div>
+        <div class="ak-service-card">
+          <div class="ak-service-icon">🧑‍💼</div>
+          <h3>Counseling</h3>
+          <p>Personalized guidance to help you choose the right course and college.</p>
         </div>
-        <div class="carousel-card min-w-[180px] flex-none bg-[var(--ak-gray)] rounded-xl p-5 text-center shadow-md scroll-snap-align-start transition-transform duration-150 hover:scale-105 hover:shadow-xl">
-          <div class="text-2xl">🏫</div>
-          <div class="font-bold text-blue-700">Symbiosis</div>
-          <div class="text-sm text-gray-600">Pune</div>
+        <div class="ak-service-card">
+          <div class="ak-service-icon">📚</div>
+          <h3>Course &amp; College Guide</h3>
+          <p>Comprehensive information on top courses and colleges in India &amp; abroad.</p>
         </div>
-        <div class="carousel-card min-w-[180px] flex-none bg-[var(--ak-gray)] rounded-xl p-5 text-center shadow-md scroll-snap-align-start transition-transform duration-150 hover:scale-105 hover:shadow-xl">
-          <div class="text-2xl">🏫</div>
-          <div class="font-bold text-blue-700">IIT Bombay</div>
-          <div class="text-sm text-gray-600">Mumbai</div>
+        <div class="ak-service-card">
+          <div class="ak-service-icon">📝</div>
+          <h3>Exam Assistance</h3>
+          <p>Updates, tips, and resources for major entrance exams.</p>
         </div>
-        <div class="carousel-card min-w-[180px] flex-none bg-[var(--ak-gray)] rounded-xl p-5 text-center shadow-md scroll-snap-align-start transition-transform duration-150 hover:scale-105 hover:shadow-xl">
-          <div class="text-2xl">🏫</div>
-          <div class="font-bold text-blue-700">SRM</div>
-          <div class="text-sm text-gray-600">Chennai</div>
-        </div>
-        <!-- Exams -->
-        <div class="carousel-card min-w-[180px] flex-none bg-orange-50 rounded-xl p-5 text-center shadow-md scroll-snap-align-start transition-transform duration-150 hover:scale-105 hover:shadow-xl">
-          <div class="text-2xl">📝</div>
-          <div class="font-bold text-orange-600">JEE</div>
-        </div>
-        <div class="carousel-card min-w-[180px] flex-none bg-orange-50 rounded-xl p-5 text-center shadow-md scroll-snap-align-start transition-transform duration-150 hover:scale-105 hover:shadow-xl">
-          <div class="text-2xl">📝</div>
-          <div class="font-bold text-orange-600">CUET</div>
-        </div>
-        <div class="carousel-card min-w-[180px] flex-none bg-orange-50 rounded-xl p-5 text-center shadow-md scroll-snap-align-start transition-transform duration-150 hover:scale-105 hover:shadow-xl">
-          <div class="text-2xl">📝</div>
-          <div class="font-bold text-orange-600">NEET</div>
-        </div>
-        <!-- Courses -->
-        <div class="carousel-card min-w-[180px] flex-none bg-green-50 rounded-xl p-5 text-center shadow-md scroll-snap-align-start transition-transform duration-150 hover:scale-105 hover:shadow-xl">
-          <div class="text-2xl">🎓</div>
-          <div class="font-bold text-green-700">BBA</div>
-        </div>
-        <div class="carousel-card min-w-[180px] flex-none bg-green-50 rounded-xl p-5 text-center shadow-md scroll-snap-align-start transition-transform duration-150 hover:scale-105 hover:shadow-xl">
-          <div class="text-2xl">🎓</div>
-          <div class="font-bold text-green-700">MBA</div>
-        </div>
-        <div class="carousel-card min-w-[180px] flex-none bg-green-50 rounded-xl p-5 text-center shadow-md scroll-snap-align-start transition-transform duration-150 hover:scale-105 hover:shadow-xl">
-          <div class="text-2xl">🎓</div>
-          <div class="font-bold text-green-700">B.Tech</div>
+        <div class="ak-service-card">
+          <div class="ak-service-icon">🌏</div>
+          <h3>Study Abroad</h3>
+          <p>Guidance for overseas admissions, visas, SOPs, and more.</p>
         </div>
       </div>
-      <style>
-        .carousel::-webkit-scrollbar { height: 8px; background: #f5f7fa; }
-        .carousel::-webkit-scrollbar-thumb { background: #b3b8d8; border-radius: 4px; }
-        .carousel { scroll-snap-type: x mandatory; }
-        .carousel-card { scroll-snap-align: start; }
-      </style>
     </div>
+    <style>
+      .ak-services {
+        background: var(--ak-gray);
+        padding: 3.5rem 0 3rem 0;
+      }
+      .ak-services-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+      .ak-services h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--ak-blue);
+        text-align: center;
+        margin-bottom: 2.5rem;
+        letter-spacing: 0.01em;
+      }
+      .ak-services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2.2rem;
+      }
+      .ak-service-card {
+        background: #fff;
+        border-radius: var(--ak-radius);
+        box-shadow: var(--ak-shadow);
+        padding: 2.2rem 1.3rem 1.7rem 1.3rem;
+        text-align: center;
+        transition: transform 0.15s, box-shadow 0.15s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.7rem;
+      }
+      .ak-service-card:hover {
+        transform: translateY(-6px) scale(1.03);
+        box-shadow: 0 8px 32px rgba(26,35,126,0.10);
+      }
+      .ak-service-icon {
+        font-size: 2.2rem;
+        color: #1976d2;
+        margin-bottom: 0.5rem;
+      }
+      .ak-service-card h3 {
+        font-size: 1.13rem;
+        font-weight: 700;
+        margin-bottom: 0.3rem;
+        color: var(--ak-blue);
+      }
+      .ak-service-card p {
+        color: #5a5a5a;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+    </style>
   </section>
 
-  <!-- TESTIMONIALS & TRUST MARKERS -->
-  <section id="testimonials" class="bg-[var(--ak-gray)] py-12 font-inter">
-    <div class="container max-w-5xl mx-auto px-6">
-      <h2 class="text-2xl font-bold text-blue-900 text-center mb-8">What Our Students Say</h2>
-      <div class="flex flex-wrap gap-8 justify-center">
-        <div class="testimonial-card bg-white rounded-xl shadow-md p-6 max-w-xs flex-1 transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-xl">
-          <div class="flex items-center gap-3 mb-3">
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student testimonial" class="w-12 h-12 rounded-full object-cover">
-            <div>
-              <div class="font-bold text-blue-700">Aditi Sharma</div>
-              <div class="text-sm text-gray-600">B.Tech, VIT</div>
-            </div>
-          </div>
-          <p class="text-gray-800 text-base">Admission Kart made my college application journey stress-free. The counselors were always available and guided me at every step!</p>
+  <!-- TOP COLLEGES / EXAMS / COURSES SHOWCASE (Minimal, Clean) -->
+  <section id="showcase" class="ak-showcase">
+    <div class="ak-showcase-inner">
+      <h2>Top Colleges, Exams &amp; Courses</h2>
+      <div class="ak-carousel">
+        <!-- Colleges -->
+        <div class="ak-carousel-card ak-card-college">
+          <div class="ak-card-emoji">🏫</div>
+          <div class="ak-card-title">VIT</div>
+          <div class="ak-card-sub">Vellore</div>
         </div>
-        <div class="testimonial-card bg-white rounded-xl shadow-md p-6 max-w-xs flex-1 transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-xl">
-          <div class="flex items-center gap-3 mb-3">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student testimonial" class="w-12 h-12 rounded-full object-cover">
-            <div>
-              <div class="font-bold text-blue-700">Rahul Verma</div>
-              <div class="text-sm text-gray-600">MBA, Christ</div>
-            </div>
-          </div>
-          <p class="text-gray-800 text-base">I got into my dream college abroad thanks to their expert advice and visa support. Highly recommended!</p>
+        <div class="ak-carousel-card ak-card-college">
+          <div class="ak-card-emoji">🏫</div>
+          <div class="ak-card-title">Christ</div>
+          <div class="ak-card-sub">Bangalore</div>
         </div>
-        <div class="testimonial-card bg-white rounded-xl shadow-md p-6 max-w-xs flex-1 transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-xl">
-          <div class="flex items-center gap-3 mb-3">
-            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Student testimonial" class="w-12 h-12 rounded-full object-cover">
+        <div class="ak-carousel-card ak-card-college">
+          <div class="ak-card-emoji">🏫</div>
+          <div class="ak-card-title">Symbiosis</div>
+          <div class="ak-card-sub">Pune</div>
+        </div>
+        <div class="ak-carousel-card ak-card-college">
+          <div class="ak-card-emoji">🏫</div>
+          <div class="ak-card-title">IIT Bombay</div>
+          <div class="ak-card-sub">Mumbai</div>
+        </div>
+        <div class="ak-carousel-card ak-card-college">
+          <div class="ak-card-emoji">🏫</div>
+          <div class="ak-card-title">SRM</div>
+          <div class="ak-card-sub">Chennai</div>
+        </div>
+        <!-- Exams -->
+        <div class="ak-carousel-card ak-card-exam">
+          <div class="ak-card-emoji">📝</div>
+          <div class="ak-card-title">JEE</div>
+        </div>
+        <div class="ak-carousel-card ak-card-exam">
+          <div class="ak-card-emoji">📝</div>
+          <div class="ak-card-title">CUET</div>
+        </div>
+        <div class="ak-carousel-card ak-card-exam">
+          <div class="ak-card-emoji">📝</div>
+          <div class="ak-card-title">NEET</div>
+        </div>
+        <!-- Courses -->
+        <div class="ak-carousel-card ak-card-course">
+          <div class="ak-card-emoji">🎓</div>
+          <div class="ak-card-title">BBA</div>
+        </div>
+        <div class="ak-carousel-card ak-card-course">
+          <div class="ak-card-emoji">🎓</div>
+          <div class="ak-card-title">MBA</div>
+        </div>
+        <div class="ak-carousel-card ak-card-course">
+          <div class="ak-card-emoji">🎓</div>
+          <div class="ak-card-title">B.Tech</div>
+        </div>
+      </div>
+    </div>
+    <style>
+      .ak-showcase {
+        background: #fff;
+        padding: 3rem 0 2.5rem 0;
+        font-family: 'Inter', 'Poppins', 'Roboto', Arial, sans-serif;
+      }
+      .ak-showcase-inner {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+      .ak-showcase h2 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--ak-blue);
+        text-align: center;
+        margin-bottom: 2.2rem;
+        letter-spacing: 0.01em;
+      }
+      .ak-carousel {
+        display: flex;
+        overflow-x: auto;
+        gap: 1.3rem;
+        padding-bottom: 0.7rem;
+        scroll-snap-type: x mandatory;
+      }
+      .ak-carousel::-webkit-scrollbar {
+        height: 7px;
+        background: #f5f7fa;
+      }
+      .ak-carousel::-webkit-scrollbar-thumb {
+        background: #dbe3ea;
+        border-radius: 4px;
+      }
+      .ak-carousel-card {
+        min-width: 170px;
+        flex: 0 0 auto;
+        background: #f8fafc;
+        border-radius: var(--ak-radius);
+        padding: 1.5rem 1rem;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(26,35,126,0.06);
+        scroll-snap-align: start;
+        transition: transform 0.15s, box-shadow 0.15s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.3rem;
+      }
+      .ak-carousel-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 32px rgba(26,35,126,0.10);
+      }
+      .ak-card-college { background: #f8fafc; }
+      .ak-card-exam { background: #fff7ed; }
+      .ak-card-course { background: #f0fdf4; }
+      .ak-card-emoji {
+        font-size: 1.7rem;
+        margin-bottom: 0.2rem;
+      }
+      .ak-card-title {
+        font-weight: 700;
+        color: var(--ak-blue);
+        font-size: 1.08rem;
+      }
+      .ak-card-exam .ak-card-title { color: #f59e42; }
+      .ak-card-course .ak-card-title { color: #22a06b; }
+      .ak-card-sub {
+        font-size: 0.97rem;
+        color: #6b7280;
+      }
+    </style>
+  </section>
+
+  <!-- TESTIMONIALS & TRUST MARKERS (Minimal, Clean) -->
+  <section id="testimonials" class="ak-testimonials">
+    <div class="ak-testimonials-inner">
+      <h2>What Our Students Say</h2>
+      <div class="ak-testimonials-list">
+        <div class="ak-testimonial-card">
+          <div class="ak-testimonial-user">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student testimonial">
             <div>
-              <div class="font-bold text-blue-700">Sneha Iyer</div>
-              <div class="text-sm text-gray-600">BBA, Symbiosis</div>
+              <div class="ak-testimonial-name">Aditi Sharma</div>
+              <div class="ak-testimonial-meta">B.Tech, VIT</div>
             </div>
           </div>
-          <p class="text-gray-800 text-base">The team is very professional and knowledgeable. They helped me shortlist the best colleges and courses for my profile.</p>
+          <p>Admission Kart made my college application journey stress-free. The counselors were always available and guided me at every step!</p>
+        </div>
+        <div class="ak-testimonial-card">
+          <div class="ak-testimonial-user">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student testimonial">
+            <div>
+              <div class="ak-testimonial-name">Rahul Verma</div>
+              <div class="ak-testimonial-meta">MBA, Christ</div>
+            </div>
+          </div>
+          <p>I got into my dream college abroad thanks to their expert advice and visa support. Highly recommended!</p>
+        </div>
+        <div class="ak-testimonial-card">
+          <div class="ak-testimonial-user">
+            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Student testimonial">
+            <div>
+              <div class="ak-testimonial-name">Sneha Iyer</div>
+              <div class="ak-testimonial-meta">BBA, Symbiosis</div>
+            </div>
+          </div>
+          <p>The team is very professional and knowledgeable. They helped me shortlist the best colleges and courses for my profile.</p>
         </div>
       </div>
       <!-- Trust Markers -->
-      <div class="mt-12 text-center">
-        <div class="flex justify-center gap-10 flex-wrap items-center">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/VIT_University_Logo.png" alt="VIT" class="h-10 object-contain">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Christ_University_Logo.png" alt="Christ" class="h-10 object-contain">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Symbiosis_International_University_Logo.png" alt="Symbiosis" class="h-10 object-contain">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/IIT_Bombay_Logo.png" alt="IIT Bombay" class="h-10 object-contain">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/SRM_University_Logo.png" alt="SRM" class="h-10 object-contain">
-        </div>
-        <div class="mt-6 flex justify-center items-center gap-2">
-          <span class="text-xl text-yellow-400">★★★★★</span>
-          <span class="font-bold text-blue-700">4.9/5</span>
-          <span class="text-gray-600">on Google Reviews</span>
-        </div>
+      <div class="ak-trust-logos">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/VIT_University_Logo.png" alt="VIT">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Christ_University_Logo.png" alt="Christ">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Symbiosis_International_University_Logo.png" alt="Symbiosis">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/IIT_Bombay_Logo.png" alt="IIT Bombay">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/SRM_University_Logo.png" alt="SRM">
+      </div>
+      <div class="ak-google-rating">
+        <span class="ak-stars">★★★★★</span>
+        <span class="ak-rating-score">4.9/5</span>
+        <span class="ak-rating-meta">on Google Reviews</span>
       </div>
     </div>
+    <style>
+      .ak-testimonials {
+        background: var(--ak-gray);
+        padding: 3.5rem 0 3rem 0;
+        font-family: 'Inter', 'Poppins', 'Roboto', Arial, sans-serif;
+      }
+      .ak-testimonials-inner {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+      .ak-testimonials h2 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--ak-blue);
+        text-align: center;
+        margin-bottom: 2.2rem;
+        letter-spacing: 0.01em;
+      }
+      .ak-testimonials-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+        margin-bottom: 2.5rem;
+      }
+      .ak-testimonial-card {
+        background: #fff;
+        border-radius: var(--ak-radius);
+        box-shadow: var(--ak-shadow);
+        padding: 1.7rem 1.2rem 1.3rem 1.2rem;
+        max-width: 320px;
+        flex: 1 1 260px;
+        transition: transform 0.15s, box-shadow 0.15s;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .ak-testimonial-card:hover {
+        transform: translateY(-6px) scale(1.03);
+        box-shadow: 0 8px 32px rgba(26,35,126,0.10);
+      }
+      .ak-testimonial-user {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        margin-bottom: 0.2rem;
+      }
+      .ak-testimonial-user img {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .ak-testimonial-name {
+        font-weight: 700;
+        color: #1976d2;
+        font-size: 1.05rem;
+      }
+      .ak-testimonial-meta {
+        font-size: 0.97rem;
+        color: #6b7280;
+      }
+      .ak-testimonial-card p {
+        color: #232a36;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin: 0;
+      }
+      .ak-trust-logos {
+        display: flex;
+        justify-content: center;
+        gap: 2.5rem;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 2.5rem 0 0.7rem 0;
+      }
+      .ak-trust-logos img {
+        height: 38px;
+        object-fit: contain;
+        filter: grayscale(0.2) brightness(0.98);
+        opacity: 0.92;
+        transition: filter 0.15s, opacity 0.15s;
+      }
+      .ak-trust-logos img:hover {
+        filter: none;
+        opacity: 1;
+      }
+      .ak-google-rating {
+        margin-top: 1.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.7rem;
+        font-size: 1.08rem;
+      }
+      .ak-stars {
+        color: #fbc02d;
+        font-size: 1.2rem;
+        letter-spacing: 0.1em;
+      }
+      .ak-rating-score {
+        font-weight: 700;
+        color: #1976d2;
+      }
+      .ak-rating-meta {
+        color: #6b7280;
+        font-size: 0.97rem;
+      }
+    </style>
   </section>
 
-  <!-- FINAL CALL TO ACTION SECTION -->
-  <section id="cta-final" style="position:relative;background:linear-gradient(90deg,#1a237e 60%,#3949ab 100%);padding:2.5rem 0;">
-    <div class="container" style="max-width:900px;margin:0 auto;padding:0 2rem;text-align:center;">
-      <h2 style="font-size:2rem;font-weight:700;color:#fff;margin-bottom:1.2rem;">Confused about admissions? Let our experts help.</h2>
-      <a href="#footer" class="cta-btn" style="background:#fff;color:#1a237e;padding:1rem 2.2rem;border-radius:6px;font-weight:700;text-decoration:none;font-size:1.15rem;box-shadow:0 2px 8px rgba(26,35,126,0.08);transition:background 0.2s;">Book Free Session</a>
+  <!-- FINAL CALL TO ACTION SECTION (Minimal, Clean) -->
+  <section id="cta-final" class="ak-cta-final">
+    <div class="ak-cta-final-inner">
+      <h2>Confused about admissions? Let our experts help.</h2>
+      <a href="#footer" class="ak-cta-btn ak-cta-final-btn">Book Free Session</a>
     </div>
+    <style>
+      .ak-cta-final {
+        background: linear-gradient(90deg, #1a237e 60%, #3949ab 100%);
+        padding: 2.7rem 0 2.2rem 0;
+        position: relative;
+      }
+      .ak-cta-final-inner {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        text-align: center;
+      }
+      .ak-cta-final h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 1.3rem;
+        letter-spacing: 0.01em;
+      }
+      .ak-cta-final-btn {
+        background: #fff;
+        color: #1a237e;
+        padding: 1rem 2.2rem;
+        border-radius: 8px;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 1.13rem;
+        box-shadow: 0 2px 8px rgba(26,35,126,0.08);
+        transition: background 0.18s, color 0.18s;
+        border: none;
+        margin-top: 0.5rem;
+        display: inline-block;
+      }
+      .ak-cta-final-btn:hover, .ak-cta-final-btn:focus {
+        background: #f6f8fc;
+        color: #3949ab;
+      }
+    </style>
   </section>
 
-  <!-- FOOTER -->
-  <footer id="footer" style="background:#222e50;color:#fff;padding:2.5rem 0 1.2rem 0;">
-    <div class="container" style="max-width:1100px;margin:0 auto;padding:0 2rem;display:flex;flex-wrap:wrap;gap:2.5rem;justify-content:space-between;">
-      <div style="min-width:220px;flex:1;">
-        <div style="font-size:1.3rem;font-weight:700;margin-bottom:0.7rem;letter-spacing:1px;">Admission Kart</div>
-        <p style="color:#b3b8d8;font-size:0.98rem;max-width:260px;">Your trusted partner for college admissions in India &amp; abroad.</p>
-        <div style="margin-top:1.2rem;display:flex;gap:1rem;">
-          <a href="#" aria-label="Instagram" style="color:#fff;font-size:1.3rem;"><span>📸</span></a>
-          <a href="#" aria-label="Facebook" style="color:#fff;font-size:1.3rem;"><span>📘</span></a>
-          <a href="#" aria-label="LinkedIn" style="color:#fff;font-size:1.3rem;"><span>🔗</span></a>
-          <a href="#" aria-label="YouTube" style="color:#fff;font-size:1.3rem;"><span>▶️</span></a>
+  <!-- FOOTER (Minimal, Clean) -->
+  <footer id="footer" class="ak-footer">
+    <div class="ak-footer-inner">
+      <div class="ak-footer-col ak-footer-brand">
+        <div class="ak-footer-logo">Admission Kart</div>
+        <p>Your trusted partner for college admissions in India &amp; abroad.</p>
+        <div class="ak-footer-social">
+          <a href="#" aria-label="Instagram"><span>📸</span></a>
+          <a href="#" aria-label="Facebook"><span>📘</span></a>
+          <a href="#" aria-label="LinkedIn"><span>🔗</span></a>
+          <a href="#" aria-label="YouTube"><span>▶️</span></a>
         </div>
       </div>
-      <div style="min-width:180px;flex:1;">
-        <div style="font-weight:700;margin-bottom:0.7rem;">Quick Links</div>
-        <ul style="list-style:none;padding:0;margin:0;line-height:2;">
-          <li><a href="#services" style="color:#b3b8d8;text-decoration:none;">Courses</a></li>
-          <li><a href="#showcase" style="color:#b3b8d8;text-decoration:none;">Colleges</a></li>
-          <li><a href="#showcase" style="color:#b3b8d8;text-decoration:none;">Exams</a></li>
-          <li><a href="#about" style="color:#b3b8d8;text-decoration:none;">About Us</a></li>
-          <li><a href="#footer" style="color:#b3b8d8;text-decoration:none;">Contact</a></li>
+      <div class="ak-footer-col ak-footer-links">
+        <div class="ak-footer-title">Quick Links</div>
+        <ul>
+          <li><a href="#services">Courses</a></li>
+          <li><a href="#showcase">Colleges</a></li>
+          <li><a href="#showcase">Exams</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#footer">Contact</a></li>
         </ul>
       </div>
-      <div style="min-width:220px;flex:1;">
-        <div style="font-weight:700;margin-bottom:0.7rem;">Newsletter</div>
-        <form style="display:flex;gap:0.5rem;flex-wrap:wrap;" onsubmit="event.preventDefault();alert('Thank you for subscribing!');">
-          <input type="email" required placeholder="Your email" style="padding:0.6rem 1rem;border-radius:5px;border:none;outline:none;font-size:1rem;flex:1;min-width:120px;">
-          <button type="submit" style="background:#fbc02d;color:#1a237e;font-weight:700;padding:0.6rem 1.2rem;border-radius:5px;border:none;cursor:pointer;">Subscribe</button>
+      <div class="ak-footer-col ak-footer-newsletter">
+        <div class="ak-footer-title">Newsletter</div>
+        <form onsubmit="event.preventDefault();alert('Thank you for subscribing!');">
+          <input type="email" required placeholder="Your email">
+          <button type="submit">Subscribe</button>
         </form>
       </div>
     </div>
-    <div style="text-align:center;color:#b3b8d8;font-size:0.97rem;margin-top:2rem;">
+    <div class="ak-footer-bottom">
       &copy; 2024 Admission Kart. All rights reserved.
     </div>
+    <style>
+      .ak-footer {
+        background: #222e50;
+        color: #fff;
+        padding: 2.7rem 0 1.2rem 0;
+        font-family: 'Inter', 'Poppins', 'Roboto', Arial, sans-serif;
+      }
+      .ak-footer-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2.5rem;
+        justify-content: space-between;
+      }
+      .ak-footer-col {
+        min-width: 180px;
+        flex: 1 1 220px;
+        margin-bottom: 1.2rem;
+      }
+      .ak-footer-logo {
+        font-size: 1.3rem;
+        font-weight: 800;
+        margin-bottom: 0.7rem;
+        letter-spacing: 0.02em;
+      }
+      .ak-footer-brand p {
+        color: #b3b8d8;
+        font-size: 0.98rem;
+        max-width: 260px;
+        margin-bottom: 1.2rem;
+      }
+      .ak-footer-social {
+        display: flex;
+        gap: 1rem;
+        margin-top: 0.2rem;
+      }
+      .ak-footer-social a {
+        color: #fff;
+        font-size: 1.3rem;
+        opacity: 0.85;
+        transition: opacity 0.15s;
+        text-decoration: none;
+      }
+      .ak-footer-social a:hover {
+        opacity: 1;
+      }
+      .ak-footer-title {
+        font-weight: 700;
+        margin-bottom: 0.7rem;
+        font-size: 1.05rem;
+        letter-spacing: 0.01em;
+      }
+      .ak-footer-links ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        line-height: 2.1;
+      }
+      .ak-footer-links ul li a {
+        color: #b3b8d8;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: color 0.15s;
+      }
+      .ak-footer-links ul li a:hover {
+        color: #fff;
+      }
+      .ak-footer-newsletter form {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin-top: 0.2rem;
+      }
+      .ak-footer-newsletter input[type="email"] {
+        padding: 0.6rem 1rem;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        flex: 1 1 120px;
+        min-width: 120px;
+        background: #fff;
+        color: #232a36;
+      }
+      .ak-footer-newsletter button {
+        background: #fbc02d;
+        color: #1a237e;
+        font-weight: 700;
+        padding: 0.6rem 1.2rem;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background 0.15s, color 0.15s;
+      }
+      .ak-footer-newsletter button:hover {
+        background: #ffe082;
+        color: #1a237e;
+      }
+      .ak-footer-bottom {
+        text-align: center;
+        color: #b3b8d8;
+        font-size: 0.97rem;
+        margin-top: 2rem;
+      }
+      @media (max-width: 800px) {
+        .ak-footer-inner {
+          flex-direction: column;
+          gap: 1.7rem;
+        }
+        .ak-footer-col {
+          min-width: 0;
+        }
+      }
+    </style>
   </footer>
 
 
