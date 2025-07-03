@@ -35,6 +35,7 @@
             ak4: '0 8px 32px rgba(56,189,248,0.10)',
             ak5: '0 2px 8px rgba(56,189,248,0.06)',
             ak6: '0 2px 8px rgba(250,204,21,0.08)',
+            akglow: '0 0 24px 0 #38BDF8, 0 2px 16px rgba(56,189,248,0.10)',
           },
           fontFamily: {
             inter: ['Inter', 'Poppins', 'Roboto', 'Arial', 'sans-serif'],
@@ -293,6 +294,69 @@
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- COMPREHENSIVE ADMISSION SUPPORT (NEW SECTION) -->
+  <section id="admission-support" class="bg-akbg pt-14 pb-12 font-inter">
+    <div class="max-w-[1100px] mx-auto px-8">
+      <h2 class="text-[2rem] font-extrabold text-akprimary text-center mb-4 tracking-[.01em] flex items-center justify-center gap-3">
+        <span class="text-[1.5rem]">✅</span> Comprehensive Admission Support
+      </h2>
+      <p class="text-akmuted text-center max-w-[600px] mx-auto mb-10 text-[1.13rem]">From university selection to visa &amp; SOP assistance, get complete guidance for your admission journey in India &amp; abroad.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8" id="admission-support-cards">
+        <!-- Card 1 -->
+        <div class="adms-card bg-akcard rounded-ak shadow-ak p-8 text-center border border-akborder transition-all duration-200 cursor-pointer flex flex-col items-center gap-2 hover:shadow-[0_0_32px_0_#38BDF8,0_2px_16px_rgba(56,189,248,0.10)]">
+          <div class="text-[2.2rem] mb-2 text-akprimary">🎓</div>
+          <h3 class="text-[1.13rem] font-bold mb-1 text-akprimary">University Selection</h3>
+          <p class="text-akmuted text-[1rem] leading-[1.6]">Personalized shortlisting of best-fit universities &amp; colleges as per your profile and goals.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="adms-card bg-akcard rounded-ak shadow-ak p-8 text-center border border-akborder transition-all duration-200 cursor-pointer flex flex-col items-center gap-2 hover:shadow-[0_0_32px_0_#38BDF8,0_2px_16px_rgba(56,189,248,0.10)]">
+          <div class="text-[2.2rem] mb-2 text-akaccent">📝</div>
+          <h3 class="text-[1.13rem] font-bold mb-1 text-akprimary">Application Preparation</h3>
+          <p class="text-akmuted text-[1rem] leading-[1.6]">Complete support for application forms, documentation, and deadlines.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="adms-card bg-akcard rounded-ak shadow-ak p-8 text-center border border-akborder transition-all duration-200 cursor-pointer flex flex-col items-center gap-2 hover:shadow-[0_0_32px_0_#38BDF8,0_2px_16px_rgba(56,189,248,0.10)]">
+          <div class="text-[2.2rem] mb-2 text-akaccent2">📄</div>
+          <h3 class="text-[1.13rem] font-bold mb-1 text-akprimary">Visa &amp; SOP Assistance</h3>
+          <p class="text-akmuted text-[1rem] leading-[1.6]">Expert help for visa process, SOP/LOR writing, and interview prep for study abroad.</p>
+        </div>
+        <!-- Card 4 -->
+        <div class="adms-card bg-akcard rounded-ak shadow-ak p-8 text-center border border-akborder transition-all duration-200 cursor-pointer flex flex-col items-center gap-2 hover:shadow-[0_0_32px_0_#38BDF8,0_2px_16px_rgba(56,189,248,0.10)]">
+          <div class="text-[2.2rem] mb-2 text-akprimary">📞</div>
+          <h3 class="text-[1.13rem] font-bold mb-1 text-akprimary">1-on-1 Career Guidance</h3>
+          <p class="text-akmuted text-[1rem] leading-[1.6]">Dedicated counseling sessions to clarify your career path and resolve all queries.</p>
+        </div>
+        <!-- Card 5 -->
+        <div class="adms-card bg-akcard rounded-ak shadow-ak p-8 text-center border border-akborder transition-all duration-200 cursor-pointer flex flex-col items-center gap-2 hover:shadow-[0_0_32px_0_#38BDF8,0_2px_16px_rgba(56,189,248,0.10)]">
+          <div class="text-[2.2rem] mb-2 text-akaccent">📆</div>
+          <h3 class="text-[1.13rem] font-bold mb-1 text-akprimary">Interview &amp; Test Prep</h3>
+          <p class="text-akmuted text-[1rem] leading-[1.6]">Mock interviews, entrance test strategies, and confidence-building for success.</p>
+        </div>
+        <!-- Card 6 -->
+        <div class="adms-card bg-akcard rounded-ak shadow-ak p-8 text-center border border-akborder transition-all duration-200 cursor-pointer flex flex-col items-center gap-2 hover:shadow-[0_0_32px_0_#38BDF8,0_2px_16px_rgba(56,189,248,0.10)]">
+          <div class="text-[2.2rem] mb-2 text-akaccent2">✈️</div>
+          <h3 class="text-[1.13rem] font-bold mb-1 text-akprimary">Study Abroad Strategy</h3>
+          <p class="text-akmuted text-[1rem] leading-[1.6]">Country/course selection, scholarships, and complete roadmap for overseas education.</p>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script>
+      // GSAP scale and glow effect on card hover
+      document.addEventListener('DOMContentLoaded', function () {
+        const cards = document.querySelectorAll('#admission-support-cards .adms-card');
+        cards.forEach(card => {
+          card.addEventListener('mouseenter', () => {
+            gsap.to(card, { scale: 1.06, boxShadow: "0 0 32px 0 #38BDF8, 0 2px 16px rgba(56,189,248,0.10)", duration: 0.22, ease: "power2.out" });
+          });
+          card.addEventListener('mouseleave', () => {
+            gsap.to(card, { scale: 1, boxShadow: "", duration: 0.18, ease: "power2.in" });
+          });
+        });
+      });
+    </script>
   </section>
 
   <!-- OUR SERVICES OVERVIEW (Premium, Dark, Professional) -->
