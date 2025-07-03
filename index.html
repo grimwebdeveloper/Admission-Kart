@@ -10,31 +10,32 @@
 
 <body>
   
-  <!-- HEADER (Sticky) -->
-  <header id="main-header" style="position:sticky;top:0;z-index:1000;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:1rem 2rem;">
+  <!-- HEADER (Sticky, Modern Academic) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <header id="main-header" class="sticky top-0 z-50 bg-white shadow-md font-inter transition-all duration-300" style="font-family: 'Inter', 'Poppins', 'Roboto', Arial, sans-serif;">
+    <div class="container mx-auto max-w-6xl flex items-center justify-between px-6 py-4">
       <!-- Logo -->
-      <a href="#" style="font-size:1.7rem;font-weight:700;color:#1a237e;letter-spacing:1px;text-decoration:none;display:flex;align-items:center;">
-        <span style="margin-right:0.5rem;">🎓</span> Admission Kart
+      <a href="#" class="flex items-center text-2xl font-extrabold text-blue-900 tracking-wide no-underline hover:opacity-90 transition-opacity duration-200">
+        <span class="mr-2 text-3xl">🎓</span> Admission Kart
       </a>
       <!-- Mega Menu (Desktop) -->
-      <nav class="mega-menu" style="flex:1;margin-left:2rem;display:none;">
-        <ul style="display:flex;gap:2rem;list-style:none;margin:0;padding:0;">
-          <li class="menu-item" style="position:relative;">
-            <button class="menu-btn" style="background:none;border:none;font:inherit;cursor:pointer;padding:0;color:#222;">Colleges</button>
-            <div class="dropdown" style="display:none;position:absolute;top:2.5rem;left:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);padding:1.5rem 2rem;min-width:400px;border-radius:8px;">
-              <div style="display:flex;gap:2rem;">
+      <nav class="mega-menu hidden lg:flex flex-1 ml-8">
+        <ul class="flex gap-8 list-none m-0 p-0 font-medium text-blue-900">
+          <li class="menu-item relative group">
+            <button class="menu-btn bg-transparent border-none font-inherit cursor-pointer p-0 text-blue-900 hover:text-blue-700 transition-colors duration-150 focus:outline-none">Colleges</button>
+            <div class="dropdown absolute left-0 top-12 bg-white shadow-xl rounded-xl p-6 min-w-[400px] hidden group-hover:flex group-focus-within:flex animate-fadeIn" style="gap:2rem;">
+              <div class="flex gap-8">
                 <div>
-                  <strong>By State</strong>
-                  <ul style="margin:0.5rem 0 0 0;padding:0;list-style:none;font-size:0.97rem;">
+                  <strong class="block mb-2 text-blue-800">By State</strong>
+                  <ul class="list-none m-0 p-0 text-base text-gray-700 space-y-1">
                     <li>Maharashtra</li>
                     <li>Karnataka</li>
                     <li>Tamil Nadu</li>
                   </ul>
                 </div>
                 <div>
-                  <strong>Top Private Colleges</strong>
-                  <ul style="margin:0.5rem 0 0 0;padding:0;list-style:none;font-size:0.97rem;">
+                  <strong class="block mb-2 text-blue-800">Top Private Colleges</strong>
+                  <ul class="list-none m-0 p-0 text-base text-gray-700 space-y-1">
                     <li>VIT</li>
                     <li>MIT-WPU</li>
                     <li>Christ</li>
@@ -44,8 +45,8 @@
                   </ul>
                 </div>
                 <div>
-                  <strong>Top Govt Colleges</strong>
-                  <ul style="margin:0.5rem 0 0 0;padding:0;list-style:none;font-size:0.97rem;">
+                  <strong class="block mb-2 text-blue-800">Top Govt Colleges</strong>
+                  <ul class="list-none m-0 p-0 text-base text-gray-700 space-y-1">
                     <li>IIT Bombay</li>
                     <li>NIT Karnataka</li>
                     <li>Anna University</li>
@@ -54,10 +55,10 @@
               </div>
             </div>
           </li>
-          <li class="menu-item" style="position:relative;">
-            <button class="menu-btn" style="background:none;border:none;font:inherit;cursor:pointer;padding:0;color:#222;">Courses</button>
-            <div class="dropdown" style="display:none;position:absolute;top:2.5rem;left:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);padding:1.5rem 2rem;min-width:220px;border-radius:8px;">
-              <ul style="margin:0;padding:0;list-style:none;font-size:0.97rem;">
+          <li class="menu-item relative group">
+            <button class="menu-btn bg-transparent border-none font-inherit cursor-pointer p-0 text-blue-900 hover:text-blue-700 transition-colors duration-150 focus:outline-none">Courses</button>
+            <div class="dropdown absolute left-0 top-12 bg-white shadow-xl rounded-xl p-6 min-w-[220px] hidden group-hover:flex group-focus-within:flex animate-fadeIn">
+              <ul class="list-none m-0 p-0 text-base text-gray-700 space-y-1">
                 <li>Engineering (UG / PG)</li>
                 <li>Management (UG / PG)</li>
                 <li>Medical</li>
@@ -67,30 +68,30 @@
               </ul>
             </div>
           </li>
-          <li class="menu-item" style="position:relative;">
-            <button class="menu-btn" style="background:none;border:none;font:inherit;cursor:pointer;padding:0;color:#222;">Exams</button>
-            <div class="dropdown" style="display:none;position:absolute;top:2.5rem;left:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);padding:1.5rem 2rem;min-width:220px;border-radius:8px;">
-              <ul style="margin:0;padding:0;list-style:none;font-size:0.97rem;">
+          <li class="menu-item relative group">
+            <button class="menu-btn bg-transparent border-none font-inherit cursor-pointer p-0 text-blue-900 hover:text-blue-700 transition-colors duration-150 focus:outline-none">Exams</button>
+            <div class="dropdown absolute left-0 top-12 bg-white shadow-xl rounded-xl p-6 min-w-[220px] hidden group-hover:flex group-focus-within:flex animate-fadeIn">
+              <ul class="list-none m-0 p-0 text-base text-gray-700 space-y-1">
                 <li><strong>National:</strong> JEE, NEET, CUET</li>
                 <li><strong>State:</strong> MHT CET, KCET, AP EAMCET</li>
                 <li><strong>Abroad:</strong> SAT, IELTS, TOEFL</li>
               </ul>
             </div>
           </li>
-          <li class="menu-item" style="position:relative;">
-            <button class="menu-btn" style="background:none;border:none;font:inherit;cursor:pointer;padding:0;color:#222;">Study Abroad</button>
-            <div class="dropdown" style="display:none;position:absolute;top:2.5rem;left:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);padding:1.5rem 2rem;min-width:220px;border-radius:8px;">
-              <ul style="margin:0;padding:0;list-style:none;font-size:0.97rem;">
+          <li class="menu-item relative group">
+            <button class="menu-btn bg-transparent border-none font-inherit cursor-pointer p-0 text-blue-900 hover:text-blue-700 transition-colors duration-150 focus:outline-none">Study Abroad</button>
+            <div class="dropdown absolute left-0 top-12 bg-white shadow-xl rounded-xl p-6 min-w-[220px] hidden group-hover:flex group-focus-within:flex animate-fadeIn">
+              <ul class="list-none m-0 p-0 text-base text-gray-700 space-y-1">
                 <li><strong>By Country:</strong> USA, UK, Canada, Germany</li>
                 <li>UG | PG Admissions</li>
                 <li>Visa Help, SOP, LOR</li>
               </ul>
             </div>
           </li>
-          <li class="menu-item" style="position:relative;">
-            <button class="menu-btn" style="background:none;border:none;font:inherit;cursor:pointer;padding:0;color:#222;">Counseling</button>
-            <div class="dropdown" style="display:none;position:absolute;top:2.5rem;left:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);padding:1.5rem 2rem;min-width:180px;border-radius:8px;">
-              <ul style="margin:0;padding:0;list-style:none;font-size:0.97rem;">
+          <li class="menu-item relative group">
+            <button class="menu-btn bg-transparent border-none font-inherit cursor-pointer p-0 text-blue-900 hover:text-blue-700 transition-colors duration-150 focus:outline-none">Counseling</button>
+            <div class="dropdown absolute left-0 top-12 bg-white shadow-xl rounded-xl p-6 min-w-[180px] hidden group-hover:flex group-focus-within:flex animate-fadeIn">
+              <ul class="list-none m-0 p-0 text-base text-gray-700 space-y-1">
                 <li>Book Session</li>
                 <li>Career Guidance</li>
                 <li>Admission Process</li>
@@ -100,66 +101,95 @@
         </ul>
       </nav>
       <!-- Book Consultation CTA -->
-      <a href="#cta-final" class="cta-btn" style="background:#1a237e;color:#fff;padding:0.7rem 1.5rem;border-radius:6px;font-weight:600;text-decoration:none;box-shadow:0 2px 8px rgba(26,35,126,0.08);transition:background 0.2s;">Book Consultation</a>
+      <a href="#cta-final" class="cta-btn bg-blue-900 text-white px-6 py-2 rounded-md font-semibold shadow hover:bg-blue-800 transition-colors duration-200 hidden sm:inline-block ml-4">Book Consultation</a>
       <!-- Hamburger (Mobile) -->
-      <button id="mobile-menu-btn" aria-label="Open menu" style="background:none;border:none;display:none;flex-direction:column;gap:4px;cursor:pointer;margin-left:1.5rem;">
-        <span style="width:26px;height:3px;background:#1a237e;border-radius:2px;display:block;"></span>
-        <span style="width:26px;height:3px;background:#1a237e;border-radius:2px;display:block;"></span>
-        <span style="width:18px;height:3px;background:#1a237e;border-radius:2px;display:block;"></span>
+      <button id="mobile-menu-btn" aria-label="Open menu" class="bg-transparent border-none flex flex-col gap-1.5 cursor-pointer ml-4 lg:hidden">
+        <span class="block w-7 h-1 rounded bg-blue-900"></span>
+        <span class="block w-7 h-1 rounded bg-blue-900"></span>
+        <span class="block w-5 h-1 rounded bg-blue-900"></span>
       </button>
     </div>
     <!-- Mobile Menu Drawer -->
-    <div id="mobile-menu-drawer" style="display:none;position:fixed;top:0;right:0;width:80vw;max-width:320px;height:100vh;background:#fff;box-shadow:-2px 0 16px rgba(0,0,0,0.12);z-index:2000;padding:2rem 1.5rem;">
-      <button id="mobile-menu-close" aria-label="Close menu" style="background:none;border:none;position:absolute;top:1rem;right:1rem;font-size:2rem;cursor:pointer;">&times;</button>
+    <div id="mobile-menu-drawer" class="fixed top-0 right-0 w-4/5 max-w-xs h-full bg-white shadow-2xl z-50 p-6 hidden flex-col animate-slideIn">
+      <button id="mobile-menu-close" aria-label="Close menu" class="absolute top-4 right-4 text-3xl text-blue-900 bg-transparent border-none cursor-pointer">&times;</button>
       <nav>
-        <ul style="list-style:none;padding:0;margin:2rem 0 0 0;display:flex;flex-direction:column;gap:1.2rem;">
-          <li><a href="#" style="color:#1a237e;font-weight:600;text-decoration:none;">Colleges</a></li>
-          <li><a href="#" style="color:#1a237e;font-weight:600;text-decoration:none;">Courses</a></li>
-          <li><a href="#" style="color:#1a237e;font-weight:600;text-decoration:none;">Exams</a></li>
-          <li><a href="#" style="color:#1a237e;font-weight:600;text-decoration:none;">Study Abroad</a></li>
-          <li><a href="#" style="color:#1a237e;font-weight:600;text-decoration:none;">Counseling</a></li>
+        <ul class="list-none p-0 mt-12 flex flex-col gap-6 font-semibold text-blue-900">
+          <li><a href="#" class="hover:text-blue-700 transition-colors">Colleges</a></li>
+          <li><a href="#" class="hover:text-blue-700 transition-colors">Courses</a></li>
+          <li><a href="#" class="hover:text-blue-700 transition-colors">Exams</a></li>
+          <li><a href="#" class="hover:text-blue-700 transition-colors">Study Abroad</a></li>
+          <li><a href="#" class="hover:text-blue-700 transition-colors">Counseling</a></li>
         </ul>
-        <a href="#cta-final" class="cta-btn" style="display:inline-block;margin-top:2rem;background:#1a237e;color:#fff;padding:0.7rem 1.5rem;border-radius:6px;font-weight:600;text-decoration:none;">Book Consultation</a>
+        <a href="#cta-final" class="cta-btn block mt-8 bg-blue-900 text-white px-6 py-2 rounded-md font-semibold shadow hover:bg-blue-800 transition-colors duration-200">Book Consultation</a>
       </nav>
     </div>
     <style>
-      @media (min-width: 900px) {
-        .mega-menu { display: block !important; }
-        #mobile-menu-btn { display: none !important; }
+      :root {
+        --ak-blue: #1a237e;
+        --ak-blue-light: #e3e9fc;
+        --ak-gray: #f5f7fa;
+        --ak-gray-dark: #b3b8d8;
+        --ak-yellow: #fbc02d;
       }
-      @media (max-width: 899px) {
-        .mega-menu { display: none !important; }
-        #mobile-menu-btn { display: flex !important; }
+      .font-inter { font-family: 'Inter', 'Poppins', 'Roboto', Arial, sans-serif; }
+      .animate-fadeIn { animation: fadeIn 0.25s cubic-bezier(.4,0,.2,1); }
+      .animate-slideIn { animation: slideInDrawer 0.22s cubic-bezier(.4,0,.2,1); }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(12px);}
+        to { opacity: 1; transform: translateY(0);}
       }
-      .menu-item:hover .dropdown, .menu-item:focus-within .dropdown {
-        display: block !important;
-      }
-      .menu-btn:focus + .dropdown {
-        display: block !important;
-      }
-      #mobile-menu-drawer.open {
-        display: block !important;
-        animation: slideIn 0.2s;
-      }
-      @keyframes slideIn {
+      @keyframes slideInDrawer {
         from { right: -320px; opacity: 0; }
         to { right: 0; opacity: 1; }
       }
+      .menu-item:focus-within .dropdown,
+      .menu-item:hover .dropdown {
+        display: flex !important;
+      }
+      .dropdown { display: none; }
+      @media (min-width: 1024px) {
+        .mega-menu { display: flex !important; }
+        #mobile-menu-btn { display: none !important; }
+      }
+      @media (max-width: 1023px) {
+        .mega-menu { display: none !important; }
+        #mobile-menu-btn { display: flex !important; }
+        .cta-btn.sm\:inline-block { display: none !important; }
+      }
+      #mobile-menu-drawer.open {
+        display: flex !important;
+      }
       .cta-btn:hover {
-        background: #3949ab;
+        background: #3949ab !important;
       }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script>
-      // Mobile menu open/close
+      // Mobile menu open/close with animation
       document.addEventListener('DOMContentLoaded', function() {
         var btn = document.getElementById('mobile-menu-btn');
         var drawer = document.getElementById('mobile-menu-drawer');
         var closeBtn = document.getElementById('mobile-menu-close');
         if(btn && drawer && closeBtn) {
-          btn.onclick = function() { drawer.classList.add('open'); };
-          closeBtn.onclick = function() { drawer.classList.remove('open'); };
+          btn.onclick = function() {
+            drawer.classList.add('open');
+            gsap.fromTo(drawer, {x: 320, opacity: 0}, {x: 0, opacity: 1, duration: 0.22, ease: "power2.out"});
+          };
+          closeBtn.onclick = function() {
+            gsap.to(drawer, {x: 320, opacity: 0, duration: 0.18, ease: "power2.in", onComplete: function() {
+              drawer.classList.remove('open');
+              drawer.style.transform = '';
+              drawer.style.opacity = '';
+            }});
+          };
           drawer.onclick = function(e) {
-            if(e.target === drawer) drawer.classList.remove('open');
+            if(e.target === drawer) {
+              gsap.to(drawer, {x: 320, opacity: 0, duration: 0.18, ease: "power2.in", onComplete: function() {
+                drawer.classList.remove('open');
+                drawer.style.transform = '';
+                drawer.style.opacity = '';
+              }});
+            }
           };
         }
       });
@@ -167,25 +197,25 @@
   </header>
 
   <!-- HERO SECTION -->
-  <section id="hero" style="background:linear-gradient(90deg,#e3e9fc 60%,#fff 100%);padding:3.5rem 0 2.5rem 0;">
-    <div class="container" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 2rem;">
+  <section id="hero" class="bg-gradient-to-r from-[var(--ak-blue-light)] to-white py-16 pb-10 font-inter">
+    <div class="container mx-auto max-w-6xl flex flex-wrap items-center justify-between px-6">
       <!-- Left: Text -->
-      <div style="flex:1 1 350px;min-width:320px;max-width:540px;">
-        <h1 style="font-size:2.3rem;font-weight:800;line-height:1.2;color:#1a237e;margin-bottom:1.2rem;">
+      <div class="flex-1 min-w-[320px] max-w-xl">
+        <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight text-blue-900 mb-5 animate-heroFadeIn">
           Get Expert Guidance for College Admissions in India &amp; Abroad
         </h1>
-        <p style="font-size:1.15rem;color:#333;max-width:420px;margin-bottom:2rem;">
+        <p class="text-lg text-gray-700 max-w-md mb-8">
           Personalized counseling, trusted by 10,000+ students. Your dream college is just a step away!
         </p>
-        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
-          <a href="#cta-final" class="cta-btn" style="background:#1a237e;color:#fff;padding:0.8rem 1.7rem;border-radius:6px;font-weight:600;text-decoration:none;box-shadow:0 2px 8px rgba(26,35,126,0.08);transition:background 0.2s;">Get Admission Help</a>
-          <a href="#cta-final" class="cta-btn" style="background:#fff;color:#1a237e;padding:0.8rem 1.7rem;border-radius:6px;font-weight:600;text-decoration:none;border:2px solid #1a237e;transition:background 0.2s;">Book Free Counseling</a>
+        <div class="flex gap-4 flex-wrap">
+          <a href="#cta-final" class="cta-btn bg-blue-900 text-white px-7 py-3 rounded-md font-semibold shadow hover:bg-blue-800 transition-colors duration-200">Get Admission Help</a>
+          <a href="#cta-final" class="cta-btn bg-white text-blue-900 px-7 py-3 rounded-md font-semibold border-2 border-blue-900 hover:bg-blue-50 transition-colors duration-200">Book Free Counseling</a>
         </div>
       </div>
       <!-- Right: Illustration -->
-      <div style="flex:1 1 320px;min-width:260px;display:flex;justify-content:center;align-items:center;">
-        <!-- Simple SVG illustration: Counselor & student -->
-        <svg width="270" height="210" viewBox="0 0 270 210" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Counselor and student illustration">
+      <div class="flex-1 min-w-[260px] flex justify-center items-center mt-10 sm:mt-0">
+        <!-- SVG illustration: Counselor & student -->
+        <svg width="270" height="210" viewBox="0 0 270 210" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Counselor and student illustration" class="animate-heroSvg">
           <ellipse cx="135" cy="200" rx="110" ry="10" fill="#e3e9fc"/>
           <circle cx="80" cy="90" r="38" fill="#fff" stroke="#b3b8d8" stroke-width="3"/>
           <circle cx="190" cy="90" r="38" fill="#fff" stroke="#b3b8d8" stroke-width="3"/>
@@ -202,6 +232,18 @@
         </svg>
       </div>
     </div>
+    <style>
+      @keyframes heroFadeIn {
+        from { opacity: 0; transform: translateY(30px);}
+        to { opacity: 1; transform: translateY(0);}
+      }
+      .animate-heroFadeIn { animation: heroFadeIn 0.7s cubic-bezier(.4,0,.2,1) 0.1s both; }
+      @keyframes heroSvg {
+        0% { opacity: 0; transform: scale(0.95);}
+        100% { opacity: 1; transform: scale(1);}
+      }
+      .animate-heroSvg { animation: heroSvg 0.7s cubic-bezier(.4,0,.2,1) 0.3s both; }
+    </style>
   </section>
 
   <!-- ABOUT ADMISSION KART -->
@@ -224,13 +266,6 @@
           <div style="font-size:2rem;color:#1976d2;font-weight:700;">98%</div>
           <div style="color:#555;">Success Rate</div>
         </div>
-      </div>
-      <!-- Optional: Small animation/video placeholder -->
-      <div style="margin-top:2.5rem;">
-        <video width="320" height="180" controls poster="https://img.freepik.com/free-vector/college-admission-concept-illustration_114360-7892.jpg" style="border-radius:10px;box-shadow:0 2px 12px rgba(26,35,126,0.08);background:#f5f7fa;">
-          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
       </div>
     </div>
   </section>
@@ -276,123 +311,121 @@
   </section>
 
   <!-- TOP COLLEGES / EXAMS / COURSES SHOWCASE -->
-  <section id="showcase" style="background:#fff;padding:2.5rem 0;">
-    <div class="container" style="max-width:1100px;margin:0 auto;padding:0 2rem;">
-      <h2 style="font-size:1.7rem;font-weight:700;color:#1a237e;text-align:center;margin-bottom:1.5rem;">Top Colleges, Exams &amp; Courses</h2>
-      <div class="carousel" style="overflow-x:auto;display:flex;gap:1.5rem;padding-bottom:1rem;scroll-snap-type:x mandatory;">
+  <section id="showcase" class="bg-white py-10 font-inter">
+    <div class="container max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl font-bold text-blue-900 text-center mb-6">Top Colleges, Exams &amp; Courses</h2>
+      <div class="carousel flex overflow-x-auto gap-6 pb-4 scroll-snap-x scroll-snap-mandatory">
         <!-- Colleges -->
-        <div class="carousel-card" style="min-width:180px;flex:0 0 180px;background:#f5f7fa;border-radius:10px;padding:1.2rem;text-align:center;box-shadow:0 2px 8px rgba(26,35,126,0.06);scroll-snap-align:start;">
-          <div style="font-size:2rem;">🏫</div>
-          <div style="font-weight:700;color:#1976d2;">VIT</div>
-          <div style="font-size:0.95rem;color:#555;">Vellore</div>
+        <div class="carousel-card min-w-[180px] flex-none bg-[var(--ak-gray)] rounded-xl p-5 text-center shadow-md scroll-snap-align-start transition-transform duration-150 hover:scale-105 hover:shadow-xl">
+          <div class="text-2xl">🏫</div>
+          <div class="font-bold text-blue-700">VIT</div>
+          <div class="text-sm text-gray-600">Vellore</div>
         </div>
-        <div class="carousel-card" style="min-width:180px;flex:0 0 180px;background:#f5f7fa;border-radius:10px;padding:1.2rem;text-align:center;box-shadow:0 2px 8px rgba(26,35,126,0.06);scroll-snap-align:start;">
-          <div style="font-size:2rem;">🏫</div>
-          <div style="font-weight:700;color:#1976d2;">Christ</div>
-          <div style="font-size:0.95rem;color:#555;">Bangalore</div>
+        <div class="carousel-card min-w-[180px] flex-none bg-[var(--ak-gray)] rounded-xl p-5 text-center shadow-md scroll-snap-align-start transition-transform duration-150 hover:scale-105 hover:shadow-xl">
+          <div class="text-2xl">🏫</div>
+          <div class="font-bold text-blue-700">Christ</div>
+          <div class="text-sm text-gray-600">Bangalore</div>
         </div>
-        <div class="carousel-card" style="min-width:180px;flex:0 0 180px;background:#f5f7fa;border-radius:10px;padding:1.2rem;text-align:center;box-shadow:0 2px 8px rgba(26,35,126,0.06);scroll-snap-align:start;">
-          <div style="font-size:2rem;">🏫</div>
-          <div style="font-weight:700;color:#1976d2;">Symbiosis</div>
-          <div style="font-size:0.95rem;color:#555;">Pune</div>
+        <div class="carousel-card min-w-[180px] flex-none bg-[var(--ak-gray)] rounded-xl p-5 text-center shadow-md scroll-snap-align-start transition-transform duration-150 hover:scale-105 hover:shadow-xl">
+          <div class="text-2xl">🏫</div>
+          <div class="font-bold text-blue-700">Symbiosis</div>
+          <div class="text-sm text-gray-600">Pune</div>
         </div>
-        <div class="carousel-card" style="min-width:180px;flex:0 0 180px;background:#f5f7fa;border-radius:10px;padding:1.2rem;text-align:center;box-shadow:0 2px 8px rgba(26,35,126,0.06);scroll-snap-align:start;">
-          <div style="font-size:2rem;">🏫</div>
-          <div style="font-weight:700;color:#1976d2;">IIT Bombay</div>
-          <div style="font-size:0.95rem;color:#555;">Mumbai</div>
+        <div class="carousel-card min-w-[180px] flex-none bg-[var(--ak-gray)] rounded-xl p-5 text-center shadow-md scroll-snap-align-start transition-transform duration-150 hover:scale-105 hover:shadow-xl">
+          <div class="text-2xl">🏫</div>
+          <div class="font-bold text-blue-700">IIT Bombay</div>
+          <div class="text-sm text-gray-600">Mumbai</div>
         </div>
-        <div class="carousel-card" style="min-width:180px;flex:0 0 180px;background:#f5f7fa;border-radius:10px;padding:1.2rem;text-align:center;box-shadow:0 2px 8px rgba(26,35,126,0.06);scroll-snap-align:start;">
-          <div style="font-size:2rem;">🏫</div>
-          <div style="font-weight:700;color:#1976d2;">SRM</div>
-          <div style="font-size:0.95rem;color:#555;">Chennai</div>
+        <div class="carousel-card min-w-[180px] flex-none bg-[var(--ak-gray)] rounded-xl p-5 text-center shadow-md scroll-snap-align-start transition-transform duration-150 hover:scale-105 hover:shadow-xl">
+          <div class="text-2xl">🏫</div>
+          <div class="font-bold text-blue-700">SRM</div>
+          <div class="text-sm text-gray-600">Chennai</div>
         </div>
         <!-- Exams -->
-        <div class="carousel-card" style="min-width:180px;flex:0 0 180px;background:#fff3e0;border-radius:10px;padding:1.2rem;text-align:center;box-shadow:0 2px 8px rgba(26,35,126,0.06);scroll-snap-align:start;">
-          <div style="font-size:2rem;">📝</div>
-          <div style="font-weight:700;color:#f57c00;">JEE</div>
+        <div class="carousel-card min-w-[180px] flex-none bg-orange-50 rounded-xl p-5 text-center shadow-md scroll-snap-align-start transition-transform duration-150 hover:scale-105 hover:shadow-xl">
+          <div class="text-2xl">📝</div>
+          <div class="font-bold text-orange-600">JEE</div>
         </div>
-        <div class="carousel-card" style="min-width:180px;flex:0 0 180px;background:#fff3e0;border-radius:10px;padding:1.2rem;text-align:center;box-shadow:0 2px 8px rgba(26,35,126,0.06);scroll-snap-align:start;">
-          <div style="font-size:2rem;">📝</div>
-          <div style="font-weight:700;color:#f57c00;">CUET</div>
+        <div class="carousel-card min-w-[180px] flex-none bg-orange-50 rounded-xl p-5 text-center shadow-md scroll-snap-align-start transition-transform duration-150 hover:scale-105 hover:shadow-xl">
+          <div class="text-2xl">📝</div>
+          <div class="font-bold text-orange-600">CUET</div>
         </div>
-        <div class="carousel-card" style="min-width:180px;flex:0 0 180px;background:#fff3e0;border-radius:10px;padding:1.2rem;text-align:center;box-shadow:0 2px 8px rgba(26,35,126,0.06);scroll-snap-align:start;">
-          <div style="font-size:2rem;">📝</div>
-          <div style="font-weight:700;color:#f57c00;">NEET</div>
+        <div class="carousel-card min-w-[180px] flex-none bg-orange-50 rounded-xl p-5 text-center shadow-md scroll-snap-align-start transition-transform duration-150 hover:scale-105 hover:shadow-xl">
+          <div class="text-2xl">📝</div>
+          <div class="font-bold text-orange-600">NEET</div>
         </div>
         <!-- Courses -->
-        <div class="carousel-card" style="min-width:180px;flex:0 0 180px;background:#e8f5e9;border-radius:10px;padding:1.2rem;text-align:center;box-shadow:0 2px 8px rgba(26,35,126,0.06);scroll-snap-align:start;">
-          <div style="font-size:2rem;">🎓</div>
-          <div style="font-weight:700;color:#388e3c;">BBA</div>
+        <div class="carousel-card min-w-[180px] flex-none bg-green-50 rounded-xl p-5 text-center shadow-md scroll-snap-align-start transition-transform duration-150 hover:scale-105 hover:shadow-xl">
+          <div class="text-2xl">🎓</div>
+          <div class="font-bold text-green-700">BBA</div>
         </div>
-        <div class="carousel-card" style="min-width:180px;flex:0 0 180px;background:#e8f5e9;border-radius:10px;padding:1.2rem;text-align:center;box-shadow:0 2px 8px rgba(26,35,126,0.06);scroll-snap-align:start;">
-          <div style="font-size:2rem;">🎓</div>
-          <div style="font-weight:700;color:#388e3c;">MBA</div>
+        <div class="carousel-card min-w-[180px] flex-none bg-green-50 rounded-xl p-5 text-center shadow-md scroll-snap-align-start transition-transform duration-150 hover:scale-105 hover:shadow-xl">
+          <div class="text-2xl">🎓</div>
+          <div class="font-bold text-green-700">MBA</div>
         </div>
-        <div class="carousel-card" style="min-width:180px;flex:0 0 180px;background:#e8f5e9;border-radius:10px;padding:1.2rem;text-align:center;box-shadow:0 2px 8px rgba(26,35,126,0.06);scroll-snap-align:start;">
-          <div style="font-size:2rem;">🎓</div>
-          <div style="font-weight:700;color:#388e3c;">B.Tech</div>
+        <div class="carousel-card min-w-[180px] flex-none bg-green-50 rounded-xl p-5 text-center shadow-md scroll-snap-align-start transition-transform duration-150 hover:scale-105 hover:shadow-xl">
+          <div class="text-2xl">🎓</div>
+          <div class="font-bold text-green-700">B.Tech</div>
         </div>
       </div>
+      <style>
+        .carousel::-webkit-scrollbar { height: 8px; background: #f5f7fa; }
+        .carousel::-webkit-scrollbar-thumb { background: #b3b8d8; border-radius: 4px; }
+        .carousel { scroll-snap-type: x mandatory; }
+        .carousel-card { scroll-snap-align: start; }
+      </style>
     </div>
-    <style>
-      .carousel::-webkit-scrollbar { height: 8px; background: #f5f7fa; }
-      .carousel::-webkit-scrollbar-thumb { background: #b3b8d8; border-radius: 4px; }
-      .carousel-card:hover {
-        box-shadow:0 6px 24px rgba(26,35,126,0.10);
-        transform:scale(1.04);
-      }
-    </style>
   </section>
 
   <!-- TESTIMONIALS & TRUST MARKERS -->
-  <section id="testimonials" style="background:#f5f7fa;padding:3rem 0;">
-    <div class="container" style="max-width:1100px;margin:0 auto;padding:0 2rem;">
-      <h2 style="font-size:1.7rem;font-weight:700;color:#1a237e;text-align:center;margin-bottom:2rem;">What Our Students Say</h2>
-      <div style="display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;">
-        <div class="testimonial-card" style="background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(26,35,126,0.06);padding:1.5rem 1.2rem;max-width:340px;flex:1;">
-          <div style="display:flex;align-items:center;gap:0.7rem;margin-bottom:0.7rem;">
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student testimonial" style="width:48px;height:48px;border-radius:50%;object-fit:cover;">
+  <section id="testimonials" class="bg-[var(--ak-gray)] py-12 font-inter">
+    <div class="container max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl font-bold text-blue-900 text-center mb-8">What Our Students Say</h2>
+      <div class="flex flex-wrap gap-8 justify-center">
+        <div class="testimonial-card bg-white rounded-xl shadow-md p-6 max-w-xs flex-1 transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-xl">
+          <div class="flex items-center gap-3 mb-3">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student testimonial" class="w-12 h-12 rounded-full object-cover">
             <div>
-              <div style="font-weight:700;color:#1976d2;">Aditi Sharma</div>
-              <div style="font-size:0.95rem;color:#555;">B.Tech, VIT</div>
+              <div class="font-bold text-blue-700">Aditi Sharma</div>
+              <div class="text-sm text-gray-600">B.Tech, VIT</div>
             </div>
           </div>
-          <p style="color:#333;font-size:1.05rem;">Admission Kart made my college application journey stress-free. The counselors were always available and guided me at every step!</p>
+          <p class="text-gray-800 text-base">Admission Kart made my college application journey stress-free. The counselors were always available and guided me at every step!</p>
         </div>
-        <div class="testimonial-card" style="background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(26,35,126,0.06);padding:1.5rem 1.2rem;max-width:340px;flex:1;">
-          <div style="display:flex;align-items:center;gap:0.7rem;margin-bottom:0.7rem;">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student testimonial" style="width:48px;height:48px;border-radius:50%;object-fit:cover;">
+        <div class="testimonial-card bg-white rounded-xl shadow-md p-6 max-w-xs flex-1 transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-xl">
+          <div class="flex items-center gap-3 mb-3">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student testimonial" class="w-12 h-12 rounded-full object-cover">
             <div>
-              <div style="font-weight:700;color:#1976d2;">Rahul Verma</div>
-              <div style="font-size:0.95rem;color:#555;">MBA, Christ</div>
+              <div class="font-bold text-blue-700">Rahul Verma</div>
+              <div class="text-sm text-gray-600">MBA, Christ</div>
             </div>
           </div>
-          <p style="color:#333;font-size:1.05rem;">I got into my dream college abroad thanks to their expert advice and visa support. Highly recommended!</p>
+          <p class="text-gray-800 text-base">I got into my dream college abroad thanks to their expert advice and visa support. Highly recommended!</p>
         </div>
-        <div class="testimonial-card" style="background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(26,35,126,0.06);padding:1.5rem 1.2rem;max-width:340px;flex:1;">
-          <div style="display:flex;align-items:center;gap:0.7rem;margin-bottom:0.7rem;">
-            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Student testimonial" style="width:48px;height:48px;border-radius:50%;object-fit:cover;">
+        <div class="testimonial-card bg-white rounded-xl shadow-md p-6 max-w-xs flex-1 transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-xl">
+          <div class="flex items-center gap-3 mb-3">
+            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Student testimonial" class="w-12 h-12 rounded-full object-cover">
             <div>
-              <div style="font-weight:700;color:#1976d2;">Sneha Iyer</div>
-              <div style="font-size:0.95rem;color:#555;">BBA, Symbiosis</div>
+              <div class="font-bold text-blue-700">Sneha Iyer</div>
+              <div class="text-sm text-gray-600">BBA, Symbiosis</div>
             </div>
           </div>
-          <p style="color:#333;font-size:1.05rem;">The team is very professional and knowledgeable. They helped me shortlist the best colleges and courses for my profile.</p>
+          <p class="text-gray-800 text-base">The team is very professional and knowledgeable. They helped me shortlist the best colleges and courses for my profile.</p>
         </div>
       </div>
       <!-- Trust Markers -->
-      <div style="margin-top:2.5rem;text-align:center;">
-        <div style="display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;align-items:center;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/VIT_University_Logo.png" alt="VIT" style="height:38px;object-fit:contain;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Christ_University_Logo.png" alt="Christ" style="height:38px;object-fit:contain;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Symbiosis_International_University_Logo.png" alt="Symbiosis" style="height:38px;object-fit:contain;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/IIT_Bombay_Logo.png" alt="IIT Bombay" style="height:38px;object-fit:contain;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/SRM_University_Logo.png" alt="SRM" style="height:38px;object-fit:contain;">
+      <div class="mt-12 text-center">
+        <div class="flex justify-center gap-10 flex-wrap items-center">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/VIT_University_Logo.png" alt="VIT" class="h-10 object-contain">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Christ_University_Logo.png" alt="Christ" class="h-10 object-contain">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Symbiosis_International_University_Logo.png" alt="Symbiosis" class="h-10 object-contain">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/IIT_Bombay_Logo.png" alt="IIT Bombay" class="h-10 object-contain">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/SRM_University_Logo.png" alt="SRM" class="h-10 object-contain">
         </div>
-        <div style="margin-top:1.5rem;display:flex;justify-content:center;align-items:center;gap:0.5rem;">
-          <span style="font-size:1.3rem;color:#fbc02d;">★★★★★</span>
-          <span style="font-weight:700;color:#1976d2;">4.9/5</span>
-          <span style="color:#555;">on Google Reviews</span>
+        <div class="mt-6 flex justify-center items-center gap-2">
+          <span class="text-xl text-yellow-400">★★★★★</span>
+          <span class="font-bold text-blue-700">4.9/5</span>
+          <span class="text-gray-600">on Google Reviews</span>
         </div>
       </div>
     </div>
