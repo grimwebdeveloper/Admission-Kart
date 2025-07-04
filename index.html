@@ -100,89 +100,272 @@
         <span class="text-[2.1rem] mr-[0.1em]">🎓</span>
         <span>Admission Kart</span>
       </a>
-      <!-- Desktop Navigation -->
-      <nav class="hidden lg:flex flex-1 ml-10">
-        <ul class="flex gap-10 list-none m-0 p-0 font-medium text-aktext">
-          <!-- Colleges Dropdown -->
+      <!-- Premium Desktop Navigation (Light Theme, Centered, Full-Width Mega Menu, Compact Height, No Overlap, Professional UI) -->
+      <nav class="hidden lg:flex flex-1 justify-center items-center">
+        <ul class="flex gap-10 list-none m-0 p-0 font-medium text-aktext text-[1.07rem] h-[52px]">
+          <!-- Colleges Mega Dropdown -->
           <li class="relative group">
-            <button class="bg-transparent border-none font-sans cursor-pointer px-1 py-2 text-aktext hover:text-akprimary transition-colors duration-150 focus:outline-none tracking-wide text-base" style="letter-spacing:0.01em;">Colleges</button>
-            <div class="absolute left-0 top-14 bg-akcard/95 shadow-2xl rounded-2xl p-8 min-w-[420px] hidden group-hover:flex group-focus-within:flex animate-fadeIn border border-akborder" style="gap:2.5rem;">
-              <div class="flex gap-12">
-                <div>
-                  <span class="block mb-3 text-akaccent font-semibold text-sm uppercase tracking-wider">By State</span>
-                  <ul class="list-none m-0 p-0 text-base text-akmuted space-y-2">
-                    <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">Maharashtra</li>
-                    <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">Karnataka</li>
-                    <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">Tamil Nadu</li>
+            <button class="flex items-center gap-1 bg-transparent border-none font-sans cursor-pointer px-4 py-0 text-aktext hover:text-akprimary transition-colors duration-150 focus:outline-none tracking-wide text-base h-[52px] min-h-0" style="letter-spacing:0.01em;">
+              <span>Colleges</span>
+              <svg class="w-4 h-4 text-akmuted group-hover:text-akprimary transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="absolute left-1/2 top-[calc(100%+12px)] -translate-x-1/2 bg-white shadow-2xl rounded-2xl px-0 py-0 w-full max-w-[1280px] min-w-[1100px] hidden group-hover:flex group-focus-within:flex animate-fadeIn border border-akborder z-40"
+                 style="gap:0;">
+              <div class="flex w-full px-14 py-8 gap-10 justify-center">
+                <!-- Left Column -->
+                <div class="min-w-[220px] flex-1 max-w-[260px]">
+                  <h4 class="text-xs font-semibold text-akprimary uppercase tracking-wider mb-4">By State</h4>
+                  <ul class="list-none m-0 p-0 text-base text-akmuted space-y-1.5">
+                    <li class="flex items-center gap-2 hover:bg-akprimary/10 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-akprimary rounded-full"></span>
+                      Maharashtra
+                    </li>
+                    <li class="flex items-center gap-2 hover:bg-akprimary/10 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-akprimary rounded-full"></span>
+                      Karnataka
+                    </li>
+                    <li class="flex items-center gap-2 hover:bg-akprimary/10 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-akprimary rounded-full"></span>
+                      Tamil Nadu
+                    </li>
                   </ul>
                 </div>
-                <div>
-                  <span class="block mb-3 text-akaccent font-semibold text-sm uppercase tracking-wider">Top Private Colleges</span>
-                  <ul class="list-none m-0 p-0 text-base text-akmuted space-y-2">
-                    <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">VIT</li>
-                    <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">MIT-WPU</li>
-                    <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">Christ</li>
-                    <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">PES</li>
-                    <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">SRM</li>
-                    <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">Sathyabama</li>
-                  </ul>
+                <!-- Center Column -->
+                <div class="flex-1 max-w-[420px]">
+                  <h4 class="text-xs font-semibold text-sky-500 uppercase tracking-wider mb-4">Top Colleges</h4>
+                  <div class="grid grid-cols-2 gap-7">
+                    <div>
+                      <span class="block mb-2 text-akaccent font-semibold text-xs uppercase tracking-wider">Private</span>
+                      <ul class="list-none m-0 p-0 text-base text-akmuted space-y-1.5">
+                        <li class="flex items-center gap-2 hover:bg-sky-100 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                          <span class="inline-block w-2 h-2 bg-sky-500 rounded-full"></span>
+                          VIT
+                        </li>
+                        <li class="flex items-center gap-2 hover:bg-sky-100 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                          <span class="inline-block w-2 h-2 bg-sky-500 rounded-full"></span>
+                          MIT-WPU
+                        </li>
+                        <li class="flex items-center gap-2 hover:bg-sky-100 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                          <span class="inline-block w-2 h-2 bg-sky-500 rounded-full"></span>
+                          Christ
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <span class="block mb-2 text-akaccent font-semibold text-xs uppercase tracking-wider">Govt</span>
+                      <ul class="list-none m-0 p-0 text-base text-akmuted space-y-1.5">
+                        <li class="flex items-center gap-2 hover:bg-sky-100 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                          <span class="inline-block w-2 h-2 bg-sky-500 rounded-full"></span>
+                          IIT Bombay
+                        </li>
+                        <li class="flex items-center gap-2 hover:bg-sky-100 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                          <span class="inline-block w-2 h-2 bg-sky-500 rounded-full"></span>
+                          NIT Karnataka
+                        </li>
+                        <li class="flex items-center gap-2 hover:bg-sky-100 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                          <span class="inline-block w-2 h-2 bg-sky-500 rounded-full"></span>
+                          Anna University
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <span class="block mb-3 text-akaccent font-semibold text-sm uppercase tracking-wider">Top Govt Colleges</span>
-                  <ul class="list-none m-0 p-0 text-base text-akmuted space-y-2">
-                    <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">IIT Bombay</li>
-                    <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">NIT Karnataka</li>
-                    <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">Anna University</li>
-                  </ul>
+                <!-- CTA Section -->
+                <div class="flex flex-col justify-between min-w-[250px] max-w-[300px] border-l border-akborder pl-8">
+                  <div>
+                    <span class="font-semibold text-aktext text-sm">Need Guidance?</span>
+                    <p class="text-xs text-akmuted mt-1">Get expert advice for your college journey</p>
+                  </div>
+                  <a href="#cta-final" class="mt-7 bg-akprimary text-white px-6 py-2.5 rounded-lg font-semibold text-sm no-underline shadow-ak3 border-none transition-colors duration-150 hover:bg-akprimaryhover hover:text-white whitespace-nowrap text-center">Book Free Consultation</a>
                 </div>
               </div>
             </div>
           </li>
-          <!-- Courses Dropdown -->
+          <!-- Courses Mega Dropdown -->
           <li class="relative group">
-            <button class="bg-transparent border-none font-sans cursor-pointer px-1 py-2 text-aktext hover:text-akprimary transition-colors duration-150 focus:outline-none tracking-wide text-base" style="letter-spacing:0.01em;">Courses</button>
-            <div class="absolute left-0 top-14 bg-akcard/95 shadow-2xl rounded-2xl p-8 min-w-[240px] hidden group-hover:flex group-focus-within:flex animate-fadeIn border border-akborder">
-              <ul class="list-none m-0 p-0 text-base text-akmuted space-y-2">
-                <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">Engineering (UG / PG)</li>
-                <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">Management (UG / PG)</li>
-                <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">Medical</li>
-                <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">Law</li>
-                <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">Design</li>
-                <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">Arts & Science</li>
-              </ul>
+            <button class="flex items-center gap-1 bg-transparent border-none font-sans cursor-pointer px-4 py-0 text-aktext hover:text-akprimary transition-colors duration-150 focus:outline-none tracking-wide text-base h-[52px] min-h-0" style="letter-spacing:0.01em;">
+              <span>Courses</span>
+              <svg class="w-4 h-4 text-akmuted group-hover:text-akprimary transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="absolute left-1/2 top-[calc(100%+12px)] -translate-x-1/2 bg-white shadow-2xl rounded-2xl px-0 py-0 w-full max-w-[1280px] min-w-[1100px] hidden group-hover:flex group-focus-within:flex animate-fadeIn border border-akborder z-40"
+                 style="gap:0;">
+              <div class="flex w-full px-14 py-8 gap-10 justify-center">
+                <div class="min-w-[220px] flex-1 max-w-[260px]">
+                  <h4 class="text-xs font-semibold text-akprimary uppercase tracking-wider mb-4">Popular Programs</h4>
+                  <ul class="list-none m-0 p-0 text-base text-akmuted space-y-1.5">
+                    <li class="flex items-center gap-2 hover:bg-akprimary/10 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-akprimary rounded-full"></span>
+                      Engineering (UG / PG)
+                    </li>
+                    <li class="flex items-center gap-2 hover:bg-akprimary/10 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-akprimary rounded-full"></span>
+                      Management (UG / PG)
+                    </li>
+                    <li class="flex items-center gap-2 hover:bg-akprimary/10 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-akprimary rounded-full"></span>
+                      Medical
+                    </li>
+                  </ul>
+                </div>
+                <div class="flex-1 max-w-[420px]">
+                  <h4 class="text-xs font-semibold text-sky-500 uppercase tracking-wider mb-4">Specialized Fields</h4>
+                  <ul class="list-none m-0 p-0 text-base text-akmuted space-y-1.5">
+                    <li class="flex items-center gap-2 hover:bg-sky-100 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-sky-500 rounded-full"></span>
+                      Law
+                    </li>
+                    <li class="flex items-center gap-2 hover:bg-sky-100 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-sky-500 rounded-full"></span>
+                      Design
+                    </li>
+                    <li class="flex items-center gap-2 hover:bg-sky-100 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-sky-500 rounded-full"></span>
+                      Arts & Science
+                    </li>
+                  </ul>
+                </div>
+                <!-- CTA Section -->
+                <div class="flex flex-col justify-between min-w-[250px] max-w-[300px] border-l border-akborder pl-8">
+                  <div>
+                    <span class="font-semibold text-aktext text-sm">Confused about Courses?</span>
+                    <p class="text-xs text-akmuted mt-1">Let us help you choose the right path</p>
+                  </div>
+                  <a href="#cta-final" class="mt-7 bg-akprimary text-white px-6 py-2.5 rounded-lg font-semibold text-sm no-underline shadow-ak3 border-none transition-colors duration-150 hover:bg-akprimaryhover hover:text-white whitespace-nowrap text-center">Book Free Consultation</a>
+                </div>
+              </div>
             </div>
           </li>
-          <!-- Exams Dropdown -->
+          <!-- Exams Mega Dropdown -->
           <li class="relative group">
-            <button class="bg-transparent border-none font-sans cursor-pointer px-1 py-2 text-aktext hover:text-akprimary transition-colors duration-150 focus:outline-none tracking-wide text-base" style="letter-spacing:0.01em;">Exams</button>
-            <div class="absolute left-0 top-14 bg-akcard/95 shadow-2xl rounded-2xl p-8 min-w-[240px] hidden group-hover:flex group-focus-within:flex animate-fadeIn border border-akborder">
-              <ul class="list-none m-0 p-0 text-base text-akmuted space-y-2">
-                <li><span class="font-semibold text-akaccent">National:</span> JEE, NEET, CUET</li>
-                <li><span class="font-semibold text-akaccent">State:</span> MHT CET, KCET, AP EAMCET</li>
-                <li><span class="font-semibold text-akaccent">Abroad:</span> SAT, IELTS, TOEFL</li>
-              </ul>
+            <button class="flex items-center gap-1 bg-transparent border-none font-sans cursor-pointer px-4 py-0 text-aktext hover:text-akprimary transition-colors duration-150 focus:outline-none tracking-wide text-base h-[52px] min-h-0" style="letter-spacing:0.01em;">
+              <span>Exams</span>
+              <svg class="w-4 h-4 text-akmuted group-hover:text-akprimary transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="absolute left-1/2 top-[calc(100%+12px)] -translate-x-1/2 bg-white shadow-2xl rounded-2xl px-0 py-0 w-full max-w-[1280px] min-w-[1100px] hidden group-hover:flex group-focus-within:flex animate-fadeIn border border-akborder z-40"
+                 style="gap:0;">
+              <div class="flex w-full px-14 py-8 gap-10 justify-center">
+                <div class="min-w-[220px] flex-1 max-w-[260px]">
+                  <h4 class="text-xs font-semibold text-akprimary uppercase tracking-wider mb-4">Major Exams</h4>
+                  <ul class="list-none m-0 p-0 text-base text-akmuted space-y-1.5">
+                    <li class="flex items-center gap-2 hover:bg-akprimary/10 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-akprimary rounded-full"></span>
+                      <span><span class="font-semibold text-akaccent">National:</span> JEE, NEET, CUET</span>
+                    </li>
+                    <li class="flex items-center gap-2 hover:bg-akprimary/10 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-akprimary rounded-full"></span>
+                      <span><span class="font-semibold text-akaccent">State:</span> MHT CET, KCET, AP EAMCET</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="flex-1 max-w-[420px]">
+                  <h4 class="text-xs font-semibold text-sky-500 uppercase tracking-wider mb-4">Abroad & More</h4>
+                  <ul class="list-none m-0 p-0 text-base text-akmuted space-y-1.5">
+                    <li class="flex items-center gap-2 hover:bg-sky-100 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-sky-500 rounded-full"></span>
+                      <span><span class="font-semibold text-akaccent">Abroad:</span> SAT, IELTS, TOEFL</span>
+                    </li>
+                  </ul>
+                </div>
+                <!-- CTA Section -->
+                <div class="flex flex-col justify-between min-w-[250px] max-w-[300px] border-l border-akborder pl-8">
+                  <div>
+                    <span class="font-semibold text-aktext text-sm">Exam Help?</span>
+                    <p class="text-xs text-akmuted mt-1">Get tips & resources for your entrance exams</p>
+                  </div>
+                  <a href="#cta-final" class="mt-7 bg-akprimary text-white px-6 py-2.5 rounded-lg font-semibold text-sm no-underline shadow-ak3 border-none transition-colors duration-150 hover:bg-akprimaryhover hover:text-white whitespace-nowrap text-center">Book Free Consultation</a>
+                </div>
+              </div>
             </div>
           </li>
-          <!-- Study Abroad Dropdown -->
+          <!-- Study Abroad Mega Dropdown -->
           <li class="relative group">
-            <button class="bg-transparent border-none font-sans cursor-pointer px-1 py-2 text-aktext hover:text-akprimary transition-colors duration-150 focus:outline-none tracking-wide text-base" style="letter-spacing:0.01em;">Study Abroad</button>
-            <div class="absolute left-0 top-14 bg-akcard/95 shadow-2xl rounded-2xl p-8 min-w-[240px] hidden group-hover:flex group-focus-within:flex animate-fadeIn border border-akborder">
-              <ul class="list-none m-0 p-0 text-base text-akmuted space-y-2">
-                <li><span class="font-semibold text-akaccent">By Country:</span> USA, UK, Canada, Germany</li>
-                <li>UG | PG Admissions</li>
-                <li>Visa Help, SOP, LOR</li>
-              </ul>
+            <button class="flex items-center gap-1 bg-transparent border-none font-sans cursor-pointer px-4 py-0 text-aktext hover:text-akprimary transition-colors duration-150 focus:outline-none tracking-wide text-base h-[52px] min-h-0" style="letter-spacing:0.01em;">
+              <span>Study Abroad</span>
+              <svg class="w-4 h-4 text-akmuted group-hover:text-akprimary transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="absolute left-1/2 top-[calc(100%+12px)] -translate-x-1/2 bg-white shadow-2xl rounded-2xl px-0 py-0 w-full max-w-[1280px] min-w-[1100px] hidden group-hover:flex group-focus-within:flex animate-fadeIn border border-akborder z-40"
+                 style="gap:0;">
+              <div class="flex w-full px-14 py-8 gap-10 justify-center">
+                <div class="min-w-[220px] flex-1 max-w-[260px]">
+                  <h4 class="text-xs font-semibold text-akprimary uppercase tracking-wider mb-4">By Country</h4>
+                  <ul class="list-none m-0 p-0 text-base text-akmuted space-y-1.5">
+                    <li class="flex items-center gap-2 hover:bg-akprimary/10 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-akprimary rounded-full"></span>
+                      USA
+                    </li>
+                    <li class="flex items-center gap-2 hover:bg-akprimary/10 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-akprimary rounded-full"></span>
+                      UK
+                    </li>
+                    <li class="flex items-center gap-2 hover:bg-akprimary/10 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-akprimary rounded-full"></span>
+                      Canada
+                    </li>
+                    <li class="flex items-center gap-2 hover:bg-akprimary/10 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-akprimary rounded-full"></span>
+                      Germany
+                    </li>
+                  </ul>
+                </div>
+                <div class="flex-1 max-w-[420px]">
+                  <h4 class="text-xs font-semibold text-sky-500 uppercase tracking-wider mb-4">Support</h4>
+                  <ul class="list-none m-0 p-0 text-base text-akmuted space-y-1.5">
+                    <li class="flex items-center gap-2 hover:bg-sky-100 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-sky-500 rounded-full"></span>
+                      UG | PG Admissions
+                    </li>
+                    <li class="flex items-center gap-2 hover:bg-sky-100 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-sky-500 rounded-full"></span>
+                      Visa Help, SOP, LOR
+                    </li>
+                  </ul>
+                </div>
+                <!-- CTA Section -->
+                <div class="flex flex-col justify-between min-w-[250px] max-w-[300px] border-l border-akborder pl-8">
+                  <div>
+                    <span class="font-semibold text-aktext text-sm">Dreaming Abroad?</span>
+                    <p class="text-xs text-akmuted mt-1">We help you with every step of your global journey</p>
+                  </div>
+                  <a href="#cta-final" class="mt-7 bg-akprimary text-white px-6 py-2.5 rounded-lg font-semibold text-sm no-underline shadow-ak3 border-none transition-colors duration-150 hover:bg-akprimaryhover hover:text-white whitespace-nowrap text-center">Book Free Consultation</a>
+                </div>
+              </div>
             </div>
           </li>
-          <!-- Counseling Dropdown -->
+          <!-- Counseling Mega Dropdown -->
           <li class="relative group">
-            <button class="bg-transparent border-none font-sans cursor-pointer px-1 py-2 text-aktext hover:text-akprimary transition-colors duration-150 focus:outline-none tracking-wide text-base" style="letter-spacing:0.01em;">Counseling</button>
-            <div class="absolute left-0 top-14 bg-akcard/95 shadow-2xl rounded-2xl p-8 min-w-[200px] hidden group-hover:flex group-focus-within:flex animate-fadeIn border border-akborder">
-              <ul class="list-none m-0 p-0 text-base text-akmuted space-y-2">
-                <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">Book Session</li>
-                <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">Career Guidance</li>
-                <li class="hover:bg-akborder/40 rounded px-2 py-1 transition cursor-pointer">Admission Process</li>
-              </ul>
+            <button class="flex items-center gap-1 bg-transparent border-none font-sans cursor-pointer px-4 py-0 text-aktext hover:text-akprimary transition-colors duration-150 focus:outline-none tracking-wide text-base h-[52px] min-h-0" style="letter-spacing:0.01em;">
+              <span>Counseling</span>
+              <svg class="w-4 h-4 text-akmuted group-hover:text-akprimary transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="absolute left-1/2 top-[calc(100%+12px)] -translate-x-1/2 bg-white shadow-2xl rounded-2xl px-0 py-0 w-full max-w-[1100px] min-w-[900px] hidden group-hover:flex group-focus-within:flex animate-fadeIn border border-akborder z-40"
+                 style="gap:0;">
+              <div class="flex w-full px-14 py-8 gap-10 justify-center">
+                <div class="flex-1 max-w-[420px]">
+                  <h4 class="text-xs font-semibold text-akprimary uppercase tracking-wider mb-4">Our Services</h4>
+                  <ul class="list-none m-0 p-0 text-base text-akmuted space-y-1.5">
+                    <li class="flex items-center gap-2 hover:bg-akprimary/10 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-akprimary rounded-full"></span>
+                      Book Session
+                    </li>
+                    <li class="flex items-center gap-2 hover:bg-akprimary/10 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-akprimary rounded-full"></span>
+                      Career Guidance
+                    </li>
+                    <li class="flex items-center gap-2 hover:bg-akprimary/10 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-akprimary rounded-full"></span>
+                      Admission Process
+                    </li>
+                  </ul>
+                </div>
+                <!-- CTA Section -->
+                <div class="flex flex-col justify-between min-w-[250px] max-w-[300px] border-l border-akborder pl-8">
+                  <div>
+                    <span class="font-semibold text-aktext text-sm">Talk to an Expert</span>
+                    <p class="text-xs text-akmuted mt-1">Personalized counseling for your needs</p>
+                  </div>
+                  <a href="#cta-final" class="mt-7 bg-akprimary text-white px-6 py-2.5 rounded-lg font-semibold text-sm no-underline shadow-ak3 border-none transition-colors duration-150 hover:bg-akprimaryhover hover:text-white whitespace-nowrap text-center">Book Free Consultation</a>
+                </div>
+              </div>
             </div>
           </li>
         </ul>
