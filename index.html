@@ -241,35 +241,42 @@
     </script>
   </header>
 
-  <!-- HERO SECTION (Premium, Dark, Professional) -->
-  <section id="hero" class="bg-gradient-to-r from-akbg via-akcard2 to-akbg pt-22 pb-14 font-inter">
-    <div class="max-w-[1200px] mx-auto flex flex-wrap items-center justify-between gap-10 px-8">
+  <!-- HERO SECTION (Premium, Dark, Professional, Improved, 85vh min-height) -->
+  <section id="hero" class="relative bg-gradient-to-br from-[#0A0A0A] via-[#18181B] to-[#0A0A0A] pt-24 pb-16 font-inter overflow-hidden min-h-[90vh] flex items-center">
+    <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between gap-10 px-6 md:px-8 w-full">
       <!-- Left: Text -->
-      <div class="flex-1 min-w-[280px] max-w-[520px] flex flex-col gap-6">
-        <h1 class="text-[2.3rem] sm:text-[2.8rem] font-extrabold text-akprimary mb-2 leading-[1.18] tracking-[.01em]">Get Expert Guidance for College Admissions in India &amp; Abroad</h1>
-        <p class="text-[1.13rem] text-akmuted mb-5 max-w-[420px] leading-[1.6]">Personalized counseling, trusted by 10,000+ students. Your dream college is just a step away!</p>
-        <div class="flex gap-4 flex-wrap">
-          <a href="#cta-final" class="bg-akprimary text-akbg px-7 py-3 rounded-lg font-semibold text-[1.05rem] no-underline shadow-ak3 border-none transition-colors duration-150 hover:bg-akaccent hover:text-akbg">Get Admission Help</a>
-          <a href="#cta-final" class="bg-akcard text-akprimary border-2 border-akprimary px-7 py-3 rounded-lg font-semibold text-[1.05rem] no-underline shadow-none transition-colors duration-150 hover:bg-akbg hover:text-akaccent">Book Free Counseling</a>
+      <div class="flex-1 min-w-[280px] max-w-[520px] flex flex-col gap-5 md:gap-7 z-10">
+        <h1 class="text-[2.1rem] sm:text-[2.6rem] md:text-[2.8rem] font-extrabold text-white mb-1 leading-[1.18] tracking-[.01em]">
+          Complete Admission Support for <span class="text-akprimary">India &amp; Abroad</span>
+        </h1>
+        <div class="flex flex-wrap gap-3 text-akmuted text-[1.01rem] font-medium mb-2">
+          <span>Counseling</span>
+          <span class="mx-1 text-akborder">|</span>
+          <span>Courses</span>
+          <span class="mx-1 text-akborder">|</span>
+          <span>College Selection</span>
+        </div>
+        <div class="flex gap-4 flex-wrap mt-2">
+          <a href="#cta-final" class="bg-akprimary text-akbg px-6 py-2.5 rounded-md font-semibold text-[1rem] no-underline shadow-ak3 border-none transition-colors duration-150 hover:bg-akaccent hover:text-akbg">Get Admission Help</a>
+          <a href="#cta-final" class="bg-akcard text-akprimary border-2 border-akprimary px-6 py-2.5 rounded-md font-semibold text-[1rem] no-underline shadow-none transition-colors duration-150 hover:bg-akbg hover:text-akaccent">Book Free Counseling</a>
         </div>
       </div>
-      <!-- Right: Illustration -->
-      <div class="flex-1 min-w-[220px] flex items-center justify-center mt-10 sm:mt-0">
-        <svg width="270" height="210" viewBox="0 0 270 210" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Counselor and student illustration" class="w-[270px] h-[210px] animate-heroSvg">
-          <ellipse cx="135" cy="200" rx="110" ry="10" fill="#232323"/>
-          <circle cx="80" cy="90" r="38" fill="#18181B" stroke="#2E2E2E" stroke-width="3"/>
-          <circle cx="190" cy="90" r="38" fill="#18181B" stroke="#2E2E2E" stroke-width="3"/>
-          <ellipse cx="80" cy="120" rx="28" ry="12" fill="#38BDF8" opacity="0.12"/>
-          <ellipse cx="190" cy="120" rx="28" ry="12" fill="#38BDF8" opacity="0.12"/>
-          <!-- Student -->
-          <circle cx="80" cy="85" r="18" fill="#38BDF8"/>
-          <rect x="65" y="105" width="30" height="35" rx="10" fill="#0EA5E9"/>
-          <!-- Counselor -->
-          <circle cx="190" cy="85" r="18" fill="#FACC15"/>
-          <rect x="175" y="105" width="30" height="35" rx="10" fill="#FACC15"/>
-          <!-- Desk -->
-          <rect x="60" y="140" width="140" height="18" rx="6" fill="#2E2E2E"/>
-        </svg>
+      <!-- Right: Illustration Card -->
+      <div class="flex-1 min-w-[260px] flex items-center justify-center mt-10 md:mt-0 relative z-10">
+        <div class="relative w-[340px] h-[240px] md:w-[370px] md:h-[260px] bg-gradient-to-br from-[#232323] to-[#18181B] rounded-2xl shadow-ak4 flex items-center justify-center">
+          <!-- Placeholder for illustration -->
+          <div class="w-[90px] h-[90px] rounded-full bg-[#E5E7EB] flex items-center justify-center text-akmuted text-2xl font-bold select-none opacity-60">🧑‍🎓</div>
+          <!-- Top-right badge: Years Experience -->
+          <div class="absolute top-3 right-3 bg-[#18181B] border border-akborder rounded-lg px-3 py-1 flex items-center gap-2 shadow-ak2">
+            <span class="text-akprimary font-bold text-[1rem] leading-none">5+</span>
+            <span class="text-akmuted text-xs leading-none">Years Experience</span>
+          </div>
+          <!-- Bottom-left badge: Students Helped -->
+          <div class="absolute bottom-3 left-3 bg-[#18181B] border border-akborder rounded-lg px-3 py-1 flex flex-col shadow-ak2">
+            <span class="text-akprimary font-bold text-[1rem] leading-none">20,000+</span>
+            <span class="text-akmuted text-xs leading-none">Students Helped</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
