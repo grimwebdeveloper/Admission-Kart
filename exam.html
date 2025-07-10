@@ -136,6 +136,27 @@
             background: var(--akprimary);
         }
         
+        /* Responsive progress steps */
+        @media (max-width: 1023px) {
+            .progress-step::after {
+                display: none;
+            }
+            
+            .progress-step {
+                margin-bottom: 1rem;
+            }
+            
+            .progress-step::before {
+                top: 0.5rem;
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+            
+            .progress-step > div {
+                padding-top: 3rem !important;
+            }
+        }
+        
         /* Notification banner */
         .notification-banner {
             background: linear-gradient(90deg, #fbbf24, #f59e0b);
@@ -667,35 +688,35 @@
                     <h2 class="text-3xl font-bold text-aktext mb-6">Application Process</h2>
                     <div class="bg-white border border-akborder rounded-xl p-6 shadow-sm">
                         <!-- Progress Steps -->
-                        <div class="flex flex-col md:flex-row justify-between mb-8">
+                        <div class="flex flex-col lg:flex-row justify-between mb-8 gap-4 lg:gap-0">
                             <div class="progress-step active">
                                 <div class="pt-12">
-                                    <div class="font-semibold text-aktext">Step 1</div>
-                                    <div class="text-sm text-akmuted">Register Online</div>
+                                    <div class="font-semibold text-aktext text-center lg:text-left">Step 1</div>
+                                    <div class="text-sm text-akmuted text-center lg:text-left">Register Online</div>
                                 </div>
                             </div>
                             <div class="progress-step active">
                                 <div class="pt-12">
-                                    <div class="font-semibold text-aktext">Step 2</div>
-                                    <div class="text-sm text-akmuted">Fill Application</div>
+                                    <div class="font-semibold text-aktext text-center lg:text-left">Step 2</div>
+                                    <div class="text-sm text-akmuted text-center lg:text-left">Fill Application</div>
                                 </div>
                             </div>
                             <div class="progress-step">
                                 <div class="pt-12">
-                                    <div class="font-semibold text-aktext">Step 3</div>
-                                    <div class="text-sm text-akmuted">Upload Documents</div>
+                                    <div class="font-semibold text-aktext text-center lg:text-left">Step 3</div>
+                                    <div class="text-sm text-akmuted text-center lg:text-left">Upload Documents</div>
                                 </div>
                             </div>
                             <div class="progress-step">
                                 <div class="pt-12">
-                                    <div class="font-semibold text-aktext">Step 4</div>
-                                    <div class="text-sm text-akmuted">Pay Fees</div>
+                                    <div class="font-semibold text-aktext text-center lg:text-left">Step 4</div>
+                                    <div class="text-sm text-akmuted text-center lg:text-left">Pay Fees</div>
                                 </div>
                             </div>
                             <div class="progress-step">
                                 <div class="pt-12">
-                                    <div class="font-semibold text-aktext">Step 5</div>
-                                    <div class="text-sm text-akmuted">Submit</div>
+                                    <div class="font-semibold text-aktext text-center lg:text-left">Step 5</div>
+                                    <div class="text-sm text-akmuted text-center lg:text-left">Submit</div>
                                 </div>
                             </div>
                         </div>
