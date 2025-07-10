@@ -1,1221 +1,1222 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CUET UG 2025 – Common University Entrance Test | Exam Dates, Syllabus, Eligibility</title>
-    <meta name="description" content="Complete guide to CUET UG 2025 - exam dates, application process, syllabus, eligibility criteria, preparation tips, and top colleges accepting CUET scores.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <style>
-        /* Custom CSS Variables for Light Theme */
-        :root {
-            --akcard: #ffffff;
-            --akprimary: #2563eb;
-            --akprimaryhover: #1d4ed8;
-            --aktext: #374151;
-            --akmuted: #6b7280;
-            --akaccent: #059669;
-            --akborder: #e5e7eb;
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admission Kart</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            akbg: '#F9FAFB',
+            aktext: '#1F2937',
+            aktext2: '#4B5563',
+            akcard: '#FFFFFF',
+            akborder: '#E5E7EB',
+            akprimary: '#2563EB',
+            akprimaryhover: '#1D4ED8',
+            akaccent: '#2563EB',
+            akaccent2: '#16A34A',
+            akmuted: '#4B5563',
+            akfooter: '#F3F4F6',
+            akfootertext: '#4B5563',
+            akcard2: '#F3F4F6',
+            akerror: '#DC2626',
+            akwarning: '#F59E0B',
+            akinfo: '#3B82F6',
+          },
+          borderRadius: {
+            ak: '14px',
+          },
+          boxShadow: {
+            ak: '0 2px 16px rgba(0,0,0,0.05)',
+            ak2: '0 2px 12px rgba(37,99,235,0.04)',
+            ak3: '0 2px 8px rgba(37,99,235,0.07)',
+            ak4: '0 8px 32px rgba(37,99,235,0.10)',
+            ak5: '0 2px 8px rgba(37,99,235,0.06)',
+            ak6: '0 2px 8px rgba(37,99,235,0.08)',
+            akglow: '0 0 24px 0 #2563EB, 0 2px 16px rgba(37,99,235,0.10)',
+          },
+          fontFamily: {
+            inter: ['Inter', 'Poppins', 'Roboto', 'Arial', 'sans-serif'],
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'translateY(10px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            heroSvg: {
+              '0%': { opacity: '0', transform: 'scale(0.95)' },
+              '100%': { opacity: '1', transform: 'scale(1)' },
+            },
+            slideInDrawer: {
+              '0%': { right: '-340px', opacity: '0' },
+              '100%': { right: '0', opacity: '1' },
+            },
+          },
+          animation: {
+            fadeIn: 'fadeIn 0.18s cubic-bezier(.4,0,.2,1)',
+            heroSvg: 'heroSvg 0.7s cubic-bezier(.4,0,.2,1) 0.3s both',
+            slideInDrawer: 'slideInDrawer 0.22s cubic-bezier(.4,0,.2,1)',
+          },
+          minWidth: {
+            200: '200px',
+            220: '220px',
+            240: '240px',
+            420: '420px',
+          },
+          spacing: {
+            '2.2': '0.55rem',
+            '3.5': '0.875rem',
+            '5.5': '1.375rem',
+            '7': '1.75rem',
+            '8.5': '2.125rem',
+            '9': '2.25rem',
+            '10.5': '2.625rem',
+            '13': '3.25rem',
+            '14': '3.5rem',
+            '15': '3.75rem',
+            '17': '4.25rem',
+            '18': '4.5rem',
+            '22': '5.5rem',
+          }
         }
-        
-        .bg-akcard { background-color: var(--akcard); }
-        .bg-akprimary { background-color: var(--akprimary); }
-        .bg-akprimaryhover { background-color: var(--akprimaryhover); }
-        .text-akprimary { color: var(--akprimary); }
-        .text-aktext { color: var(--aktext); }
-        .text-akmuted { color: var(--akmuted); }
-        .text-akaccent { color: var(--akaccent); }
-        .border-akborder { border-color: var(--akborder); }
-        
-        .shadow-ak2 {
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-        }
-        .shadow-ak3 {
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-        
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .animate-fadeIn { animation: fadeIn 0.2s ease-out; }
-        
-        /* Custom scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f3f4f6; }
-        ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
-        
-        html { scroll-behavior: smooth; }
-        
-        /* Hide elements initially for animation */
-        .fade-in-element { opacity: 0; transform: translateY(30px); }
-        
-        /* Sticky sidebar */
-        .sticky-sidebar {
-            position: sticky;
-            top: 100px;
-            height: fit-content;
-        }
-        
-        /* Timeline styles */
-        .timeline-item {
-            position: relative;
-            padding-left: 2rem;
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0.5rem;
-            width: 12px;
-            height: 12px;
-            background: var(--akprimary);
-            border-radius: 50%;
-        }
-        
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            left: 5px;
-            top: 1.25rem;
-            width: 2px;
-            height: calc(100% - 0.5rem);
-            background: #e5e7eb;
-        }
-        
-        .timeline-item:last-child::after {
-            display: none;
-        }
-        
-        /* Progress bar styles */
-        .progress-step {
-            position: relative;
-            flex: 1;
-            text-align: center;
-        }
-        
-        .progress-step::before {
-            content: '';
-            position: absolute;
-            top: 1rem;
-            left: 50%;
-            width: 2rem;
-            height: 2rem;
-            background: #e5e7eb;
-            border-radius: 50%;
-            transform: translateX(-50%);
-            z-index: 2;
-        }
-        
-        .progress-step.active::before {
-            background: var(--akprimary);
-        }
-        
-        .progress-step::after {
-            content: '';
-            position: absolute;
-            top: 1.75rem;
-            left: 50%;
-            width: 100%;
-            height: 2px;
-            background: #e5e7eb;
-            z-index: 1;
-        }
-        
-        .progress-step:last-child::after {
-            display: none;
-        }
-        
-        .progress-step.active::after {
-            background: var(--akprimary);
-        }
-        
-        /* Notification banner */
-        .notification-banner {
-            background: linear-gradient(90deg, #fbbf24, #f59e0b);
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-        }
-    </style>
-    
-    <!-- Schema Markup for SEO -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ExaminationEvent",
-        "name": "CUET UG 2025",
-        "description": "Common University Entrance Test for Undergraduate admissions",
-        "organizer": {
-            "@type": "Organization",
-            "name": "National Testing Agency (NTA)"
-        },
-        "startDate": "2025-05-15",
-        "endDate": "2025-05-31",
-        "location": {
-            "@type": "Place",
-            "name": "Multiple Cities Across India"
-        }
+      }
     }
-    </script>
+  </script>
 </head>
-<body class="bg-white text-gray-700">
 
-    <!-- Header -->
-    <header id="main-header" class="sticky top-0 z-50 bg-akcard shadow-ak2 transition-shadow border-b border-akborder">
-        <div class="max-w-[1200px] mx-auto flex items-center justify-between py-2 px-4 sm:px-6 lg:px-8 min-h-[72px]">
-            <!-- Logo -->
-            <a href="index.html" class="flex items-center text-xl sm:text-2xl font-extrabold text-akprimary no-underline gap-2 tracking-[.02em]">
-                <span class="text-2xl sm:text-3xl mr-[0.1em]">🎓</span>
-                <span class="hidden sm:inline">Admission Kart</span>
-                <span class="sm:hidden">AK</span>
-            </a>
-
-            <!-- Desktop Navigation -->
-            <nav class="hidden lg:flex flex-1 justify-center items-center">
-                <ul class="flex gap-6 xl:gap-10 list-none m-0 p-0 font-medium text-aktext text-lg h-[52px]">
-                    <li><a href="#" class="hover:text-akprimary transition-colors">Colleges</a></li>
-                    <li><a href="#" class="hover:text-akprimary transition-colors">Courses</a></li>
-                    <li><a href="#" class="hover:text-akprimary transition-colors">Exams</a></li>
-                    <li><a href="#" class="hover:text-akprimary transition-colors">Study Abroad</a></li>
-                    <li><a href="#" class="hover:text-akprimary transition-colors">Counseling</a></li>
-                </ul>
-            </nav>
-
-            <!-- CTA Button -->
-            <a href="#enquiry-form" class="hidden lg:inline-block ml-4 xl:ml-8 bg-akprimary text-white px-5 xl:px-7 py-2.5 xl:py-3 rounded-lg font-semibold text-sm xl:text-base no-underline shadow-ak3 transition-colors duration-150 hover:bg-akprimaryhover">
-                Book Consultation
-            </a>
-
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="lg:hidden">
-                <svg class="w-6 h-6 text-akprimary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
+<body class="font-inter bg-akbg text-aktext tracking-[.01em]">
+  <!-- HEADER (Light, Professional) -->
+  <header id="main-header" class="sticky top-0 z-50 bg-akcard shadow-ak2 transition-shadow border-b border-akborder">
+    <div class="max-w-[1200px] mx-auto flex items-center justify-between py-2 px-8 min-h-[72px]">
+      <!-- Logo -->
+      <a href="#" class="flex items-center text-[1.7rem] font-extrabold text-akprimary no-underline gap-2 tracking-[.02em]">
+        <span class="text-[2.1rem] mr-[0.1em]">🎓</span>
+        <span>Admission Kart</span>
+      </a>
+      <!-- Premium Desktop Navigation (Light Theme, Centered, Full-Width Mega Menu, Compact Height, No Overlap, Professional UI) -->
+      <nav class="hidden lg:flex flex-1 justify-center items-center">
+        <ul class="flex list-none m-0 p-0 font-medium text-aktext text-[1.07rem] h-[52px]">
+          <!-- Colleges Mega Dropdown -->
+          <li class="relative group">
+            <button class="flex items-center gap-1 bg-transparent border-none font-sans cursor-pointer px-4 py-0 text-aktext hover:text-akprimary transition-colors duration-150 focus:outline-none tracking-wide text-base h-[52px] min-h-0" style="letter-spacing:0.01em;">
+              <span><a href="/college.html">Colleges</a></span>
+              <svg class="w-4 h-4 text-akmuted group-hover:text-akprimary transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-        </div>
-    </header>
-
-    <!-- Notification Banner -->
-    <div class="notification-banner text-white py-2 px-4 text-center">
-        <div class="flex items-center justify-center gap-2">
-            <span class="text-lg">🚨</span>
-            <span class="font-semibold">CUET UG 2025 Registration Opens Soon!</span>
-            <span class="text-lg">🚨</span>
-        </div>
-    </div>
-
-    <!-- Breadcrumb -->
-    <nav class="bg-gray-50 py-3">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center space-x-2 text-sm text-akmuted">
-                <a href="index.html" class="hover:text-akprimary">Home</a>
-                <span>›</span>
-                <a href="#" class="hover:text-akprimary">Exams</a>
-                <span>›</span>
-                <span class="text-aktext font-medium">CUET UG</span>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="grid lg:grid-cols-4 gap-8">
-            <!-- Main Content -->
-            <div class="lg:col-span-3 space-y-12">
-                
-                <!-- Hero Section -->
-                <section id="hero" class="bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-2xl p-8 lg:p-12">
-                    <div class="hero-content">
-                        <div class="mb-6">
-                            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-                                CUET UG 2025
-                            </h1>
-                            <p class="text-xl text-blue-100 mb-6 leading-relaxed">
-                                Common University Entrance Test for Undergraduate Admissions
-                            </p>
-                            <p class="text-lg text-blue-200 mb-8">
-                                Get complete details on exam dates, syllabus, eligibility criteria, application process, and preparation tips for CUET UG 2025.
-                            </p>
-                            
-                            <!-- Key Points -->
-                            <div class="flex flex-wrap gap-4 mb-8">
-                                <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">📅 May 2025</span>
-                                <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">💻 Online Mode</span>
-                                <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">🏛️ 200+ Universities</span>
-                                <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">🎓 UG Admissions</span>
-                            </div>
-                        </div>
-
-                        <!-- CTA Buttons -->
-                        <div class="flex flex-col sm:flex-row gap-4">
-                            <button onclick="scrollToEnquiry()" class="bg-white text-akprimary px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all rounded-lg hover:bg-gray-50">
-                                🎯 Get Free Guidance
-                            </button>
-                            <button class="border-2 border-white text-white hover:bg-white hover:text-akprimary px-8 py-4 text-lg font-semibold bg-transparent rounded-lg transition-all">
-                                📥 Download Brochure
-                            </button>
-                            <button class="border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black px-8 py-4 text-lg font-semibold bg-transparent rounded-lg transition-all">
-                                📝 Apply Now
-                            </button>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Overview Section -->
-                <section class="fade-in-element">
-                    <h2 class="text-3xl font-bold text-aktext mb-6">What is CUET UG?</h2>
-                    <div class="bg-white border border-akborder rounded-xl p-6 shadow-sm">
-                        <p class="text-lg text-aktext leading-relaxed mb-4">
-                            Common University Entrance Test (CUET) UG is a national-level entrance examination conducted by the National Testing Agency (NTA) for admission to undergraduate programs in central universities and other participating institutions across India.
-                        </p>
-                        
-                        <!-- Key Details -->
-                        <div class="grid md:grid-cols-2 gap-6 mt-6">
-                            <div class="flex items-center gap-3">
-                                <span class="text-2xl">🏛️</span>
-                                <div>
-                                    <div class="font-semibold text-aktext">Conducted By</div>
-                                    <div class="text-akmuted">National Testing Agency (NTA)</div>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <span class="text-2xl">🌍</span>
-                                <div>
-                                    <div class="font-semibold text-aktext">Level</div>
-                                    <div class="text-akmuted">National Level</div>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <span class="text-2xl">💻</span>
-                                <div>
-                                    <div class="font-semibold text-aktext">Mode</div>
-                                    <div class="text-akmuted">Computer Based Test (CBT)</div>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <span class="text-2xl">📅</span>
-                                <div>
-                                    <div class="font-semibold text-aktext">Frequency</div>
-                                    <div class="text-akmuted">Once a Year</div>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <span class="text-2xl">🎓</span>
-                                <div>
-                                    <div class="font-semibold text-aktext">Courses Offered</div>
-                                    <div class="text-akmuted">UG in Arts, Science, Commerce</div>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <span class="text-2xl">🏫</span>
-                                <div>
-                                    <div class="font-semibold text-aktext">Participating Universities</div>
-                                    <div class="text-akmuted">200+ Universities</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Important Dates -->
-                <section class="fade-in-element">
-                    <h2 class="text-3xl font-bold text-aktext mb-6">Important Dates - CUET UG 2025</h2>
-                    <div class="bg-white border border-akborder rounded-xl p-6 shadow-sm">
-                        <div class="overflow-x-auto">
-                            <table class="w-full">
-                                <thead class="bg-gray-50">
-                                    <tr>
-                                        <th class="px-6 py-4 text-left text-sm font-semibold text-aktext">Event</th>
-                                        <th class="px-6 py-4 text-left text-sm font-semibold text-aktext">Date</th>
-                                        <th class="px-6 py-4 text-left text-sm font-semibold text-aktext">Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="divide-y divide-akborder">
-                                    <tr class="hover:bg-gray-50">
-                                        <td class="px-6 py-4 text-aktext font-medium">Registration Starts</td>
-                                        <td class="px-6 py-4 text-akmuted">February 2025</td>
-                                        <td class="px-6 py-4">
-                                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">Upcoming</span>
-                                        </td>
-                                    </tr>
-                                    <tr class="hover:bg-gray-50">
-                                        <td class="px-6 py-4 text-aktext font-medium">Last Date to Apply</td>
-                                        <td class="px-6 py-4 text-akmuted">March 2025</td>
-                                        <td class="px-6 py-4">
-                                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">Upcoming</span>
-                                        </td>
-                                    </tr>
-                                    <tr class="hover:bg-gray-50">
-                                        <td class="px-6 py-4 text-aktext font-medium">Correction Window</td>
-                                        <td class="px-6 py-4 text-akmuted">April 2025</td>
-                                        <td class="px-6 py-4">
-                                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">Upcoming</span>
-                                        </td>
-                                    </tr>
-                                    <tr class="hover:bg-gray-50">
-                                        <td class="px-6 py-4 text-aktext font-medium">Admit Card Release</td>
-                                        <td class="px-6 py-4 text-akmuted">May 2025</td>
-                                        <td class="px-6 py-4">
-                                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">Upcoming</span>
-                                        </td>
-                                    </tr>
-                                    <tr class="hover:bg-gray-50">
-                                        <td class="px-6 py-4 text-aktext font-medium">Exam Date</td>
-                                        <td class="px-6 py-4 text-akmuted">May 15-31, 2025</td>
-                                        <td class="px-6 py-4">
-                                            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Important</span>
-                                        </td>
-                                    </tr>
-                                    <tr class="hover:bg-gray-50">
-                                        <td class="px-6 py-4 text-aktext font-medium">Result Declaration</td>
-                                        <td class="px-6 py-4 text-akmuted">June 2025</td>
-                                        <td class="px-6 py-4">
-                                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">Upcoming</span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        
-                        <div class="mt-6 p-4 bg-blue-50 rounded-lg">
-                            <p class="text-sm text-blue-800">
-                                <strong>📌 Note:</strong> Dates are tentative and subject to change. Please check the official NTA website for the latest updates.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Eligibility Criteria -->
-                <section class="fade-in-element">
-                    <h2 class="text-3xl font-bold text-aktext mb-6">Eligibility Criteria</h2>
-                    <div class="bg-white border border-akborder rounded-xl p-6 shadow-sm">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <h3 class="text-xl font-semibold text-aktext mb-4">📚 Educational Qualification</h3>
-                                <ul class="space-y-3">
-                                    <li class="flex items-start gap-3">
-                                        <span class="text-green-500 mt-1">✓</span>
-                                        <span>Passed 12th or equivalent from recognized board</span>
-                                    </li>
-                                    <li class="flex items-start gap-3">
-                                        <span class="text-green-500 mt-1">✓</span>
-                                        <span>Minimum 50% marks in qualifying exam</span>
-                                    </li>
-                                    <li class="flex items-start gap-3">
-                                        <span class="text-green-500 mt-1">✓</span>
-                                        <span>45% for SC/ST/PwD candidates</span>
-                                    </li>
-                                    <li class="flex items-start gap-3">
-                                        <span class="text-green-500 mt-1">✓</span>
-                                        <span>Appearing candidates also eligible</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-semibold text-aktext mb-4">🎂 Age Limit</h3>
-                                <ul class="space-y-3">
-                                    <li class="flex items-start gap-3">
-                                        <span class="text-blue-500 mt-1">📋</span>
-                                        <span>No upper age limit for most courses</span>
-                                    </li>
-                                    <li class="flex items-start gap-3">
-                                        <span class="text-blue-500 mt-1">📋</span>
-                                        <span>Some universities may have specific age criteria</span>
-                                    </li>
-                                    <li class="flex items-start gap-3">
-                                        <span class="text-blue-500 mt-1">📋</span>
-                                        <span>Check individual university requirements</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-6 p-4 bg-yellow-50 rounded-lg">
-                            <h4 class="font-semibold text-aktext mb-2">📌 Category-wise Relaxation:</h4>
-                            <div class="grid md:grid-cols-3 gap-4 text-sm">
-                                <div>
-                                    <strong>General/OBC:</strong> 50% marks
-                                </div>
-                                <div>
-                                    <strong>SC/ST:</strong> 45% marks
-                                </div>
-                                <div>
-                                    <strong>PwD:</strong> 45% marks
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Exam Pattern -->
-                <section class="fade-in-element">
-                    <h2 class="text-3xl font-bold text-aktext mb-6">Exam Pattern</h2>
-                    <div class="bg-white border border-akborder rounded-xl p-6 shadow-sm">
-                        <div class="grid md:grid-cols-2 gap-6 mb-6">
-                            <div class="flex items-center gap-3">
-                                <span class="text-2xl">💻</span>
-                                <div>
-                                    <div class="font-semibold text-aktext">Mode</div>
-                                    <div class="text-akmuted">Computer Based Test (CBT)</div>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <span class="text-2xl">⏰</span>
-                                <div>
-                                    <div class="font-semibold text-aktext">Duration</div>
-                                    <div class="text-akmuted">45 minutes per section</div>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <span class="text-2xl">❓</span>
-                                <div>
-                                    <div class="font-semibold text-aktext">Question Type</div>
-                                    <div class="text-akmuted">Multiple Choice Questions</div>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <span class="text-2xl">🌐</span>
-                                <div>
-                                    <div class="font-semibold text-aktext">Languages</div>
-                                    <div class="text-akmuted">13 Languages Available</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3 class="text-xl font-semibold text-aktext mb-4">📋 Test Structure</h3>
-                        <div class="overflow-x-auto">
-                            <table class="w-full border border-akborder rounded-lg">
-                                <thead class="bg-gray-50">
-                                    <tr>
-                                        <th class="px-4 py-3 text-left text-sm font-semibold text-aktext">Section</th>
-                                        <th class="px-4 py-3 text-left text-sm font-semibold text-aktext">Questions</th>
-                                        <th class="px-4 py-3 text-left text-sm font-semibold text-aktext">Duration</th>
-                                        <th class="px-4 py-3 text-left text-sm font-semibold text-aktext">Marking</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="divide-y divide-akborder">
-                                    <tr>
-                                        <td class="px-4 py-3 font-medium text-aktext">Section IA (Language)</td>
-                                        <td class="px-4 py-3 text-akmuted">50 (40 to attempt)</td>
-                                        <td class="px-4 py-3 text-akmuted">45 minutes</td>
-                                        <td class="px-4 py-3 text-akmuted">+5, -1.25</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-4 py-3 font-medium text-aktext">Section IB (Language)</td>
-                                        <td class="px-4 py-3 text-akmuted">50 (40 to attempt)</td>
-                                        <td class="px-4 py-3 text-akmuted">45 minutes</td>
-                                        <td class="px-4 py-3 text-akmuted">+5, -1.25</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-4 py-3 font-medium text-aktext">Section II (Domain)</td>
-                                        <td class="px-4 py-3 text-akmuted">50 (40 to attempt)</td>
-                                        <td class="px-4 py-3 text-akmuted">45 minutes</td>
-                                        <td class="px-4 py-3 text-akmuted">+5, -1.25</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-4 py-3 font-medium text-aktext">Section III (General Test)</td>
-                                        <td class="px-4 py-3 text-akmuted">75 (60 to attempt)</td>
-                                        <td class="px-4 py-3 text-akmuted">60 minutes</td>
-                                        <td class="px-4 py-3 text-akmuted">+5, -1.25</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Syllabus -->
-                <section class="fade-in-element">
-                    <h2 class="text-3xl font-bold text-aktext mb-6">CUET UG Syllabus</h2>
-                    <div class="space-y-6">
-                        <!-- Language Section -->
-                        <div class="bg-white border border-akborder rounded-xl p-6 shadow-sm">
-                            <h3 class="text-xl font-semibold text-aktext mb-4 flex items-center gap-2">
-                                <span class="text-2xl">📝</span> Section I - Language
-                            </h3>
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <h4 class="font-semibold text-aktext mb-3">Reading Comprehension</h4>
-                                    <ul class="space-y-2 text-akmuted text-sm">
-                                        <li>• Factual passages</li>
-                                        <li>• Literary passages</li>
-                                        <li>• Narrative passages</li>
-                                        <li>• Inferential questions</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-aktext mb-3">Verbal Ability</h4>
-                                    <ul class="space-y-2 text-akmuted text-sm">
-                                        <li>• Rearranging sentences</li>
-                                        <li>• Fill in the blanks</li>
-                                        <li>• Synonyms & Antonyms</li>
-                                        <li>• Vocabulary</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Domain Section -->
-                        <div class="bg-white border border-akborder rounded-xl p-6 shadow-sm">
-                            <h3 class="text-xl font-semibold text-aktext mb-4 flex items-center gap-2">
-                                <span class="text-2xl">📚</span> Section II - Domain Subjects
-                            </h3>
-                            <div class="grid md:grid-cols-3 gap-6">
-                                <div>
-                                    <h4 class="font-semibold text-aktext mb-3">Mathematics</h4>
-                                    <ul class="space-y-2 text-akmuted text-sm">
-                                        <li>• Sets & Relations</li>
-                                        <li>• Functions</li>
-                                        <li>• Trigonometry</li>
-                                        <li>• Coordinate Geometry</li>
-                                        <li>• Calculus</li>
-                                        <li>• Statistics</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-aktext mb-3">Physics</h4>
-                                    <ul class="space-y-2 text-akmuted text-sm">
-                                        <li>• Mechanics</li>
-                                        <li>• Thermodynamics</li>
-                                        <li>• Waves & Optics</li>
-                                        <li>• Electricity</li>
-                                        <li>• Magnetism</li>
-                                        <li>• Modern Physics</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-aktext mb-3">Chemistry</h4>
-                                    <ul class="space-y-2 text-akmuted text-sm">
-                                        <li>• Physical Chemistry</li>
-                                        <li>• Inorganic Chemistry</li>
-                                        <li>• Organic Chemistry</li>
-                                        <li>• Environmental Chemistry</li>
-                                        <li>• Biomolecules</li>
-                                        <li>• Polymers</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- General Test -->
-                        <div class="bg-white border border-akborder rounded-xl p-6 shadow-sm">
-                            <h3 class="text-xl font-semibold text-aktext mb-4 flex items-center gap-2">
-                                <span class="text-2xl">🧠</span> Section III - General Test
-                            </h3>
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <h4 class="font-semibold text-aktext mb-3">General Knowledge</h4>
-                                    <ul class="space-y-2 text-akmuted text-sm">
-                                        <li>• Current Affairs</li>
-                                        <li>• History</li>
-                                        <li>• Geography</li>
-                                        <li>• Politics</li>
-                                        <li>• Economics</li>
-                                        <li>• Sports</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-aktext mb-3">Logical Reasoning</h4>
-                                    <ul class="space-y-2 text-akmuted text-sm">
-                                        <li>• Analytical Reasoning</li>
-                                        <li>• Logical Reasoning</li>
-                                        <li>• Quantitative Reasoning</li>
-                                        <li>• Sequence & Series</li>
-                                        <li>• Data Interpretation</li>
-                                        <li>• Mathematical Reasoning</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="text-center">
-                            <button class="bg-akprimary text-white px-8 py-3 rounded-lg hover:bg-akprimaryhover transition-colors font-semibold">
-                                📥 Download Complete Syllabus PDF
-                            </button>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Colleges Accepting CUET -->
-                <section class="fade-in-element">
-                    <h2 class="text-3xl font-bold text-aktext mb-6">Top Colleges Accepting CUET UG</h2>
-                    
-                    <!-- Filter Options -->
-                    <div class="flex flex-wrap gap-4 mb-6">
-                        <button class="college-filter active bg-akprimary text-white px-4 py-2 rounded-lg" data-filter="all">All Colleges</button>
-                        <button class="college-filter bg-gray-200 text-aktext px-4 py-2 rounded-lg hover:bg-gray-300" data-filter="central">Central Universities</button>
-                        <button class="college-filter bg-gray-200 text-aktext px-4 py-2 rounded-lg hover:bg-gray-300" data-filter="state">State Universities</button>
-                        <button class="college-filter bg-gray-200 text-aktext px-4 py-2 rounded-lg hover:bg-gray-300" data-filter="private">Private Universities</button>
-                    </div>
-
-                    <div class="grid md:grid-cols-2 gap-6" id="collegesList">
-                        <!-- College cards will be populated by JavaScript -->
-                    </div>
-                </section>
-
-                <!-- Application Process -->
-                <section class="fade-in-element">
-                    <h2 class="text-3xl font-bold text-aktext mb-6">Application Process</h2>
-                    <div class="bg-white border border-akborder rounded-xl p-6 shadow-sm">
-                        <!-- Progress Steps -->
-                        <div class="flex flex-col md:flex-row justify-between mb-8">
-                            <div class="progress-step active">
-                                <div class="pt-12">
-                                    <div class="font-semibold text-aktext">Step 1</div>
-                                    <div class="text-sm text-akmuted">Register Online</div>
-                                </div>
-                            </div>
-                            <div class="progress-step active">
-                                <div class="pt-12">
-                                    <div class="font-semibold text-aktext">Step 2</div>
-                                    <div class="text-sm text-akmuted">Fill Application</div>
-                                </div>
-                            </div>
-                            <div class="progress-step">
-                                <div class="pt-12">
-                                    <div class="font-semibold text-aktext">Step 3</div>
-                                    <div class="text-sm text-akmuted">Upload Documents</div>
-                                </div>
-                            </div>
-                            <div class="progress-step">
-                                <div class="pt-12">
-                                    <div class="font-semibold text-aktext">Step 4</div>
-                                    <div class="text-sm text-akmuted">Pay Fees</div>
-                                </div>
-                            </div>
-                            <div class="progress-step">
-                                <div class="pt-12">
-                                    <div class="font-semibold text-aktext">Step 5</div>
-                                    <div class="text-sm text-akmuted">Submit</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Detailed Steps -->
-                        <div class="space-y-6">
-                            <div class="flex items-start gap-4">
-                                <div class="w-8 h-8 bg-akprimary text-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
-                                <div>
-                                    <h3 class="font-semibold text-aktext mb-2">Register Online</h3>
-                                    <p class="text-akmuted">Visit the official CUET website and create your account using email ID and mobile number.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <div class="w-8 h-8 bg-akprimary text-white rounded-full flex items-center justify-center font-bold text-sm">2</div>
-                                <div>
-                                    <h3 class="font-semibold text-aktext mb-2">Fill Application Form</h3>
-                                    <p class="text-akmuted">Complete personal details, academic information, and select your preferred subjects and universities.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <div class="w-8 h-8 bg-gray-300 text-white rounded-full flex items-center justify-center font-bold text-sm">3</div>
-                                <div>
-                                    <h3 class="font-semibold text-aktext mb-2">Upload Documents</h3>
-                                    <p class="text-akmuted">Upload scanned copies of photograph, signature, Class 10 & 12 certificates, and category certificate (if applicable).</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <div class="w-8 h-8 bg-gray-300 text-white rounded-full flex items-center justify-center font-bold text-sm">4</div>
-                                <div>
-                                    <h3 class="font-semibold text-aktext mb-2">Pay Application Fee</h3>
-                                    <p class="text-akmuted">Pay the application fee online using debit card, credit card, or net banking.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <div class="w-8 h-8 bg-gray-300 text-white rounded-full flex items-center justify-center font-bold text-sm">5</div>
-                                <div>
-                                    <h3 class="font-semibold text-aktext mb-2">Submit Application</h3>
-                                    <p class="text-akmuted">Review all details carefully and submit your application. Take a printout for future reference.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-6 p-4 bg-green-50 rounded-lg">
-                            <h4 class="font-semibold text-green-800 mb-2">💰 Application Fee Structure:</h4>
-                            <div class="grid md:grid-cols-3 gap-4 text-sm text-green-700">
-                                <div><strong>General/OBC:</strong> ₹650 per subject</div>
-                                <div><strong>SC/ST/PwD:</strong> ₹600 per subject</div>
-                                <div><strong>EWS:</strong> ₹600 per subject</div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Preparation Tips -->
-                <section class="fade-in-element">
-                    <h2 class="text-3xl font-bold text-aktext mb-6">Preparation Tips & Strategy</h2>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="bg-white border border-akborder rounded-xl p-6 shadow-sm">
-                            <h3 class="text-xl font-semibold text-aktext mb-4 flex items-center gap-2">
-                                <span class="text-2xl">📚</span> Study Strategy
-                            </h3>
-                            <ul class="space-y-3 text-akmuted">
-                                <li class="flex items-start gap-3">
-                                    <span class="text-green-500 mt-1">✓</span>
-                                    <span>Start with NCERT books for domain subjects</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="text-green-500 mt-1">✓</span>
-                                    <span>Practice reading comprehension daily</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="text-green-500 mt-1">✓</span>
-                                    <span>Stay updated with current affairs</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="text-green-500 mt-1">✓</span>
-                                    <span>Solve previous year papers regularly</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="text-green-500 mt-1">✓</span>
-                                    <span>Take mock tests to improve speed</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="bg-white border border-akborder rounded-xl p-6 shadow-sm">
-                            <h3 class="text-xl font-semibold text-aktext mb-4 flex items-center gap-2">
-                                <span class="text-2xl">⏰</span> Time Management
-                            </h3>
-                            <ul class="space-y-3 text-akmuted">
-                                <li class="flex items-start gap-3">
-                                    <span class="text-blue-500 mt-1">⏱️</span>
-                                    <span>Allocate 45 minutes per section efficiently</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="text-blue-500 mt-1">⏱️</span>
-                                    <span>Attempt easier questions first</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="text-blue-500 mt-1">⏱️</span>
-                                    <span>Don't spend too much time on one question</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="text-blue-500 mt-1">⏱️</span>
-                                    <span>Keep 5 minutes for final review</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="text-blue-500 mt-1">⏱️</span>
-                                    <span>Practice with timer during preparation</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="bg-white border border-akborder rounded-xl p-6 shadow-sm">
-                            <h3 class="text-xl font-semibold text-aktext mb-4 flex items-center gap-2">
-                                <span class="text-2xl">📖</span> Free Resources
-                            </h3>
-                            <ul class="space-y-3 text-akmuted">
-                                <li class="flex items-start gap-3">
-                                    <span class="text-purple-500 mt-1">📚</span>
-                                    <span>NCERT textbooks (Class 11 & 12)</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="text-purple-500 mt-1">📚</span>
-                                    <span>Previous year question papers</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="text-purple-500 mt-1">📚</span>
-                                    <span>Sample papers from NTA</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="text-purple-500 mt-1">📚</span>
-                                    <span>YouTube educational channels</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="text-purple-500 mt-1">📚</span>
-                                    <span>Government websites for GK</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="bg-white border border-akborder rounded-xl p-6 shadow-sm">
-                            <h3 class="text-xl font-semibold text-aktext mb-4 flex items-center gap-2">
-                                <span class="text-2xl">🎯</span> Exam Day Tips
-                            </h3>
-                            <ul class="space-y-3 text-akmuted">
-                                <li class="flex items-start gap-3">
-                                    <span class="text-orange-500 mt-1">🎯</span>
-                                    <span>Reach exam center 30 minutes early</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="text-orange-500 mt-1">🎯</span>
-                                    <span>Carry admit card and valid ID proof</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="text-orange-500 mt-1">🎯</span>
-                                    <span>Read instructions carefully</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="text-orange-500 mt-1">🎯</span>
-                                    <span>Stay calm and focused</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="text-orange-500 mt-1">🎯</span>
-                                    <span>Avoid negative marking by guessing</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="mt-6 text-center">
-                        <button class="bg-akprimary text-white px-8 py-3 rounded-lg hover:bg-akprimaryhover transition-colors font-semibold">
-                            📥 Download Study Plan PDF
-                        </button>
-                    </div>
-                </section>
-
-                <!-- Previous Year Papers & Mock Tests -->
-                <section class="fade-in-element">
-                    <h2 class="text-3xl font-bold text-aktext mb-6">Previous Year Papers & Mock Tests</h2>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="bg-white border border-akborder rounded-xl p-6 shadow-sm">
-                            <h3 class="text-xl font-semibold text-aktext mb-4 flex items-center gap-2">
-                                <span class="text-2xl">📄</span> Previous Year Papers
-                            </h3>
-                            <div class="space-y-4">
-                                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                                    <div>
-                                        <div class="font-medium text-aktext">CUET UG 2024</div>
-                                        <div class="text-sm text-akmuted">All subjects included</div>
-                                    </div>
-                                    <button class="bg-akprimary text-white px-4 py-2 rounded-lg text-sm hover:bg-akprimaryhover transition-colors">
-                                        Download
-                                    </button>
-                                </div>
-                                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                                    <div>
-                                        <div class="font-medium text-aktext">CUET UG 2023</div>
-                                        <div class="text-sm text-akmuted">All subjects included</div>
-                                    </div>
-                                    <button class="bg-akprimary text-white px-4 py-2 rounded-lg text-sm hover:bg-akprimaryhover transition-colors">
-                                        Download
-                                    </button>
-                                </div>
-                                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                                    <div>
-                                        <div class="font-medium text-aktext">CUET UG 2022</div>
-                                        <div class="text-sm text-akmuted">All subjects included</div>
-                                    </div>
-                                    <button class="bg-akprimary text-white px-4 py-2 rounded-lg text-sm hover:bg-akprimaryhover transition-colors">
-                                        Download
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-white border border-akborder rounded-xl p-6 shadow-sm">
-                            <h3 class="text-xl font-semibold text-aktext mb-4 flex items-center gap-2">
-                                <span class="text-2xl">🧪</span> Mock Tests
-                            </h3>
-                            <div class="space-y-4">
-                                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                                    <div>
-                                        <div class="font-medium text-aktext">Full Length Mock Test 1</div>
-                                        <div class="text-sm text-akmuted">All sections • 3 hours</div>
-                                    </div>
-                                    <button class="bg-green-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-700 transition-colors">
-                                        Take Test
-                                    </button>
-                                </div>
-                                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                                    <div>
-                                        <div class="font-medium text-aktext">Subject-wise Tests</div>
-                                        <div class="text-sm text-akmuted">Math, Physics, Chemistry</div>
-                                    </div>
-                                    <button class="bg-green-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-700 transition-colors">
-                                        Take Test
-                                    </button>
-                                </div>
-                                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                                    <div>
-                                        <div class="font-medium text-aktext">Language Practice</div>
-                                        <div class="text-sm text-akmuted">English & Hindi</div>
-                                    </div>
-                                    <button class="bg-green-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-700 transition-colors">
-                                        Take Test
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-6 p-4 bg-blue-50 rounded-lg">
-                        <p class="text-blue-800 text-center">
-                            <strong>💡 Pro Tip:</strong> Solve at least 50 previous year questions and take 10 full-length mock tests before the exam for better preparation.
-                        </p>
-                    </div>
-                </section>
-
-                <!-- Student Testimonials -->
-                <section class="fade-in-element">
-                    <h2 class="text-3xl font-bold text-aktext mb-6">Student Success Stories</h2>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="bg-white border border-akborder rounded-xl p-6 shadow-sm">
-                            <div class="flex items-center gap-4 mb-4">
-                                <div class="w-12 h-12 bg-akprimary rounded-full flex items-center justify-center">
-                                    <span class="text-white font-bold">AS</span>
-                                </div>
-                                <div>
-                                    <div class="font-semibold text-aktext">Arjun Sharma</div>
-                                    <div class="text-akmuted text-sm">CUET UG 2024 Topper</div>
-                                    <div class="text-yellow-500 text-sm">★★★★★</div>
-                                </div>
-                            </div>
-                            <p class="text-akmuted italic">
-                                "CUET opened doors to my dream university! The exam pattern was fair and the preparation resources from Admission Kart were extremely helpful. Got admission in DU with 99.8 percentile!"
-                            </p>
-                        </div>
-                        <div class="bg-white border border-akborder rounded-xl p-6 shadow-sm">
-                            <div class="flex items-center gap-4 mb-4">
-                                <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
-                                    <span class="text-white font-bold">PK</span>
-                                </div>
-                                <div>
-                                    <div class="font-semibold text-aktext">Priya Kumari</div>
-                                    <div class="text-akmuted text-sm">JNU Student</div>
-                                    <div class="text-yellow-500 text-sm">★★★★★</div>
-                                </div>
-                            </div>
-                            <p class="text-akmuted italic">
-                                "The mock tests and previous year papers helped me understand the exam pattern perfectly. Scored 98.5 percentile and got my preferred course in JNU. Thank you Admission Kart!"
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- FAQs -->
-                <section class="fade-in-element">
-                    <h2 class="text-3xl font-bold text-aktext mb-6">Frequently Asked Questions</h2>
-                    <div class="space-y-4">
-                        <div class="bg-white border border-akborder rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
-                                <span class="text-lg font-medium text-aktext">How many attempts are allowed for CUET UG?</span>
-                                <span class="faq-icon text-akprimary">+</span>
-                            </button>
-                            <div class="faq-content px-6 pb-4 hidden">
-                                <div class="pt-2 border-t border-akborder">
-                                    <p class="text-akmuted">There is no limit on the number of attempts for CUET UG. Candidates can appear for the exam multiple times as long as they meet the eligibility criteria.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-white border border-akborder rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
-                                <span class="text-lg font-medium text-aktext">Is coaching necessary for CUET UG preparation?</span>
-                                <span class="faq-icon text-akprimary">+</span>
-                            </button>
-                            <div class="faq-content px-6 pb-4 hidden">
-                                <div class="pt-2 border-t border-akborder">
-                                    <p class="text-akmuted">Coaching is not mandatory for CUET UG. With proper self-study using NCERT books, previous year papers, and mock tests, students can achieve good scores. However, coaching can provide structured guidance and doubt resolution.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-white border border-akborder rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
-                                <span class="text-lg font-medium text-aktext">What is the reservation policy for CUET UG?</span>
-                                <span class="faq-icon text-akprimary">+</span>
-                            </button>
-                            <div class="faq-content px-6 pb-4 hidden">
-                                <div class="pt-2 border-t border-akborder">
-                                    <p class="text-akmuted">CUET UG follows the government reservation policy: 15% for SC, 7.5% for ST, 27% for OBC-NCL, 10% for EWS, and 5% for PwD candidates. Each participating university may have additional reservation policies.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-white border border-akborder rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
-                                <span class="text-lg font-medium text-aktext">How difficult is CUET UG compared to other entrance exams?</span>
-                                <span class="faq-icon text-akprimary">+</span>
-                            </button>
-                            <div class="faq-content px-6 pb-4 hidden">
-                                <div class="pt-2 border-t border-akborder">
-                                    <p class="text-akmuted">CUET UG difficulty level is moderate and is based on NCERT curriculum. It's generally considered easier than JEE Main but requires good preparation in language, domain subjects, and general knowledge.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-white border border-akborder rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
-                                <span class="text-lg font-medium text-aktext">Can I change my exam center after registration?</span>
-                                <span class="faq-icon text-akprimary">+</span>
-                            </button>
-                            <div class="faq-content px-6 pb-4 hidden">
-                                <div class="pt-2 border-t border-akborder">
-                                    <p class="text-akmuted">Yes, you can change your exam center during the correction window period. However, changes are subject to availability of seats in the desired center and may require additional fees.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-12 text-center">
-                        <div class="bg-akprimary/10 rounded-lg p-8">
-                            <div class="text-4xl mb-4">💬</div>
-                            <h3 class="text-xl font-semibold text-aktext mb-2">Still have questions?</h3>
-                            <p class="text-akmuted mb-6">
-                                Our CUET experts are here to help you with personalized guidance and doubt resolution.
-                            </p>
-                            <button onclick="scrollToEnquiry()" class="bg-akprimary hover:bg-akprimaryhover text-white px-8 py-3 rounded-lg font-semibold transition-colors">Talk to Our Expert</button>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Community Section -->
-                <section class="fade-in-element">
-                    <h2 class="text-3xl font-bold text-aktext mb-6">Join CUET Community</h2>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl p-6">
-                            <div class="flex items-center gap-4 mb-4">
-                                <div class="text-4xl">📱</div>
-                                <div>
-                                    <h3 class="text-xl font-bold">WhatsApp Group</h3>
-                                    <p class="text-green-100">Get daily updates & tips</p>
-                                </div>
-                            </div>
-                            <p class="mb-4 text-green-100">Join 10,000+ CUET aspirants for daily practice questions, exam updates, and peer discussions.</p>
-                            <button class="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                                Join WhatsApp Group
-                            </button>
-                        </div>
-
-                        <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl p-6">
-                            <div class="flex items-center gap-4 mb-4">
-                                <div class="text-4xl">📢</div>
-                                <div>
-                                    <h3 class="text-xl font-bold">Telegram Channel</h3>
-                                    <p class="text-blue-100">Latest news & notifications</p>
-                                </div>
-                            </div>
-                            <p class="mb-4 text-blue-100">Stay updated with official announcements, exam dates, and important notifications from NTA.</p>
-                            <button class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                                Join Telegram Channel
-                            </button>
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-            <!-- Sidebar -->
-            <div class="lg:col-span-1">
-                <div class="sticky-sidebar space-y-6">
-                    <!-- Key Highlights Box -->
-                    <div class="bg-white border border-akborder rounded-xl p-6 shadow-sm">
-                        <h3 class="text-xl font-bold text-aktext mb-4">📋 CUET UG 2025 Highlights</h3>
-                        <table class="w-full text-sm">
-                            <tr class="border-b border-akborder">
-                                <td class="py-2 font-medium text-aktext">Exam Name</td>
-                                <td class="py-2 text-akmuted">CUET UG</td>
-                            </tr>
-                            <tr class="border-b border-akborder">
-                                <td class="py-2 font-medium text-aktext">Conducting Body</td>
-                                <td class="py-2 text-akmuted">NTA</td>
-                            </tr>
-                            <tr class="border-b border-akborder">
-                                <td class="py-2 font-medium text-aktext">Exam Mode</td>
-                                <td class="py-2 text-akmuted">Online (CBT)</td>
-                            </tr>
-                            <tr class="border-b border-akborder">
-                                <td class="py-2 font-medium text-aktext">Exam Date</td>
-                                <td class="py-2 text-akmuted">May 2025</td>
-                            </tr>
-                            <tr class="border-b border-akborder">
-                                <td class="py-2 font-medium text-aktext">Application Fee</td>
-                                <td class="py-2 text-akmuted">₹600-650</td>
-                            </tr>
-                            <tr>
-                                <td class="py-2 font-medium text-aktext">Participating Universities</td>
-                                <td class="py-2 text-akmuted">200+</td>
-                            </tr>
-                        </table>
-                    </div>
-
-                    <!-- Quick Enquiry Form -->
-                    <div id="enquiry-form" class="bg-gradient-to-br from-akprimary to-blue-700 text-white rounded-xl p-6">
-                        <h3 class="text-xl font-bold mb-4">🎯 Need CUET Guidance?</h3>
-                        <form id="quickEnquiryForm" class="space-y-4">
-                            <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-3 rounded-lg text-aktext focus:outline-none focus:ring-2 focus:ring-white">
-                            <input type="email" name="email" placeholder="Email Address" required class="w-full px-4 py-3 rounded-lg text-aktext focus:outline-none focus:ring-2 focus:ring-white">
-                            <input type="tel" name="phone" placeholder="Phone Number" required class="w-full px-4 py-3 rounded-lg text-aktext focus:outline-none focus:ring-2 focus:ring-white">
-                            <select name="subject" required class="w-full px-4 py-3 rounded-lg text-aktext focus:outline-none focus:ring-2 focus:ring-white">
-                                <option value="">Select Subject Interest</option>
-                                <option value="mathematics">Mathematics</option>
-                                <option value="physics">Physics</option>
-                                <option value="chemistry">Chemistry</option>
-                                <option value="biology">Biology</option>
-                                <option value="economics">Economics</option>
-                                <option value="political-science">Political Science</option>
-                                <option value="history">History</option>
-                                <option value="geography">Geography</option>
-                            </select>
-                            <button type="submit" class="w-full bg-white text-akprimary py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                                Get Free Guidance
-                            </button>
-                        </form>
-                        <div class="mt-4 text-center text-sm text-blue-100">
-                            ✓ Expert Counseling • ✓ 24hr Response • ✓ Free Mock Tests
-                        </div>
-                    </div>
-
-                    <!-- Quick Links -->
-                    <div class="bg-white border border-akborder rounded-xl p-6 shadow-sm">
-                        <h3 class="text-xl font-bold text-aktext mb-4">🔗 Quick Links</h3>
-                        <div class="space-y-2">
-                            <a href="#dates" class="block text-akmuted hover:text-akprimary transition-colors">📅 Important Dates</a>
-                            <a href="#eligibility" class="block text-akmuted hover:text-akprimary transition-colors">📋 Eligibility Criteria</a>
-                            <a href="#pattern" class="block text-akmuted hover:text-akprimary transition-colors">📝 Exam Pattern</a>
-                            <a href="#syllabus" class="block text-akmuted hover:text-akprimary transition-colors">📚 Syllabus</a>
-                            <a href="#colleges" class="block text-akmuted hover:text-akprimary transition-colors">🏫 Participating Colleges</a>
-                            <a href="#application" class="block text-akmuted hover:text-akprimary transition-colors">📄 Application Process</a>
-                            <a href="#preparation" class="block text-akmuted hover:text-akprimary transition-colors">💡 Preparation Tips</a>
-                        </div>
-                    </div>
-
-                    <!-- Latest Updates -->
-                    <div class="bg-white border border-akborder rounded-xl p-6 shadow-sm">
-                        <h3 class="text-xl font-bold text-aktext mb-4">📢 Latest Updates</h3>
-                        <div class="space-y-4">
-                            <div class="p-3 bg-yellow-50 rounded-lg border-l-4 border-yellow-400">
-                                <div class="text-sm font-medium text-yellow-800">Registration Opening Soon</div>
-                                <div class="text-xs text-yellow-600 mt-1">Expected in February 2025</div>
-                            </div>
-                            <div class="p-3 bg-blue-50 rounded-lg border-l-4 border-blue-400">
-                                <div class="text-sm font-medium text-blue-800">New Universities Added</div>
-                                <div class="text-xs text-blue-600 mt-1">50+ more universities joining CUET</div>
-                            </div>
-                            <div class="p-3 bg-green-50 rounded-lg border-l-4 border-green-400">
-                                <div class="text-sm font-medium text-green-800">Mock Tests Available</div>
-                                <div class="text-xs text-green-600 mt-1">Free practice tests now live</div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="absolute left-1/2 top-[calc(100%+12px)] -translate-x-[14%] bg-white shadow-2xl rounded-2xl px-0 py-0 w-full max-w-[1280px] min-w-[1100px] hidden group-hover:flex group-focus-within:flex animate-fadeIn border border-akborder z-40"
+                 style="gap:0;">
+              <div class="flex w-full px-14 py-8 gap-10 justify-center">
+                <!-- Left Column -->
+                <div class="min-w-[220px] flex-1 max-w-[260px]">
+                  <h4 class="text-xs font-semibold text-akprimary uppercase tracking-wider mb-4">By State</h4>
+                  <ul class="list-none m-0 p-0 text-base text-akmuted space-y-1.5">
+                    <li class="flex items-center gap-2 hover:bg-akprimary/10 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-akprimary rounded-full"></span>
+                      Maharashtra
+                    </li>
+                    <li class="flex items-center gap-2 hover:bg-akprimary/10 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-akprimary rounded-full"></span>
+                      Karnataka
+                    </li>
+                    <li class="flex items-center gap-2 hover:bg-akprimary/10 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-akprimary rounded-full"></span>
+                      Tamil Nadu
+                    </li>
+                  </ul>
                 </div>
+                <!-- Center Column -->
+                <div class="flex-1 max-w-[420px]">
+                  <h4 class="text-xs font-semibold text-sky-500 uppercase tracking-wider mb-4">Top Colleges</h4>
+                  <div class="grid grid-cols-2 gap-7">
+                    <div>
+                      <span class="block mb-2 text-akaccent font-semibold text-xs uppercase tracking-wider">Private</span>
+                      <ul class="list-none m-0 p-0 text-base text-akmuted space-y-1.5">
+                        <li class="flex items-center gap-2 hover:bg-sky-100 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                          <span class="inline-block w-2 h-2 bg-sky-500 rounded-full"></span>
+                          VIT
+                        </li>
+                        <li class="flex items-center gap-2 hover:bg-sky-100 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                          <span class="inline-block w-2 h-2 bg-sky-500 rounded-full"></span>
+                          MIT-WPU
+                        </li>
+                        <li class="flex items-center gap-2 hover:bg-sky-100 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                          <span class="inline-block w-2 h-2 bg-sky-500 rounded-full"></span>
+                          Christ
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <span class="block mb-2 text-akaccent font-semibold text-xs uppercase tracking-wider">Govt</span>
+                      <ul class="list-none m-0 p-0 text-base text-akmuted space-y-1.5">
+                        <li class="flex items-center gap-2 hover:bg-sky-100 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                          <span class="inline-block w-2 h-2 bg-sky-500 rounded-full"></span>
+                          IIT Bombay
+                        </li>
+                        <li class="flex items-center gap-2 hover:bg-sky-100 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                          <span class="inline-block w-2 h-2 bg-sky-500 rounded-full"></span>
+                          NIT Karnataka
+                        </li>
+                        <li class="flex items-center gap-2 hover:bg-sky-100 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                          <span class="inline-block w-2 h-2 bg-sky-500 rounded-full"></span>
+                          Anna University
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!-- CTA Section -->
+                <div class="flex flex-col justify-between min-w-[250px] max-w-[300px] border-l border-akborder pl-8">
+                  <div>
+                    <span class="font-semibold text-aktext text-sm">Need Guidance?</span>
+                    <p class="text-xs text-akmuted mt-1">Get expert advice for your college journey</p>
+                  </div>
+                  <a href="#cta-final" class="mt-7 bg-akprimary text-white px-6 py-2.5 rounded-lg font-semibold text-sm no-underline shadow-ak3 border-none transition-colors duration-150 hover:bg-akprimaryhover hover:text-white whitespace-nowrap text-center">Book Free Consultation</a>
+                </div>
+              </div>
             </div>
-        </div>
-    </div>
-
-    <!-- Sticky Mobile CTA -->
-    <div class="fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-akborder shadow-lg lg:hidden">
-        <div class="flex">
-            <button onclick="window.open('tel:+919876543210')" class="flex-1 bg-green-600 hover:bg-green-700 text-white py-4 font-semibold transition-colors">
-                📞 Call Expert
+          </li>
+          <!-- Courses Mega Dropdown -->
+          <li class="relative group">
+            <button class="flex items-center gap-1 bg-transparent border-none font-sans cursor-pointer px-4 py-0 text-aktext hover:text-akprimary transition-colors duration-150 focus:outline-none tracking-wide text-base h-[52px] min-h-0" style="letter-spacing:0.01em;">
+              <span><a href="/course.html">Courses</a></a></span>
+              <svg class="w-4 h-4 text-akmuted group-hover:text-akprimary transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <button onclick="scrollToEnquiry()" class="flex-1 bg-akprimary hover:bg-akprimaryhover text-white py-4 font-semibold transition-colors">
-                💬 Get Guidance
+            <div class="absolute left-1/2 top-[calc(100%+12px)] -translate-x-[19%] bg-white shadow-2xl rounded-2xl px-0 py-0 w-full max-w-[1280px] min-w-[1100px] hidden group-hover:flex group-focus-within:flex animate-fadeIn border border-akborder z-40"
+                 style="gap:0;">
+              <div class="flex w-full px-14 py-8 gap-10 justify-center">
+                <div class="min-w-[220px] flex-1 max-w-[260px]">
+                  <h4 class="text-xs font-semibold text-akprimary uppercase tracking-wider mb-4">Popular Programs</h4>
+                  <ul class="list-none m-0 p-0 text-base text-akmuted space-y-1.5">
+                    <li class="flex items-center gap-2 hover:bg-akprimary/10 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-akprimary rounded-full"></span>
+                      Engineering (UG / PG)
+                    </li>
+                    <li class="flex items-center gap-2 hover:bg-akprimary/10 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-akprimary rounded-full"></span>
+                      Management (UG / PG)
+                    </li>
+                    <li class="flex items-center gap-2 hover:bg-akprimary/10 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-akprimary rounded-full"></span>
+                      Medical
+                    </li>
+                  </ul>
+                </div>
+                <div class="flex-1 max-w-[420px]">
+                  <h4 class="text-xs font-semibold text-sky-500 uppercase tracking-wider mb-4">Specialized Fields</h4>
+                  <ul class="list-none m-0 p-0 text-base text-akmuted space-y-1.5">
+                    <li class="flex items-center gap-2 hover:bg-sky-100 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-sky-500 rounded-full"></span>
+                      Law
+                    </li>
+                    <li class="flex items-center gap-2 hover:bg-sky-100 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-sky-500 rounded-full"></span>
+                      Design
+                    </li>
+                    <li class="flex items-center gap-2 hover:bg-sky-100 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-sky-500 rounded-full"></span>
+                      Arts & Science
+                    </li>
+                  </ul>
+                </div>
+                <!-- CTA Section -->
+                <div class="flex flex-col justify-between min-w-[250px] max-w-[300px] border-l border-akborder pl-8">
+                  <div>
+                    <span class="font-semibold text-aktext text-sm">Confused about Courses?</span>
+                    <p class="text-xs text-akmuted mt-1">Let us help you choose the right path</p>
+                  </div>
+                  <a href="#cta-final" class="mt-7 bg-akprimary text-white px-6 py-2.5 rounded-lg font-semibold text-sm no-underline shadow-ak3 border-none transition-colors duration-150 hover:bg-akprimaryhover hover:text-white whitespace-nowrap text-center">Book Free Consultation</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- Exams Mega Dropdown -->
+          <li class="relative group">
+            <button class="flex items-center gap-1 bg-transparent border-none font-sans cursor-pointer px-4 py-0 text-aktext hover:text-akprimary transition-colors duration-150 focus:outline-none tracking-wide text-base h-[52px] min-h-0" style="letter-spacing:0.01em;">
+              <span>Exams</span>
+              <svg class="w-4 h-4 text-akmuted group-hover:text-akprimary transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-        </div>
+            <div class="absolute left-1/2 top-[calc(100%+12px)] -translate-x-[24%] bg-white shadow-2xl rounded-2xl px-0 py-0 w-full max-w-[1280px] min-w-[1100px] hidden group-hover:flex group-focus-within:flex animate-fadeIn border border-akborder z-40"
+                 style="gap:0;">
+              <div class="flex w-full px-14 py-8 gap-10 justify-center">
+                <div class="min-w-[220px] flex-1 max-w-[260px]">
+                  <h4 class="text-xs font-semibold text-akprimary uppercase tracking-wider mb-4">Major Exams</h4>
+                  <ul class="list-none m-0 p-0 text-base text-akmuted space-y-1.5">
+                    <li class="flex items-center gap-2 hover:bg-akprimary/10 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-akprimary rounded-full"></span>
+                      <span><span class="font-semibold text-akaccent">National:</span> JEE, NEET, CUET</span>
+                    </li>
+                    <li class="flex items-center gap-2 hover:bg-akprimary/10 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-akprimary rounded-full"></span>
+                      <span><span class="font-semibold text-akaccent">State:</span> MHT CET, KCET, AP EAMCET</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="flex-1 max-w-[420px]">
+                  <h4 class="text-xs font-semibold text-sky-500 uppercase tracking-wider mb-4">Abroad & More</h4>
+                  <ul class="list-none m-0 p-0 text-base text-akmuted space-y-1.5">
+                    <li class="flex items-center gap-2 hover:bg-sky-100 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-sky-500 rounded-full"></span>
+                      <span><span class="font-semibold text-akaccent">Abroad:</span> SAT, IELTS, TOEFL</span>
+                    </li>
+                  </ul>
+                </div>
+                <!-- CTA Section -->
+                <div class="flex flex-col justify-between min-w-[250px] max-w-[300px] border-l border-akborder pl-8">
+                  <div>
+                    <span class="font-semibold text-aktext text-sm">Exam Help?</span>
+                    <p class="text-xs text-akmuted mt-1">Get tips & resources for your entrance exams</p>
+                  </div>
+                  <a href="#cta-final" class="mt-7 bg-akprimary text-white px-6 py-2.5 rounded-lg font-semibold text-sm no-underline shadow-ak3 border-none transition-colors duration-150 hover:bg-akprimaryhover hover:text-white whitespace-nowrap text-center">Book Free Consultation</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- Study Abroad Mega Dropdown -->
+          <li class="relative group">
+            <button class="flex items-center gap-1 bg-transparent border-none font-sans cursor-pointer px-4 py-0 text-aktext hover:text-akprimary transition-colors duration-150 focus:outline-none tracking-wide text-base h-[52px] min-h-0" style="letter-spacing:0.01em;">
+              <span>Study Abroad</span>
+              <svg class="w-4 h-4 text-akmuted group-hover:text-akprimary transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="absolute left-1/2 top-[calc(100%+12px)] -translate-x-[30%] bg-white shadow-2xl rounded-2xl px-0 py-0 w-full max-w-[1280px] min-w-[1100px] hidden group-hover:flex group-focus-within:flex animate-fadeIn border border-akborder z-40"
+                 style="gap:0;">
+              <div class="flex w-full px-14 py-8 gap-10 justify-center">
+                <div class="min-w-[220px] flex-1 max-w-[260px]">
+                  <h4 class="text-xs font-semibold text-akprimary uppercase tracking-wider mb-4">By Country</h4>
+                  <ul class="list-none m-0 p-0 text-base text-akmuted space-y-1.5">
+                    <li class="flex items-center gap-2 hover:bg-akprimary/10 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-akprimary rounded-full"></span>
+                      USA
+                    </li>
+                    <li class="flex items-center gap-2 hover:bg-akprimary/10 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-akprimary rounded-full"></span>
+                      UK
+                    </li>
+                    <li class="flex items-center gap-2 hover:bg-akprimary/10 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-akprimary rounded-full"></span>
+                      Canada
+                    </li>
+                    <li class="flex items-center gap-2 hover:bg-akprimary/10 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-akprimary rounded-full"></span>
+                      Germany
+                    </li>
+                  </ul>
+                </div>
+                <div class="flex-1 max-w-[420px]">
+                  <h4 class="text-xs font-semibold text-sky-500 uppercase tracking-wider mb-4">Support</h4>
+                  <ul class="list-none m-0 p-0 text-base text-akmuted space-y-1.5">
+                    <li class="flex items-center gap-2 hover:bg-sky-100 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-sky-500 rounded-full"></span>
+                      UG | PG Admissions
+                    </li>
+                    <li class="flex items-center gap-2 hover:bg-sky-100 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-sky-500 rounded-full"></span>
+                      Visa Help, SOP, LOR
+                    </li>
+                  </ul>
+                </div>
+                <!-- CTA Section -->
+                <div class="flex flex-col justify-between min-w-[250px] max-w-[300px] border-l border-akborder pl-8">
+                  <div>
+                    <span class="font-semibold text-aktext text-sm">Dreaming Abroad?</span>
+                    <p class="text-xs text-akmuted mt-1">We help you with every step of your global journey</p>
+                  </div>
+                  <a href="#cta-final" class="mt-7 bg-akprimary text-white px-6 py-2.5 rounded-lg font-semibold text-sm no-underline shadow-ak3 border-none transition-colors duration-150 hover:bg-akprimaryhover hover:text-white whitespace-nowrap text-center">Book Free Consultation</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- Counseling Mega Dropdown -->
+          <li class="relative group">
+            <button class="flex items-center gap-1 bg-transparent border-none font-sans cursor-pointer px-4 py-0 text-aktext hover:text-akprimary transition-colors duration-150 focus:outline-none tracking-wide text-base h-[52px] min-h-0" style="letter-spacing:0.01em;">
+              <span>Counseling</span>
+              <svg class="w-4 h-4 text-akmuted group-hover:text-akprimary transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="absolute left-1/2 top-[calc(100%+12px)] -translate-x-[39%] bg-white shadow-2xl rounded-2xl px-0 py-0 w-full max-w-[1100px] min-w-[900px] hidden group-hover:flex group-focus-within:flex animate-fadeIn border border-akborder z-40"
+                 style="gap:0;">
+              <div class="flex w-full px-14 py-8 gap-10 justify-center">
+                <div class="flex-1 max-w-[420px]">
+                  <h4 class="text-xs font-semibold text-akprimary uppercase tracking-wider mb-4">Our Services</h4>
+                  <ul class="list-none m-0 p-0 text-base text-akmuted space-y-1.5">
+                    <li class="flex items-center gap-2 hover:bg-akprimary/10 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-akprimary rounded-full"></span>
+                      Book Session
+                    </li>
+                    <li class="flex items-center gap-2 hover:bg-akprimary/10 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-akprimary rounded-full"></span>
+                      Career Guidance
+                    </li>
+                    <li class="flex items-center gap-2 hover:bg-akprimary/10 rounded px-2 py-2 transition cursor-pointer text-aktext">
+                      <span class="inline-block w-2 h-2 bg-akprimary rounded-full"></span>
+                      Admission Process
+                    </li>
+                  </ul>
+                </div>
+                <!-- CTA Section -->
+                <div class="flex flex-col justify-between min-w-[250px] max-w-[300px] border-l border-akborder pl-8">
+                  <div>
+                    <span class="font-semibold text-aktext text-sm">Talk to an Expert</span>
+                    <p class="text-xs text-akmuted mt-1">Personalized counseling for your needs</p>
+                  </div>
+                  <a href="#cta-final" class="mt-7 bg-akprimary text-white px-6 py-2.5 rounded-lg font-semibold text-sm no-underline shadow-ak3 border-none transition-colors duration-150 hover:bg-akprimaryhover hover:text-white whitespace-nowrap text-center">Book Free Consultation</a>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <!-- CTA Button (Desktop) -->
+      <a href="#cta-final" class="hidden lg:inline-block ml-8 bg-akprimary text-white px-7 py-3 rounded-lg font-semibold text-[1.05rem] no-underline shadow-ak3 border-none transition-colors duration-150 hover:bg-akprimaryhover hover:text-white">Book Consultation</a>
+      <!-- Hamburger (Mobile) -->
+      <button id="mobile-menu-btn" aria-label="Open menu" class="flex flex-col gap-1.5 cursor-pointer p-1 ml-5 w-9 h-9 justify-center bg-transparent border-none lg:hidden">
+        <span class="block h-[3px] w-7 bg-akprimary rounded transition-all"></span>
+        <span class="block h-[3px] w-7 bg-akprimary rounded transition-all"></span>
+        <span class="block h-[3px] w-5 bg-akprimary rounded transition-all"></span>
+      </button>
     </div>
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu-drawer" class="hidden fixed top-0 right-0 w-[82vw] max-w-[340px] h-screen bg-akcard shadow-[0_0_32px_rgba(0,0,0,0.05)] z-[100] flex-col p-10 pt-10 pb-6 animate-slideInDrawer border-l border-akborder">
+      <button id="mobile-menu-close" aria-label="Close menu" class="absolute top-5 right-5 text-[2.2rem] bg-transparent border-none text-akprimary cursor-pointer leading-none">&times;</button>
+      <nav>
+        <ul class="list-none p-0 mt-14 flex flex-col gap-7 font-semibold text-[1.1rem] text-aktext">
+          <li><a href="#" class="text-aktext no-underline transition-colors hover:text-akprimary">Colleges</a></li>
+          <li><a href="#" class="text-aktext no-underline transition-colors hover:text-akprimary">Courses</a></li>
+          <li><a href="#" class="text-aktext no-underline transition-colors hover:text-akprimary">Exams</a></li>
+          <li><a href="#" class="text-aktext no-underline transition-colors hover:text-akprimary">Study Abroad</a></li>
+          <li><a href="#" class="text-aktext no-underline transition-colors hover:text-akprimary">Counseling</a></li>
+        </ul>
+        <a href="#cta-final" class="block mt-10 w-full text-center bg-akprimary text-white px-7 py-3 rounded-lg font-semibold text-[1.05rem] no-underline shadow-ak3 border-none transition-colors duration-150 hover:bg-akprimaryhover hover:text-white">Book Consultation</a>
+      </nav>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script>
+      // Mobile menu open/close with animation
+      document.addEventListener('DOMContentLoaded', function() {
+        var btn = document.getElementById('mobile-menu-btn');
+        var drawer = document.getElementById('mobile-menu-drawer');
+        var closeBtn = document.getElementById('mobile-menu-close');
+        if(btn && drawer && closeBtn) {
+          btn.onclick = function() {
+            drawer.classList.remove('hidden');
+            drawer.classList.add('flex', 'open');
+            gsap.fromTo(drawer, {x: 340, opacity: 0}, {x: 0, opacity: 1, duration: 0.22, ease: "power2.out"});
+          };
+          closeBtn.onclick = function() {
+            gsap.to(drawer, {x: 340, opacity: 0, duration: 0.18, ease: "power2.in", onComplete: function() {
+              drawer.classList.remove('flex', 'open');
+              drawer.classList.add('hidden');
+              drawer.style.transform = '';
+              drawer.style.opacity = '';
+            }});
+          };
+          drawer.onclick = function(e) {
+            if(e.target === drawer) {
+              gsap.to(drawer, {x: 340, opacity: 0, duration: 0.18, ease: "power2.in", onComplete: function() {
+                drawer.classList.remove('flex', 'open');
+                drawer.classList.add('hidden');
+                drawer.style.transform = '';
+                drawer.style.opacity = '';
+              }});
+            }
+          };
+        }
+      });
+    </script>
+  </header>
 
-    <!-- FOOTER (Light, Professional, Redesigned, Spaced) -->
+  <!-- HERO SECTION (Light, Professional, Improved, 85vh min-height) -->
+  <section id="hero" class="relative bg-gradient-to-br from-white via-akcard2 to-white pt-24 pb-16 font-inter overflow-hidden min-h-[70vh] flex items-center">
+    <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between gap-10 px-6 md:px-8 w-full">
+      <!-- Left: Text -->
+      <div class="flex-1 min-w-[280px] max-w-[520px] flex flex-col gap-5 md:gap-7 z-10">
+        <h1 class="text-[2.1rem] sm:text-[2.6rem] md:text-[2.8rem] font-extrabold text-aktext mb-1 leading-[1.18] tracking-[.01em]">
+          Complete Admission Support for <span class="text-akprimary">India &amp; Abroad</span>
+        </h1>
+        <div class="flex flex-wrap gap-3 text-akmuted text-[1.01rem] font-medium mb-2">
+          <span>Counseling</span>
+          <span class="mx-1 text-akborder">|</span>
+          <span>Courses</span>
+          <span class="mx-1 text-akborder">|</span>
+          <span>College Selection</span>
+        </div>
+        <div class="flex gap-4 flex-wrap mt-2">
+          <a href="#cta-final" class="bg-akprimary text-white px-6 py-2.5 rounded-md font-semibold text-[1rem] no-underline shadow-ak3 border-none transition-colors duration-150 hover:bg-akprimaryhover hover:text-white">Get Admission Help</a>
+          <a href="#cta-final" class="bg-akcard text-akprimary border-2 border-akprimary px-6 py-2.5 rounded-md font-semibold text-[1rem] no-underline shadow-none transition-colors duration-150 hover:bg-akprimary hover:text-white">Book Free Counseling</a>
+        </div>
+      </div>
+      <!-- Right: Illustration Card -->
+      <div class="flex-1 min-w-[260px] flex items-center justify-center mt-10 md:mt-0 relative z-10">
+        <div class="relative w-[340px] h-[240px] md:w-[370px] md:h-[260px] bg-gradient-to-br from-akcard2 to-akcard rounded-2xl shadow-ak4 flex items-center justify-center overflow-hidden">
+          <!-- Education themed illustration image -->
+          <img 
+            src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+            alt="Students studying together" 
+            class="absolute inset-0 w-full h-full object-cover object-center "
+            loading="lazy"
+          />
+          <!-- Top-right badge: Years Experience -->
+          <div class="absolute top-3 right-3 bg-akcard2 border border-akborder rounded-lg px-3 py-1 flex items-center gap-2 shadow-ak2 z-10">
+            <span class="text-akprimary font-bold text-[1rem] leading-none">5+</span>
+            <span class="text-akmuted text-xs leading-none">Years Experience</span>
+          </div>
+          <!-- Bottom-left badge: Students Helped -->
+          <div class="absolute bottom-3 left-3 bg-akcard2 border border-akborder rounded-lg px-3 py-1 flex flex-col shadow-ak2 z-10">
+            <span class="text-akprimary font-bold text-[1rem] leading-none">20,000+</span>
+            <span class="text-akmuted text-xs leading-none">Students Helped</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT ADMISSION KART (Light, Modern Animations & Stats Cards) -->
+  <section id="about" class="py-20 bg-akcard font-inter relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-6 text-center space-y-14">
+      <div class="about-item space-y-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-akprimary mb-2 tracking-[.01em]">About Admission Kart</h2>
+        <p class="text-lg md:text-xl text-akmuted leading-relaxed max-w-2xl mx-auto">
+          We are dedicated to providing comprehensive admission support and career guidance to students across India and abroad. Our mission is to bridge the gap between students' aspirations and their dream colleges through personalized counseling and expert guidance.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Stat 1 -->
+        <div class="about-item bg-akcard2 border border-akborder rounded-xl p-8 text-center hover:border-akprimary/50 transition-all duration-300 shadow-ak4">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4" style="background-color: #2563EB20;">
+            <!-- Users Icon SVG -->
+            <svg class="w-8 h-8" fill="none" stroke="#2563EB" stroke-width="1.7" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div class="text-3xl font-bold mb-2" style="color: #2563EB;">20,000+</div>
+          <div class="text-akmuted font-medium">Students Guided</div>
+        </div>
+        <!-- Stat 2 -->
+        <div class="about-item bg-akcard2 border border-akborder rounded-xl p-8 text-center hover:border-akaccent/50 transition-all duration-300 shadow-ak4">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4" style="background-color: #2563EB20;">
+            <!-- Calendar Icon SVG -->
+            <svg class="w-8 h-8" fill="none" stroke="#2563EB" stroke-width="1.7" viewBox="0 0 24 24">
+              <rect x="3" y="4" width="18" height="18" rx="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16 2v4M8 2v4M3 10h18"/>
+            </svg>
+          </div>
+          <div class="text-3xl font-bold mb-2" style="color: #2563EB;">5+</div>
+          <div class="text-akmuted font-medium">Years Experience</div>
+        </div>
+        <!-- Stat 3 -->
+        <div class="about-item bg-akcard2 border border-akborder rounded-xl p-8 text-center hover:border-akaccent2/50 transition-all duration-300 shadow-ak4">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4" style="background-color: #16A34A20;">
+            <!-- Award Icon SVG -->
+            <svg class="w-8 h-8" fill="none" stroke="#16A34A" stroke-width="1.7" viewBox="0 0 24 24">
+              <circle cx="12" cy="8" r="6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.58 16.89 17 21l-5-2-5 2 1.42-4.11"/>
+            </svg>
+          </div>
+          <div class="text-3xl font-bold mb-2" style="color: #16A34A;">Top Ranked</div>
+          <div class="text-akmuted font-medium">Colleges Partner</div>
+        </div>
+      </div>
+    </div>
+    <!-- Optionally, add a subtle animated background shape for extra polish -->
+    <div class="pointer-events-none absolute -top-32 -right-32 w-[400px] h-[400px] bg-gradient-to-br from-akprimary/10 to-akaccent/0 rounded-full blur-3xl opacity-60"></div>
+  </section>
+
+  <!-- OUR SERVICES OVERVIEW (Light, Professional) -->
+  <section id="services" class="py-20 bg-akcard2">
+    <div class="max-w-[1100px] mx-auto px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-akprimary">Our Services Overview</h2>
+        <p class="text-lg text-akmuted max-w-2xl mx-auto">
+          Comprehensive support services designed to guide you through every step of your admission journey
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div class="service-card bg-akcard border border-akborder rounded-xl p-8 hover:border-akprimary/50 hover:shadow-lg hover:shadow-akprimary/10 transition-all duration-300 group">
+          <div class="inline-flex items-center justify-center w-14 h-14 bg-akprimary/10 rounded-xl mb-6 group-hover:bg-akprimary/20 transition-colors">
+            <div class="text-2xl">🎯</div>
+          </div>
+          <h3 class="text-xl font-semibold mb-4 group-hover:text-akprimary transition-colors text-aktext">Admission Help</h3>
+          <p class="text-akmuted leading-relaxed">End-to-end support for college applications, documentation, and deadlines.</p>
+        </div>
+        <div class="service-card bg-akcard border border-akborder rounded-xl p-8 hover:border-akprimary/50 hover:shadow-lg hover:shadow-akprimary/10 transition-all duration-300 group">
+          <div class="inline-flex items-center justify-center w-14 h-14 bg-akprimary/10 rounded-xl mb-6 group-hover:bg-akprimary/20 transition-colors">
+            <div class="text-2xl">🧑‍💼</div>
+          </div>
+          <h3 class="text-xl font-semibold mb-4 group-hover:text-akprimary transition-colors text-aktext">Counseling</h3>
+          <p class="text-akmuted leading-relaxed">Personalized guidance to help you choose the right course and college.</p>
+        </div>
+        <div class="service-card bg-akcard border border-akborder rounded-xl p-8 hover:border-akprimary/50 hover:shadow-lg hover:shadow-akprimary/10 transition-all duration-300 group">
+          <div class="inline-flex items-center justify-center w-14 h-14 bg-akprimary/10 rounded-xl mb-6 group-hover:bg-akprimary/20 transition-colors">
+            <div class="text-2xl">📚</div>
+          </div>
+          <h3 class="text-xl font-semibold mb-4 group-hover:text-akprimary transition-colors text-aktext">Course &amp; College Guide</h3>
+          <p class="text-akmuted leading-relaxed">Comprehensive information on top courses and colleges in India &amp; abroad.</p>
+        </div>
+        <div class="service-card bg-akcard border border-akborder rounded-xl p-8 hover:border-akprimary/50 hover:shadow-lg hover:shadow-akprimary/10 transition-all duration-300 group">
+          <div class="inline-flex items-center justify-center w-14 h-14 bg-akprimary/10 rounded-xl mb-6 group-hover:bg-akprimary/20 transition-colors">
+            <div class="text-2xl">📝</div>
+          </div>
+          <h3 class="text-xl font-semibold mb-4 group-hover:text-akprimary transition-colors text-aktext">Exam Assistance</h3>
+          <p class="text-akmuted leading-relaxed">Updates, tips, and resources for major entrance exams.</p>
+        </div>
+        <div class="service-card bg-akcard border border-akborder rounded-xl p-8 hover:border-akprimary/50 hover:shadow-lg hover:shadow-akprimary/10 transition-all duration-300 group">
+          <div class="inline-flex items-center justify-center w-14 h-14 bg-akprimary/10 rounded-xl mb-6 group-hover:bg-akprimary/20 transition-colors">
+            <div class="text-2xl">🌏</div>
+          </div>
+          <h3 class="text-xl font-semibold mb-4 group-hover:text-akprimary transition-colors text-aktext">Study Abroad</h3>
+          <p class="text-akmuted leading-relaxed">Guidance for overseas admissions, visas, SOPs, and more.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPREHENSIVE ADMISSION SUPPORT (Light, Improved UI) -->
+  <section id="admission-support" class="py-20 bg-akcard font-inter">
+    <div class="max-w-[1100px] mx-auto px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-akprimary flex items-center justify-center gap-3">
+          Comprehensive Admission Support
+        </h2>
+        <p class="text-lg text-akmuted max-w-2xl mx-auto">
+          End-to-end support services to ensure your admission success in India & abroad
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="admission-support-cards">
+        <!-- Card 1 -->
+        <div class="support-card bg-akcard2 border border-akborder rounded-xl p-8 hover:border-akprimary/50 hover:shadow-xl hover:shadow-akprimary/20 hover:scale-105 transition-all duration-300 group cursor-pointer">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-akprimary/10 to-akprimary/5 rounded-xl mb-6 group-hover:from-akprimary/20 group-hover:to-akprimary/10 transition-all">
+            <div class="text-2xl">🎓</div>
+          </div>
+          <h3 class="text-xl font-semibold mb-4 group-hover:text-akprimary transition-colors text-aktext">University Selection</h3>
+          <p class="text-akmuted leading-relaxed">Expert guidance in choosing the right university based on your profile and preferences</p>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="support-card bg-akcard2 border border-akborder rounded-xl p-8 hover:border-akprimary/50 hover:shadow-xl hover:shadow-akprimary/20 hover:scale-105 transition-all duration-300 group cursor-pointer">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-akprimary/10 to-akprimary/5 rounded-xl mb-6 group-hover:from-akprimary/20 group-hover:to-akprimary/10 transition-all">
+            <div class="text-2xl">📝</div>
+          </div>
+          <h3 class="text-xl font-semibold mb-4 group-hover:text-akprimary transition-colors text-aktext">Application Preparation</h3>
+          <p class="text-akmuted leading-relaxed">Complete assistance in preparing and submitting error-free applications</p>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="support-card bg-akcard2 border border-akborder rounded-xl p-8 hover:border-akprimary/50 hover:shadow-xl hover:shadow-akprimary/20 hover:scale-105 transition-all duration-300 group cursor-pointer">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-akprimary/10 to-akprimary/5 rounded-xl mb-6 group-hover:from-akprimary/20 group-hover:to-akprimary/10 transition-all">
+            <div class="text-2xl">✈️</div>
+          </div>
+          <h3 class="text-xl font-semibold mb-4 group-hover:text-akprimary transition-colors text-aktext">Visa & SOP Assistance</h3>
+          <p class="text-akmuted leading-relaxed">Professional help with visa applications and statement of purpose writing</p>
+        </div>
+        
+        <!-- Card 4 -->
+        <div class="support-card bg-akcard2 border border-akborder rounded-xl p-8 hover:border-akprimary/50 hover:shadow-xl hover:shadow-akprimary/20 hover:scale-105 transition-all duration-300 group cursor-pointer">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-akprimary/10 to-akprimary/5 rounded-xl mb-6 group-hover:from-akprimary/20 group-hover:to-akprimary/10 transition-all">
+            <div class="text-2xl">📞</div>
+          </div>
+          <h3 class="text-xl font-semibold mb-4 group-hover:text-akprimary transition-colors text-aktext">1-on-1 Career Guidance</h3>
+          <p class="text-akmuted leading-relaxed">Personalized career counseling sessions with industry experts</p>
+        </div>
+        
+        <!-- Card 5 -->
+        <div class="support-card bg-akcard2 border border-akborder rounded-xl p-8 hover:border-akprimary/50 hover:shadow-xl hover:shadow-akprimary/20 hover:scale-105 transition-all duration-300 group cursor-pointer">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-akprimary/10 to-akprimary/5 rounded-xl mb-6 group-hover:from-akprimary/20 group-hover:to-akprimary/10 transition-all">
+            <div class="text-2xl">📆</div>
+          </div>
+          <h3 class="text-xl font-semibold mb-4 group-hover:text-akprimary transition-colors text-aktext">Interview & Test Prep</h3>
+          <p class="text-akmuted leading-relaxed">Comprehensive preparation for interviews and entrance tests</p>
+        </div>
+        
+        <!-- Card 6 -->
+        <div class="support-card bg-akcard2 border border-akborder rounded-xl p-8 hover:border-akprimary/50 hover:shadow-xl hover:shadow-akprimary/20 hover:scale-105 transition-all duration-300 group cursor-pointer">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-akprimary/10 to-akprimary/5 rounded-xl mb-6 group-hover:from-akprimary/20 group-hover:to-akprimary/10 transition-all">
+            <div class="text-2xl">🌏</div>
+          </div>
+          <h3 class="text-xl font-semibold mb-4 group-hover:text-akprimary transition-colors text-aktext">Study Abroad Strategy</h3>
+          <p class="text-akmuted leading-relaxed">Strategic planning for international education opportunities</p>
+        </div>
+      </div>
+    </div>
+    
+
+  </section>
+
+  <!-- TOP COLLEGES / EXAMS / COURSES SHOWCASE (Split Sections, 3 Cards per Row) -->
+  <section id="showcase" class="bg-akcard pt-16 pb-14 font-inter">
+    <div class="max-w-[1050px] mx-auto px-6">
+
+      <!-- Top Colleges -->
+      <h2 class="text-[1.7rem] font-extrabold text-akprimary text-center mb-10 tracking-[.01em]">Top Private & Government Colleges</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-16">
+        <!-- College 1 -->
+        <div class="college-card bg-akcard border border-akborder rounded-xl overflow-hidden hover:border-akprimary/50 hover:shadow-xl hover:shadow-akprimary/10 transition-all duration-300 group">
+          <div class="relative h-40 overflow-hidden">
+            <img src="https://images.unsplash.com/20/cambridge.JPG?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dW5pdmVyc2l0eXxlbnwwfHwwfHx8MA%3D%3D" alt="VIT University" class="w-full h-full object-cover bg-white group-hover:scale-105 transition-transform duration-300" />
+            <div class="absolute top-3 right-3 bg-black/70 backdrop-blur-sm rounded-full px-2 py-1 flex items-center space-x-1">
+              <span class="text-akprimary">★</span>
+              <span class="text-xs font-medium text-white">4.8</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-lg font-semibold group-hover:text-akprimary transition-colors text-aktext">VIT University</h3>
+              <span class="px-2 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-600">Private</span>
+            </div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs text-akmuted">NAAC Grade</span>
+              <span class="text-akprimary font-semibold text-xs">A+</span>
+            </div>
+            <button class="w-full border border-akprimary text-akprimary hover:bg-akprimary hover:text-white transition-all bg-transparent py-2 px-3 rounded-lg font-medium text-sm">
+              Explore
+            </button>
+          </div>
+        </div>
+        <!-- College 2 -->
+        <div class="college-card bg-akcard border border-akborder rounded-xl overflow-hidden hover:border-akprimary/50 hover:shadow-xl hover:shadow-akprimary/10 transition-all duration-300 group">
+          <div class="relative h-40 overflow-hidden">
+            <img src="https://images.unsplash.com/20/cambridge.JPG?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dW5pdmVyc2l0eXxlbnwwfHwwfHx8MA%3D%3D" alt="Christ University" class="w-full h-full object-cover bg-white group-hover:scale-105 transition-transform duration-300" />
+            <div class="absolute top-3 right-3 bg-black/70 backdrop-blur-sm rounded-full px-2 py-1 flex items-center space-x-1">
+              <span class="text-akprimary">★</span>
+              <span class="text-xs font-medium text-white">4.7</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-lg font-semibold group-hover:text-akprimary transition-colors text-aktext">Christ University</h3>
+              <span class="px-2 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-600">Private</span>
+            </div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs text-akmuted">NAAC Grade</span>
+              <span class="text-akprimary font-semibold text-xs">A+</span>
+            </div>
+            <button class="w-full border border-akprimary text-akprimary hover:bg-akprimary hover:text-white transition-all bg-transparent py-2 px-3 rounded-lg font-medium text-sm">
+              Explore
+            </button>
+          </div>
+        </div>
+        <!-- College 3 -->
+        <div class="college-card bg-akcard border border-akborder rounded-xl overflow-hidden hover:border-akprimary/50 hover:shadow-xl hover:shadow-akprimary/10 transition-all duration-300 group">
+          <div class="relative h-40 overflow-hidden">
+            <img src="https://images.unsplash.com/20/cambridge.JPG?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dW5pdmVyc2l0eXxlbnwwfHwwfHx8MA%3D%3D" alt="Symbiosis University" class="w-full h-full object-cover bg-white group-hover:scale-105 transition-transform duration-300" />
+            <div class="absolute top-3 right-3 bg-black/70 backdrop-blur-sm rounded-full px-2 py-1 flex items-center space-x-1">
+              <span class="text-akprimary">★</span>
+              <span class="text-xs font-medium text-white">4.6</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-lg font-semibold group-hover:text-akprimary transition-colors text-aktext">Symbiosis University</h3>
+              <span class="px-2 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-600">Private</span>
+            </div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs text-akmuted">NAAC Grade</span>
+              <span class="text-akprimary font-semibold text-xs">A+</span>
+            </div>
+            <button class="w-full border border-akprimary text-akprimary hover:bg-akprimary hover:text-white transition-all bg-transparent py-2 px-3 rounded-lg font-medium text-sm">
+              Explore
+            </button>
+          </div>
+        </div>
+        <!-- College 4 -->
+        <div class="college-card bg-akcard border border-akborder rounded-xl overflow-hidden hover:border-akprimary/50 hover:shadow-xl hover:shadow-akprimary/10 transition-all duration-300 group">
+          <div class="relative h-40 overflow-hidden">
+            <img src="https://images.unsplash.com/20/cambridge.JPG?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dW5pdmVyc2l0eXxlbnwwfHwwfHx8MA%3D%3D" alt="IIT Bombay" class="w-full h-full object-cover bg-white group-hover:scale-105 transition-transform duration-300" />
+            <div class="absolute top-3 right-3 bg-black/70 backdrop-blur-sm rounded-full px-2 py-1 flex items-center space-x-1">
+              <span class="text-akprimary">★</span>
+              <span class="text-xs font-medium text-white">4.9</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-lg font-semibold group-hover:text-akprimary transition-colors text-aktext">IIT Bombay</h3>
+              <span class="px-2 py-1 rounded-full text-xs font-medium bg-green-500/10 text-green-700">Government</span>
+            </div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs text-akmuted">NAAC Grade</span>
+              <span class="text-akprimary font-semibold text-xs">A++</span>
+            </div>
+            <button class="w-full border border-akprimary text-akprimary hover:bg-akprimary hover:text-white transition-all bg-transparent py-2 px-3 rounded-lg font-medium text-sm">
+              Explore
+            </button>
+          </div>
+        </div>
+        <!-- College 5 -->
+        <div class="college-card bg-akcard border border-akborder rounded-xl overflow-hidden hover:border-akprimary/50 hover:shadow-xl hover:shadow-akprimary/10 transition-all duration-300 group">
+          <div class="relative h-40 overflow-hidden">
+            <img src="https://images.unsplash.com/20/cambridge.JPG?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dW5pdmVyc2l0eXxlbnwwfHwwfHx8MA%3D%3D" alt="SRM University" class="w-full h-full object-cover bg-white group-hover:scale-105 transition-transform duration-300" />
+            <div class="absolute top-3 right-3 bg-black/70 backdrop-blur-sm rounded-full px-2 py-1 flex items-center space-x-1">
+              <span class="text-akprimary">★</span>
+              <span class="text-xs font-medium text-white">4.5</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-lg font-semibold group-hover:text-akprimary transition-colors text-aktext">SRM University</h3>
+              <span class="px-2 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-600">Private</span>
+            </div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs text-akmuted">NAAC Grade</span>
+              <span class="text-akprimary font-semibold text-xs">A++</span>
+            </div>
+            <button class="w-full border border-akprimary text-akprimary hover:bg-akprimary hover:text-white transition-all bg-transparent py-2 px-3 rounded-lg font-medium text-sm">
+              Explore
+            </button>
+          </div>
+        </div>
+        <!-- College 6 -->
+        <div class="college-card bg-akcard border border-akborder rounded-xl overflow-hidden hover:border-akprimary/50 hover:shadow-xl hover:shadow-akprimary/10 transition-all duration-300 group">
+          <div class="relative h-40 overflow-hidden">
+            <img src="https://images.unsplash.com/20/cambridge.JPG?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dW5pdmVyc2l0eXxlbnwwfHwwfHx8MA%3D%3D" alt="Delhi University" class="w-full h-full object-cover bg-white group-hover:scale-105 transition-transform duration-300" />
+            <div class="absolute top-3 right-3 bg-black/70 backdrop-blur-sm rounded-full px-2 py-1 flex items-center space-x-1">
+              <span class="text-akprimary">★</span>
+              <span class="text-xs font-medium text-white">4.7</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-lg font-semibold group-hover:text-akprimary transition-colors text-aktext">Delhi University</h3>
+              <span class="px-2 py-1 rounded-full text-xs font-medium bg-green-500/10 text-green-700">Government</span>
+            </div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs text-akmuted">NAAC Grade</span>
+              <span class="text-akprimary font-semibold text-xs">A+</span>
+            </div>
+            <button class="w-full border border-akprimary text-akprimary hover:bg-akprimary hover:text-white transition-all bg-transparent py-2 px-3 rounded-lg font-medium text-sm">
+              Explore
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top Exams -->
+      <h2 class="text-[1.7rem] font-extrabold text-akprimary text-center mb-10 tracking-[.01em]">Top Entrance Exams</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-16">
+        <!-- Exam 1 -->
+        <div class="exam-card bg-akcard2 rounded-xl p-7 shadow-ak5 border border-akborder hover:border-akprimary/50 hover:shadow-lg hover:shadow-akprimary/10 transition-all duration-300 group">
+          <div class="mb-4 flex items-center justify-between">
+            <h3 class="text-lg font-bold group-hover:text-akprimary transition-colors text-aktext">JEE</h3>
+            <span class="px-2 py-1 bg-akprimary/10 text-akprimary rounded-full text-xs font-medium">Engineering</span>
+          </div>
+          <p class="text-akmuted text-xs mb-4">Joint Entrance Examination</p>
+          <div class="space-y-3 mb-5">
+            <div class="flex items-center space-x-2">
+              <span class="text-akaccent text-base">👥</span>
+              <span class="text-xs text-akmuted">Eligibility:</span>
+              <span class="font-medium text-xs">12th Pass (PCM)</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-akaccent2 text-base">📅</span>
+              <span class="text-xs text-akmuted">Exam Dates:</span>
+              <span class="font-medium text-xs">Jan & April 2024</span>
+            </div>
+          </div>
+          <button class="w-full border border-akprimary text-akprimary hover:bg-akprimary hover:text-white transition-all bg-transparent py-2 px-3 rounded-lg font-medium text-xs">
+            View Details
+          </button>
+        </div>
+        <!-- Exam 2 -->
+        <div class="exam-card bg-akcard2 rounded-xl p-7 shadow-ak5 border border-akborder hover:border-akprimary/50 hover:shadow-lg hover:shadow-akprimary/10 transition-all duration-300 group">
+          <div class="mb-4 flex items-center justify-between">
+            <h3 class="text-lg font-bold group-hover:text-akprimary transition-colors text-aktext">CUET</h3>
+            <span class="px-2 py-1 bg-blue-500/10 text-blue-600 rounded-full text-xs font-medium">UG</span>
+          </div>
+          <p class="text-akmuted text-xs mb-4">Common University Entrance Test</p>
+          <div class="space-y-3 mb-5">
+            <div class="flex items-center space-x-2">
+              <span class="text-akaccent text-base">👥</span>
+              <span class="text-xs text-akmuted">Eligibility:</span>
+              <span class="font-medium text-xs">12th Pass</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-akaccent2 text-base">📅</span>
+              <span class="text-xs text-akmuted">Exam Dates:</span>
+              <span class="font-medium text-xs">May-June 2024</span>
+            </div>
+          </div>
+          <button class="w-full border border-akprimary text-akprimary hover:bg-akprimary hover:text-white transition-all bg-transparent py-2 px-3 rounded-lg font-medium text-xs">
+            View Details
+          </button>
+        </div>
+        <!-- Exam 3 -->
+        <div class="exam-card bg-akcard2 rounded-xl p-7 shadow-ak5 border border-akborder hover:border-akprimary/50 hover:shadow-lg hover:shadow-akprimary/10 transition-all duration-300 group">
+          <div class="mb-4 flex items-center justify-between">
+            <h3 class="text-lg font-bold group-hover:text-akprimary transition-colors text-aktext">NEET</h3>
+            <span class="px-2 py-1 bg-red-500/10 text-red-600 rounded-full text-xs font-medium">Medical</span>
+          </div>
+          <p class="text-akmuted text-xs mb-4">National Eligibility Entrance Test</p>
+          <div class="space-y-3 mb-5">
+            <div class="flex items-center space-x-2">
+              <span class="text-akaccent text-base">👥</span>
+              <span class="text-xs text-akmuted">Eligibility:</span>
+              <span class="font-medium text-xs">12th Pass (PCB)</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-akaccent2 text-base">📅</span>
+              <span class="text-xs text-akmuted">Exam Dates:</span>
+              <span class="font-medium text-xs">May 2024</span>
+            </div>
+          </div>
+          <button class="w-full border border-akprimary text-akprimary hover:bg-akprimary hover:text-white transition-all bg-transparent py-2 px-3 rounded-lg font-medium text-xs">
+            View Details
+          </button>
+        </div>
+      </div>
+
+      <!-- Top Courses -->
+      <h2 class="text-[1.7rem] font-extrabold text-akprimary text-center mb-10 tracking-[.01em]">Popular Courses</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <!-- Course 1 -->
+        <div class="course-card bg-akcard2 rounded-xl p-7 shadow-ak5 border border-akborder hover:border-akprimary/50 hover:shadow-lg hover:shadow-akprimary/10 transition-all duration-300 group">
+          <div class="mb-5 flex items-center gap-3">
+            <span class="text-[1.7rem]">🎓</span>
+            <h3 class="text-lg font-semibold group-hover:text-akprimary transition-colors text-aktext">B.Tech/B.E.</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center space-x-2">
+              <span class="text-akprimary text-base">⏰</span>
+              <span class="text-xs text-akmuted">Duration:</span>
+              <span class="font-medium text-xs">4 Years</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-akaccent text-base">📚</span>
+              <span class="text-xs text-akmuted">Entrance:</span>
+              <span class="font-medium text-xs">JEE Main/Adv</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-akaccent2 text-base">📈</span>
+              <span class="text-xs text-akmuted">Career:</span>
+              <span class="font-medium text-xs">Software Engg, Data Scientist</span>
+            </div>
+          </div>
+        </div>
+        <!-- Course 2 -->
+        <div class="course-card bg-akcard2 rounded-xl p-7 shadow-ak5 border border-akborder hover:border-akprimary/50 hover:shadow-lg hover:shadow-akprimary/10 transition-all duration-300 group">
+          <div class="mb-5 flex items-center gap-3">
+            <span class="text-[1.7rem]">🎓</span>
+            <h3 class="text-lg font-semibold group-hover:text-akprimary transition-colors text-aktext">MBBS</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center space-x-2">
+              <span class="text-akprimary text-base">⏰</span>
+              <span class="text-xs text-akmuted">Duration:</span>
+              <span class="font-medium text-xs">5.5 Years</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-akaccent text-base">📚</span>
+              <span class="text-xs text-akmuted">Entrance:</span>
+              <span class="font-medium text-xs">NEET</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-akaccent2 text-base">📈</span>
+              <span class="text-xs text-akmuted">Career:</span>
+              <span class="font-medium text-xs">Doctor, Surgeon</span>
+            </div>
+          </div>
+        </div>
+        <!-- Course 3 -->
+        <div class="course-card bg-akcard2 rounded-xl p-7 shadow-ak5 border border-akborder hover:border-akprimary/50 hover:shadow-lg hover:shadow-akprimary/10 transition-all duration-300 group">
+          <div class="mb-5 flex items-center gap-3">
+            <span class="text-[1.7rem]">🎓</span>
+            <h3 class="text-lg font-semibold group-hover:text-akprimary transition-colors text-aktext">MBA/PGDM</h3>
+          </div>
+          <div class="space-y-3">
+          <div class="flex items-center space-x-2">
+              <span class="text-akprimary text-base">⏰</span>
+              <span class="text-xs text-akmuted">Duration:</span>
+              <span class="font-medium text-xs">2 Years</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-akaccent text-base">📚</span>
+              <span class="text-xs text-akmuted">Entrance:</span>
+              <span class="font-medium text-xs">CAT/MAT/XAT</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-akaccent2 text-base">📈</span>
+              <span class="text-xs text-akmuted">Career:</span>
+              <span class="font-medium text-xs">Analyst, Manager</span>
+            </div>
+          </div>
+        </div>
+        <!-- Course 4 -->
+        <div class="course-card bg-akcard2 rounded-xl p-7 shadow-ak5 border border-akborder hover:border-akprimary/50 hover:shadow-lg hover:shadow-akprimary/10 transition-all duration-300 group">
+          <div class="mb-5 flex items-center gap-3">
+            <span class="text-[1.7rem]">🎓</span>
+            <h3 class="text-lg font-semibold group-hover:text-akprimary transition-colors text-aktext">BBA</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center space-x-2">
+              <span class="text-akprimary text-base">⏰</span>
+              <span class="text-xs text-akmuted">Duration:</span>
+              <span class="font-medium text-xs">3 Years</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-akaccent text-base">📚</span>
+              <span class="text-xs text-akmuted">Entrance:</span>
+              <span class="font-medium text-xs">CUET/Univ Exams</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-akaccent2 text-base">📈</span>
+              <span class="text-xs text-akmuted">Career:</span>
+              <span class="font-medium text-xs">Marketing, HR</span>
+            </div>
+          </div>
+        </div>
+        <!-- Course 5 -->
+        <div class="course-card bg-akcard2 rounded-xl p-7 shadow-ak5 border border-akborder hover:border-akprimary/50 hover:shadow-lg hover:shadow-akprimary/10 transition-all duration-300 group">
+          <div class="mb-5 flex items-center gap-3">
+            <span class="text-[1.7rem]">🎓</span>
+            <h3 class="text-lg font-semibold group-hover:text-akprimary transition-colors text-aktext">B.Com</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center space-x-2">
+              <span class="text-akprimary text-base">⏰</span>
+              <span class="text-xs text-akmuted">Duration:</span>
+              <span class="font-medium text-xs">3 Years</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-akaccent text-base">📚</span>
+              <span class="text-xs text-akmuted">Entrance:</span>
+              <span class="font-medium text-xs">CUET/Univ Exams</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-akaccent2 text-base">📈</span>
+              <span class="text-xs text-akmuted">Career:</span>
+              <span class="font-medium text-xs">Accountant, Analyst</span>
+            </div>
+          </div>
+        </div>
+        <!-- Course 6 -->
+        <div class="course-card bg-akcard2 rounded-xl p-7 shadow-ak5 border border-akborder hover:border-akprimary/50 hover:shadow-lg hover:shadow-akprimary/10 transition-all duration-300 group">
+          <div class="mb-5 flex items-center gap-3">
+            <span class="text-[1.7rem]">🎓</span>
+            <h3 class="text-lg font-semibold group-hover:text-akprimary transition-colors text-aktext">B.Sc</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center space-x-2">
+              <span class="text-akprimary text-base">⏰</span>
+              <span class="text-xs text-akmuted">Duration:</span>
+              <span class="font-medium text-xs">3 Years</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-akaccent text-base">📚</span>
+              <span class="text-xs text-akmuted">Entrance:</span>
+              <span class="font-medium text-xs">CUET/Univ Exams</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-akaccent2 text-base">📈</span>
+              <span class="text-xs text-akmuted">Career:</span>
+              <span class="font-medium text-xs">Research, Lab Tech</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION (Accordion, Light) -->
+  <section id="faqs" class="bg-akcard2 pt-20 pb-16 font-inter">
+    <div class="max-w-[1000px] mx-auto px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-[2.5rem] md:text-[3rem] font-extrabold text-akprimary mb-6 tracking-[.01em]">Frequently Asked Questions</h2>
+        <p class="text-[1.1rem] text-akmuted max-w-2xl mx-auto leading-[1.6]">
+          Get answers to common questions about our admission support services
+        </p>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        <div class="space-y-4" id="faq-accordion">
+          <!-- FAQ 1 -->
+          <div class="bg-akcard border border-akborder rounded-xl overflow-hidden hover:border-akprimary/50 transition-all duration-300 shadow-ak5">
+            <button type="button" class="w-full flex justify-between items-center px-6 py-5 text-left text-aktext font-semibold text-[1.1rem] focus:outline-none faq-toggle transition-colors hover:bg-akborder/30">
+              <span class="pr-4">How do I get admission assistance?</span>
+              <div class="flex-shrink-0">
+                <span class="faq-icon text-akprimary text-[1.3rem] transition-transform duration-300">+</span>
+              </div>
+            </button>
+            <div class="faq-content px-6 pb-5 text-akmuted text-[1rem] leading-[1.7] hidden">
+              <div class="pt-2 border-t border-akborder">
+                Simply click on "Book Consultation" and fill out the form. Our expert counselors will reach out to guide you through the entire admission process, from shortlisting colleges to application and documentation.
+              </div>
+            </div>
+          </div>
+          
+          <!-- FAQ 2 -->
+          <div class="bg-akcard border border-akborder rounded-xl overflow-hidden hover:border-akprimary/50 transition-all duration-300 shadow-ak5">
+            <button type="button" class="w-full flex justify-between items-center px-6 py-5 text-left text-aktext font-semibold text-[1.1rem] focus:outline-none faq-toggle transition-colors hover:bg-akborder/30">
+              <span class="pr-4">What exams do I need for MBA?</span>
+              <div class="flex-shrink-0">
+                <span class="faq-icon text-akprimary text-[1.3rem] transition-transform duration-300">+</span>
+              </div>
+            </button>
+            <div class="faq-content px-6 pb-5 text-akmuted text-[1rem] leading-[1.7] hidden">
+              <div class="pt-2 border-t border-akborder">
+                For MBA admissions in India, common entrance exams include CAT, XAT, MAT, CMAT, and state-level exams. For international MBAs, exams like GMAT or GRE and English proficiency tests (IELTS/TOEFL) are required.
+              </div>
+            </div>
+          </div>
+          
+          <!-- FAQ 3 -->
+          <div class="bg-akcard border border-akborder rounded-xl overflow-hidden hover:border-akprimary/50 transition-all duration-300 shadow-ak5">
+            <button type="button" class="w-full flex justify-between items-center px-6 py-5 text-left text-aktext font-semibold text-[1.1rem] focus:outline-none faq-toggle transition-colors hover:bg-akborder/30">
+              <span class="pr-4">Can you help with international universities?</span>
+              <div class="flex-shrink-0">
+                <span class="faq-icon text-akprimary text-[1.3rem] transition-transform duration-300">+</span>
+              </div>
+            </button>
+            <div class="faq-content px-6 pb-5 text-akmuted text-[1rem] leading-[1.7] hidden">
+              <div class="pt-2 border-t border-akborder">
+                Yes! We provide complete guidance for admissions to universities in the USA, UK, Canada, Germany, and more—including course selection, application, visa process, SOPs, and LORs.
+              </div>
+            </div>
+          </div>
+          
+          <!-- FAQ 4 -->
+          <div class="bg-akcard border border-akborder rounded-xl overflow-hidden hover:border-akprimary/50 transition-all duration-300 shadow-ak5">
+            <button type="button" class="w-full flex justify-between items-center px-6 py-5 text-left text-aktext font-semibold text-[1.1rem] focus:outline-none faq-toggle transition-colors hover:bg-akborder/30">
+              <span class="pr-4">Is the counseling session free?</span>
+              <div class="flex-shrink-0">
+                <span class="faq-icon text-akprimary text-[1.3rem] transition-transform duration-300">+</span>
+              </div>
+            </button>
+            <div class="faq-content px-6 pb-5 text-akmuted text-[1rem] leading-[1.7] hidden">
+              <div class="pt-2 border-t border-akborder">
+                Yes, your first counseling session is absolutely free. Book a session to discuss your goals and get personalized advice from our experts.
+              </div>
+            </div>
+          </div>
+          
+          <!-- FAQ 5 -->
+          <div class="bg-akcard border border-akborder rounded-xl overflow-hidden hover:border-akprimary/50 transition-all duration-300 shadow-ak5">
+            <button type="button" class="w-full flex justify-between items-center px-6 py-5 text-left text-aktext font-semibold text-[1.1rem] focus:outline-none faq-toggle transition-colors hover:bg-akborder/30">
+              <span class="pr-4">How soon will I get a response after booking?</span>
+              <div class="flex-shrink-0">
+                <span class="faq-icon text-akprimary text-[1.3rem] transition-transform duration-300">+</span>
+              </div>
+            </button>
+            <div class="faq-content px-6 pb-5 text-akmuted text-[1rem] leading-[1.7] hidden">
+              <div class="pt-2 border-t border-akborder">
+                Our team usually responds within 24 hours of your booking. You'll receive a call or email to schedule your session.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // FAQ Accordion JS
+      document.addEventListener('DOMContentLoaded', function () {
+        const toggles = document.querySelectorAll('#faq-accordion .faq-toggle');
+        toggles.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('.faq-icon');
+            const isOpen = !content.classList.contains('hidden');
+            
+            // Close all
+            toggles.forEach(function (otherBtn) {
+              otherBtn.nextElementSibling.classList.add('hidden');
+              otherBtn.querySelector('.faq-icon').textContent = '+';
+              otherBtn.querySelector('.faq-icon').classList.remove('rotate-45');
+            });
+            
+            // Open this if not already open
+            if (!isOpen) {
+              content.classList.remove('hidden');
+              icon.textContent = '−';
+              icon.classList.add('rotate-45');
+            }
+          });
+        });
+      });
+    </script>
+  </section>
+
+  <!-- TESTIMONIALS & TRUST MARKERS (Light, Professional) -->
+  <section id="testimonials" class="bg-akbg pt-14 pb-12 font-inter">
+    <div class="max-w-[1000px] mx-auto px-8">
+      <h2 class="text-3xl md:text-4xl font-bold text-akprimary tracking-[.01em] text-center mb-16">
+        What Our Students Say
+      </h2>
+      <div class="flex flex-wrap gap-8 justify-center mb-10">
+        <div class="bg-akcard rounded-ak shadow-ak p-7 pt-7 pb-5 max-w-[320px] flex-1 min-w-[260px] border border-akborder transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-ak4 flex flex-col gap-4">
+          <div class="flex items-center gap-3 mb-1">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student testimonial" class="w-11 h-11 rounded-full object-cover border border-akborder" />
+            <div>
+              <div class="font-bold text-akaccent text-[1.05rem]">Aditi Sharma</div>
+              <div class="text-[0.97rem] text-akmuted">B.Tech, VIT</div>
+            </div>
+          </div>
+          <p class="text-aktext text-[1rem] leading-[1.6] m-0">Admission Kart made my college application journey stress-free. The counselors were always available and guided me at every step!</p>
+        </div>
+        <div class="bg-akcard rounded-ak shadow-ak p-7 pt-7 pb-5 max-w-[320px] flex-1 min-w-[260px] border border-akborder transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-ak4 flex flex-col gap-4">
+          <div class="flex items-center gap-3 mb-1">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student testimonial" class="w-11 h-11 rounded-full object-cover border border-akborder" />
+            <div>
+              <div class="font-bold text-akaccent2 text-[1.05rem]">Rahul Verma</div>
+              <div class="text-[0.97rem] text-akmuted">MBA, Christ</div>
+            </div>
+          </div>
+          <p class="text-aktext text-[1rem] leading-[1.6] m-0">I got into my dream college abroad thanks to their expert advice and visa support. Highly recommended!</p>
+        </div>
+        <div class="bg-akcard rounded-ak shadow-ak p-7 pt-7 pb-5 max-w-[320px] flex-1 min-w-[260px] border border-akborder transition-transform duration-150 hover:-translate-y-1.5 hover:scale-105 hover:shadow-ak4 flex flex-col gap-4">
+          <div class="flex items-center gap-3 mb-1">
+            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Student testimonial" class="w-11 h-11 rounded-full object-cover border border-akborder" />
+            <div>
+              <div class="font-bold text-akprimary text-[1.05rem]">Sneha Iyer</div>
+              <div class="text-[0.97rem] text-akmuted">BBA, Symbiosis</div>
+            </div>
+          </div>
+          <p class="text-aktext text-[1rem] leading-[1.6] m-0">The team is very professional and knowledgeable. They helped me shortlist the best colleges and courses for my profile.</p>
+        </div>
+      </div>
+      <!-- Trust Markers -->
+      <div class="flex justify-center gap-10 flex-wrap items-center mt-10 mb-2">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/VIT_University_Logo.png" alt="VIT" class="h-[38px] object-contain grayscale-[.2] brightness-[.98] opacity-90 transition hover:grayscale-0 hover:opacity-100" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Christ_University_Logo.png" alt="Christ" class="h-[38px] object-contain grayscale-[.2] brightness-[.98] opacity-90 transition hover:grayscale-0 hover:opacity-100" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Symbiosis_International_University_Logo.png" alt="Symbiosis" class="h-[38px] object-contain grayscale-[.2] brightness-[.98] opacity-90 transition hover:grayscale-0 hover:opacity-100" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/IIT_Bombay_Logo.png" alt="IIT Bombay" class="h-[38px] object-contain grayscale-[.2] brightness-[.98] opacity-90 transition hover:grayscale-0 hover:opacity-100" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/SRM_University_Logo.png" alt="SRM" class="h-[38px] object-contain grayscale-[.2] brightness-[.98] opacity-90 transition hover:grayscale-0 hover:opacity-100" />
+      </div>
+      <div class="mt-5 flex justify-center items-center gap-3 text-[1.08rem]">
+        <span class="text-akprimary text-[1.2rem] tracking-widest">★★★★★</span>
+        <span class="font-bold text-akaccent">4.9/5</span>
+        <span class="text-akmuted text-[0.97rem]">on Google Reviews</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CALL TO ACTION SECTION (Light, Professional) -->
+  <section id="cta-final" class="py-20 bg-gradient-to-r from-akcard2 via-akcard to-akcard2">
+    <div class="max-w-[1200px] mx-auto px-6">
+      <div class="bg-gradient-to-r from-akprimary/5 to-akprimary/10 border border-akprimary/10 rounded-2xl p-12 text-center">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-aktext">
+          Still Confused? <span class="text-akprimary">Let Experts Help You.</span>
+        </h2>
+        
+        <p class="text-lg md:text-xl text-akmuted mb-8 max-w-2xl mx-auto">
+          Don't let confusion hold you back from your dream college. Get personalized guidance from our admission experts.
+        </p>
+        
+        <a href="#footer" class="bg-akprimary text-white hover:bg-akprimaryhover hover:shadow-xl hover:shadow-akprimary/25 transition-all text-xl px-12 py-6 rounded-xl font-semibold inline-block no-underline">
+          Book a Free Consultation
+        </a>
+        
+        <div class="mt-6 text-sm text-akmuted">
+          ✓ No hidden charges • ✓ Expert guidance • ✓ Personalized support
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (Light, Professional, Redesigned, Spaced) -->
   <footer id="footer" class="bg-akfooter text-akfootertext pt-12 pb-6 font-inter border-t border-akborder text-[0.98rem]">
     <div class="max-w-[1200px] mx-auto px-6 flex flex-wrap gap-14 justify-between items-start">
       <!-- Logo & About -->
@@ -1285,206 +1286,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
   </footer>
 
-    <script>
-        // College data for CUET
-        const collegesData = [
-            {
-                name: "Delhi University",
-                location: "Delhi",
-                type: "central",
-                logo: "🏛️",
-                courses: "BA, B.Sc, B.Com",
-                cutoff: "95+ percentile"
-            },
-            {
-                name: "Jawaharlal Nehru University",
-                location: "Delhi",
-                type: "central",
-                logo: "🎓",
-                courses: "BA, B.Sc, MA",
-                cutoff: "90+ percentile"
-            },
-            {
-                name: "Banaras Hindu University",
-                location: "Varanasi",
-                type: "central",
-                logo: "🕉️",
-                courses: "BA, B.Sc, B.Tech",
-                cutoff: "85+ percentile"
-            },
-            {
-                name: "Jamia Millia Islamia",
-                location: "Delhi",
-                type: "central",
-                logo: "🌙",
-                courses: "BA, B.Sc, B.Arch",
-                cutoff: "80+ percentile"
-            },
-            {
-                name: "Aligarh Muslim University",
-                location: "Aligarh",
-                type: "central",
-                logo: "🏛️",
-                courses: "BA, B.Sc, B.Com",
-                cutoff: "75+ percentile"
-            },
-            {
-                name: "University of Hyderabad",
-                location: "Hyderabad",
-                type: "central",
-                logo: "🏫",
-                courses: "BA, B.Sc, Integrated",
-                cutoff: "85+ percentile"
-            },
-            {
-                name: "Manipal University",
-                location: "Manipal",
-                type: "private",
-                logo: "🎯",
-                courses: "B.Tech, BBA, B.Sc",
-                cutoff: "70+ percentile"
-            },
-            {
-                name: "SRM University",
-                location: "Chennai",
-                type: "private",
-                logo: "🌟",
-                courses: "B.Tech, BBA, B.Sc",
-                cutoff: "65+ percentile"
-            }
-        ];
-
-        // Render colleges
-        function renderColleges(colleges = collegesData) {
-            const collegesList = document.getElementById('collegesList');
-            collegesList.innerHTML = '';
-
-            colleges.forEach(college => {
-                const collegeCard = document.createElement('div');
-                collegeCard.className = 'bg-white border border-akborder rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow';
-                collegeCard.innerHTML = `
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center gap-3">
-                            <div class="text-3xl">${college.logo}</div>
-                            <div>
-                                <h3 class="text-lg font-semibold text-aktext mb-1">${college.name}</h3>
-                                <p class="text-akmuted flex items-center gap-1">
-                                    <span>📍</span> ${college.location}
-                                </p>
-                            </div>
-                        </div>
-                        <div class="text-right">
-                            <div class="text-sm font-semibold text-akprimary capitalize">${college.type}</div>
-                        </div>
-                    </div>
-                    
-                    <div class="grid grid-cols-1 gap-3 mb-4 text-sm">
-                        <div>
-                            <div class="text-akmuted">Popular Courses</div>
-                            <div class="font-semibold text-aktext">${college.courses}</div>
-                        </div>
-                        <div>
-                            <div class="text-akmuted">Expected Cutoff</div>
-                            <div class="font-semibold text-green-600">${college.cutoff}</div>
-                        </div>
-                    </div>
-                    
-                    <div class="flex gap-3">
-                        <button class="flex-1 bg-akprimary text-white py-2 rounded-lg hover:bg-akprimaryhover transition-colors font-semibold text-sm">
-                            View Details
-                        </button>
-                        <button class="flex-1 border border-akprimary text-akprimary py-2 rounded-lg hover:bg-akprimary hover:text-white transition-colors font-semibold text-sm">
-                            Apply Now
-                        </button>
-                    </div>
-                `;
-                collegesList.appendChild(collegeCard);
-            });
-        }
-
-        // College filter functionality
-        document.querySelectorAll('.college-filter').forEach(button => {
-            button.addEventListener('click', function() {
-                // Update active button
-                document.querySelectorAll('.college-filter').forEach(btn => {
-                    btn.classList.remove('active', 'bg-akprimary', 'text-white');
-                    btn.classList.add('bg-gray-200', 'text-aktext');
-                });
-                this.classList.add('active', 'bg-akprimary', 'text-white');
-                this.classList.remove('bg-gray-200', 'text-aktext');
-
-                // Filter colleges
-                const filter = this.dataset.filter;
-                let filteredColleges = collegesData;
-
-                if (filter !== 'all') {
-                    filteredColleges = collegesData.filter(college => 
-                        college.type === filter
-                    );
-                }
-
-                renderColleges(filteredColleges);
-            });
-        });
-
-        // FAQ Toggle functionality
-        document.querySelectorAll('.faq-toggle').forEach(button => {
-            button.addEventListener('click', function() {
-                const content = this.nextElementSibling;
-                const icon = this.querySelector('.faq-icon');
-                
-                if (content.classList.contains('hidden')) {
-                    content.classList.remove('hidden');
-                    icon.textContent = '−';
-                } else {
-                    content.classList.add('hidden');
-                    icon.textContent = '+';
-                }
-            });
-        });
-
-        // Form submissions
-        document.getElementById('quickEnquiryForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your enquiry! Our CUET experts will contact you within 24 hours.');
-        });
-
-        // Scroll to enquiry function
-        function scrollToEnquiry() {
-            document.getElementById('enquiry-form').scrollIntoView({ 
-                behavior: 'smooth',
-                block: 'center'
-            });
-        }
-
-        // GSAP Animations
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Hero animation
-        gsap.fromTo('.hero-content', 
-            { opacity: 0, y: 50 }, 
-            { opacity: 1, y: 0, duration: 1, ease: "power3.out", delay: 0.3 }
-        );
-
-        // Fade in elements on scroll
-        gsap.fromTo('.fade-in-element', 
-            { opacity: 0, y: 30 }, 
-            { 
-                opacity: 1, 
-                y: 0, 
-                duration: 0.6, 
-                stagger: 0.1, 
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: '.fade-in-element',
-                    start: 'top 80%',
-                    end: 'bottom 20%'
-                }
-            }
-        );
-
-        // Initialize
-        renderColleges();
-    </script>
+  <!-- scripts -->
+  <script type="module" src="/src/main.js"></script>
 </body>
+
 </html>
