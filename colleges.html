@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Colleges - Find Your Perfect College | Admission Kart</title>
+    <meta name="description" content="Explore 500+ top colleges in India. Filter by location, course, fees, ranking. Get admission guidance for engineering, medical, management colleges.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --secondary-color: #1e40af;
+            --accent-color: #f59e0b;
+            --success-color: #10b981;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .filter-sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+        }
+
+        .college-card {
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+
+        .college-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        .filter-section {
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .filter-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .range-slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: #e5e7eb;
+            outline: none;
+        }
+
+        .range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            cursor: pointer;
+        }
+
+        .range-slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            cursor: pointer;
+            border: none;
+        }
+
+        .mobile-filter-toggle {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-filter-toggle {
+                display: block;
+            }
+            
+            .filter-sidebar {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100vh;
+                z-index: 50;
+                background: white;
+                transition: left 0.3s ease;
+                overflow-y: auto;
+                padding: 1rem;
+            }
+            
+            .filter-sidebar.active {
+                left: 0;
+            }
+            
+            .filter-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 40;
+                display: none;
+            }
+            
+            .filter-overlay.active {
+                display: block;
+            }
+        }
+
+        .loading-skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        .pagination-btn {
+            transition: all 0.3s ease;
+        }
+
+        .pagination-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .wishlist-btn {
+            transition: all 0.3s ease;
+        }
+
+        .wishlist-btn.active {
+            color: #ef4444;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-30">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-4">
+                    <a href="/" class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-graduation-cap text-white text-sm"></i>
+                        </div>
+                        <span class="text-xl font-bold text-gray-900">Admission Kart</span>
+                    </a>
+                </div>
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="/" class="text-gray-600 hover:text-blue-600 transition-colors">Home</a>
+                    <a href="/colleges.html" class="text-blue-600 font-medium">Colleges</a>
+                    <a href="/course-bba.html" class="text-gray-600 hover:text-blue-600 transition-colors">Courses</a>
+                    <a href="/exam-cuet.html" class="text-gray-600 hover:text-blue-600 transition-colors">Exams</a>
+                    <a href="/contact.html" class="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
+                    <a href="/login.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Login</a>
+                </nav>
+                <button class="md:hidden text-gray-600">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-50 py-3">
+        <div class="container mx-auto px-4">
+            <nav class="flex items-center space-x-2 text-sm">
+                <a href="/" class="text-blue-600 hover:text-blue-800">Home</a>
+                <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                <span class="text-gray-600">All Colleges</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Page Header -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">All Colleges in India</h1>
+            <p class="text-gray-600">Discover the best colleges for your career. Filter by location, course, fees, and more.</p>
+        </div>
+
+        <!-- Mobile Filter Toggle -->
+        <div class="mobile-filter-toggle mb-6">
+            <button id="mobileFilterBtn" class="w-full bg-blue-600 text-white py-3 px-4 rounded-lg flex items-center justify-center space-x-2">
+                <i class="fas fa-filter"></i>
+                <span>Show Filters</span>
+            </button>
+        </div>
+
+        <!-- Filter Overlay (Mobile) -->
+        <div id="filterOverlay" class="filter-overlay"></div>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Filter Sidebar -->
+            <div id="filterSidebar" class="filter-sidebar w-full lg:w-80 glass-card rounded-xl p-6">
+                <!-- Mobile Close Button -->
+                <div class="flex justify-between items-center mb-6 lg:hidden">
+                    <h3 class="text-lg font-semibold">Filters</h3>
+                    <button id="closeFilterBtn" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Search Filter -->
+                <div class="filter-section">
+                    <h4 class="font-semibold text-gray-900 mb-3 flex items-center">
+                        <i class="fas fa-search text-blue-600 mr-2"></i>
+                        Search Colleges
+                    </h4>
+                    <input type="text" id="searchInput" placeholder="College name, keyword..." 
+                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                </div>
+
+                <!-- Location Filter -->
+                <div class="filter-section">
+                    <h4 class="font-semibold text-gray-900 mb-3 flex items-center">
+                        <i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>
+                        Location
+                    </h4>
+                    <select id="stateFilter" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 mb-3">
+                        <option value="">All States</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="West Bengal">West Bengal</option>
+                    </select>
+                    <select id="cityFilter" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                        <option value="">All Cities</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Kolkata">Kolkata</option>
+                    </select>
+                </div>
+
+                <!-- Course Type Filter -->
+                <div class="filter-section">
+                    <h4 class="font-semibold text-gray-900 mb-3 flex items-center">
+                        <i class="fas fa-graduation-cap text-blue-600 mr-2"></i>
+                        Course Type
+                    </h4>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="checkbox" value="Engineering" class="course-filter mr-2 text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm">Engineering (B.Tech/B.E)</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" value="Medical" class="course-filter mr-2 text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm">Medical (MBBS/BDS)</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" value="Management" class="course-filter mr-2 text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm">Management (MBA/BBA)</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" value="Law" class="course-filter mr-2 text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm">Law (LLB/BA LLB)</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" value="Arts" class="course-filter mr-2 text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm">Arts & Science</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- College Type Filter -->
+                <div class="filter-section">
+                    <h4 class="font-semibold text-gray-900 mb-3 flex items-center">
+                        <i class="fas fa-university text-blue-600 mr-2"></i>
+                        College Type
+                    </h4>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="collegeType" value="" class="mr-2 text-blue-600 focus:ring-blue-500" checked>
+                            <span class="text-sm">All Types</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="collegeType" value="Government" class="mr-2 text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm">Government</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="collegeType" value="Private" class="mr-2 text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm">Private</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="collegeType" value="Deemed" class="mr-2 text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm">Deemed University</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- NAAC Rating Filter -->
+                <div class="filter-section">
+                    <h4 class="font-semibold text-gray-900 mb-3 flex items-center">
+                        <i class="fas fa-star text-blue-600 mr-2"></i>
+                        NAAC Rating
+                    </h4>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="checkbox" value="A++" class="naac-filter mr-2 text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm">A++ Grade</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" value="A+" class="naac-filter mr-2 text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm">A+ Grade</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" value="A" class="naac-filter mr-2 text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm">A Grade</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" value="B++" class="naac-filter mr-2 text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm">B++ Grade</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Fees Range Filter -->
+                <div class="filter-section">
+                    <h4 class="font-semibold text-gray-900 mb-3 flex items-center">
+                        <i class="fas fa-rupee-sign text-blue-600 mr-2"></i>
+                        Annual Fees Range
+                    </h4>
+                    <div class="space-y-3">
+                        <input type="range" id="feesRange" class="range-slider" min="0" max="500000" value="500000" step="10000">
+                        <div class="flex justify-between text-sm text-gray-600">
+                            <span>₹0</span>
+                            <span id="feesValue">₹5,00,000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entrance Exam Filter -->
+                <div class="filter-section">
+                    <h4 class="font-semibold text-gray-900 mb-3 flex items-center">
+                        <i class="fas fa-clipboard-list text-blue-600 mr-2"></i>
+                        Entrance Exams
+                    </h4>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="checkbox" value="JEE Main" class="exam-filter mr-2 text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm">JEE Main</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" value="NEET" class="exam-filter mr-2 text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm">NEET</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" value="CUET" class="exam-filter mr-2 text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm">CUET</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" value="CAT" class="exam-filter mr-2 text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm">CAT</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" value="CLAT" class="exam-filter mr-2 text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm">CLAT</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Filter Actions -->
+                <div class="pt-4 border-t border-gray-200">
+                    <div class="flex space-x-3">
+                        <button id="applyFilters" class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
+                            Apply Filters
+                        </button>
+                        <button id="clearFilters" class="flex-1 bg-gray-200 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-300 transition-colors">
+                            Clear All
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="flex-1">
+                <!-- Results Header -->
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 bg-white rounded-xl p-4 shadow-sm">
+                    <div>
+                        <h2 class="text-lg font-semibold text-gray-900">
+                            Showing <span id="resultCount">1-12</span> of <span id="totalCount">235</span> Colleges
+                        </h2>
+                        <p class="text-sm text-gray-600 mt-1">Find your perfect college match</p>
+                    </div>
+                    <div class="flex items-center space-x-4 mt-4 sm:mt-0">
+                        <div class="flex items-center space-x-2">
+                            <label class="text-sm text-gray-600">Sort by:</label>
+                            <select id="sortBy" class="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-sm">
+                                <option value="ranking">Ranking</option>
+                                <option value="fees-low">Fees (Low to High)</option>
+                                <option value="fees-high">Fees (High to Low)</option>
+                                <option value="placement">Placement %</option>
+                                <option value="name">Name (A-Z)</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <button id="gridView" class="p-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                <i class="fas fa-th-large"></i>
+                            </button>
+                            <button id="listView" class="p-2 text-blue-600 bg-blue-50 rounded-lg">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loading Skeleton -->
+                <div id="loadingSkeleton" class="hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                        <div class="bg-white rounded-xl p-6 shadow-sm">
+                            <div class="loading-skeleton h-4 rounded mb-4"></div>
+                            <div class="loading-skeleton h-3 rounded mb-2"></div>
+                            <div class="loading-skeleton h-3 rounded mb-4"></div>
+                            <div class="loading-skeleton h-8 rounded"></div>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 shadow-sm">
+                            <div class="loading-skeleton h-4 rounded mb-4"></div>
+                            <div class="loading-skeleton h-3 rounded mb-2"></div>
+                            <div class="loading-skeleton h-3 rounded mb-4"></div>
+                            <div class="loading-skeleton h-8 rounded"></div>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 shadow-sm">
+                            <div class="loading-skeleton h-4 rounded mb-4"></div>
+                            <div class="loading-skeleton h-3 rounded mb-2"></div>
+                            <div class="loading-skeleton h-3 rounded mb-4"></div>
+                            <div class="loading-skeleton h-8 rounded"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- College Cards Grid -->
+                <div id="collegeGrid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                    <!-- College cards will be dynamically inserted here -->
+                </div>
+
+                <!-- No Results -->
+                <div id="noResults" class="no-results hidden">
+                    <div class="text-6xl mb-4">🔍</div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">No colleges found</h3>
+                    <p class="text-gray-600 mb-6">Try adjusting your filters or search terms</p>
+                    <button id="resetFilters" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                        Reset All Filters
+                    </button>
+                </div>
+
+                <!-- Pagination -->
+                <div id="pagination" class="flex justify-center items-center space-x-2 mt-12">
+                    <button id="prevPage" class="pagination-btn px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed">
+                        <i class="fas fa-chevron-left mr-2"></i>Previous
+                    </button>
+                    <div id="pageNumbers" class="flex space-x-1">
+                        <!-- Page numbers will be dynamically inserted -->
+                    </div>
+                    <button id="nextPage" class="pagination-btn px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed">
+                        Next<i class="fas fa-chevron-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEO Section -->
+        <section class="mt-16 bg-white rounded-xl p-8 shadow-sm">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Top Colleges in India - Your Gateway to Success</h2>
+            <div class="prose max-w-none text-gray-600">
+                <p class="mb-4">
+                    Discover India's premier educational institutions with our comprehensive college directory. Whether you're seeking admission to top engineering colleges, prestigious medical schools, renowned management institutes, or esteemed law universities, we've curated a complete list of 500+ colleges across India.
+                </p>
+                <p class="mb-4">
+                    Our platform helps you filter colleges by location, course type, fees structure, NAAC ratings, and entrance exam requirements. From IITs and IIMs to AIIMS and NITs, find detailed information about admission processes, placement records, campus facilities, and student reviews.
+                </p>
+                <p>
+                    Make informed decisions about your higher education journey with expert guidance, transparent information, and personalized counseling support. Your dream college is just a click away!
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Apply Now Modal -->
+    <div id="applyModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl p-8 max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-semibold text-gray-900">Quick Application</h3>
+                <button id="closeModal" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <form id="quickApplicationForm">
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                        <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                        <input type="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+                        <input type="tel" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Course Interest</label>
+                        <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                            <option>B.Tech/B.E</option>
+                            <option>MBBS/BDS</option>
+                            <option>MBA/BBA</option>
+                            <option>LLB/BA LLB</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex space-x-4 mt-6">
+                    <button type="button" id="cancelApplication" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                        Cancel
+                    </button>
+                    <button type="submit" class="flex-1 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        Submit Application
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-graduation-cap text-white text-sm"></i>
+                        </div>
+                        <span class="text-xl font-bold">Admission Kart</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Your trusted partner in higher education. Helping students find their perfect college match since 2020.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="/" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="/colleges.html" class="hover:text-white transition-colors">All Colleges</a></li>
+                        <li><a href="/course-bba.html" class="hover:text-white transition-colors">Courses</a></li>
+                        <li><a href="/exam-cuet.html" class="hover:text-white transition-colors">Entrance Exams</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="/contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="/about.html" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact Info</h4>
+                    <div class="space-y-2 text-sm text-gray-400">
+                        <p><i class="fas fa-phone mr-2"></i>+91 9876543210</p>
+                        <p><i class="fas fa-envelope mr-2"></i>info@admissionkart.com</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Bangalore, India</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2024 Admission Kart. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sample college data
+        const collegesData = [
+            {
+                id: 1,
+                name: "Indian Institute of Technology Delhi",
+                location: "New Delhi, Delhi",
+                state: "Delhi",
+                city: "Delhi",
+                type: "Government",
+                naacRating: "A++",
+                fees: 200000,
+                courses: ["Engineering"],
+                exams: ["JEE Main"],
+                ranking: 1,
+                placementRate: 95,
+                avgPackage: "18.5 LPA",
+                image: "/placeholder.svg?height=200&width=300",
+                logo: "/placeholder.svg?height=60&width=60"
+            },
+            {
+                id: 2,
+                name: "All India Institute of Medical Sciences",
+                location: "New Delhi, Delhi",
+                state: "Delhi",
+                city: "Delhi",
+                type: "Government",
+                naacRating: "A++",
+                fees: 150000,
+                courses: ["Medical"],
+                exams: ["NEET"],
+                ranking: 1,
+                placementRate: 100,
+                avgPackage: "12.0 LPA",
+                image: "/placeholder.svg?height=200&width=300",
+                logo: "/placeholder.svg?height=60&width=60"
+            },
+            {
+                id: 3,
+                name: "Indian Institute of Management Bangalore",
+                location: "Bangalore, Karnataka",
+                state: "Karnataka",
+                city: "Bangalore",
+                type: "Government",
+                naacRating: "A++",
+                fees: 2400000,
+                courses: ["Management"],
+                exams: ["CAT"],
+                ranking: 1,
+                placementRate: 100,
+                avgPackage: "35.0 LPA",
+                image: "/placeholder.svg?height=200&width=300",
+                logo: "/placeholder.svg?height=60&width=60"
+            },
+            {
+                id: 4,
+                name: "National Law School of India University",
+                location: "Bangalore, Karnataka",
+                state: "Karnataka",
+                city: "Bangalore",
+                type: "Government",
+                naacRating: "A+",
+                fees: 300000,
+                courses: ["Law"],
+                exams: ["CLAT"],
+                ranking: 1,
+                placementRate: 98,
+                avgPackage: "15.0 LPA",
+                image: "/placeholder.svg?height=200&width=300",
+                logo: "/placeholder.svg?height=60&width=60"
+            },
+            {
+                id: 5,
+                name: "Christ University",
+                location: "Bangalore, Karnataka",
+                state: "Karnataka",
+                city: "Bangalore",
+                type: "Deemed",
+                naacRating: "A+",
+                fees: 180000,
+                courses: ["Management", "Arts"],
+                exams: ["CUET"],
+                ranking: 15,
+                placementRate: 85,
+                avgPackage: "6.5 LPA",
+                image: "/placeholder.svg?height=200&width=300",
+                logo: "/placeholder.svg?height=60&width=60"
+            },
+            {
+                id: 6,
+                name: "Manipal Institute of Technology",
+                location: "Manipal, Karnataka",
+                state: "Karnataka",
+                city: "Manipal",
+                type: "Private",
+                naacRating: "A",
+                fees: 350000,
+                courses: ["Engineering"],
+                exams: ["JEE Main"],
+                ranking: 25,
+                placementRate: 90,
+                avgPackage: "8.2 LPA",
+                image: "/placeholder.svg?height=200&width=300",
+                logo: "/placeholder.svg?height=60&width=60"
+            },
+            {
+                id: 7,
+                name: "Symbiosis International University",
+                location: "Pune, Maharashtra",
+                state: "Maharashtra",
+                city: "Pune",
+                type: "Deemed",
+                naacRating: "A",
+                fees: 250000,
+                courses: ["Management", "Law"],
+                exams: ["CUET", "CAT"],
+                ranking: 20,
+                placementRate: 88,
+                avgPackage: "7.8 LPA",
+                image: "/placeholder.svg?height=200&width=300",
+                logo: "/placeholder.svg?height=60&width=60"
+            },
+            {
+                id: 8,
+                name: "Vellore Institute of Technology",
+                location: "Vellore, Tamil Nadu",
+                state: "Tamil Nadu",
+                city: "Vellore",
+                type: "Private",
+                naacRating: "A+",
+                fees: 200000,
+                courses: ["Engineering"],
+                exams: ["JEE Main"],
+                ranking: 30,
+                placementRate: 85,
+                avgPackage: "7.5 LPA",
+                image: "/placeholder.svg?height=200&width=300",
+                logo: "/placeholder.svg?height=60&width=60"
+            },
+            {
+                id: 9,
+                name: "Jamia Millia Islamia",
+                location: "New Delhi, Delhi",
+                state: "Delhi",
+                city: "Delhi",
+                type: "Government",
+                naacRating: "A",
+                fees: 50000,
+                courses: ["Engineering", "Arts"],
+                exams: ["CUET", "JEE Main"],
+                ranking: 35,
+                placementRate: 80,
+                avgPackage: "6.0 LPA",
+                image: "/placeholder.svg?height=200&width=300",
+                logo: "/placeholder.svg?height=60&width=60"
+            },
+            {
+                id: 10,
+                name: "Jadavpur University",
+                location: "Kolkata, West Bengal",
+                state: "West Bengal",
+                city: "Kolkata",
+                type: "Government",
+                naacRating: "A",
+                fees: 30000,
+                courses: ["Engineering", "Arts"],
+                exams: ["JEE Main"],
+                ranking: 40,
+                placementRate: 82,
+                avgPackage: "8.0 LPA",
+                image: "/placeholder.svg?height=200&width=300",
+                logo: "/placeholder.svg?height=60&width=60"
+            },
+            {
+                id: 11,
+                name: "Banaras Hindu University",
+                location: "Varanasi, Uttar Pradesh",
+                state: "Uttar Pradesh",
+                city: "Varanasi",
+                type: "Government",
+                naacRating: "A+",
+                fees: 40000,
+                courses: ["Engineering", "Medical", "Arts"],
+                exams: ["JEE Main", "NEET", "CUET"],
+                ranking: 45,
+                placementRate: 78,
+                avgPackage: "5.5 LPA",
+                image: "/placeholder.svg?height=200&width=300",
+                logo: "/placeholder.svg?height=60&width=60"
+            },
+            {
+                id: 12,
+                name: "Amity University",
+                location: "Noida, Uttar Pradesh",
+                state: "Uttar Pradesh",
+                city: "Noida",
+                type: "Private",
+                naacRating: "A",
+                fees: 300000,
+                courses: ["Engineering", "Management", "Law"],
+                exams: ["JEE Main", "CAT", "CLAT"],
+                ranking: 50,
+                placementRate: 75,
+                avgPackage: "6.8 LPA",
+                image: "/placeholder.svg?height=200&width=300",
+                logo: "/placeholder.svg?height=60&width=60"
+            }
+        ];
+
+        // Global variables
+        let filteredColleges = [...collegesData];
+        let currentPage = 1;
+        const itemsPerPage = 9;
+        let wishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
+
+        // DOM elements
+        const searchInput = document.getElementById('searchInput');
+        const stateFilter = document.getElementById('stateFilter');
+        const cityFilter = document.getElementById('cityFilter');
+        const courseFilters = document.querySelectorAll('.course-filter');
+        const collegeTypeFilters = document.querySelectorAll('input[name="collegeType"]');
+        const naacFilters = document.querySelectorAll('.naac-filter');
+        const feesRange = document.getElementById('feesRange');
+        const feesValue = document.getElementById('feesValue');
+        const examFilters = document.querySelectorAll('.exam-filter');
+        const sortBy = document.getElementById('sortBy');
+        const collegeGrid = document.getElementById('collegeGrid');
+        const resultCount = document.getElementById('resultCount');
+        const totalCount = document.getElementById('totalCount');
+        const pagination = document.getElementById('pagination');
+        const prevPage = document.getElementById('prevPage');
+        const nextPage = document.getElementById('nextPage');
+        const pageNumbers = document.getElementById('pageNumbers');
+        const noResults = document.getElementById('noResults');
+        const loadingSkeleton = document.getElementById('loadingSkeleton');
+        const applyFilters = document.getElementById('applyFilters');
+        const clearFilters = document.getElementById('clearFilters');
+        const resetFilters = document.getElementById('resetFilters');
+        const mobileFilterBtn = document.getElementById('mobileFilterBtn');
+        const filterSidebar = document.getElementById('filterSidebar');
+        const filterOverlay = document.getElementById('filterOverlay');
+        const closeFilterBtn = document.getElementById('closeFilterBtn');
+        const applyModal = document.getElementById('applyModal');
+        const closeModal = document.getElementById('closeModal');
+        const cancelApplication = document.getElementById('cancelApplication');
+        const quickApplicationForm = document.getElementById('quickApplicationForm');
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderColleges();
+            setupEventListeners();
+            updateFeesDisplay();
+            
+            // GSAP animations
+            gsap.from('.filter-sidebar', {duration: 0.8, x: -50, opacity: 0, ease: "power2.out"});
+            gsap.from('.college-card', {duration: 0.8, y: 30, opacity: 0, stagger: 0.1, ease: "power2.out", delay: 0.3});
+        });
+
+        // Event listeners
+        function setupEventListeners() {
+            // Search and filters
+            searchInput.addEventListener('input', debounce(applyAllFilters, 300));
+            stateFilter.addEventListener('change', applyAllFilters);
+            cityFilter.addEventListener('change', applyAllFilters);
+            courseFilters.forEach(filter => filter.addEventListener('change', applyAllFilters));
+            collegeTypeFilters.forEach(filter => filter.addEventListener('change', applyAllFilters));
+            naacFilters.forEach(filter => filter.addEventListener('change', applyAllFilters));
+            feesRange.addEventListener('input', updateFeesDisplay);
+            feesRange.addEventListener('change', applyAllFilters);
+            examFilters.forEach(filter => filter.addEventListener('change', applyAllFilters));
+            sortBy.addEventListener('change', applyAllFilters);
+
+            // Filter actions
+            applyFilters.addEventListener('click', applyAllFilters);
+            clearFilters.addEventListener('click', clearAllFilters);
+            resetFilters.addEventListener('click', clearAllFilters);
+
+            // Mobile filter toggle
+            mobileFilterBtn.addEventListener('click', () => {
+                filterSidebar.classList.add('active');
+                filterOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+
+            closeFilterBtn.addEventListener('click', closeMobileFilter);
+            filterOverlay.addEventListener('click', closeMobileFilter);
+
+            // Pagination
+            prevPage.addEventListener('click', () => changePage(currentPage - 1));
+            nextPage.addEventListener('click', () => changePage(currentPage + 1));
+
+            // Modal
+            closeModal.addEventListener('click', closeApplyModal);
+            cancelApplication.addEventListener('click', closeApplyModal);
+            applyModal.addEventListener('click', (e) => {
+                if (e.target === applyModal) closeApplyModal();
+            });
+
+            // Form submission
+            quickApplicationForm.addEventListener('submit', handleApplicationSubmit);
+
+            // View toggle
+            document.getElementById('gridView').addEventListener('click', () => setView('grid'));
+            document.getElementById('listView').addEventListener('click', () => setView('list'));
+        }
+
+        // Debounce function
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Update fees display
+        function updateFeesDisplay() {
+            const value = parseInt(feesRange.value);
+            feesValue.textContent = `₹${(value / 100000).toFixed(1)}L`;
+        }
+
+        // Apply all filters
+        function applyAllFilters() {
+            showLoading();
+            
+            setTimeout(() => {
+                const searchTerm = searchInput.value.toLowerCase();
+                const selectedState = stateFilter.value;
+                const selectedCity = cityFilter.value;
+                const selectedCourses = Array.from(courseFilters).filter(cb => cb.checked).map(cb => cb.value);
+                const selectedCollegeType = document.querySelector('input[name="collegeType"]:checked').value;
+                const selectedNaacRatings = Array.from(naacFilters).filter(cb => cb.checked).map(cb => cb.value);
+                const maxFees = parseInt(feesRange.value);
+                const selectedExams = Array.from(examFilters).filter(cb => cb.checked).map(cb => cb.value);
+                const sortOption = sortBy.value;
+
+                filteredColleges = collegesData.filter(college => {
+                    // Search filter
+                    if (searchTerm && !college.name.toLowerCase().includes(searchTerm) && 
+                        !college.location.toLowerCase().includes(searchTerm)) {
+                        return false;
+                    }
+
+                    // Location filters
+                    if (selectedState && college.state !== selectedState) return false;
+                    if (selectedCity && college.city !== selectedCity) return false;
+
+                    // Course filter
+                    if (selectedCourses.length > 0 && !selectedCourses.some(course => college.courses.includes(course))) {
+                        return false;
+                    }
+
+                    // College type filter
+                    if (selectedCollegeType && college.type !== selectedCollegeType) return false;
+
+                    // NAAC rating filter
+                    if (selectedNaacRatings.length > 0 && !selectedNaacRatings.includes(college.naacRating)) {
+                        return false;
+                    }
+
+                    // Fees filter
+                    if (college.fees > maxFees) return false;
+
+                    // Exam filter
+                    if (selectedExams.length > 0 && !selectedExams.some(exam => college.exams.includes(exam))) {
+                        return false;
+                    }
+
+                    return true;
+                });
+
+                // Sort colleges
+                sortColleges(sortOption);
+
+                currentPage = 1;
+                renderColleges();
+                hideLoading();
+                closeMobileFilter();
+            }, 500);
+        }
+
+        // Sort colleges
+        function sortColleges(sortOption) {
+            switch (sortOption) {
+                case 'ranking':
+                    filteredColleges.sort((a, b) => a.ranking - b.ranking);
+                    break;
+                case 'fees-low':
+                    filteredColleges.sort((a, b) => a.fees - b.fees);
+                    break;
+                case 'fees-high':
+                    filteredColleges.sort((a, b) => b.fees - a.fees);
+                    break;
+                case 'placement':
+                    filteredColleges.sort((a, b) => b.placementRate - a.placementRate);
+                    break;
+                case 'name':
+                    filteredColleges.sort((a, b) => a.name.localeCompare(b.name));
+                    break;
+            }
+        }
+
+        // Clear all filters
+        function clearAllFilters() {
+            searchInput.value = '';
+            stateFilter.value = '';
+            cityFilter.value = '';
+            courseFilters.forEach(cb => cb.checked = false);
+            document.querySelector('input[name="collegeType"][value=""]').checked = true;
+            naacFilters.forEach(cb => cb.checked = false);
+            feesRange.value = 500000;
+            updateFeesDisplay();
+            examFilters.forEach(cb => cb.checked = false);
+            sortBy.value = 'ranking';
+            
+            applyAllFilters();
+        }
+
+        // Show loading
+        function showLoading() {
+            loadingSkeleton.classList.remove('hidden');
+            collegeGrid.classList.add('hidden');
+            noResults.classList.add('hidden');
+        }
+
+        // Hide loading
+        function hideLoading() {
+            loadingSkeleton.classList.add('hidden');
+            collegeGrid.classList.remove('hidden');
+        }
+
+        // Close mobile filter
+        function closeMobileFilter() {
+            filterSidebar.classList.remove('active');
+            filterOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Render colleges
+        function renderColleges() {
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const currentColleges = filteredColleges.slice(startIndex, endIndex);
+
+            if (filteredColleges.length === 0) {
+                collegeGrid.classList.add('hidden');
+                noResults.classList.remove('hidden');
+                pagination.classList.add('hidden');
+                return;
+            }
+
+            collegeGrid.classList.remove('hidden');
+            noResults.classList.add('hidden');
+            pagination.classList.remove('hidden');
+
+            collegeGrid.innerHTML = currentColleges.map(college => createCollegeCard(college)).join('');
+            
+            // Update result count
+            const start = startIndex + 1;
+            const end = Math.min(endIndex, filteredColleges.length);
+            resultCount.textContent = `${start}-${end}`;
+            totalCount.textContent = filteredColleges.length;
+
+            // Render pagination
+            renderPagination();
+
+            // Add event listeners to new cards
+            addCardEventListeners();
+
+            // Animate cards
+            gsap.from('.college-card', {duration: 0.6, y: 20, opacity: 0, stagger: 0.1, ease: "power2.out"});
+        }
+
+        // Create college card
+        function createCollegeCard(college) {
+            const isWishlisted = wishlist.includes(college.id);
+            const feesFormatted = college.fees >= 100000 ? `₹${(college.fees / 100000).toFixed(1)}L` : `₹${(college.fees / 1000).toFixed(0)}K`;
+            
+            return `
+                <div class="college-card bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden">
+                    <div class="relative">
+                        <img src="${college.image}" alt="${college.name}" class="w-full h-48 object-cover">
+                        <button class="wishlist-btn absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all ${isWishlisted ? 'active' : ''}" 
+                                data-college-id="${college.id}">
+                            <i class="fas fa-heart text-lg"></i>
+                        </button>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                NAAC ${college.naacRating}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-1 line-clamp-2">${college.name}</h3>
+                                <p class="text-sm text-gray-600 flex items-center">
+                                    <i class="fas fa-map-marker-alt mr-1"></i>
+                                    ${college.location}
+                                </p>
+                            </div>
+                            <img src="${college.logo}" alt="Logo" class="w-12 h-12 rounded-lg ml-4">
+                        </div>
+                        
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center justify-between text-sm">
+                                <span class="text-gray-600">Annual Fees:</span>
+                                <span class="font-semibold text-green-600">${feesFormatted}</span>
+                            </div>
+                            <div class="flex items-center justify-between text-sm">
+                                <span class="text-gray-600">Avg. Package:</span>
+                                <span class="font-semibold text-blue-600">${college.avgPackage}</span>
+                            </div>
+                            <div class="flex items-center justify-between text-sm">
+                                <span class="text-gray-600">Placement Rate:</span>
+                                <span class="font-semibold text-purple-600">${college.placementRate}%</span>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-1 mb-4">
+                            ${college.courses.map(course => `
+                                <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">${course}</span>
+                            `).join('')}
+                        </div>
+
+                        <div class="flex space-x-3">
+                            <button class="apply-btn flex-1 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium" 
+                                    data-college-id="${college.id}">
+                                Apply Now
+                            </button>
+                            <button class="enquire-btn flex-1 border border-blue-600 text-blue-600 py-2 px-4 rounded-lg hover:bg-blue-50 transition-colors text-sm font-medium"
+                                    data-college-id="${college.id}">
+                                Enquire
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Add event listeners to cards
+        function addCardEventListeners() {
+            // Wishlist buttons
+            document.querySelectorAll('.wishlist-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const collegeId = parseInt(btn.dataset.collegeId);
+                    toggleWishlist(collegeId, btn);
+                });
+            });
+
+            // Apply buttons
+            document.querySelectorAll('.apply-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const collegeId = parseInt(btn.dataset.collegeId);
+                    openApplyModal(collegeId);
+                });
+            });
+
+            // Enquire buttons
+            document.querySelectorAll('.enquire-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const collegeId = parseInt(btn.dataset.collegeId);
+                    handleEnquiry(collegeId);
+                });
+            });
+        }
+
+        // Toggle wishlist
+        function toggleWishlist(collegeId, btn) {
+            const index = wishlist.indexOf(collegeId);
+            if (index > -1) {
+                wishlist.splice(index, 1);
+                btn.classList.remove('active');
+            } else {
+                wishlist.push(collegeId);
+                btn.classList.add('active');
+            }
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            
+            // Show toast
+            showToast(index > -1 ? 'Removed from wishlist' : 'Added to wishlist');
+        }
+
+        // Open apply modal
+        function openApplyModal(collegeId) {
+            const college = collegesData.find(c => c.id === collegeId);
+            applyModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close apply modal
+        function closeApplyModal() {
+            applyModal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        // Handle enquiry
+        function handleEnquiry(collegeId) {
+            const college = collegesData.find(c => c.id === collegeId);
+            const message = `Hi, I'm interested in ${college.name}. Can you provide more information about admission process and fees?`;
+            const whatsappUrl = `https://wa.me/919876543210?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Handle application submit
+        function handleApplicationSubmit(e) {
+            e.preventDefault();
+            
+            // Show loading
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Submitting...';
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                closeApplyModal();
+                showToast('Application submitted successfully! We will contact you soon.');
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                e.target.reset();
+            }, 2000);
+        }
+
+        // Render pagination
+        function renderPagination() {
+            const totalPages = Math.ceil(filteredColleges.length / itemsPerPage);
+            
+            prevPage.disabled = currentPage === 1;
+            nextPage.disabled = currentPage === totalPages;
+
+            // Generate page numbers
+            let pages = [];
+            const maxVisiblePages = 5;
+            
+            if (totalPages <= maxVisiblePages) {
+                pages = Array.from({length: totalPages}, (_, i) => i + 1);
+            } else {
+                const start = Math.max(1, currentPage - 2);
+                const end = Math.min(totalPages, start + maxVisiblePages - 1);
+                pages = Array.from({length: end - start + 1}, (_, i) => start + i);
+            }
+
+            pageNumbers.innerHTML = pages.map(page => `
+                <button class="pagination-btn px-3 py-2 border rounded-lg ${page === currentPage ? 'bg-blue-600 text-white border-blue-600' : 'border-gray-300 hover:bg-gray-50'}" 
+                        onclick="changePage(${page})">${page}</button>
+            `).join('');
+        }
+
+        // Change page
+        function changePage(page) {
+            const totalPages = Math.ceil(filteredColleges.length / itemsPerPage);
+            if (page < 1 || page > totalPages) return;
+            
+            currentPage = page;
+            renderColleges();
+            
+            // Scroll to top
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        // Set view (grid/list)
+        function setView(view) {
+            const gridBtn = document.getElementById('gridView');
+            const listBtn = document.getElementById('listView');
+            
+            if (view === 'grid') {
+                gridBtn.classList.add('text-blue-600', 'bg-blue-50');
+                gridBtn.classList.remove('text-gray-600');
+                listBtn.classList.remove('text-blue-600', 'bg-blue-50');
+                listBtn.classList.add('text-gray-600');
+                collegeGrid.className = 'grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6';
+            } else {
+                listBtn.classList.add('text-blue-600', 'bg-blue-50');
+                listBtn.classList.remove('text-gray-600');
+                gridBtn.classList.remove('text-blue-600', 'bg-blue-50');
+                gridBtn.classList.add('text-gray-600');
+                collegeGrid.className = 'space-y-4';
+            }
+        }
+
+        // Show toast notification
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'fixed top-4 right-4 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg z-50 transform translate-x-full transition-transform duration-300';
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.classList.remove('translate-x-full');
+            }, 100);
+            
+            setTimeout(() => {
+                toast.classList.add('translate-x-full');
+                setTimeout(() => {
+                    document.body.removeChild(toast);
+                }, 300);
+            }, 3000);
+        }
+
+        // Make changePage function global
+        window.changePage = changePage;
+    </script>
+</body>
+</html>
